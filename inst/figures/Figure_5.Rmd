@@ -1,0 +1,292 @@
+---
+title: "DRiDO Figure 5"
+author: "Johanna Fleischman"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    toc_depth: 4
+    code_folding: hide 
+---
+
+# Setup 
+
+## Install Packages
+
+```{r, message=F, warning=F}
+suppressMessages(library(patchwork))
+suppressMessages(library(ggrepel))
+suppressMessages(library(RColorBrewer))
+suppressMessages(library(ggh4x))
+suppressMessages(library(ggpmisc))
+suppressMessages(library(tidyverse))
+
+knitr::opts_chunk$set(echo = TRUE, eval = TRUE, out.height = "100%", out.width = "100%", warning = F, message = F)
+```
+
+## Load and Clean Data
+
+```{r}
+# set
+# local_filepath <- "~/drido-multiomic-paper"
+
+source(file.path(local_filepath, "R/statistics_functions.R"))
+source(file.path(local_filepath, "R/figure_functions.R"))
+
+qtl_file <- "inst/supp_tables/Table_S9_QTLs.Rds"
+h2_file <- "inst/supp_tables/Table_S10_Heritability.Rds"
+qtl_corr_data <- "inst/extdata/20260408-Lifespan_colocalized_QTL_lifespan_allele_correlation.RDS"
+
+all_lod6 <- readRDS(file.path(local_filepath, qtl_file)) %>%
+  dplyr::mutate(chr = factor(chr, levels = c(seq_len(19), "X")))
+all_h2 <- readRDS(file.path(local_filepath, h2_file))
+rp <- readRDS(file.path(local_filepath, qtl_corr_data)) %>%
+  dplyr::filter(year_data == age_years) %>%
+  dplyr::select(trait, r, p, lifespan_qtl, label_use, facet_label)
+
+name_conv_file <- "inst/supp_tables/Table_S1_CompoundAnnotations.csv"
+name_conversion_use <- read.csv(file.path(local_filepath, name_conv_file))
+```
+
+# Figure 5
+
+## A: Genetic Summary
+
+```{r, fig.width = 2.8, fig.height = 2}
+# Get total traits per age_years and modality from your full trait list
+total_traits <- name_conversion_use %>%
+  dplyr::group_by(modality) %>%
+  dplyr::summarise(n_total_traits = dplyr::n_distinct(feature_id), .groups = "drop")
+
+all_h2_median <- all_h2 %>%
+  dplyr::mutate(age_years = stringr::str_to_title(sub(".*_", "", trait))) %>%
+  dplyr::group_by(modality, age_years) %>%
+  dplyr::summarise(
+    median_h2 = median(h2, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+all_qtl <- all_lod6 %>%
+  dplyr::mutate(age_years = stringr::str_to_title(sub(".*_", "", trait))) %>%
+  dplyr::group_by(age_years, modality) %>%
+  dplyr::summarise(
+    n_qtl_per_trait = dplyr::n() / dplyr::n_distinct(trait), # avg QTL per trait (that has QTL)
+    n_traits_with_qtl = dplyr::n_distinct(trait), # traits that have ≥1 QTL
+    .groups = "drop"
+  ) %>%
+  dplyr::left_join(total_traits, by = c("modality")) %>%
+  dplyr::mutate(pct_traits_with_qtl = n_traits_with_qtl / n_total_traits * 100) %>%
+  dplyr::left_join(all_h2_median, by = c("age_years", "modality"))
+
+all_qtl_plot <- all_qtl %>%
+  tidyr::pivot_longer(cols = c("n_qtl_per_trait", "pct_traits_with_qtl", "median_h2")) %>%
+  dplyr::mutate(modality = stringr::str_to_title(modality)) %>%
+  dplyr::mutate(name = factor(name, levels = c("pct_traits_with_qtl", "n_qtl_per_trait", "median_h2")))
+
+library(ggtext)
+
+facet_labels <- c(
+  n_qtl_per_trait     = "Avg. QTL<br>per trait",
+  pct_traits_with_qtl = "Pct. traits<br>with QTL",
+  median_h2           = "Median H<sup>2</sup>"
+)
+
+gg <- ggplot(all_qtl_plot) +
+  geom_col(aes(x = value, y = modality, fill = modality)) +
+  docr_ggplot_theme() +
+  facet_grid(
+    rows = vars(age_years),
+    cols = vars(name),
+    scales = "free_x",
+    labeller = labeller(
+      name = as_labeller(facet_labels),
+      age_years = label_value
+    )
+  ) +
+  theme(
+    strip.text.x = element_markdown(lineheight = 1.1, margin = margin(0, 2, 2, 2)),
+    strip.text.y = element_markdown(lineheight = 1.1),
+    panel.spacing = unit(2, "pt")
+  ) +
+  scale_fill_manual(values = brewer.pal(3, "Dark2")) +
+  labs(x = "", y = "")
+gg
+
+# docr_ggsave(plot_object = gg,
+#             "Fig_5A_Genetic_Summary",
+#             plot_width = 2.8,
+#             plot_height = 2,
+#             local_filepath = local_filepath)
+```
+
+## D: Colocalized Lifespan QTL
+
+```{r, fig.width = 2.7, fig.height = 1.8}
+lifespan_qtl <- data.frame(
+  chr = c(18, 16, 16, 12, 2, 4),
+  lifespan_qtl = as.factor(c(21.81, 83.26, 8.82, 81.19, 59.34, 137.61))
+)
+
+df_filtered <- all_lod6 %>%
+  dplyr::mutate(chr = as.numeric(as.character(chr))) %>%
+  dplyr::inner_join(
+    lifespan_qtl %>%
+      dplyr::mutate(lifespan_qtl = as.numeric(as.character(lifespan_qtl))),
+    by = "chr",
+    relationship = "many-to-many"
+  ) %>%
+  dplyr::mutate(
+    lifespan_diff = abs(pos - lifespan_qtl),
+    ci_diff = ci_hi - ci_lo
+  ) %>%
+  dplyr::filter(
+    lifespan_diff < 0.5,
+    lifespan_qtl >= ci_lo & lifespan_qtl <= ci_hi,
+    ci_diff <= 10
+  )
+
+length(unique(df_filtered$trait))
+
+rp_scatter <- df_filtered %>%
+  dplyr::left_join(rp, by = c("trait", "lifespan_qtl")) %>%
+  dplyr::filter(!is.na(r), p < 0.1) %>%
+  dplyr::mutate(
+    logp = -log10(p),
+    r2 = r * r,
+    age_years = paste0(stringr::str_to_title(sub(".*_", "", trait))),
+    label_use = paste0(name_use, "-", age_years),
+  )
+
+gg_scatter <- ggplot(
+  rp_scatter,
+  aes(
+    x = r,
+    y = lod,
+    color = facet_label,
+    label = label_use
+  )
+) +
+  geom_point(
+    size = 1,
+    alpha = 0.8
+  ) +
+  ggrepel::geom_text_repel(
+    size = 5 / ggplot2::.pt,
+    force = 2,
+    max.overlaps = 20,
+    box.padding = 0.2,
+    point.padding = 0.2,
+    segment.color = "grey60",
+    segment.size = 0.3,
+    show.legend = FALSE
+  ) +
+  scale_color_manual(
+    name = "Lifespan QTL\n(Mullis et al.,\nGenetics, 2025)",
+    values = c(
+      "#0072B2",
+      "#009E73",
+      "#E69F00",
+      "#CC79A7",
+      "#56B4E9"
+    )
+  ) +
+  docr_ggplot_theme(x_text_angle = 0, legend_position = "right") +
+  docr_ggplot_line(x = 0) +
+  labs(
+    title = "Correlation between molecular\nand lifespan QTL effects",
+    x = "R with lifespan effect",
+    y = "QTL LOD score"
+  ) +
+  theme(
+    legend.key.size = unit(0.3, "cm"),
+    legend.title = element_text(size = 6),
+    text = element_text(size = 6),
+    legend.box.spacing = unit(2, "pt"),
+    axis.title.x = element_markdown()
+  )
+
+gg_scatter
+
+# docr_ggsave(plot_object = gg_scatter,
+#             "Fig_5D_Lifespan_QTL_Scatter",
+#             plot_width = 2.7,
+#             plot_height = 1.8,
+#             local_filepath = local_filepath)
+```
+
+# Supplement
+
+## Ext. Fig. 6
+
+```{r, fig.width = 3.5, fig.height = 2}
+# Get total traits per age_years and modality from your full trait list
+total_traits <- name_conversion_use %>%
+  dplyr::mutate(modality = ifelse(grepl("Ig", Broad_Group), paste0(modality, " Ig Variable"), modality)) %>%
+  dplyr::group_by(modality) %>%
+  dplyr::summarise(n_total_traits = dplyr::n_distinct(feature_id), .groups = "drop")
+
+all_h2_median <- all_h2 %>%
+  dplyr::left_join(name_conversion_use %>% dplyr::select(name_use, Broad_Group), by = "name_use") %>%
+  dplyr::mutate(modality = ifelse(grepl("Ig", Broad_Group), paste0(modality, " Ig Variable"), modality)) %>%
+  dplyr::mutate(age_years = stringr::str_to_title(sub(".*_", "", trait))) %>%
+  dplyr::group_by(modality, age_years) %>%
+  dplyr::summarise(
+    median_h2 = median(h2, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+all_qtl <- all_lod6 %>%
+  dplyr::left_join(name_conversion_use %>% dplyr::select(name_use, Broad_Group), by = "name_use") %>%
+  dplyr::mutate(modality = ifelse(grepl("Ig", Broad_Group), paste0(modality, " Ig Variable"), modality)) %>%
+  dplyr::mutate(age_years = stringr::str_to_title(sub(".*_", "", trait))) %>%
+  dplyr::group_by(age_years, modality) %>%
+  dplyr::summarise(
+    n_qtl_per_trait = dplyr::n() / dplyr::n_distinct(trait), # avg QTL per trait (that has QTL)
+    n_traits_with_qtl = dplyr::n_distinct(trait), # traits that have ≥1 QTL
+    .groups = "drop"
+  ) %>%
+  dplyr::left_join(total_traits, by = c("modality")) %>%
+  dplyr::mutate(pct_traits_with_qtl = n_traits_with_qtl / n_total_traits * 100) %>%
+  dplyr::left_join(all_h2_median, by = c("age_years", "modality"))
+
+all_qtl_plot <- all_qtl %>%
+  tidyr::pivot_longer(cols = c("n_qtl_per_trait", "pct_traits_with_qtl", "median_h2")) %>%
+  dplyr::mutate(modality = stringr::str_to_title(modality)) %>%
+  dplyr::mutate(name = factor(name, levels = c("pct_traits_with_qtl", "n_qtl_per_trait", "median_h2")))
+
+library(ggtext)
+
+facet_labels <- c(
+  n_qtl_per_trait     = "Avg. QTL<br>per trait",
+  pct_traits_with_qtl = "Pct. traits<br>with QTL",
+  median_h2           = "Median H<sup>2</sup>"
+)
+
+gg <- ggplot(all_qtl_plot) +
+  geom_col(aes(x = value, y = modality, fill = modality)) +
+  docr_ggplot_theme() +
+  facet_grid(
+    rows = vars(age_years),
+    cols = vars(name),
+    scales = "free_x",
+    labeller = labeller(
+      name = as_labeller(facet_labels),
+      age_years = label_value
+    )
+  ) +
+  theme(
+    strip.text.x = element_markdown(lineheight = 1.1, margin = margin(0, 2, 2, 2)),
+    strip.text.y = element_markdown(lineheight = 1.1),
+    panel.spacing = unit(2, "pt")
+  ) +
+  scale_fill_manual(values = brewer.pal(4, "Dark2")) +
+  labs(x = "", y = "")
+gg
+#
+# docr_ggsave(plot_object = gg,
+#             "Fig_S6_Genetic_Summary_with_Igs",
+#             plot_width = 3.5,
+#             plot_height = 2,
+#             local_filepath = local_filepath)
+```

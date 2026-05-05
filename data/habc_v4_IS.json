@@ -1,0 +1,15 @@
+{
+  "searchVersion": ["HABC v4 IS"],
+  "consensusMinFractionMs2Scans": [0.6],
+  "ms2MinNumMatches": [0],
+  "ms2MinNumDiagnosticMatches": [0],
+  "spectralCompositionAlgorithm": ["AUTO_SUMMARIZED_ACYL_CHAINS_SUM_COMPOSITION"],
+  "ms1PpmTolr": [3],
+  "ms2PpmTolr": [10],
+  "ms1ScanFilter": ["SIM"],
+  "consensusIntensityAgglomerationType": ["MEDIAN"],
+  "isReduceBySimpleParsimony": [true],
+  "consensusMs1PpmTolr": [5],
+  "ms1IsFindPrecursorIon": [true],
+  "ms1IsRequireMonoisotopic": [false]
+}

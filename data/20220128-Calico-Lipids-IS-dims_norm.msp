@@ -1,0 +1,2262 @@
+Name: Carn(24:0)_IS
+Id: Carn(24:0)_IS [M+H]+
+ADDUCT: [M+H]+
+Formula: C31H57D4O4N
+PrecursorMz: 516.4924429
+ExactMass: 515.4851665
+MW: 515.4851665
+CLASS: Carn
+SumComposition: Carn(24:0)_IS
+SumChainLengths: Carn(24:0)_IS
+NumPeaks: 4
+60.0807757 83 trimethylamine
+144.1019051 32 deoxycarnitine
+457.4189436 129 *NL trimethylamine
+516.4924429 837 precursor
+
+
+Name: Carn(24:0)_IS
+Id: Carn(24:0)_IS [M+K]+
+ADDUCT: [M+K]+
+Formula: C31H57D4O4N
+PrecursorMz: 554.4488745
+ExactMass: 515.4851665
+MW: 515.4851665
+CLASS: Carn
+SumComposition: Carn(24:0)_IS
+SumChainLengths: Carn(24:0)_IS
+NumPeaks: 4
+60.0807757 83 trimethylamine
+182.0583367 32 deoxycarnitine
+495.3753752 129 *NL trimethylamine
+554.4488745 837 precursor
+
+
+Name: Carn(24:0)_IS
+Id: Carn(24:0)_IS [M+Na]+
+ADDUCT: [M+Na]+
+Formula: C31H57D4O4N
+PrecursorMz: 538.4743845
+ExactMass: 515.4851665
+MW: 515.4851665
+CLASS: Carn
+SumComposition: Carn(24:0)_IS
+SumChainLengths: Carn(24:0)_IS
+NumPeaks: 4
+60.0807757 83 trimethylamine
+166.0838467 32 deoxycarnitine
+479.4008852 129 *NL trimethylamine
+538.4743845 837 precursor
+
+
+Name: CE(18:1)_IS
+Id: CE(18:1)_IS [M+K]+
+ADDUCT: [M+K]+
+Formula: C45H71D7O2
+PrecursorMz: 696.6078269
+ExactMass: 657.6441189
+MW: 657.6441189
+CLASS: CE
+SumComposition: CE(18:1)_IS
+SumChainLengths: CE(18:1)_IS
+NumPeaks: 3
+328.2635255 249 @Fatty acyl + adduct
+369.3515779 8 *Cholesterol - water
+696.6078269 1000 precursor
+
+
+Name: CE(18:1)_IS
+Id: CE(18:1)_IS [M+Na]+
+ADDUCT: [M+Na]+
+Formula: C45H71D7O2
+PrecursorMz: 680.6333369
+ExactMass: 657.6441189
+MW: 657.6441189
+CLASS: CE
+SumComposition: CE(18:1)_IS
+SumChainLengths: CE(18:1)_IS
+NumPeaks: 3
+312.2890355 249 @Fatty acyl + adduct
+369.3515779 8 *Cholesterol - water
+680.6333369 1000 precursor
+
+
+Name: CE(18:1)_IS
+Id: CE(18:1)_IS [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C45H71D7O2
+PrecursorMz: 675.6779419
+ExactMass: 657.6441189
+MW: 657.6441189
+CLASS: CE
+SumComposition: CE(18:1)_IS
+SumChainLengths: CE(18:1)_IS
+NumPeaks: 2
+369.3515779 1000 *Cholesterol - water
+675.6779419 1 precursor
+
+
+Name: Ceramide(18:1;O2/15:0)_IS
+Id: Ceramide(18:1;O2/15:0)_IS [M-H]-
+ADDUCT: [M-H]-
+Formula: C33H58D7O3N
+PrecursorMz: 529.5331057
+ExactMass: 530.5403822
+MW: 530.5403822
+CLASS: Ceramide
+SumComposition: Ceramide(33:1;O2)_IS
+SumChainLengths: Ceramide(15:0_18:1;O2)_IS
+NumPeaks: 15
+223.2067438 219 $Fatty Amide - NH3 - H
+240.2332929 105 $Fatty Amide - H
+241.2173038 120 $Fatty Acid - H
+244.2663216 190 @LCB-CO2H4-CNH3
+257.2979561 18 @LCB-COH2-H2O
+266.2489476 701 *N-acyl-ethanolamine - H2O - H/@LCB -CO2H4
+270.2819717 64 @LCB - H2O - NH3
+273.2928848 701 *N-acyl-ethanolamine - H2O - H/@LCB -CO2H4
+275.3085208 20 @LCB -CO2H2
+282.2438575 117 N-acyl-ethanolamine - H2 - H
+284.2595076 13 N-acyl-ethanolamine - H
+481.5119763 74 *pre-COH2-H2O
+497.5068910 67 *pre-COH4
+499.5225410 110 pre-COH2
+529.5331057 1000 precursor
+
+
+Name: Ceramide(18:1;O2/15:0)_IS
+Id: Ceramide(18:1;O2/15:0)_IS [M+37Cl]-
+ADDUCT: [M+37Cl]-
+Formula: C33H58D7O3N
+PrecursorMz: 567.5068338
+ExactMass: 530.5403822
+MW: 530.5403822
+CLASS: Ceramide
+SumComposition: Ceramide(33:1;O2)_IS
+SumChainLengths: Ceramide(15:0_18:1;O2)_IS
+NumPeaks: 17
+223.2067438 219 $Fatty Amide - NH3 - H
+240.2332929 105 $Fatty Amide - H
+241.2173038 120 $Fatty Acid - H
+244.2663216 190 @LCB-CO2H4-CNH3
+257.2979561 18 @LCB-COH2-H2O
+266.2489476 701 *N-acyl-ethanolamine - H2O - H/@LCB -CO2H4
+270.2819717 64 @LCB - H2O - NH3
+273.2928848 701 *N-acyl-ethanolamine - H2O - H/@LCB -CO2H4
+275.3085208 20 @LCB -CO2H2
+282.2438575 117 N-acyl-ethanolamine - H2 - H
+284.2595076 13 N-acyl-ethanolamine - H
+481.5119763 74 *pre-COH2-H2O
+497.5068910 67 *pre-COH4
+499.5225410 110 pre-COH2
+522.4891685 1000 NL adduct
+529.5331057 1000 NL adduct
+567.5068338 30 precursor
+
+
+Name: Ceramide(18:1;O2/15:0)_IS
+Id: Ceramide(18:1;O2/15:0)_IS [M+AcOH-H]-
+ADDUCT: [M+AcOH-H]-
+Formula: C33H58D7O3N
+PrecursorMz: 589.5542351
+ExactMass: 530.5403822
+MW: 530.5403822
+CLASS: Ceramide
+SumComposition: Ceramide(33:1;O2)_IS
+SumChainLengths: Ceramide(15:0_18:1;O2)_IS
+NumPeaks: 17
+223.2067438 219 $Fatty Amide - NH3 - H
+240.2332929 105 $Fatty Amide - H
+241.2173038 120 $Fatty Acid - H
+244.2663216 190 @LCB-CO2H4-CNH3
+257.2979561 18 @LCB-COH2-H2O
+266.2489476 701 *N-acyl-ethanolamine - H2O - H/@LCB -CO2H4
+270.2819717 64 @LCB - H2O - NH3
+273.2928848 701 *N-acyl-ethanolamine - H2O - H/@LCB -CO2H4
+275.3085208 20 @LCB -CO2H2
+282.2438575 117 N-acyl-ethanolamine - H2 - H
+284.2595076 13 N-acyl-ethanolamine - H
+481.5119763 74 *pre-COH2-H2O
+497.5068910 67 *pre-COH4
+499.5225410 110 pre-COH2
+522.4891685 1000 NL adduct
+529.5331057 1000 NL adduct
+589.5542351 30 precursor
+
+
+Name: Ceramide(18:1;O2/15:0)_IS
+Id: Ceramide(18:1;O2/15:0)_IS [M+Cl]-
+ADDUCT: [M+Cl]-
+Formula: C33H58D7O3N
+PrecursorMz: 565.5097838
+ExactMass: 530.5403822
+MW: 530.5403822
+CLASS: Ceramide
+SumComposition: Ceramide(33:1;O2)_IS
+SumChainLengths: Ceramide(15:0_18:1;O2)_IS
+NumPeaks: 17
+223.2067438 219 $Fatty Amide - NH3 - H
+240.2332929 105 $Fatty Amide - H
+241.2173038 120 $Fatty Acid - H
+244.2663216 190 @LCB-CO2H4-CNH3
+257.2979561 18 @LCB-COH2-H2O
+266.2489476 701 *N-acyl-ethanolamine - H2O - H/@LCB -CO2H4
+270.2819717 64 @LCB - H2O - NH3
+273.2928848 701 *N-acyl-ethanolamine - H2O - H/@LCB -CO2H4
+275.3085208 20 @LCB -CO2H2
+282.2438575 117 N-acyl-ethanolamine - H2 - H
+284.2595076 13 N-acyl-ethanolamine - H
+481.5119763 74 *pre-COH2-H2O
+497.5068910 67 *pre-COH4
+499.5225410 110 pre-COH2
+522.4891685 1000 NL adduct
+529.5331057 1000 NL adduct
+565.5097838 30 precursor
+
+
+Name: Ceramide(18:1;O2/15:0)_IS
+Id: Ceramide(18:1;O2/15:0)_IS [M+FA-H]-
+ADDUCT: [M+FA-H]-
+Formula: C33H58D7O3N
+PrecursorMz: 575.5385850
+ExactMass: 530.5403822
+MW: 530.5403822
+CLASS: Ceramide
+SumComposition: Ceramide(33:1;O2)_IS
+SumChainLengths: Ceramide(15:0_18:1;O2)_IS
+NumPeaks: 17
+223.2067438 219 $Fatty Amide - NH3 - H
+240.2332929 105 $Fatty Amide - H
+241.2173038 120 $Fatty Acid - H
+244.2663216 190 @LCB-CO2H4-CNH3
+257.2979561 18 @LCB-COH2-H2O
+266.2489476 701 *N-acyl-ethanolamine - H2O - H/@LCB -CO2H4
+270.2819717 64 @LCB - H2O - NH3
+273.2928848 701 *N-acyl-ethanolamine - H2O - H/@LCB -CO2H4
+275.3085208 20 @LCB -CO2H2
+282.2438575 117 N-acyl-ethanolamine - H2 - H
+284.2595076 13 N-acyl-ethanolamine - H
+481.5119763 74 *pre-COH2-H2O
+497.5068910 67 *pre-COH4
+499.5225410 110 pre-COH2
+522.4891685 1000 NL adduct
+529.5331057 1000 NL adduct
+575.5385850 30 precursor
+
+
+Name: Ceramide(18:1;O2/15:0)_IS
+Id: Ceramide(18:1;O2/15:0)_IS [M+H]+
+ADDUCT: [M+H]+
+Formula: C33H58D7O3N
+PrecursorMz: 531.5476586
+ExactMass: 530.5403822
+MW: 530.5403822
+CLASS: Ceramide
+SumComposition: Ceramide(33:1;O2)_IS
+SumChainLengths: Ceramide(15:0_18:1;O2)_IS
+NumPeaks: 9
+225.2212967 1 $sn2 acylium ion
+242.2478458 11 $fatty amide
+259.3125137 101 @pre-sn2-CH2O
+271.3125184 1000 @pre-sn2-H2O
+289.3230784 127 @pre-sn2
+483.5265339 13 *pre-CH2O-H2O
+495.5265386 31 *pre-H2O-H2O
+513.5370986 101 *pre-H2O
+531.5476586 2 precursor
+
+
+Name: Ceramide(18:1;O2/15:0)_IS
+Id: Ceramide(18:1;O2/15:0)_IS [M+K]+
+ADDUCT: [M+K]+
+Formula: C33H58D7O3N
+PrecursorMz: 569.5040902
+ExactMass: 530.5403822
+MW: 530.5403822
+CLASS: Ceramide
+SumComposition: Ceramide(33:1;O2)_IS
+SumChainLengths: Ceramide(15:0_18:1;O2)_IS
+NumPeaks: 7
+207.2107367 1000 $sn2 acylium ion - H2O
+225.2212967 1000 $sn2 acylium ion
+278.1886272 1000 $sn2 fatty amide + adduct
+345.2900700 1000 @pre-sn2+H2O+ADDUCT
+521.4829655 1000 *pre-CH2O-H2O
+551.4935302 1000 *pre-H2O
+569.5040902 1000 precursor
+
+
+Name: Ceramide(18:1;O2/15:0)_IS
+Id: Ceramide(18:1;O2/15:0)_IS [M+Na]+
+ADDUCT: [M+Na]+
+Formula: C33H58D7O3N
+PrecursorMz: 553.5296002
+ExactMass: 530.5403822
+MW: 530.5403822
+CLASS: Ceramide
+SumComposition: Ceramide(33:1;O2)_IS
+SumChainLengths: Ceramide(15:0_18:1;O2)_IS
+NumPeaks: 7
+207.2107367 1000 $sn2 acylium ion - H2O
+225.2212967 1000 $sn2 acylium ion
+262.2141372 1000 $sn2 fatty amide + adduct
+329.3155800 1000 @pre-sn2+H2O+ADDUCT
+505.5084755 1000 *pre-CH2O-H2O
+535.5190402 1000 *pre-H2O
+553.5296002 1000 precursor
+
+
+Name: Cholesterol-H2O_IS
+Id: Cholesterol-H2O_IS [M+H]+
+ADDUCT: [M+H]+
+Formula: C27H37D7
+PrecursorMz: 376.3955078
+ExactMass: 375.3882446
+MW: 375.3882446
+CLASS: Cholesterol-H2O
+SumComposition: Cholesterol-H2O_IS
+SumChainLengths: Cholesterol-H2O_IS
+NumPeaks: 1
+376.3955078 1000 precursor
+
+
+Name: DG(15:0/18:1)_IS
+Id: DG(15:0/18:1)_IS [M+K]+
+ADDUCT: [M+K]+
+Formula: C36H61D7O5
+PrecursorMz: 626.5143205
+ExactMass: 587.5506125
+MW: 587.5506125
+CLASS: DG
+SumComposition: DG(33:1)_IS
+SumChainLengths: DG(15:0_18:1)_IS
+NumPeaks: 5
+299.2580761 14 @sn1 + deoxyglycerol
+337.2145076 5 @sn1 + deoxyglycerol + adduct
+346.3333134 14 $sn2 + deoxyglycerol
+384.2897450 5 $sn2 + deoxyglycerol + adduct
+626.5143205 1000 precursor
+
+
+Name: DG(15:0/18:1)_IS
+Id: DG(15:0/18:1)_IS [M+Na]+
+ADDUCT: [M+Na]+
+Formula: C36H61D7O5
+PrecursorMz: 610.5398305
+ExactMass: 587.5506125
+MW: 587.5506125
+CLASS: DG
+SumComposition: DG(33:1)_IS
+SumChainLengths: DG(15:0_18:1)_IS
+NumPeaks: 5
+299.2580761 14 @sn1 + deoxyglycerol
+321.2400176 5 @sn1 + deoxyglycerol + adduct
+346.3333134 14 $sn2 + deoxyglycerol
+368.3152550 5 $sn2 + deoxyglycerol + adduct
+610.5398305 1000 precursor
+
+
+Name: DG(15:0/18:1)_IS
+Id: DG(15:0/18:1)_IS [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C36H61D7O5
+PrecursorMz: 605.5844355
+ExactMass: 587.5506125
+MW: 587.5506125
+CLASS: DG
+SumComposition: DG(33:1)_IS
+SumChainLengths: DG(15:0_18:1)_IS
+NumPeaks: 3
+299.2580761 420 @sn1 + deoxyglycerol
+346.3333134 420 $sn2 + deoxyglycerol
+605.5844355 1 precursor
+
+
+Name: FA(16:1)_IS
+Id: FA(16:1)_IS [M-H]-
+ADDUCT: [M-H]-
+Formula: C16H17D13O2
+PrecursorMz: 266.2989015
+ExactMass: 267.3061779
+MW: 267.3061779
+CLASS: FA
+SumComposition: FA(16:1)_IS
+SumChainLengths: FA(16:1)_IS
+NumPeaks: 2
+248.2883415 1000 loss of water
+266.2989015 1000 precursor
+
+
+Name: FA(16:1)_IS
+Id: FA(16:1)_IS [M+37Cl]-
+ADDUCT: [M+37Cl]-
+Formula: C16H17D13O2
+PrecursorMz: 304.2726295
+ExactMass: 267.3061779
+MW: 267.3061779
+CLASS: FA
+SumComposition: FA(16:1)_IS
+SumChainLengths: FA(16:1)_IS
+NumPeaks: 2
+286.2620695 1000 loss of water
+304.2726295 1000 precursor
+
+
+Name: FA(16:1)_IS
+Id: FA(16:1)_IS [M+Cl]-
+ADDUCT: [M+Cl]-
+Formula: C16H17D13O2
+PrecursorMz: 302.2755795
+ExactMass: 267.3061779
+MW: 267.3061779
+CLASS: FA
+SumComposition: FA(16:1)_IS
+SumChainLengths: FA(16:1)_IS
+NumPeaks: 2
+284.2650195 1000 loss of water
+302.2755795 1000 precursor
+
+
+Name: HexCer(18:1;O2/15:0)_IS
+Id: HexCer(18:1;O2/15:0)_IS [M-H]-
+ADDUCT: [M-H]-
+Formula: C39H68D7O8N
+PrecursorMz: 691.5859291
+ExactMass: 692.5932056
+MW: 692.5932056
+CLASS: HexCer
+SumComposition: HexCer(33:1;O2)_IS
+SumChainLengths: HexCer(15:0_18:1;O2)_IS
+NumPeaks: 21
+89.0244176 911 hexose fragment at MZ 89
+101.0244176 769 hexose fragment at MZ 101
+113.0244176 379 hexose fragment at MZ 113
+119.0349823 424 hexose fragment at MZ 119
+131.0349823 55 hexose fragment at MZ 131
+143.0349823 77 hexose fragment at MZ 143
+149.0455470 33 hexose fragment at MZ 149
+161.0455470 71 hexose fragment at MZ 161
+179.0561117 137 hexose
+223.2067438 71 $acyl ketene
+240.2332929 84 $sn2 fatty amide
+241.2173038 128 $sn2 fatty acid
+244.2663216 95 @LCB-CO2H4-CNH3
+266.2489429 309 $sn2 fatty amide + C2H2
+282.2438575 65 $sn2 fatty amide + C2H2O
+481.5119810 45 NL C7H12O6 + H2O + adduct
+497.5068910 22 NL C7H14O6 + adduct
+499.5225410 41 NL C7H12O6 + adduct
+511.5225410 21 NL hexose + adduct
+529.5331057 766 *NL deoxyhexose + adduct
+691.5859291 452 precursor
+
+
+Name: HexCer(18:1;O2/15:0)_IS
+Id: HexCer(18:1;O2/15:0)_IS [M+37Cl]-
+ADDUCT: [M+37Cl]-
+Formula: C39H68D7O8N
+PrecursorMz: 729.5596572
+ExactMass: 692.5932056
+MW: 692.5932056
+CLASS: HexCer
+SumComposition: HexCer(33:1;O2)_IS
+SumChainLengths: HexCer(15:0_18:1;O2)_IS
+NumPeaks: 22
+89.0244176 911 hexose fragment at MZ 89
+101.0244176 769 hexose fragment at MZ 101
+113.0244176 379 hexose fragment at MZ 113
+119.0349823 424 hexose fragment at MZ 119
+131.0349823 55 hexose fragment at MZ 131
+143.0349823 77 hexose fragment at MZ 143
+149.0455470 33 hexose fragment at MZ 149
+161.0455470 71 hexose fragment at MZ 161
+179.0561117 137 hexose
+223.2067438 71 $acyl ketene
+240.2332929 84 $sn2 fatty amide
+241.2173038 128 $sn2 fatty acid
+244.2663216 95 @LCB-CO2H4-CNH3
+266.2489429 309 $sn2 fatty amide + C2H2
+282.2438575 65 $sn2 fatty amide + C2H2O
+481.5119810 45 NL C7H12O6 + H2O + adduct
+497.5068910 22 NL C7H14O6 + adduct
+499.5225410 41 NL C7H12O6 + adduct
+511.5225410 21 NL hexose + adduct
+529.5331057 766 *NL deoxyhexose + adduct
+691.5859291 452 pre - adduct
+729.5596572 1 precursor
+
+
+Name: HexCer(18:1;O2/15:0)_IS
+Id: HexCer(18:1;O2/15:0)_IS [M+AcOH-H]-
+ADDUCT: [M+AcOH-H]-
+Formula: C39H68D7O8N
+PrecursorMz: 751.6070585
+ExactMass: 692.5932056
+MW: 692.5932056
+CLASS: HexCer
+SumComposition: HexCer(33:1;O2)_IS
+SumChainLengths: HexCer(15:0_18:1;O2)_IS
+NumPeaks: 20
+89.0244176 911 hexose fragment at MZ 89
+101.0244176 769 hexose fragment at MZ 101
+113.0244176 379 hexose fragment at MZ 113
+119.0349823 424 hexose fragment at MZ 119
+131.0349823 55 hexose fragment at MZ 131
+143.0349823 77 hexose fragment at MZ 143
+149.0455470 33 hexose fragment at MZ 149
+161.0455470 71 hexose fragment at MZ 161
+179.0561117 137 hexose
+223.2067438 71 $acyl ketene
+240.2332929 84 $sn2 fatty amide
+241.2173038 128 $sn2 fatty acid
+244.2663216 95 @LCB-CO2H4-CNH3
+266.2489429 309 $sn2 fatty amide + C2H2
+282.2438575 65 $sn2 fatty amide + C2H2O
+481.5119810 45 NL C7H12O6 + H2O + adduct
+497.5068910 22 NL C7H14O6 + adduct
+499.5225410 41 NL C7H12O6 + adduct
+511.5225410 21 NL hexose + adduct
+529.5331057 766 *NL deoxyhexose + adduct
+
+
+Name: HexCer(18:1;O2/15:0)_IS
+Id: HexCer(18:1;O2/15:0)_IS [M+Cl]-
+ADDUCT: [M+Cl]-
+Formula: C39H68D7O8N
+PrecursorMz: 727.5626072
+ExactMass: 692.5932056
+MW: 692.5932056
+CLASS: HexCer
+SumComposition: HexCer(33:1;O2)_IS
+SumChainLengths: HexCer(15:0_18:1;O2)_IS
+NumPeaks: 22
+89.0244176 911 hexose fragment at MZ 89
+101.0244176 769 hexose fragment at MZ 101
+113.0244176 379 hexose fragment at MZ 113
+119.0349823 424 hexose fragment at MZ 119
+131.0349823 55 hexose fragment at MZ 131
+143.0349823 77 hexose fragment at MZ 143
+149.0455470 33 hexose fragment at MZ 149
+161.0455470 71 hexose fragment at MZ 161
+179.0561117 137 hexose
+223.2067438 71 $acyl ketene
+240.2332929 84 $sn2 fatty amide
+241.2173038 128 $sn2 fatty acid
+244.2663216 95 @LCB-CO2H4-CNH3
+266.2489429 309 $sn2 fatty amide + C2H2
+282.2438575 65 $sn2 fatty amide + C2H2O
+481.5119810 45 NL C7H12O6 + H2O + adduct
+497.5068910 22 NL C7H14O6 + adduct
+499.5225410 41 NL C7H12O6 + adduct
+511.5225410 21 NL hexose + adduct
+529.5331057 766 *NL deoxyhexose + adduct
+691.5859291 452 pre - adduct
+727.5626072 1 precursor
+
+
+Name: HexCer(18:1;O2/15:0)_IS
+Id: HexCer(18:1;O2/15:0)_IS [M+FA-H]-
+ADDUCT: [M+FA-H]-
+Formula: C39H68D7O8N
+PrecursorMz: 737.5914084
+ExactMass: 692.5932056
+MW: 692.5932056
+CLASS: HexCer
+SumComposition: HexCer(33:1;O2)_IS
+SumChainLengths: HexCer(15:0_18:1;O2)_IS
+NumPeaks: 20
+89.0244176 911 hexose fragment at MZ 89
+101.0244176 769 hexose fragment at MZ 101
+113.0244176 379 hexose fragment at MZ 113
+119.0349823 424 hexose fragment at MZ 119
+131.0349823 55 hexose fragment at MZ 131
+143.0349823 77 hexose fragment at MZ 143
+149.0455470 33 hexose fragment at MZ 149
+161.0455470 71 hexose fragment at MZ 161
+179.0561117 137 hexose
+223.2067438 71 $acyl ketene
+240.2332929 84 $sn2 fatty amide
+241.2173038 128 $sn2 fatty acid
+244.2663216 95 @LCB-CO2H4-CNH3
+266.2489429 309 $sn2 fatty amide + C2H2
+282.2438575 65 $sn2 fatty amide + C2H2O
+481.5119810 45 NL C7H12O6 + H2O + adduct
+497.5068910 22 NL C7H14O6 + adduct
+499.5225410 41 NL C7H12O6 + adduct
+511.5225410 21 NL hexose + adduct
+529.5331057 766 *NL deoxyhexose + adduct
+
+
+Name: HexCer(18:1;O2/15:0)_IS
+Id: HexCer(18:1;O2/15:0)_IS [M+H]+
+ADDUCT: [M+H]+
+Formula: C39H68D7O8N
+PrecursorMz: 693.6004820
+ExactMass: 692.5932056
+MW: 692.5932056
+CLASS: HexCer
+SumComposition: HexCer(33:1;O2)_IS
+SumChainLengths: HexCer(15:0_18:1;O2)_IS
+NumPeaks: 8
+242.2478458 21 $fatty amide
+259.3125090 93 @NL hexose + acyl ketene + water + CH2O)
+271.3125137 1000 @NL hexose + acyl ketene + water
+289.3230737 95 @NL hexose + acyl ketene
+495.5265339 65 NL hexose  + water
+513.5370939 117 *NL hexose
+675.5899220 73 NL H2O
+693.6004820 4 precursor
+
+
+Name: HexCer(18:1;O2/15:0)_IS
+Id: HexCer(18:1;O2/15:0)_IS [M+K]+
+ADDUCT: [M+K]+
+Formula: C39H68D7O8N
+PrecursorMz: 731.5569136
+ExactMass: 692.5932056
+MW: 692.5932056
+CLASS: HexCer
+SumComposition: HexCer(33:1;O2)_IS
+SumChainLengths: HexCer(15:0_18:1;O2)_IS
+NumPeaks: 8
+207.2107367 1000 $sn2 acylium ion - H2O
+219.0270961 1000 hexose + adduct
+225.2212967 1000 $sn2 acylium ion
+309.2689453 1000 @NL hexose + acyl ketene + water
+521.4829608 1000 *NL hexose + H2CO
+551.4935255 1000 *NL hexose
+569.5040855 1000 NL deoxyhexose
+731.5569136 1000 precursor
+
+
+Name: HexCer(18:1;O2/15:0)_IS
+Id: HexCer(18:1;O2/15:0)_IS [M+Na]+
+ADDUCT: [M+Na]+
+Formula: C39H68D7O8N
+PrecursorMz: 715.5824236
+ExactMass: 692.5932056
+MW: 692.5932056
+CLASS: HexCer
+SumComposition: HexCer(33:1;O2)_IS
+SumChainLengths: HexCer(15:0_18:1;O2)_IS
+NumPeaks: 8
+203.0526061 1000 hexose + adduct
+207.2107367 1000 $sn2 acylium ion - H2O
+225.2212967 1000 $sn2 acylium ion
+293.2944553 1000 @NL hexose + acyl ketene + water
+505.5084708 1000 *NL hexose + H2CO
+535.5190355 1000 *NL hexose
+553.5295955 1000 NL deoxyhexose
+715.5824236 1000 precursor
+
+
+Name: LPC(18:1/0:0)_IS
+Id: LPC(18:1/0:0)_IS [M-CH3]-
+ADDUCT: [M-CH3]-
+Formula: C26H45D7O7NP
+PrecursorMz: 513.3686016
+ExactMass: 528.3920767
+MW: 528.3920767
+CLASS: LPC
+SumComposition: LPC(18:1)_IS
+SumChainLengths: LPC(0:0_18:1)_IS
+NumPeaks: 7
+78.9590540 35 PO3-
+152.9958381 8 deoxyglycerol phosphate
+168.0431179 21 PC - CH3
+224.0687841 88 NL sn1
+242.0793441 7 NL sn1 ketene
+288.2925411 1000 @sn1
+513.3686016 307 @pre-adduct-CH3
+
+
+Name: LPC(18:1/0:0)_IS
+Id: LPC(18:1/0:0)_IS [M+37Cl]-
+ADDUCT: [M+37Cl]-
+Formula: C26H45D7O7NP
+PrecursorMz: 565.3585283
+ExactMass: 528.3920767
+MW: 528.3920767
+CLASS: LPC
+SumComposition: LPC(18:1)_IS
+SumChainLengths: LPC(0:0_18:1)_IS
+NumPeaks: 7
+78.9590540 35 PO3-
+152.9958381 8 deoxyglycerol phosphate
+168.0431179 21 PC - CH3
+224.0687841 88 NL sn1
+242.0793441 7 NL sn1 ketene
+288.2925411 1000 @sn1
+513.3686016 307 @pre-adduct-CH3
+
+
+Name: LPC(18:1/0:0)_IS
+Id: LPC(18:1/0:0)_IS [M+AcOH-H]-
+ADDUCT: [M+AcOH-H]-
+Formula: C26H45D7O7NP
+PrecursorMz: 587.4059296
+ExactMass: 528.3920767
+MW: 528.3920767
+CLASS: LPC
+SumComposition: LPC(18:1)_IS
+SumChainLengths: LPC(0:0_18:1)_IS
+NumPeaks: 7
+78.9590540 35 PO3-
+152.9958381 8 deoxyglycerol phosphate
+168.0431179 21 PC - CH3
+224.0687841 88 NL sn1
+242.0793441 7 NL sn1 ketene
+288.2925411 1000 @sn1
+513.3686016 307 @pre-adduct-CH3
+
+
+Name: LPC(18:1/0:0)_IS
+Id: LPC(18:1/0:0)_IS [M+Cl]-
+ADDUCT: [M+Cl]-
+Formula: C26H45D7O7NP
+PrecursorMz: 563.3614783
+ExactMass: 528.3920767
+MW: 528.3920767
+CLASS: LPC
+SumComposition: LPC(18:1)_IS
+SumChainLengths: LPC(0:0_18:1)_IS
+NumPeaks: 7
+78.9590540 35 PO3-
+152.9958381 8 deoxyglycerol phosphate
+168.0431179 21 PC - CH3
+224.0687841 88 NL sn1
+242.0793441 7 NL sn1 ketene
+288.2925411 1000 @sn1
+513.3686016 307 @pre-adduct-CH3
+
+
+Name: LPC(18:1/0:0)_IS
+Id: LPC(18:1/0:0)_IS [M+FA-H]-
+ADDUCT: [M+FA-H]-
+Formula: C26H45D7O7NP
+PrecursorMz: 573.3902796
+ExactMass: 528.3920767
+MW: 528.3920767
+CLASS: LPC
+SumComposition: LPC(18:1)_IS
+SumChainLengths: LPC(0:0_18:1)_IS
+NumPeaks: 7
+78.9590540 35 PO3-
+152.9958381 8 deoxyglycerol phosphate
+168.0431179 21 PC - CH3
+224.0687841 88 NL sn1
+242.0793441 7 NL sn1 ketene
+288.2925411 1000 @sn1
+513.3686016 307 @pre-adduct-CH3
+
+
+Name: LPC(18:1/0:0)_IS
+Id: LPC(18:1/0:0)_IS [M+H]+
+ADDUCT: [M+H]+
+Formula: C26H45D7O7NP
+PrecursorMz: 529.3993532
+ExactMass: 528.3920767
+MW: 528.3920767
+CLASS: LPC
+SumComposition: LPC(18:1)_IS
+SumChainLengths: LPC(0:0_18:1)_IS
+NumPeaks: 9
+86.0969791 164 Dehydro Choline
+104.1075391 758 Choline
+125.0003702 56 C2H6O4P
+184.0733209 1000 phospocholine
+258.1101003 13 glycerophosphocholine
+346.3333087 28 @NL phospho choline
+452.3152939 9 NL trimethylamine + water
+511.3887932 73 NL water
+529.3993532 295 precursor
+
+
+Name: LPC(18:1/0:0)_IS
+Id: LPC(18:1/0:0)_IS [M+K]+
+ADDUCT: [M+K]+
+Formula: C26H45D7O7NP
+PrecursorMz: 567.3557847
+ExactMass: 528.3920767
+MW: 528.3920767
+CLASS: LPC
+SumComposition: LPC(18:1)_IS
+SumChainLengths: LPC(0:0_18:1)_IS
+NumPeaks: 9
+86.0969791 195 Dehydro Choline
+104.1075391 1000 Choline
+162.9562532 243 C2H5O4P + adduct
+192.9668225 9 glycerol-P - water + adduct
+346.3333087 123 @NL PhosphoCholine + adduct
+384.2897403 5 @NL PhosphoCholine
+464.2555221 13 NL choline
+508.2822854 539 @NL trimethylamine
+567.3557847 239 precursor
+
+
+Name: LPC(18:1/0:0)_IS
+Id: LPC(18:1/0:0)_IS [M+Na]+
+ADDUCT: [M+Na]+
+Formula: C26H45D7O7NP
+PrecursorMz: 551.3812947
+ExactMass: 528.3920767
+MW: 528.3920767
+CLASS: LPC
+SumComposition: LPC(18:1)_IS
+SumChainLengths: LPC(0:0_18:1)_IS
+NumPeaks: 9
+86.0969791 195 Dehydro Choline
+104.1075391 1000 Choline
+146.9817632 243 C2H5O4P + adduct
+176.9923325 9 glycerol-P - water + adduct
+346.3333087 123 @NL PhosphoCholine + adduct
+368.3152503 5 @NL PhosphoCholine
+448.2810321 13 NL choline
+492.3077954 539 @NL trimethylamine
+551.3812947 239 precursor
+
+
+Name: LPE(18:1/0:0)_IS
+Id: LPE(18:1/0:0)_IS [M-H]-
+ADDUCT: [M-H]-
+Formula: C23H39D7O7NP
+PrecursorMz: 485.3378501
+ExactMass: 486.3451265
+MW: 486.3451265
+CLASS: LPE
+SumComposition: LPE(18:1)_IS
+SumChainLengths: LPE(0:0_18:1)_IS
+NumPeaks: 8
+78.9590540 42 phosphite
+122.0012578 2 deoxyethanolamine-P + adduct
+140.0118178 32 *ethanolamine-P + adduct
+152.9958381 10 glycerol3P - water
+196.0380326 100 NL sn1
+214.0485926 24 NL sn1 ketene
+288.2925411 1000 @sn1
+485.3378501 152 precursor
+
+
+Name: LPE(18:1/0:0)_IS
+Id: LPE(18:1/0:0)_IS [M+H]+
+ADDUCT: [M+H]+
+Formula: C23H39D7O7NP
+PrecursorMz: 487.3524030
+ExactMass: 486.3451265
+MW: 486.3451265
+CLASS: LPE
+SumComposition: LPE(18:1)_IS
+SumChainLengths: LPE(0:0_18:1)_IS
+NumPeaks: 15
+62.0600403 234 ethanolamine
+98.9841715 15 PO4H4+
+124.0158107 10 ethanolamine-P - H2O
+142.0263707 13 ethanolamine-P
+155.0103910 60 glycerol-P - H2O
+173.0209510 10 glycerol-P
+198.0525901 16 glycerol+phosphoethanolamine - H2O
+216.0631501 25 glycerol+phosphoethanolamine
+254.2859740 9 @sn1 acylium ion - water
+272.2965340 24 @sn1 acylium ion
+315.3387285 90 NL glycerol-P
+346.3333087 1000 *NL ethanolamine-P
+426.2996438 35 NL C2NH5 + H2O
+469.3418430 37 NL H2O
+487.3524030 23 precursor
+
+
+Name: LPE(18:1/0:0)_IS
+Id: LPE(18:1/0:0)_IS [M+K]+
+ADDUCT: [M+K]+
+Formula: C23H39D7O7NP
+PrecursorMz: 525.3088345
+ExactMass: 486.3451265
+MW: 486.3451265
+CLASS: LPE
+SumComposition: LPE(18:1)_IS
+SumChainLengths: LPE(0:0_18:1)_IS
+NumPeaks: 14
+136.9406031 215 phosphoric acid + adduct
+161.9722423 47 ethanolamine-P - H2O
+179.9828023 74 *ethanolamine-P + adduct
+192.9668178 40 NL sn1 + deoxyethanolamine
+210.9773825 121 glycerol-P
+272.2965340 5 @sn1 acylium ion
+346.3333087 397 @NL ethanolamine-P + ADDUCT
+384.2897403 12 *NL ethanolamine-P
+402.3003050 44 NL deoxyethanolamine-P
+464.2560707 240 NL ethanolamine
+482.2666354 1000 *NL deoxyethanolamine
+507.2982745 10 NL water
+508.2822854 3 NL NH3
+525.3088345 367 precursor
+
+
+Name: LPE(18:1/0:0)_IS
+Id: LPE(18:1/0:0)_IS [M+Na]+
+ADDUCT: [M+Na]+
+Formula: C23H39D7O7NP
+PrecursorMz: 509.3343445
+ExactMass: 486.3451265
+MW: 486.3451265
+CLASS: LPE
+SumComposition: LPE(18:1)_IS
+SumChainLengths: LPE(0:0_18:1)_IS
+NumPeaks: 14
+120.9661131 215 phosphoric acid + adduct
+145.9977523 47 ethanolamine-P - H2O
+164.0083123 74 *ethanolamine-P + adduct
+176.9923278 40 NL sn1 + deoxyethanolamine
+195.0028925 121 glycerol-P
+272.2965340 5 @sn1 acylium ion
+346.3333087 397 @NL ethanolamine-P + ADDUCT
+368.3152503 12 *NL ethanolamine-P
+386.3258150 44 NL deoxyethanolamine-P
+448.2815807 240 NL ethanolamine
+466.2921454 1000 *NL deoxyethanolamine
+491.3237845 10 NL water
+492.3077954 3 NL NH3
+509.3343445 367 precursor
+
+
+Name: MG(18:1)_IS
+Id: MG(18:1)_IS [M+H]+
+ADDUCT: [M+H]+
+Formula: C21H33D7O4
+PrecursorMz: 364.3438734
+ExactMass: 363.3365970
+MW: 363.3365970
+CLASS: MG
+SumComposition: MG(18:1)_IS
+SumChainLengths: MG(18:1)_IS
+NumPeaks: 6
+75.0440606 37 deoxyglycerol
+254.2859740 53 @sn1 acylium - water
+272.2965340 296 @sn1 acylium
+290.3070940 176 @sn1
+346.3333134 1000 *NL water
+364.3438734 134 precursor
+
+
+Name: MG(18:1)_IS
+Id: MG(18:1)_IS [M+K]+
+ADDUCT: [M+K]+
+Formula: C21H33D7O4
+PrecursorMz: 402.3003050
+ExactMass: 363.3365970
+MW: 363.3365970
+CLASS: MG
+SumComposition: MG(18:1)_IS
+SumChainLengths: MG(18:1)_IS
+NumPeaks: 10
+113.0004921 37 deoxyglycerol + adduct
+131.0110521 37 glycerol + adduct
+272.2965340 2000 @sn1 acylium + adduct/@sn1 acylium
+290.3070940 1000 @sn1
+328.3227534 1000 *NL adduct + 2*water
+346.3333134 2000 @sn1 + glycerol - water/NL adduct + water
+364.3438734 2000 NL adduct/@sn1 + glycerol
+366.2791850 1000 *NL 2*H2O
+384.2897450 1000 *NL H2O
+402.3003050 1000 precursor
+
+
+Name: MG(18:1)_IS
+Id: MG(18:1)_IS [M+Na]+
+ADDUCT: [M+Na]+
+Formula: C21H33D7O4
+PrecursorMz: 386.3258150
+ExactMass: 363.3365970
+MW: 363.3365970
+CLASS: MG
+SumComposition: MG(18:1)_IS
+SumChainLengths: MG(18:1)_IS
+NumPeaks: 10
+97.0260021 37 deoxyglycerol + adduct
+115.0365621 37 glycerol + adduct
+272.2965340 2000 @sn1 acylium + adduct/@sn1 acylium
+290.3070940 1000 @sn1
+328.3227534 1000 *NL adduct + 2*water
+346.3333134 2000 @sn1 + glycerol - water/NL adduct + water
+350.3046950 1000 *NL 2*H2O
+364.3438734 2000 NL adduct/@sn1 + glycerol
+368.3152550 1000 *NL H2O
+386.3258150 1000 precursor
+
+
+Name: MG(18:1)_IS
+Id: MG(18:1)_IS [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C21H33D7O4
+PrecursorMz: 381.3704200
+ExactMass: 363.3365970
+MW: 363.3365970
+CLASS: MG
+SumComposition: MG(18:1)_IS
+SumChainLengths: MG(18:1)_IS
+NumPeaks: 10
+92.0706071 37 deoxyglycerol + adduct
+110.0811671 37 glycerol + adduct
+272.2965340 2000 @sn1 acylium + adduct/@sn1 acylium
+290.3070940 1000 @sn1
+328.3227534 1000 *NL adduct + 2*water
+345.3493000 1000 *NL 2*H2O
+346.3333134 2000 @sn1 + glycerol - water/NL adduct + water
+363.3598600 1000 *NL H2O
+364.3438734 2000 NL adduct/@sn1 + glycerol
+381.3704200 1000 precursor
+
+
+Name: PA(15:0/18:1)_IS
+Id: PA(15:0/18:1)_IS [M-H]-
+ADDUCT: [M-H]-
+Formula: C36H62D7O8P
+PrecursorMz: 666.5096664
+ExactMass: 667.5169429
+MW: 667.5169429
+CLASS: PA
+SumComposition: PA(33:1)_IS
+SumChainLengths: PA(15:0_18:1)_IS
+NumPeaks: 11
+96.9696186 23 phosphate
+134.9852687 6 glycerol phosphate - 2x water
+152.9958334 302 *glycerol phosphate - water
+171.0063981 6 glycerol phosphate
+241.2173038 500 @sn1
+288.2925411 500 $sn2
+377.2098489 138 @nL sn2
+395.2204089 52 @nL sn2 ketene
+424.2850862 138 $nL sn1
+442.2956462 52 $nL sn1 ketene
+666.5096664 291 precursor
+
+
+Name: PA(15:0/18:1)_IS
+Id: PA(15:0/18:1)_IS [M+37Cl]-
+ADDUCT: [M+37Cl]-
+Formula: C36H62D7O8P
+PrecursorMz: 704.4833945
+ExactMass: 667.5169429
+MW: 667.5169429
+CLASS: PA
+SumComposition: PA(33:1)_IS
+SumChainLengths: PA(15:0_18:1)_IS
+NumPeaks: 11
+96.9696186 23 phosphate
+134.9852687 6 glycerol phosphate - 2x water
+152.9958334 302 *glycerol phosphate - water
+171.0063981 6 glycerol phosphate
+241.2173038 500 @sn1
+288.2925411 500 $sn2
+377.2098489 138 @nL sn2
+395.2204089 52 @nL sn2 ketene
+424.2850862 138 $nL sn1
+442.2956462 52 $nL sn1 ketene
+704.4833945 5 precursor
+
+
+Name: PA(15:0/18:1)_IS
+Id: PA(15:0/18:1)_IS [M+AcOH-H]-
+ADDUCT: [M+AcOH-H]-
+Formula: C36H62D7O8P
+PrecursorMz: 726.5307958
+ExactMass: 667.5169429
+MW: 667.5169429
+CLASS: PA
+SumComposition: PA(33:1)_IS
+SumChainLengths: PA(15:0_18:1)_IS
+NumPeaks: 11
+96.9696186 23 phosphate
+134.9852687 6 glycerol phosphate - 2x water
+152.9958334 302 *glycerol phosphate - water
+171.0063981 6 glycerol phosphate
+241.2173038 500 @sn1
+288.2925411 500 $sn2
+377.2098489 138 @nL sn2
+395.2204089 52 @nL sn2 ketene
+424.2850862 138 $nL sn1
+442.2956462 52 $nL sn1 ketene
+726.5307958 5 precursor
+
+
+Name: PA(15:0/18:1)_IS
+Id: PA(15:0/18:1)_IS [M+Cl]-
+ADDUCT: [M+Cl]-
+Formula: C36H62D7O8P
+PrecursorMz: 702.4863445
+ExactMass: 667.5169429
+MW: 667.5169429
+CLASS: PA
+SumComposition: PA(33:1)_IS
+SumChainLengths: PA(15:0_18:1)_IS
+NumPeaks: 11
+96.9696186 23 phosphate
+134.9852687 6 glycerol phosphate - 2x water
+152.9958334 302 *glycerol phosphate - water
+171.0063981 6 glycerol phosphate
+241.2173038 500 @sn1
+288.2925411 500 $sn2
+377.2098489 138 @nL sn2
+395.2204089 52 @nL sn2 ketene
+424.2850862 138 $nL sn1
+442.2956462 52 $nL sn1 ketene
+702.4863445 5 precursor
+
+
+Name: PC(15:0/18:1)_IS
+Id: PC(15:0/18:1)_IS [M-CH3]-
+ADDUCT: [M-CH3]-
+Formula: C41H73D7O8NP
+PrecursorMz: 737.5826172
+ExactMass: 752.6060923
+MW: 752.6060923
+CLASS: PC
+SumComposition: PC(33:1)_IS
+SumChainLengths: PC(15:0_18:1)_IS
+NumPeaks: 10
+78.9590540 26 PO3-
+168.0431179 35 PC - CH3
+224.0693374 26 gPC- CH3-H2O
+241.2173038 136 @sn1
+288.2925411 1000 $sn2
+448.2827996 5 @NL sn2
+466.2933596 25 @NL sn2+H2O
+495.3580370 7 $NL sn1
+513.3685970 10 $NL sn1+H2O
+737.5826172 1 precursor
+
+
+Name: PC(15:0/18:1)_IS
+Id: PC(15:0/18:1)_IS [M+37Cl]-
+ADDUCT: [M+37Cl]-
+Formula: C41H73D7O8NP
+PrecursorMz: 789.5725439
+ExactMass: 752.6060923
+MW: 752.6060923
+CLASS: PC
+SumComposition: PC(33:1)_IS
+SumChainLengths: PC(15:0_18:1)_IS
+NumPeaks: 11
+78.9590540 26 PO3-
+168.0431179 35 PC - CH3
+224.0693374 26 gPC- CH3-H2O
+241.2173038 136 @sn1
+288.2925411 1000 $sn2
+448.2827996 5 @NL sn2
+466.2933596 25 @NL sn2+H2O
+495.3580370 7 $NL sn1
+513.3685970 10 $NL sn1+H2O
+737.5826172 255 *NL adduct  + CH3
+789.5725439 1 precursor
+
+
+Name: PC(15:0/18:1)_IS
+Id: PC(15:0/18:1)_IS [M+AcOH-H]-
+ADDUCT: [M+AcOH-H]-
+Formula: C41H73D7O8NP
+PrecursorMz: 811.6199452
+ExactMass: 752.6060923
+MW: 752.6060923
+CLASS: PC
+SumComposition: PC(33:1)_IS
+SumChainLengths: PC(15:0_18:1)_IS
+NumPeaks: 11
+78.9590540 26 PO3-
+168.0431179 35 PC - CH3
+224.0693374 26 gPC- CH3-H2O
+241.2173038 136 @sn1
+288.2925411 1000 $sn2
+448.2827996 5 @NL sn2
+466.2933596 25 @NL sn2+H2O
+495.3580370 7 $NL sn1
+513.3685970 10 $NL sn1+H2O
+737.5826172 255 *NL adduct  + CH3
+811.6199452 1 precursor
+
+
+Name: PC(15:0/18:1)_IS
+Id: PC(15:0/18:1)_IS [M+Cl]-
+ADDUCT: [M+Cl]-
+Formula: C41H73D7O8NP
+PrecursorMz: 787.5754939
+ExactMass: 752.6060923
+MW: 752.6060923
+CLASS: PC
+SumComposition: PC(33:1)_IS
+SumChainLengths: PC(15:0_18:1)_IS
+NumPeaks: 11
+78.9590540 26 PO3-
+168.0431179 35 PC - CH3
+224.0693374 26 gPC- CH3-H2O
+241.2173038 136 @sn1
+288.2925411 1000 $sn2
+448.2827996 5 @NL sn2
+466.2933596 25 @NL sn2+H2O
+495.3580370 7 $NL sn1
+513.3685970 10 $NL sn1+H2O
+737.5826172 255 *NL adduct  + CH3
+787.5754939 1 precursor
+
+
+Name: PC(15:0/18:1)_IS
+Id: PC(15:0/18:1)_IS [M+FA-H]-
+ADDUCT: [M+FA-H]-
+Formula: C41H73D7O8NP
+PrecursorMz: 797.6042951
+ExactMass: 752.6060923
+MW: 752.6060923
+CLASS: PC
+SumComposition: PC(33:1)_IS
+SumChainLengths: PC(15:0_18:1)_IS
+NumPeaks: 11
+78.9590540 26 PO3-
+168.0431179 35 PC - CH3
+224.0693374 26 gPC- CH3-H2O
+241.2173038 136 @sn1
+288.2925411 1000 $sn2
+448.2827996 5 @NL sn2
+466.2933596 25 @NL sn2+H2O
+495.3580370 7 $NL sn1
+513.3685970 10 $NL sn1+H2O
+737.5826172 255 *NL adduct  + CH3
+797.6042951 1 precursor
+
+
+Name: PC(15:0/18:1)_IS
+Id: PC(15:0/18:1)_IS [M+H]+
+ADDUCT: [M+H]+
+Formula: C41H73D7O8NP
+PrecursorMz: 753.6133687
+ExactMass: 752.6060923
+MW: 752.6060923
+CLASS: PC
+SumComposition: PC(33:1)_IS
+SumChainLengths: PC(15:0_18:1)_IS
+NumPeaks: 13
+98.9841715 1 PO4H4+
+104.1069905 5 Choline
+124.9998216 15 C2H5O4P+Proton
+184.0733209 649 Phospocholine
+225.2212967 10 @sn1 acylium ion
+272.2965340 13 $sn2 acylium ion
+405.2400519 12 @NL sn2-trimethylamine
+452.3152892 33 $NL sn1-trimethylamine
+464.3135512 9 @NL sn2 -ADDUCT + PROTON/@NL sn2
+511.3887885 14 $NL sn1 -ADDUCT + PROTON/$NL sn1
+570.5467757 1000 *NL choline-P
+694.5398694 830 *NL Trimethylamine
+753.6133687 990 precursor
+
+
+Name: PC(15:0/18:1)_IS
+Id: PC(15:0/18:1)_IS [M+K]+
+ADDUCT: [M+K]+
+Formula: C41H73D7O8NP
+PrecursorMz: 791.5698003
+ExactMass: 752.6060923
+MW: 752.6060923
+CLASS: PC
+SumComposition: PC(33:1)_IS
+SumChainLengths: PC(15:0_18:1)_IS
+NumPeaks: 15
+124.9998216 2 C2H5O4P+Proton
+162.9562532 567 Phos + C2 + adduct
+184.0733209 32 PhosphoCholine + PROTON
+225.2212967 10 @sn1 acylium ion
+272.2965340 13 $sn2 acylium ion
+443.1964834 12 @NL sn2trimethylamine
+464.3135512 7 @NL sn2 -ADDUCT + PROTON
+490.2717208 33 $NL sn1trimethylamine
+502.2699827 2 @NL sn2
+511.3887885 7 $NL sn1 -ADDUCT + PROTON
+549.3452201 7 $NL sn1
+570.5467757 207 NL (PhosphoCholine + ADDUCT) +2*PROTON
+608.5032072 464 *NL PhosphoCholine
+732.4963010 409 *NL Trimethylamine
+791.5698003 1000 precursor
+
+
+Name: PC(15:0/18:1)_IS
+Id: PC(15:0/18:1)_IS [M+Na]+
+ADDUCT: [M+Na]+
+Formula: C41H73D7O8NP
+PrecursorMz: 775.5953103
+ExactMass: 752.6060923
+MW: 752.6060923
+CLASS: PC
+SumComposition: PC(33:1)_IS
+SumChainLengths: PC(15:0_18:1)_IS
+NumPeaks: 15
+124.9998216 2 C2H5O4P+Proton
+146.9817632 567 Phos + C2 + adduct
+184.0733209 32 PhosphoCholine + PROTON
+225.2212967 10 @sn1 acylium ion
+272.2965340 13 $sn2 acylium ion
+427.2219934 12 @NL sn2trimethylamine
+464.3135512 7 @NL sn2 -ADDUCT + PROTON
+474.2972308 33 $NL sn1trimethylamine
+486.2954927 2 @NL sn2
+511.3887885 7 $NL sn1 -ADDUCT + PROTON
+533.3707301 7 $NL sn1
+570.5467757 207 NL (PhosphoCholine + ADDUCT) +2*PROTON
+592.5287172 464 *NL PhosphoCholine
+716.5218110 409 *NL Trimethylamine
+775.5953103 1000 precursor
+
+
+Name: PC(p-18:0/18:1)_IS
+Id: PC(p-18:0/18:1)_IS [M-CH3]-
+ADDUCT: [M-CH3]-
+Formula: C44H77D9O7NP
+PrecursorMz: 765.6472062
+ExactMass: 780.6706813
+MW: 780.6706813
+CLASS: Alkenyl_PC
+SumComposition: PC(o-36:2)_IS
+SumChainLengths: PC(o-36:2)_IS
+NumPeaks: 7
+168.0431179 24 PC - CH3
+290.3050946 1000 $sn2
+403.2613359 13 @NL deoxycholine + sn2
+421.2718959 3 @NL deoxycholine + sn2 + H2O
+474.3348352 63 @NL adduct + CH3 + sn2
+492.3453952 175 @NL adduct + CH3 + sn2 + H2O
+765.6472062 839 precursor/*NL adduct + CH3
+
+
+Name: PC(p-18:0/18:1)_IS
+Id: PC(p-18:0/18:1)_IS [M+37Cl]-
+ADDUCT: [M+37Cl]-
+Formula: C44H77D9O7NP
+PrecursorMz: 817.6371329
+ExactMass: 780.6706813
+MW: 780.6706813
+CLASS: Alkenyl_PC
+SumComposition: PC(o-36:2)_IS
+SumChainLengths: PC(o-36:2)_IS
+NumPeaks: 8
+168.0431179 24 PC - CH3
+290.3050946 1000 $sn2
+403.2613359 13 @NL deoxycholine + sn2
+421.2718959 3 @NL deoxycholine + sn2 + H2O
+474.3348352 63 @NL adduct + CH3 + sn2
+492.3453952 175 @NL adduct + CH3 + sn2 + H2O
+765.6472062 822 *NL adduct + CH3
+817.6371329 17 precursor
+
+
+Name: PC(p-18:0/18:1)_IS
+Id: PC(p-18:0/18:1)_IS [M+AcOH-H]-
+ADDUCT: [M+AcOH-H]-
+Formula: C44H77D9O7NP
+PrecursorMz: 839.6845342
+ExactMass: 780.6706813
+MW: 780.6706813
+CLASS: Alkenyl_PC
+SumComposition: PC(o-36:2)_IS
+SumChainLengths: PC(o-36:2)_IS
+NumPeaks: 8
+168.0431179 24 PC - CH3
+290.3050946 1000 $sn2
+403.2613359 13 @NL deoxycholine + sn2
+421.2718959 3 @NL deoxycholine + sn2 + H2O
+474.3348352 63 @NL adduct + CH3 + sn2
+492.3453952 175 @NL adduct + CH3 + sn2 + H2O
+765.6472062 822 *NL adduct + CH3
+839.6845342 17 precursor
+
+
+Name: PC(p-18:0/18:1)_IS
+Id: PC(p-18:0/18:1)_IS [M+Cl]-
+ADDUCT: [M+Cl]-
+Formula: C44H77D9O7NP
+PrecursorMz: 815.6400829
+ExactMass: 780.6706813
+MW: 780.6706813
+CLASS: Alkenyl_PC
+SumComposition: PC(o-36:2)_IS
+SumChainLengths: PC(o-36:2)_IS
+NumPeaks: 8
+168.0431179 24 PC - CH3
+290.3050946 1000 $sn2
+403.2613359 13 @NL deoxycholine + sn2
+421.2718959 3 @NL deoxycholine + sn2 + H2O
+474.3348352 63 @NL adduct + CH3 + sn2
+492.3453952 175 @NL adduct + CH3 + sn2 + H2O
+765.6472062 822 *NL adduct + CH3
+815.6400829 17 precursor
+
+
+Name: PC(p-18:0/18:1)_IS
+Id: PC(p-18:0/18:1)_IS [M+FA-H]-
+ADDUCT: [M+FA-H]-
+Formula: C44H77D9O7NP
+PrecursorMz: 825.6688842
+ExactMass: 780.6706813
+MW: 780.6706813
+CLASS: Alkenyl_PC
+SumComposition: PC(o-36:2)_IS
+SumChainLengths: PC(o-36:2)_IS
+NumPeaks: 8
+168.0431179 24 PC - CH3
+290.3050946 1000 $sn2
+403.2613359 13 @NL deoxycholine + sn2
+421.2718959 3 @NL deoxycholine + sn2 + H2O
+474.3348352 63 @NL adduct + CH3 + sn2
+492.3453952 175 @NL adduct + CH3 + sn2 + H2O
+765.6472062 822 *NL adduct + CH3
+825.6688842 17 precursor
+
+
+Name: PC(p-18:0/18:1)_IS
+Id: PC(p-18:0/18:1)_IS [M+H]+
+ADDUCT: [M+H]+
+Formula: C44H77D9O7NP
+PrecursorMz: 781.6779578
+ExactMass: 780.6706813
+MW: 780.6706813
+CLASS: Alkenyl_PC
+SumComposition: PC(o-36:2)_IS
+SumChainLengths: PC(o-36:2)_IS
+NumPeaks: 6
+98.9841715 4 phosphoric acid + adduct
+104.1069905 5 Choline
+124.9998216 32 C2H6O4P
+184.0733209 1000 Phospocholine
+508.3761467 6 @NL sn2 + water
+781.6779578 230 precursor
+
+
+Name: PC(p-18:0/18:1)_IS
+Id: PC(p-18:0/18:1)_IS [M+K]+
+ADDUCT: [M+K]+
+Formula: C44H77D9O7NP
+PrecursorMz: 819.6343893
+ExactMass: 780.6706813
+MW: 780.6706813
+CLASS: Alkenyl_PC
+SumComposition: PC(o-36:2)_IS
+SumChainLengths: PC(o-36:2)_IS
+NumPeaks: 8
+162.9562532 432 C2H5O4P + adduct
+274.3090875 7 $sn2 acylium ion
+307.2995423 144 @NL sn2 + phosphocholine + adduct
+490.3655867 6 @NL sn2 + adduct
+598.6119133 69 NL PhosphoCholine + ADDUCT
+636.5683449 300 NL phosphocholine
+760.5608900 695 *NL Trimethylamine
+819.6343893 1000 precursor
+
+
+Name: PC(p-18:0/18:1)_IS
+Id: PC(p-18:0/18:1)_IS [M+Na]+
+ADDUCT: [M+Na]+
+Formula: C44H77D9O7NP
+PrecursorMz: 803.6598993
+ExactMass: 780.6706813
+MW: 780.6706813
+CLASS: Alkenyl_PC
+SumComposition: PC(o-36:2)_IS
+SumChainLengths: PC(o-36:2)_IS
+NumPeaks: 8
+146.9817632 432 C2H5O4P + adduct
+274.3090875 7 $sn2 acylium ion
+307.2995423 144 @NL sn2 + phosphocholine + adduct
+490.3655867 6 @NL sn2 + adduct
+598.6119133 69 NL PhosphoCholine + ADDUCT
+620.5938549 300 NL phosphocholine
+744.5864000 695 *NL Trimethylamine
+803.6598993 1000 precursor
+
+
+Name: PE(15:0/18:1)_IS
+Id: PE(15:0/18:1)_IS [M-H]-
+ADDUCT: [M-H]-
+Formula: C38H67D7O8NP
+PrecursorMz: 709.5518656
+ExactMass: 710.5591421
+MW: 710.5591421
+CLASS: PE
+SumComposition: PE(33:1)_IS
+SumChainLengths: PE(15:0_18:1)_IS
+NumPeaks: 13
+78.9590540 49 phosphite
+96.9696186 5 phosphate
+122.0012578 9 deoxyethanolamine-P
+140.0118178 43 *ethanolamine-P
+152.9958381 20 glycerol-P - water
+196.0380326 27 ethanaolamine-P + deoxyglycerol
+241.2173038 1000 @sn1
+288.2925411 1000 $sn2
+420.2520481 10 @NL sn2
+438.2626081 45 @NL sn2ketene
+467.3272854 5 $NL sn1
+485.3378454 8 $NL sn1ketene
+709.5518656 111 precursor
+
+
+Name: PE(15:0/18:1)_IS
+Id: PE(15:0/18:1)_IS [M+37Cl]-
+ADDUCT: [M+37Cl]-
+Formula: C38H67D7O8NP
+PrecursorMz: 747.5255937
+ExactMass: 710.5591421
+MW: 710.5591421
+CLASS: PE
+SumComposition: PE(33:1)_IS
+SumChainLengths: PE(15:0_18:1)_IS
+NumPeaks: 13
+78.9590540 49 phosphite
+96.9696186 5 phosphate
+122.0012578 9 deoxyethanolamine-P
+140.0118178 43 *ethanolamine-P
+152.9958381 20 glycerol-P - water
+196.0380326 27 ethanaolamine-P + deoxyglycerol
+241.2173038 1000 @sn1
+288.2925411 1000 $sn2
+420.2520481 10 @NL sn2
+438.2626081 45 @NL sn2ketene
+467.3272854 5 $NL sn1
+485.3378454 8 $NL sn1ketene
+747.5255937 111 precursor
+
+
+Name: PE(15:0/18:1)_IS
+Id: PE(15:0/18:1)_IS [M+Cl]-
+ADDUCT: [M+Cl]-
+Formula: C38H67D7O8NP
+PrecursorMz: 745.5285437
+ExactMass: 710.5591421
+MW: 710.5591421
+CLASS: PE
+SumComposition: PE(33:1)_IS
+SumChainLengths: PE(15:0_18:1)_IS
+NumPeaks: 13
+78.9590540 49 phosphite
+96.9696186 5 phosphate
+122.0012578 9 deoxyethanolamine-P
+140.0118178 43 *ethanolamine-P
+152.9958381 20 glycerol-P - water
+196.0380326 27 ethanaolamine-P + deoxyglycerol
+241.2173038 1000 @sn1
+288.2925411 1000 $sn2
+420.2520481 10 @NL sn2
+438.2626081 45 @NL sn2ketene
+467.3272854 5 $NL sn1
+485.3378454 8 $NL sn1ketene
+745.5285437 111 precursor
+
+
+Name: PE(15:0/18:1)_IS
+Id: PE(15:0/18:1)_IS [M+H]+
+ADDUCT: [M+H]+
+Formula: C38H67D7O8NP
+PrecursorMz: 711.5664185
+ExactMass: 710.5591421
+MW: 710.5591421
+CLASS: PE
+SumComposition: PE(33:1)_IS
+SumChainLengths: PE(15:0_18:1)_IS
+NumPeaks: 10
+225.2212967 40 @sn1 acylium ion - water
+243.2318567 13 @sn1 acylium ion
+272.2965340 26 $sn2 acylium ion - water
+290.3070940 5 $sn2 acylium ion
+379.2244018 2 @NL sn2 + ethanolamine
+422.2666010 4 @NL sn2
+426.2996391 5 $NL sn1 + ethanolamine
+469.3418383 1 $NL sn1
+570.5473243 1000 *NL ethanolamine-P
+711.5664185 1 precursor
+
+
+Name: PE(15:0/18:1)_IS
+Id: PE(15:0/18:1)_IS [M+K]+
+ADDUCT: [M+K]+
+Formula: C38H67D7O8NP
+PrecursorMz: 749.5228501
+ExactMass: 710.5591421
+MW: 710.5591421
+CLASS: PE
+SumComposition: PE(33:1)_IS
+SumChainLengths: PE(15:0_18:1)_IS
+NumPeaks: 15
+136.9406031 900 phosphoric acid + adduct
+179.9828023 1000 C2H8NO4P + adduct
+207.2107367 2 @sn1 acylium ion - water
+225.2212967 20 @sn1 acylium ion
+254.2859740 9 $sn2 acylium ion - water
+272.2965340 22 $sn2 acylium ion
+417.1808334 23 @NL sn2 + ethanolamine
+460.2230325 2 @NL sn2
+464.2560707 36 $NL sn1 + ethanolamine
+507.2982699 7 $NL sn1
+570.5473243 204 NL ethanolamine-P + adduct
+608.5037558 645 *NL ethanolamine-P
+626.5143158 27 NL deoxyethanolamine-P
+706.4806509 225 NL ethanolamine
+749.5228501 374 precursor
+
+
+Name: PE(15:0/18:1)_IS
+Id: PE(15:0/18:1)_IS [M+Na]+
+ADDUCT: [M+Na]+
+Formula: C38H67D7O8NP
+PrecursorMz: 733.5483601
+ExactMass: 710.5591421
+MW: 710.5591421
+CLASS: PE
+SumComposition: PE(33:1)_IS
+SumChainLengths: PE(15:0_18:1)_IS
+NumPeaks: 15
+120.9661131 900 phosphoric acid + adduct
+164.0083123 1000 C2H8NO4P + adduct
+207.2107367 2 @sn1 acylium ion - water
+225.2212967 20 @sn1 acylium ion
+254.2859740 9 $sn2 acylium ion - water
+272.2965340 22 $sn2 acylium ion
+401.2063434 23 @NL sn2 + ethanolamine
+444.2485425 2 @NL sn2
+448.2815807 36 $NL sn1 + ethanolamine
+491.3237799 7 $NL sn1
+570.5473243 204 NL ethanolamine-P + adduct
+592.5292658 645 *NL ethanolamine-P
+610.5398258 27 NL deoxyethanolamine-P
+690.5061609 225 NL ethanolamine
+733.5483601 374 precursor
+
+
+Name: PE(p-18:0/18:1)_IS
+Id: PE(p-18:0/18:1)_IS [M-H]-
+ADDUCT: [M-H]-
+Formula: C41H71D9O7NP
+PrecursorMz: 737.6164547
+ExactMass: 738.6237311
+MW: 738.6237311
+CLASS: Alkenyl_PE
+SumComposition: PE(o-36:2)_IS
+SumChainLengths: PE(o-36:2)_IS
+NumPeaks: 7
+140.0118178 29 Phosphoethanolamine
+196.0380326 83 *phosphoethanolamine+glycerol
+267.2693440 17 @sn1 ether-linked alcohol
+290.3050946 1000 $sn2
+446.3040836 70 @NL sn2
+464.3146436 200 @NL sn2 ketene
+737.6164547 1000 precursor
+
+
+Name: PE(p-18:0/18:1)_IS
+Id: PE(p-18:0/18:1)_IS [M+H]+
+ADDUCT: [M+H]+
+Formula: C41H71D9O7NP
+PrecursorMz: 739.6310076
+ExactMass: 738.6237311
+MW: 738.6237311
+CLASS: Alkenyl_PE
+SumComposition: PE(o-36:2)_IS
+SumChainLengths: PE(o-36:2)_IS
+NumPeaks: 9
+294.3155267 84 @NL sn2 + glycerol-phosphate
+307.2995423 59 @NL sn2 + ethanolamine-P
+348.3458669 1000 $sn2 + deoxyglycerol
+392.2924171 345 @NL sn2 + glycerol
+448.3186366 6 @NL sn2
+466.3291966 12 @NL sn2 ketene
+598.6119133 95 *NL ethanolamine-P
+721.6204476 11 NL water
+739.6310076 27 precursor
+
+
+Name: PE(p-18:0/18:1)_IS
+Id: PE(p-18:0/18:1)_IS [M+K]+
+ADDUCT: [M+K]+
+Formula: C41H71D9O7NP
+PrecursorMz: 777.5874391
+ExactMass: 738.6237311
+MW: 738.6237311
+CLASS: Alkenyl_PE
+SumComposition: PE(o-36:2)_IS
+SumChainLengths: PE(o-36:2)_IS
+NumPeaks: 12
+136.9406031 163 phosphoric acid + adduct
+179.9828023 202 ethanolamine-P + adduct
+192.9668225 13 glycerol-P - H2O
+307.2995423 78 @NL sn2 + ethanolamine-phosphate
+430.2488487 25 @NL sn2 + glycerol
+443.2328689 11 @NL sn2 + deoxyethanolamine
+466.2686195 96 $NL sn1 alcohol + deoxyethanolamine
+598.6119133 51 NL ethanolamine phosphate + adduct
+636.5683449 180 *NL ethanolamine-P
+654.5789049 30 NL deoxyethanolamine-P
+734.5452400 525 *NL deoxyethanolamine
+777.5874391 10000 precursor
+
+
+Name: PE(p-18:0/18:1)_IS
+Id: PE(p-18:0/18:1)_IS [M+Na]+
+ADDUCT: [M+Na]+
+Formula: C41H71D9O7NP
+PrecursorMz: 761.6129491
+ExactMass: 738.6237311
+MW: 738.6237311
+CLASS: Alkenyl_PE
+SumComposition: PE(o-36:2)_IS
+SumChainLengths: PE(o-36:2)_IS
+NumPeaks: 12
+120.9661131 163 phosphoric acid + adduct
+164.0083123 202 ethanolamine-P + adduct
+176.9923325 13 glycerol-P - H2O
+307.2995423 78 @NL sn2 + ethanolamine-phosphate
+414.2743587 25 @NL sn2 + glycerol
+427.2583789 11 @NL sn2 + deoxyethanolamine
+450.2941295 96 $NL sn1 alcohol + deoxyethanolamine
+598.6119133 51 NL ethanolamine phosphate + adduct
+620.5938549 180 *NL ethanolamine-P
+638.6044149 30 NL deoxyethanolamine-P
+718.5707500 525 *NL deoxyethanolamine
+761.6129491 10000 precursor
+
+
+Name: PG(15:0/18:1)_IS
+Id: PG(15:0/18:1)_IS [M-H]-
+ADDUCT: [M-H]-
+Formula: C39H68D7O10P
+PrecursorMz: 740.5464459
+ExactMass: 741.5537223
+MW: 741.5537223
+CLASS: PG
+SumComposition: PG(33:1)_IS
+SumChainLengths: PG(15:0_18:1)_IS
+NumPeaks: 13
+78.9590540 40 phosphite
+96.9696186 5 phosphate
+152.9958334 116 *deoxyglycerol-P-
+171.0063981 34 glycerol-P
+209.0220481 6 $NL sn1 + sn2 + water
+227.0326128 13 $NL sn1 + sn2
+241.2173038 530 @sn1
+288.2925411 1000 $sn2
+377.2098442 22 @nL (sn2 + glycerol)
+424.2850816 8 $nL (sn1 + glycerol)
+451.2466284 13 @nL (sn2 + water)
+498.3218657 7 $nL (sn1 + water)
+740.5464459 1000 precursor
+
+
+Name: PG(15:0/18:1)_IS
+Id: PG(15:0/18:1)_IS [M+37Cl]-
+ADDUCT: [M+37Cl]-
+Formula: C39H68D7O10P
+PrecursorMz: 778.5201739
+ExactMass: 741.5537223
+MW: 741.5537223
+CLASS: PG
+SumComposition: PG(33:1)_IS
+SumChainLengths: PG(15:0_18:1)_IS
+NumPeaks: 13
+78.9590540 40 phosphite
+96.9696186 5 phosphate
+152.9958334 116 *deoxyglycerol-P-
+171.0063981 34 glycerol-P
+209.0220481 6 $NL sn1 + sn2 + water
+227.0326128 13 $NL sn1 + sn2
+241.2173038 530 @sn1
+288.2925411 1000 $sn2
+377.2098442 22 @nL (sn2 + glycerol)
+424.2850816 8 $nL (sn1 + glycerol)
+451.2466284 13 @nL (sn2 + water)
+498.3218657 7 $nL (sn1 + water)
+778.5201739 1000 precursor
+
+
+Name: PG(15:0/18:1)_IS
+Id: PG(15:0/18:1)_IS [M+Cl]-
+ADDUCT: [M+Cl]-
+Formula: C39H68D7O10P
+PrecursorMz: 776.5231239
+ExactMass: 741.5537223
+MW: 741.5537223
+CLASS: PG
+SumComposition: PG(33:1)_IS
+SumChainLengths: PG(15:0_18:1)_IS
+NumPeaks: 13
+78.9590540 40 phosphite
+96.9696186 5 phosphate
+152.9958334 116 *deoxyglycerol-P-
+171.0063981 34 glycerol-P
+209.0220481 6 $NL sn1 + sn2 + water
+227.0326128 13 $NL sn1 + sn2
+241.2173038 530 @sn1
+288.2925411 1000 $sn2
+377.2098442 22 @nL (sn2 + glycerol)
+424.2850816 8 $nL (sn1 + glycerol)
+451.2466284 13 @nL (sn2 + water)
+498.3218657 7 $nL (sn1 + water)
+776.5231239 1000 precursor
+
+
+Name: PG(15:0/18:1)_IS
+Id: PG(15:0/18:1)_IS [M+H]+
+ADDUCT: [M+H]+
+Formula: C39H68D7O10P
+PrecursorMz: 742.5609988
+ExactMass: 741.5537223
+MW: 741.5537223
+CLASS: PG
+SumComposition: PG(33:1)_IS
+SumChainLengths: PG(15:0_18:1)_IS
+NumPeaks: 6
+225.2212967 1000 @RCO+ sn1
+272.2965340 1000 $RCO+ sn2
+489.2823013 1000 @NL sn2-H2O
+536.3575386 1000 $NL sn1-H2O
+570.5473243 1000 *NL glycerol-P
+742.5609988 1000 precursor
+
+
+Name: PG(15:0/18:1)_IS
+Id: PG(15:0/18:1)_IS [M+K]+
+ADDUCT: [M+K]+
+Formula: C39H68D7O10P
+PrecursorMz: 780.5174303
+ExactMass: 741.5537223
+MW: 741.5537223
+CLASS: PG
+SumComposition: PG(33:1)_IS
+SumChainLengths: PG(15:0_18:1)_IS
+NumPeaks: 11
+192.9668225 43 deoxyglycerol-P + adduct
+210.9773825 1000 glycerol-P + adduct
+225.2212967 5 @sn1 acylium ion
+272.2965340 7 $sn2 acylium ion
+491.2176128 3 @NL sn2
+509.2281728 3 @NL sn2 ketene
+538.2928501 6 $NL sn1
+556.3034101 1 $NL sn1 ketene
+570.5473243 79 NL glycerol-P + Adduct
+608.5037558 43 *NL glycerol-P
+780.5174303 1000 precursor
+
+
+Name: PG(15:0/18:1)_IS
+Id: PG(15:0/18:1)_IS [M+Na]+
+ADDUCT: [M+Na]+
+Formula: C39H68D7O10P
+PrecursorMz: 764.5429403
+ExactMass: 741.5537223
+MW: 741.5537223
+CLASS: PG
+SumComposition: PG(33:1)_IS
+SumChainLengths: PG(15:0_18:1)_IS
+NumPeaks: 11
+176.9923325 43 deoxyglycerol-P + adduct
+195.0028925 1000 glycerol-P + adduct
+225.2212967 5 @sn1 acylium ion
+272.2965340 7 $sn2 acylium ion
+475.2431228 3 @NL sn2
+493.2536828 3 @NL sn2 ketene
+522.3183601 6 $NL sn1
+540.3289201 1 $NL sn1 ketene
+570.5473243 79 NL glycerol-P + Adduct
+592.5292658 43 *NL glycerol-P
+764.5429403 1000 precursor
+
+
+Name: PG(15:0/18:1)_IS
+Id: PG(15:0/18:1)_IS [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C39H68D7O10P
+PrecursorMz: 759.5875453
+ExactMass: 741.5537223
+MW: 741.5537223
+CLASS: PG
+SumComposition: PG(33:1)_IS
+SumChainLengths: PG(15:0_18:1)_IS
+NumPeaks: 3
+225.2212967 5 @sn1 acylium ion
+272.2965340 7 $sn2 acylium ion
+570.5473243 1000 NL glycerol-P + Adduct
+
+
+Name: PI(15:0/18:1)_IS
+Id: PI(15:0/18:1)_IS [M-H]-
+ADDUCT: [M-H]-
+Formula: C42H72D7O13P
+PrecursorMz: 828.5624899
+ExactMass: 829.5697663
+MW: 829.5697663
+CLASS: PI
+SumComposition: PI(33:1)_IS
+SumChainLengths: PI(15:0_18:1)_IS
+NumPeaks: 18
+96.9696186 8 H2PO4-
+152.9958381 68 glycerol3P-H2O/glycerol3P - 2xH2O
+223.0013221 46 inositol-phosphate - 2xH2O
+241.0118821 213 *inositol-phosphate - H2O
+241.2173038 309 @sn1 fatty acyl
+259.0224421 21 inositol-phosphate
+288.2925411 293 $sn2 fatty acyl
+297.0381015 46 glycerol-inositol-phosphate - 2xH2O
+315.0486615 213 *glycerol-inositol-phosphate - H2O
+377.2098442 65 @NL sn2-H2O-H2O-INOS
+395.2204042 5 @NL sn2-H2O-INOS
+424.2850816 19 $NL sn1- 2xH2O - inositol
+442.2956416 1 $NL sn1- H2O - inositol
+539.2626723 63 @NL sn2-H2O
+557.2732323 16 @NL sn2
+586.3379097 23 $NL sn1-H2O
+604.3484697 4 $NL sn1
+828.5624899 1000 precursor
+
+
+Name: PI(15:0/18:1)_IS
+Id: PI(15:0/18:1)_IS [M+H]+
+ADDUCT: [M+H]+
+Formula: C42H72D7O13P
+PrecursorMz: 830.5770428
+ExactMass: 829.5697663
+MW: 829.5697663
+CLASS: PI
+SumComposition: PI(33:1)_IS
+SumChainLengths: PI(15:0_18:1)_IS
+NumPeaks: 3
+225.2212967 7 @sn1 acylium ion
+272.2965340 7 $sn2 acylium ion
+830.5770428 553 precursor
+
+
+Name: PI(15:0/18:1)_IS
+Id: PI(15:0/18:1)_IS [M+K]+
+ADDUCT: [M+K]+
+Formula: C42H72D7O13P
+PrecursorMz: 868.5334743
+ExactMass: 829.5697663
+MW: 829.5697663
+CLASS: PI
+SumComposition: PI(33:1)_IS
+SumChainLengths: PI(15:0_18:1)_IS
+NumPeaks: 10
+225.2212967 5 @sn1 acylium ion
+272.2965340 10 $sn2 acylium ion
+280.9828665 37 inositol-phosphate - water + adduct
+298.9934265 1000 *inositol-phosphate + adduct
+299.2580667 37 @NL sn2 + inositol-P + Adduct
+346.3333041 3 $NL sn1 + inositol-P + adduct
+417.1808287 14 @NL (sn2 + inositol-P)
+464.2560660 7 $NL (sn1 + inositol-P)
+608.5037558 161 *NL inositol-phosphate
+868.5334743 553 precursor
+
+
+Name: PI(15:0/18:1)_IS
+Id: PI(15:0/18:1)_IS [M+Na]+
+ADDUCT: [M+Na]+
+Formula: C42H72D7O13P
+PrecursorMz: 852.5589843
+ExactMass: 829.5697663
+MW: 829.5697663
+CLASS: PI
+SumComposition: PI(33:1)_IS
+SumChainLengths: PI(15:0_18:1)_IS
+NumPeaks: 10
+225.2212967 5 @sn1 acylium ion
+265.0083765 37 inositol-phosphate - water + adduct
+272.2965340 10 $sn2 acylium ion
+283.0189365 1000 *inositol-phosphate + adduct
+299.2580667 37 @NL sn2 + inositol-P + Adduct
+346.3333041 3 $NL sn1 + inositol-P + adduct
+401.2063387 14 @NL (sn2 + inositol-P)
+448.2815760 7 $NL (sn1 + inositol-P)
+592.5292658 161 *NL inositol-phosphate
+852.5589843 553 precursor
+
+
+Name: PI(15:0/18:1)_IS
+Id: PI(15:0/18:1)_IS [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C42H72D7O13P
+PrecursorMz: 847.6035893
+ExactMass: 829.5697663
+MW: 829.5697663
+CLASS: PI
+SumComposition: PI(33:1)_IS
+SumChainLengths: PI(15:0_18:1)_IS
+NumPeaks: 10
+225.2212967 5 @sn1 acylium ion
+260.0529815 37 inositol-phosphate - water + adduct
+272.2965340 10 $sn2 acylium ion
+278.0635415 1000 *inositol-phosphate + adduct
+299.2580667 37 @NL sn2 + inositol-P + Adduct
+346.3333041 3 $NL sn1 + inositol-P + adduct
+396.2509437 14 @NL (sn2 + inositol-P)
+443.3261810 7 $NL (sn1 + inositol-P)
+587.5738708 161 *NL inositol-phosphate
+847.6035893 553 precursor
+
+
+Name: PS(15:0/18:1)_IS
+Id: PS(15:0/18:1)_IS [M-H]-
+ADDUCT: [M-H]-
+Formula: C39H67D7O10NP
+PrecursorMz: 753.5416949
+ExactMass: 754.5489713
+MW: 754.5489713
+CLASS: PS
+SumComposition: PS(33:1)_IS
+SumChainLengths: PS(15:0_18:1)_IS
+NumPeaks: 12
+96.9696186 22 H2PO4-
+134.9852734 5 glycerol-P - 2xwater
+152.9958334 290 glycerol-P - water
+171.0063981 5 Glycerol-P
+241.2173038 500 @sn1 RCO2-
+288.2925411 500 $sn2 RCO2-
+377.2098489 160 @NL Serine + sn2 + H2O)
+395.2204089 58 @NL (Serine + sn2)
+424.2850862 160 $NL Serine + sn1 + H2O)
+442.2956462 58 $NL (Serine + sn1)
+666.5096664 477 *NL Serine
+753.5416949 261 precursor
+
+
+Name: PS(15:0/18:1)_IS
+Id: PS(15:0/18:1)_IS [M+H]+
+ADDUCT: [M+H]+
+Formula: C39H67D7O10NP
+PrecursorMz: 755.5562478
+ExactMass: 754.5489713
+MW: 754.5489713
+CLASS: PS
+SumComposition: PS(33:1)_IS
+SumChainLengths: PS(15:0_18:1)_IS
+NumPeaks: 18
+88.0393095 8 Serine - water
+106.0498695 3 Serine
+155.0103910 6 Glycerol-P - water
+207.2107367 2 @sn1 acylium ion - H2O
+225.2212967 26 @sn1 acylium ion
+254.2859740 2 $sn2 acylium ion - H2O
+272.2965340 26 $sn2 acylium ion
+299.2580761 24 @sn1 + glycerol
+312.2533251 23 @sn1 + serine
+346.3333134 24 $sn2 + glycerol
+359.3285624 23 $sn2 + serine
+466.2564302 2 @NL sn2
+484.2669902 2 @NL sn2acylium
+513.3316676 2 $NL sn1
+531.3422276 2 $NL sn1acylium
+570.5473243 1000 *NL phosphoserine
+737.5456878 3 NL water
+755.5562478 1 precursor
+
+
+Name: PS(15:0/18:1)_IS
+Id: PS(15:0/18:1)_IS [M+K]+
+ADDUCT: [M+K]+
+Formula: C39H67D7O10NP
+PrecursorMz: 793.5126793
+ExactMass: 754.5489713
+MW: 754.5489713
+CLASS: PS
+SumComposition: PS(33:1)_IS
+SumChainLengths: PS(15:0_18:1)_IS
+NumPeaks: 12
+125.9957411 43 Serine - water + adduct
+136.9406031 164 H3PO4+adduct
+207.2107367 1 @sn1 acylium ion - H2O
+223.9726315 1000 P-Ser+adduct
+225.2212967 8 @sn1 acylium ion
+254.2859740 1 $sn2 acylium ion - H2O
+272.2965340 8 $sn2 acylium ion
+417.1808287 7 @NL sn2 deoxyserine
+464.2560660 7 $NL sn1 deoxyserine
+570.5473243 202 *NL P-Ser + adduct
+608.5037558 59 NL phosphoSer
+793.5126793 357 precursor
+
+
+Name: PS(15:0/18:1)_IS
+Id: PS(15:0/18:1)_IS [M+Na]+
+ADDUCT: [M+Na]+
+Formula: C39H67D7O10NP
+PrecursorMz: 777.5381893
+ExactMass: 754.5489713
+MW: 754.5489713
+CLASS: PS
+SumComposition: PS(33:1)_IS
+SumChainLengths: PS(15:0_18:1)_IS
+NumPeaks: 12
+110.0212511 43 Serine - water + adduct
+120.9661131 164 H3PO4+adduct
+207.2107367 1 @sn1 acylium ion - H2O
+207.9981415 1000 P-Ser+adduct
+225.2212967 8 @sn1 acylium ion
+254.2859740 1 $sn2 acylium ion - H2O
+272.2965340 8 $sn2 acylium ion
+401.2063387 7 @NL sn2 deoxyserine
+448.2815760 7 $NL sn1 deoxyserine
+570.5473243 202 *NL P-Ser + adduct
+592.5292658 59 NL phosphoSer
+777.5381893 357 precursor
+
+
+Name: PS(15:0/18:1)_IS
+Id: PS(15:0/18:1)_IS [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C39H67D7O10NP
+PrecursorMz: 772.5827943
+ExactMass: 754.5489713
+MW: 754.5489713
+CLASS: PS
+SumComposition: PS(33:1)_IS
+SumChainLengths: PS(15:0_18:1)_IS
+NumPeaks: 12
+105.0658561 43 Serine - water + adduct
+116.0107181 164 H3PO4+adduct
+203.0427465 1000 P-Ser+adduct
+207.2107367 1 @sn1 acylium ion - H2O
+225.2212967 8 @sn1 acylium ion
+254.2859740 1 $sn2 acylium ion - H2O
+272.2965340 8 $sn2 acylium ion
+396.2509437 7 @NL sn2 deoxyserine
+443.3261810 7 $NL sn1 deoxyserine
+570.5473243 202 *NL P-Ser + adduct
+587.5738708 59 NL phosphoSer
+772.5827943 357 precursor
+
+
+Name: SM(18:1;O2/18:1)_IS
+Id: SM(18:1;O2/18:1)_IS [M+37Cl]-
+ADDUCT: [M+37Cl]-
+Formula: C41H72D9O6N2P
+PrecursorMz: 774.6061672
+ExactMass: 737.6397156
+MW: 737.6397156
+CLASS: SM
+SumComposition: SM(36:2;O2)_IS
+SumChainLengths: SM(18:1_18:1;O2)_IS
+NumPeaks: 4
+122.9852687 14 C2H4 + phosphate
+168.0431179 507 phosphocholine - CH3
+722.6162405 1000 *pre-adduct-CH3
+774.6061672 1 precursor
+
+
+Name: SM(18:1;O2/18:1)_IS
+Id: SM(18:1;O2/18:1)_IS [M+AcOH-H]-
+ADDUCT: [M+AcOH-H]-
+Formula: C41H72D9O6N2P
+PrecursorMz: 796.6535685
+ExactMass: 737.6397156
+MW: 737.6397156
+CLASS: SM
+SumComposition: SM(36:2;O2)_IS
+SumChainLengths: SM(18:1_18:1;O2)_IS
+NumPeaks: 4
+122.9852687 14 C2H4 + phosphate
+168.0431179 507 phosphocholine - CH3
+722.6162405 1000 *pre-adduct-CH3
+796.6535685 1 precursor
+
+
+Name: SM(18:1;O2/18:1)_IS
+Id: SM(18:1;O2/18:1)_IS [M+Cl]-
+ADDUCT: [M+Cl]-
+Formula: C41H72D9O6N2P
+PrecursorMz: 772.6091172
+ExactMass: 737.6397156
+MW: 737.6397156
+CLASS: SM
+SumComposition: SM(36:2;O2)_IS
+SumChainLengths: SM(18:1_18:1;O2)_IS
+NumPeaks: 4
+122.9852687 14 C2H4 + phosphate
+168.0431179 507 phosphocholine - CH3
+722.6162405 1000 *pre-adduct-CH3
+772.6091172 1 precursor
+
+
+Name: SM(18:1;O2/18:1)_IS
+Id: SM(18:1;O2/18:1)_IS [M+H]+
+ADDUCT: [M+H]+
+Formula: C41H72D9O6N2P
+PrecursorMz: 738.6469920
+ExactMass: 737.6397156
+MW: 737.6397156
+CLASS: SM
+SumComposition: SM(36:2;O2)_IS
+SumChainLengths: SM(18:1_18:1;O2)_IS
+NumPeaks: 7
+98.9841715 3 phosphoric acid + adduct
+104.1069905 8 Choline
+125.0003702 25 C2H6O4P
+184.0733209 1000 Phospocholine
+264.2685812 1 @LCB - 2xwater
+720.6364320 6 precursor - H2O
+738.6469920 80 precursor
+
+
+Name: SM(18:1;O2/18:1)_IS
+Id: SM(18:1;O2/18:1)_IS [M+Na]+
+ADDUCT: [M+Na]+
+Formula: C41H72D9O6N2P
+PrecursorMz: 760.6289336
+ExactMass: 737.6397156
+MW: 737.6397156
+CLASS: SM
+SumComposition: SM(36:2;O2)_IS
+SumChainLengths: SM(18:1_18:1;O2)_IS
+NumPeaks: 10
+86.0964305 181 Dehydro Choline
+104.1069905 5 Choline
+146.9817632 250 C2H5O4P + adduct
+206.0552625 2 Phospocholine + ADDUCT
+315.3356366 14 $Fatty amide + C2
+537.5703876 29 NL DeoxyPhosphoCholine+ adduct
+555.5809476 6 NL PhosphoCholine + adduct
+577.5628891 902 *NL PhosphoCholine
+701.5554343 837 *NL trimethylamine
+760.6289336 945 precursor
+
+
+Name: TG(15:0/18:1/15:0)_IS
+Id: TG(15:0/18:1/15:0)_IS [M+Na]+
+ADDUCT: [M+Na]+
+Formula: C51H89D7O6
+PrecursorMz: 834.7539673
+ExactMass: 811.7649536
+MW: 811.7649536
+CLASS: TG
+SumComposition: TG(48:1)_IS
+SumChainLengths: TG(15:0_15:0_18:1)_IS
+NumPeaks: 7
+225.2209930 1 @sn1 acylium ion/!sn3 acylium ion
+272.2969360 1 $sn2 acylium ion
+523.4719849 1 NL sn2 + adduct
+545.4539795 1 NL sn2
+570.5469360 1 NL sn1 + adduct/NL sn3 + adduct
+592.5289307 1 NL sn1/NL sn3
+834.7539673 1 precursor
+
+
+Name: TG(15:0/18:1/15:0)_IS
+Id: TG(15:0/18:1/15:0)_IS [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C51H89D7O6
+PrecursorMz: 829.7989502
+ExactMass: 811.7649536
+MW: 811.7649536
+CLASS: TG
+SumComposition: TG(48:1)_IS
+SumChainLengths: TG(15:0_15:0_18:1)_IS
+NumPeaks: 7
+225.2209930 1 @sn1 acylium ion/!sn3 acylium ion
+272.2969360 1 $sn2 acylium ion
+523.4719849 1 NL sn2 + adduct
+540.4990234 1 NL sn2
+570.5469360 1 NL sn1 + adduct/NL sn3 + adduct
+587.5739136 1 NL sn1/NL sn3
+829.7989502 1 precursor
+
+

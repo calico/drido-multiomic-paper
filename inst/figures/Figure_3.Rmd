@@ -1,0 +1,1150 @@
+---
+title: "DRiDO Figure 3"
+author: "Johanna Fleischman"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    code_folding: hide 
+---
+
+# Setup 
+
+## Install Packages
+
+```{r, message=F, warning=F}
+suppressMessages(library(remotes))
+suppressMessages(library(patchwork))
+suppressMessages(library(flexclust))
+suppressMessages(library(ggrepel))
+suppressMessages(library(RColorBrewer))
+suppressMessages(library(VennDiagram))
+suppressMessages(library(ggh4x))
+suppressMessages(library(ggpmisc))
+suppressMessages(library(tidyverse))
+suppressMessages(library(mclust))
+suppressMessages(library(clusterProfiler))
+suppressMessages(library(org.Mm.eg.db))
+suppressMessages(library(rrvgo))
+suppressMessages(library(GGally))
+suppressMessages(library(grid))
+
+knitr::opts_chunk$set(echo = TRUE, eval = TRUE, out.height = "100%", out.width = "100%", warning = F, message = F)
+```
+
+## Assign filepaths
+
+```{r}
+# set
+# local_filepath <- "~/drido-multiomic-paper"
+
+source(file.path(local_filepath, "R/statistics_functions.R"))
+source(file.path(local_filepath, "R/figure_functions.R"))
+source(file.path(local_filepath, "R/metab_enrichment_IDSLGOA.R"))
+
+# Filepaths to gene ontology names and INCHI keys for metabolomics enrichment
+go_names_filepath <- file.path(local_filepath, "data/go_names.RData")
+go_inchi_key_filepath <- file.path(local_filepath, "data/all_go_child_cpd_list_met_ik14.RData")
+
+lipidomics_data <- "inst/extdata/20250128-Normalized-Lipidomics-Data.Rds"
+metabolomics_data <- "inst/extdata/20250128-Normalized-Metabolomics-Data.Rds"
+proteomics_data <- "inst/extdata/20250129-Normalized-Proteomics-Data.Rds"
+phenotype_data <- "inst/extdata/DOCR_Phenotype_Data.csv"
+
+# PLL Modals on z-scored / scaled data
+pll_lm_res_file <- "inst/extdata/20260220-Linear-Scaled-MM-PLL-Aging-Results.Rds"
+pll_lm_death_res_file <- "inst/extdata/20260220-Linear-Scaled-MM-PLL-Dying-Results.Rds"
+pll_lm_res_phys_file <- "inst/extdata/20250528-Linear-MM-PLL-Aging-Phenotype-Results.Rds"
+pll_lm_death_res_phys_file <- "inst/extdata/20250528-Linear-MM-PLL-Dying-Phenotype-Results.Rds"
+
+# PLL Models on centered, NOT scaled data. Only appropriate for use with panel D
+# pll_lm_res_file <- "inst/extdata/20250424-Linear-MM-PLL-Aging-Results.Rds"
+# pll_lm_death_res_file <- "inst/extdata/20250424-Linear-MM-PLL-Dying-Results.Rds"
+# pll_lm_res_phys_file <- "inst/extdata/20250424-Linear-MM-PLL-Aging-Phenotype-Results.Rds"
+# pll_lm_death_res_phys_file <- "inst/extdata/20250424-Linear-MM-PLL-Dying-Phenotype-Results.Rds"
+
+pll_gam_summary_file <- "inst/extdata/20251008-PLL-GAM-Summary-Data.Rds"
+pll_gam_fit_file <- "inst/extdata/20251008-PLL-GAM-Fit-Data.Rds"
+name_conv_file <- "inst/supp_tables/Table_S1_CompoundAnnotations.csv"
+physio_key_file <- "data/physio-key.csv"
+inchii_key_file <- "data/inchii-key.csv"
+```
+
+## Load and clean data
+
+```{r}
+# Get keys
+name_conversion_use <- read.csv(file.path(local_filepath, name_conv_file)) %>%
+  dplyr::select(-modality, -Broad_Group)
+physio_key <- read.csv(file.path(local_filepath, physio_key_file), header = TRUE)
+inchii_key <- read.csv(file.path(local_filepath, inchii_key_file))
+
+# Make final DO-CR raw data frame
+# Retains pre-diet intervention data
+data_use <- docr_make_final_data(
+  metabolomics_data_filepath = file.path(local_filepath, metabolomics_data),
+  proteomics_data_filepath = file.path(local_filepath, proteomics_data),
+  lipidomics_data_filepath = file.path(local_filepath, lipidomics_data),
+  phenotype_data_filepath = file.path(local_filepath, phenotype_data),
+  name_conversion_key = name_conversion_use
+)
+
+# Import PLL Models
+pll_lm_pheno_res <- readRDS(file.path(local_filepath, pll_lm_res_phys_file))
+pll_lm_death_pheno_res <- readRDS(file.path(local_filepath, pll_lm_death_res_phys_file))
+
+pll_lm_aging <- readRDS(file.path(local_filepath, pll_lm_res_file)) %>%
+  dplyr::select(-method, compoundName) %>%
+  dplyr::bind_rows(pll_lm_pheno_res)
+
+pll_lm_dying <- readRDS(file.path(local_filepath, pll_lm_death_res_file)) %>%
+  dplyr::select(-method, compoundName) %>%
+  dplyr::bind_rows(pll_lm_death_pheno_res)
+
+pll_gam_summaries <- readRDS(file.path(local_filepath, pll_gam_summary_file))
+pll_gam_fits <- readRDS(file.path(local_filepath, pll_gam_fit_file))
+
+pll_gam_cluster_identities <- pll_gam_summaries %>%
+  dplyr::distinct(trait, cluster)
+
+# Clean PLL Linear Models
+pll_lm_long <- dplyr::bind_rows(
+  pll_lm_aging %>%
+    dplyr::mutate(
+      model_term = ifelse(model_term == "PLL", "PLL_Aging", as.character(model_term)),
+      model = gsub("PLL", "PLL_Aging", model),
+      phase = "Aging"
+    ),
+  pll_lm_dying %>%
+    dplyr::mutate(
+      model_term = ifelse(model_term == "PLL", "PLL_Dying", as.character(model_term)),
+      model = gsub("PLL", "PLL_Dying", model),
+      phase = "Dying"
+    )
+) %>%
+  dplyr::left_join(., name_conversion_use, by = "feature_id") %>%
+  dplyr::left_join(., pll_gam_cluster_identities, by = c("feature_id" = "trait")) %>%
+  dplyr::rows_update(
+    physio_key %>% dplyr::select(feature_id, name_use),
+    by = c("feature_id")
+  ) %>%
+  dplyr::filter(!is.na(name_use)) %>% # Remove bad annotations before FDR
+  dplyr::mutate(
+    model = make_names_pretty(model),
+    model_term = make_names_pretty(model_term)
+  ) %>%
+  dplyr::select(-padj) %>%
+  fdr_multi(
+    pval_var = "p_value_coef",
+    nest_vars = c("phase", "model_term", "modality")
+  )
+
+
+rm(list = c("pll_lm_pheno_res", "pll_lm_death_pheno_res"))
+```
+
+### Save Processed Data
+
+```{r}
+processed_data_export <- data_use %>%
+  dplyr::rows_update(
+    physio_key %>% dplyr::select(trait_id = feature_id, name_use),
+    by = "trait_id"
+  )
+
+# saveRDS(processed_data_export, file.path(local_filepath, "supplemental_tables_final", "all_processed_data.RDS"))
+```
+
+### Tables: S3-4
+
+```{r}
+# PLL non-linear trajectory summaries
+table_s3 <- pll_gam_summaries %>%
+  as.data.frame() %>%
+  dplyr::rows_update(
+    physio_key %>% dplyr::select(trait = feature_id, name_use),
+    by = c("trait")
+  ) %>%
+  dplyr::mutate(cluster = ifelse(is.na(cluster),
+    "None assigned",
+    cluster
+  )) %>%
+  dplyr::mutate(Platform = stringr::str_to_title(modality)) %>%
+  dplyr::rows_update(
+    physio_key %>% dplyr::select(trait = feature_id, name_use),
+    by = c("trait")
+  ) %>%
+  dplyr::select(Platform,
+    Compound = name_use, Cluster = cluster,
+    pvalue, Smooth_Term = smooth_term,
+    Pvalue = pvalue, FDR = padj,
+    Compound_PMC = extrema_trait,
+    Cluster_PMC = extrema_mean,
+    Cluster_PMC_SE = extrema_se,
+    Deviation_Exp = deviation.exp,
+    Adj_R2 = adj.rsquared, EDF = edf
+  ) %>%
+  dplyr::arrange(Cluster, FDR)
+
+# write.csv(table_s3,
+#           file.path(local_filepath, "supplemental_tables_final", "Table_S3_PLL_GAM_Summary.csv"),
+#           row.names = FALSE)
+
+
+# Build table s4 for both scaled and non-scaled data
+build_pll_lm_long <- function(lm_res_file, lm_death_res_file,
+                              lm_res_phys_file, lm_death_res_phys_file) {
+  pll_lm_pheno_res <- readRDS(file.path(local_filepath, lm_res_phys_file))
+  pll_lm_death_pheno_res <- readRDS(file.path(local_filepath, lm_death_res_phys_file))
+
+  pll_lm_aging <- readRDS(file.path(local_filepath, lm_res_file)) %>%
+    dplyr::select(-method, compoundName) %>%
+    dplyr::bind_rows(pll_lm_pheno_res)
+
+  pll_lm_dying <- readRDS(file.path(local_filepath, lm_death_res_file)) %>%
+    dplyr::select(-method, compoundName) %>%
+    dplyr::bind_rows(pll_lm_death_pheno_res)
+
+  dplyr::bind_rows(
+    pll_lm_aging %>%
+      dplyr::mutate(
+        model_term = ifelse(model_term == "PLL", "PLL_Aging", as.character(model_term)),
+        model = gsub("PLL", "PLL_Aging", model),
+        phase = "Aging"
+      ),
+    pll_lm_dying %>%
+      dplyr::mutate(
+        model_term = ifelse(model_term == "PLL", "PLL_Dying", as.character(model_term)),
+        model = gsub("PLL", "PLL_Dying", model),
+        phase = "Dying"
+      )
+  ) %>%
+    dplyr::left_join(., name_conversion_use, by = "feature_id") %>%
+    dplyr::left_join(., pll_gam_cluster_identities, by = c("feature_id" = "trait")) %>%
+    dplyr::rows_update(
+      physio_key %>% dplyr::select(feature_id, name_use),
+      by = "feature_id"
+    ) %>%
+    dplyr::filter(!is.na(name_use)) %>%
+    dplyr::mutate(
+      model = make_names_pretty(model),
+      model_term = make_names_pretty(model_term)
+    ) %>%
+    dplyr::select(-padj) %>%
+    fdr_multi(
+      pval_var = "p_value_coef",
+      nest_vars = c("phase", "model_term", "modality")
+    )
+}
+
+# Build each and format as table_s6
+make_table_s4 <- function(pll_lm_long, normalization) {
+  pll_lm_long %>%
+    dplyr::mutate(
+      Platform = stringr::str_to_title(modality),
+      Platform = factor(Platform, levels = c("Metabolomics", "Lipidomics", "Proteomics", "Physiological")),
+      Normalization = normalization
+    ) %>%
+    dplyr::select(Normalization, Platform,
+      Compound = name_use, Model = model,
+      Phase = phase, Term = model_term, Estimate = coef,
+      Est_SE = se_coef, Pvalue = p_value_coef, FDR = padj,
+      Cluster = cluster
+    )
+}
+
+table_s4 <- dplyr::bind_rows(
+  make_table_s4(
+    build_pll_lm_long(
+      "20260220-Linear-Scaled-MM-PLL-Aging-Results.Rds",
+      "20260220-Linear-Scaled-MM-PLL-Dying-Results.Rds",
+      "20250528-Linear-MM-PLL-Aging-Phenotype-Results.Rds",
+      "20250528-Linear-MM-PLL-Dying-Phenotype-Results.Rds"
+    ),
+    "Z-score"
+  ),
+  make_table_s4(
+    build_pll_lm_long(
+      "20250424-Linear-MM-PLL-Aging-Results.Rds",
+      "20250424-Linear-MM-PLL-Dying-Results.Rds",
+      "20250424-Linear-MM-PLL-Aging-Phenotype-Results.Rds",
+      "20250424-Linear-MM-PLL-Dying-Phenotype-Results.Rds"
+    ),
+    "Log2 Relative"
+  )
+)
+
+# write.csv(table_s4,
+#           file.path(local_filepath, "supplemental_tables_final", "Table_S4_PLL_Aging_Dying_Model.csv"),
+#           row.names = FALSE)
+```
+
+# Figure 3
+
+## A: Clusters
+
+1. Calculate weights for each data point, inversely proportional to the width of the confidence interval.
+2. Group the data by cluster and PLL. Within each group, I compute the weighted mean of `scaled_fit`, `scaled_lower_ci`, and `scaled_upper_ci`, using the previously calculated weights.
+
+Clusters have been manually re-identified so that the the plot shows the clusters next to each other with opposing directionality.
+
+```{r, fig.width = 3.8, fig.height = 1.8}
+# Scaling the data
+scaled_data <- pll_gam_fits %>%
+  dplyr::filter(significant) %>%
+  dplyr::group_by(trait) %>%
+  dplyr::group_modify(~ docr_scale_trajectory(.x)) %>%
+  dplyr::ungroup()
+
+# Compute average trajectory
+average_trajectories <- scaled_data %>%
+  dplyr::group_by(cluster, PLL) %>%
+  dplyr::summarize(
+    average_scaled_fit = mean(scaled_fit, na.rm = TRUE),
+    average_scaled_lower_ci = mean(scaled_lower_ci, na.rm = TRUE),
+    average_scaled_upper_ci = mean(scaled_upper_ci, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+count_data <- pll_gam_summaries %>%
+  dplyr::filter(significant) %>%
+  dplyr::distinct(cluster, name_use) %>%
+  dplyr::group_by(cluster) %>%
+  dplyr::summarise(count = n(), .groups = "drop") %>%
+  dplyr::mutate(label_print = paste0("n = ", count))
+
+# Visualization
+g <- ggplot2::ggplot(
+  average_trajectories,
+  ggplot2::aes(
+    x = PLL,
+    y = average_scaled_fit,
+    color = factor(cluster)
+  )
+) +
+  ggplot2::geom_line() +
+  ggplot2::geom_text(
+    data = count_data,
+    mapping = aes(x = Inf, y = Inf, label = label_print),
+    color = "black",
+    hjust = 1.2,
+    vjust = 1.55,
+    size = 2.2
+  ) +
+  ggplot2::geom_ribbon(
+    ggplot2::aes(
+      ymin = average_scaled_lower_ci,
+      ymax = average_scaled_upper_ci,
+      fill = factor(cluster)
+    ),
+    alpha = 0.2,
+    color = NA
+  ) +
+  ggplot2::labs(
+    title = "Lifespan trajectory cluster average",
+    x = "PLL",
+    y = "Scaled Predicted Fit",
+    color = "Cluster",
+    fill = "Cluster"
+  ) +
+  ggplot2::facet_wrap(~ factor(cluster), ncol = 5) +
+  docr_ggplot_theme(
+    x_text_angle = 0,
+    x_text_hjust = 0.5
+  ) +
+  theme(
+    strip.text = element_text(margin = margin(0, 2, 2, 2)),
+    panel.spacing.y = unit(3, "pt")
+  )
+print(g)
+
+# docr_ggsave(g, "Fig_3A_ClusterTrajectories", 1.9, 3.9, local_filepath = local_filepath)
+```
+
+## B: PMC
+
+```{r, fig.width = 1.35, fig.height = 1.5}
+# filter the data and calculate the median
+filtered_data <- pll_gam_summaries %>%
+  dplyr::filter(!is.na(cluster), extrema_trait != 1) %>%
+  dplyr::distinct(cluster, name_use, extrema_trait)
+
+median_val <- median(filtered_data$extrema_trait, na.rm = TRUE)
+
+# plot
+g <- ggplot(filtered_data, aes(x = extrema_trait)) +
+  geom_histogram(
+    color = "black",
+    fill = "white",
+    binwidth = 0.01
+  ) +
+  geom_vline(
+    xintercept = median_val,
+    color = "red",
+    linewidth = 1
+  ) +
+  annotate(
+    geom = "label",
+    x = 0.6,
+    y = 74,
+    label = paste("Median =", round(median_val, 3)),
+    color = "black",
+    size = 5 / ggplot2::.pt
+  ) +
+  docr_ggplot_theme(x_text_angle = 0) +
+  labs(
+    title = paste0("Maximum Curvature"),
+    x = "PMC",
+    y = ""
+  ) +
+  ggplot2::annotate("text",
+    x = 0.40, y = 125,
+    label = paste0("n = ", nrow(filtered_data)),
+    size = 5 / ggplot2::.pt
+  ) +
+  ggplot2::annotate("text",
+    x = 0.53, y = 112,
+    label = "non-linear slopes",
+    size = 5 / ggplot2::.pt
+  )
+
+g
+
+# docr_ggsave(g, "Fig_3C_MaxInflection_short", 1.5, plot_width = 1.35, local_filepath = local_filepath)
+```
+
+## C: Real Data
+
+```{r, fig.width = 1.2, fig.height = 1.5}
+death_shift <- TRUE
+
+top_traits <- c("sp__P13020__GELS")
+
+for (trait_use in top_traits) {
+  one_aging <- pll_lm_aging %>%
+    dplyr::filter(feature_id == trait_use)
+
+  cluster_use <- pll_gam_summaries %>%
+    dplyr::filter(trait == trait_use) %>%
+    dplyr::pull(cluster)
+  cluster_color <- scales::hue_pal()(10)[as.numeric(cluster_use)]
+
+  one_aging_p <- one_aging %>%
+    dplyr::filter(model_term == "PLL") %>%
+    dplyr::pull(padj)
+
+  one_aging <- one_aging %>%
+    dplyr::select(model_term, coef) %>%
+    tibble::deframe()
+
+  one_dying <- pll_lm_dying %>%
+    dplyr::filter(feature_id == trait_use) %>%
+    dplyr::select(model_term, coef) %>%
+    tibble::deframe()
+
+  new_data <- data_use %>%
+    dplyr::filter(
+      trait_id == trait_use,
+      age_years != "year1"
+    ) %>%
+    tidyr::drop_na(trait_value)
+
+  custom_title <- new_data$name_use[1]
+
+  if (custom_title == "C9") {
+    custom_ggplot_title <- "Complement comp. 9"
+  } else if (custom_title == "GELS") {
+    custom_ggplot_title <- "Gelsolin"
+  } else if (custom_title == "ITIH3") {
+    custom_ggplot_title <- "ITI-HC3"
+  } else {
+    custom_ggplot_title <- custom_title
+  }
+
+  # set hex stuff
+  if (custom_title == "2-Oxoglutarate") {
+    custom_bins <- c(0.025, diff(range(new_data$trait_value, na.rm = TRUE)) / 40)
+  } else if (custom_title == "N-acetylaspartate") {
+    custom_bins <- c(0.025, diff(range(new_data$trait_value, na.rm = TRUE)) / 25)
+  } else {
+    custom_bins <- c(0.045, diff(range(new_data$trait_value, na.rm = TRUE)) / 20)
+  }
+
+  line_data <- tibble::tibble(
+    PLL_aging = seq(min(new_data$PLL, na.rm = TRUE), 0.845, length.out = 10),
+    PLL_dying = seq(0.85, max(new_data$PLL, na.rm = TRUE), length.out = 10)
+  )
+
+  # median bodyweight is 32 grams
+  # diet 2D captures the median diet effect
+  line_data <- line_data %>%
+    dplyr::mutate(
+      aging_pred =
+        one_aging[["(Intercept)"]] +
+          one_aging[["BW_Loess"]] * 32 +
+          one_aging[["PLL"]] * PLL_aging,
+      dying_pred =
+        one_dying[["(Intercept)"]] +
+          one_dying[["BW_Loess"]] * 32 +
+          one_dying[["PLL"]] * PLL_dying
+    )
+
+  if (death_shift) {
+    aging_endpoint <- line_data %>%
+      dplyr::filter(PLL_aging == max(PLL_aging)) %>%
+      dplyr::pull(aging_pred)
+    dying_startpoint <- line_data %>%
+      dplyr::filter(PLL_dying == min(PLL_dying)) %>%
+      dplyr::pull(dying_pred)
+    shift <- aging_endpoint - dying_startpoint
+    line_data <- line_data %>%
+      dplyr::mutate(dying_pred = dying_pred + shift)
+  }
+
+  gam_fit <- pll_gam_fits %>%
+    dplyr::filter(trait %in% trait_use)
+
+  g <- ggplot2::ggplot(new_data) +
+    docr_ggplot_theme(
+      x_text_angle = 0,
+      x_text_hjust = 0.5
+    ) +
+    geom_hex(aes(x = PLL, y = trait_value), binwidth = custom_bins) +
+    labs(
+      title = paste0(custom_ggplot_title, ", Cluster ", cluster_use),
+      y = "Log2 Abundance"
+    ) +
+    scale_fill_gradientn(colors = c("white", cluster_color)) +
+    geom_line(
+      data = gam_fit,
+      mapping = aes(
+        x = PLL,
+        y = fit
+      ),
+      color = cluster_color,
+      size = 1
+    ) +
+    geom_line(
+      data = line_data, aes(x = PLL_aging, y = aging_pred),
+      color = "black", size = 0.7, alpha = 0.6
+    ) +
+    geom_line(
+      data = line_data, aes(x = PLL_dying, y = dying_pred),
+      color = "black", size = 0.7, alpha = 0.6
+    ) +
+    docr_ggplot_line(x = 0.85)
+
+  print(g)
+
+  # docr_ggsave(g, "Fig_3C_ExAgingDying", 1.5, 1.2, local_filepath = local_filepath)
+}
+```
+
+## D: Aging vs. Dying Scatter
+
+```{r, fig.width = 1.5, fig.height = 1.5}
+# PLL Wide
+gplot <- pll_lm_long %>%
+  dplyr::filter(model_term %in% c("PLL_Aging", "PLL_Dying")) %>%
+  dplyr::select(model_term, modality, cluster, name_use, padj, coef) %>%
+  tidyr::pivot_wider(
+    names_from = model_term,
+    values_from = c("padj", "coef")
+  )
+
+p_thresh <- 0.01
+sd_dying <- sd(gplot$coef_PLL_Dying, na.rm = TRUE)
+sd_aging <- sd(gplot$coef_PLL_Aging, na.rm = TRUE)
+
+gplot <- gplot %>%
+  dplyr::filter(!is.na(cluster)) %>%
+  dplyr::mutate(
+    color_use = ifelse((padj_PLL_Aging < p_thresh | padj_PLL_Dying < p_thresh), cluster, 11),
+    color_use = as.factor(color_use)
+  )
+
+custom_colors <- c(scales::hue_pal()(10), "grey80")
+names(custom_colors) <- as.character(1:11)
+
+g1 <- ggplot2::ggplot(
+  gplot,
+  aes(
+    y = coef_PLL_Aging,
+    x = coef_PLL_Dying,
+    color = color_use
+  )
+) +
+  ggplot2::geom_point(
+    alpha = 0.5,
+    size = 0.6
+  ) +
+  docr_ggplot_line(x = 0) +
+  docr_ggplot_line(y = 0) +
+  scale_color_manual(values = custom_colors) +
+  ggplot2::labs(
+    title = paste0("Slopes, FDR < ", p_thresh),
+    x = "Dying, Post-0.85 PLL",
+    y = "Aging, Pre-0.85 PLL"
+  ) +
+  docr_ggplot_theme(
+    x_text_angle = 0,
+    x_text_hjust = 0.5
+  )
+print(g1)
+
+# docr_ggsave(g1, paste0("Fig_3D_Aging_Dying_Coefs_small"), 1.5, 1.5, local_filepath = local_filepath)
+```
+
+### Text: Calculations
+
+```{r}
+p_thresh <- 0.01
+calcs <- gplot %>%
+  dplyr::mutate(sig_group = dplyr::case_when(
+    padj_PLL_Aging < p_thresh & padj_PLL_Dying < p_thresh & sign(coef_PLL_Aging) == sign(coef_PLL_Dying) ~ "Both Significant, Correlated",
+    padj_PLL_Aging < p_thresh & padj_PLL_Dying < p_thresh & sign(coef_PLL_Aging) != sign(coef_PLL_Dying) ~ "Both Significant, Anti-Correlated",
+    padj_PLL_Aging < p_thresh & padj_PLL_Dying >= p_thresh ~ "Significant in Aging Only",
+    padj_PLL_Aging >= p_thresh & padj_PLL_Dying < p_thresh ~ "Significant in Dying Only",
+    TRUE ~ "sig_in_none"
+  ))
+
+table(calcs$sig_group)
+```
+
+## E, F, H: Heatmaps
+
+```{r}
+cluster_annotation <- pll_lm_long %>%
+  dplyr::filter(!is.na(cluster)) %>%
+  dplyr::distinct(name_use, Cluster = cluster) %>%
+  tibble::column_to_rownames("name_use")
+
+cluster_colors <- scales::hue_pal()(10)
+names(cluster_colors) <- as.character(1:10)
+
+n_thresh <- 40
+
+physio_terms <- c(
+  "Hematocrit %", "Hemoglobin conc. CV", "Hemoglobin",
+  "Neutrophil-lymphocyte ratio", "RBC count", "% Lymphocytes",
+  "% Neutrophils", "RBC volume CV", "Lymphocytes (% viable)"
+)
+
+top_terms <- function(term) {
+  pll_lm_long %>%
+    dplyr::filter(
+      model_term == term,
+      !grepl("TG", name_use),
+      !is.na(cluster),
+      modality != "physiological",
+      !is.na(padj)
+    ) %>%
+    dplyr::arrange(padj) %>%
+    dplyr::slice_head(n = n_thresh) %>%
+    dplyr::pull(name_use) %>%
+    unique()
+}
+
+list_loop <- list(
+  `Top Aging` = top_terms("PLL_Aging"),
+  `Top Dying` = top_terms("PLL_Dying"),
+  `Top Physio` = physio_terms
+)
+
+# Compounds to bold:
+bold_labels <- intersect(list_loop$`Top Aging`, list_loop$`Top Dying`)
+
+annotation_col <- docr_pheatmap_annotations(
+  pll_lm_long,
+  `PLL Slope` = c("Aging" = "Aging", "Dying" = "Dying")
+)
+
+annotation_colors <- docr_pheatmap_colors(
+  annotation_col
+) %>%
+  c(., list(Cluster = cluster_colors))
+
+for (ll in names(list_loop)) {
+  temp_terms <- list_loop[[ll]]
+  temp_plot_use <- pll_lm_long %>%
+    dplyr::filter(model_term %in% c("PLL_Aging", "PLL_Dying")) %>%
+    dplyr::filter(name_use %in% temp_terms) %>%
+    dplyr::mutate(padj = ifelse(is.na(padj), 1, padj))
+
+  ph <- docr_pheatmap(
+    temp_plot_use,
+    main = ll,
+    y_axis_var = "name_use",
+    annotation_row = cluster_annotation,
+    cluster_rows = TRUE,
+    show_colnames = TRUE,
+    show_rownames = TRUE,
+    fontsize = 5,
+    fontsize_row = 5,
+    fontsize_number = 9,
+    sig_symbol = "\u00B7",
+    sig_numbers = c(0.001, 0.01, 0.05),
+    annotation_colors = annotation_colors,
+    display_var = "padj",
+    pvalue_stars = TRUE,
+    cellwidth = 11,
+    cellheight = 4.5,
+    treeheight_row = 0,
+    angle_col = 45
+  )
+
+  # bold overlapping traits
+  gt <- ph$gtable
+  row_names_grob <- gt$grobs[[which(gt$layout$name == "row_names")]]
+  labels <- row_names_grob$label
+  bold_idx <- which(labels %in% bold_labels)
+  fontfaces <- rep("plain", length(labels))
+  fontfaces[bold_idx] <- "bold"
+  row_names_grob$gp <- gpar(fontface = fontfaces)
+  gt$grobs[[which(gt$layout$name == "row_names")]] <- row_names_grob
+  grid.newpage()
+  grid.draw(gt)
+
+  # docr_ggsave(plot_object = gt,
+  #             plot_file_name = paste0("Fig_3_Heatmap_P_B_", ll),
+  #             plot_height = nrow(temp_plot_use) * 0.015 + 5,
+  #             plot_width = 4,
+  #             local_filepath = local_filepath)
+}
+```
+
+# GO Enrichment
+
+### Metabolites: INCHII enrichment
+
+```{r}
+enrich_data_metab <- pll_lm_long %>%
+  dplyr::filter(
+    modality %in% c("metabolomics", "lipidomics"),
+    model_term %in% c("PLL_Aging", "PLL_Dying")
+  ) %>%
+  dplyr::mutate(sign_coef = sign(coef)) %>%
+  dplyr::distinct(feature_id, model_term, sign_coef, padj) %>%
+  dplyr::inner_join(inchii_key, by = "feature_id")
+
+inchi_universe <- enrich_data_metab %>%
+  dplyr::distinct(inchi_key) %>%
+  dplyr::pull() %>%
+  {
+    gsub("\\xca", "E", ., useBytes = TRUE)
+  } # fix symbol
+
+enrich_metab <- data.frame()
+
+for (tm in unique(enrich_data_metab$model_term)) {
+  for (sc in unique(enrich_data_metab$sign_coef)) {
+    enrich_data_temp <- enrich_data_metab %>%
+      dplyr::filter(
+        model_term == tm,
+        sign_coef == sc,
+        padj < 0.01
+      ) %>%
+      dplyr::pull(inchi_key) %>%
+      unique()
+
+    res_temp <- docr_inchikey_enrichment(
+      input_inchi_vector = enrich_data_temp,
+      input_universe = inchi_universe,
+      go_names_filepath = go_names_filepath,
+      go_inchi_key_filepath = go_inchi_key_filepath
+    ) %>%
+      dplyr::mutate(
+        sign_coef = sc,
+        model_term = tm
+      ) %>%
+      dplyr::ungroup() %>%
+      # FDR calculation to match proteins as used in clusterProfiler::enricher()
+      dplyr::mutate(qvalue = qvalue::qvalue(Pvalue,
+        lambda = 0.05,
+        pi0.method = "bootstrap"
+      )$qvalues)
+    enrich_metab <- enrich_metab %>%
+      dplyr::bind_rows(res_temp)
+  }
+}
+```
+
+### Proteins: clusterProfiler
+
+```{r}
+# Get entrezIDs for all proteins
+go_data <- pll_lm_long %>%
+  dplyr::filter(
+    modality == "proteomics",
+    model_term %in% c("PLL_Aging", "PLL_Dying")
+  ) %>%
+  dplyr::mutate(sign_coef = sign(coef)) %>%
+  dplyr::distinct(name_use, gene_name, model_term, sign_coef, padj) %>%
+  dplyr::mutate(entrez_id = suppressMessages(
+    AnnotationDbi::mapIds(
+      org.Mm.eg.db,
+      keys = .$gene_name,
+      column = "ENTREZID",
+      keytype = "SYMBOL",
+      multiVals = "first"
+    )
+  )) %>%
+  dplyr::filter(!is.na(entrez_id))
+
+# Define all proteins detected in this dataset
+my_entrez_universe <- unique(go_data$entrez_id)
+
+# Make full TERM2GENE dataframe object for clustering
+msigdbr_TERM2GENE <- msigdbr::msigdbr(
+  species = "mouse",
+  db_species = "MM",
+  collection = "M5"
+) %>%
+  dplyr::select(gs_name, ncbi_gene)
+
+# Initialized dataframe
+enrich_proteins <- data.frame()
+
+# RUN GO ENRICHMENT, for
+# (1) each sign (up or down regulated)
+# (2) each term, aging or dying
+for (i in unique(go_data$sign_coef)) {
+  for (j in unique(go_data$model_term)) {
+    # Extract significant entrez IDs for group
+    entrez_ids_sig <- go_data %>%
+      dplyr::filter(
+        model_term == j,
+        sign_coef == i,
+        padj < 0.01
+      ) %>%
+      dplyr::arrange(desc(abs(sign_coef))) %>%
+      dplyr::pull(entrez_id)
+
+    # Run cluster enrichment
+    test <- clusterProfiler::enricher(
+      gene = entrez_ids_sig,
+      universe = my_entrez_universe,
+      TERM2GENE = msigdbr_TERM2GENE
+    )
+
+    # Clean results object
+    export_df <- test@result %>%
+      dplyr::mutate(
+        sign_coef = i,
+        model_term = j,
+        Overlap = Count,
+        All = length(my_entrez_universe),
+        Input = length(entrez_ids_sig),
+        GO_term = Description,
+        Process = as.integer(str_split(BgRatio, pattern = "/", simplify = TRUE)[, 1])
+      ) %>%
+      dplyr::select(GO_term, Process, Overlap, All, Input,
+        `Fold Enrichment` = FoldEnrichment,
+        Pvalue = pvalue,
+        qvalue,
+        sign_coef,
+        model_term,
+        geneID
+      )
+
+    # Bind to all cluster data
+    enrich_proteins <- enrich_proteins %>%
+      dplyr::bind_rows(export_df)
+  }
+}
+```
+
+### Plot Pathways
+ 
+#### Jaccard de-duplication function
+
+```{r}
+# Operates on a df with columns: GO_term, sign_coef, Overlap_Compounds, FE_use
+# Splits compound string by `sep`, filters greedily within each sign_coef group
+# keeping the term with highest |FE| when two terms exceed jaccard_threshold
+jaccard_dedup <- function(df, compound_col, sep, threshold = 0.5) {
+  jaccard <- function(a, b) length(intersect(a, b)) / length(union(a, b))
+
+  df %>%
+    dplyr::group_by(sign_coef) %>%
+    # Within each sign group, sort by |FE| descending so we keep strongest terms
+    dplyr::arrange(dplyr::desc(abs(FE_use)), .by_group = TRUE) %>%
+    dplyr::group_modify(~ {
+      terms <- .x$GO_term
+      compounds <- purrr::map(
+        .x[[compound_col]],
+        ~ stringr::str_split(.x, sep)[[1]]
+      )
+      names(compounds) <- terms
+
+      kept <- c()
+      for (term in terms) {
+        if (length(kept) == 0) {
+          kept <- c(kept, term)
+          next
+        }
+        sims <- purrr::map_dbl(kept, ~ jaccard(compounds[[term]], compounds[[.x]]))
+        if (all(sims < threshold)) kept <- c(kept, term)
+      }
+      dplyr::filter(.x, GO_term %in% kept)
+    }) %>%
+    dplyr::ungroup() %>%
+    dplyr::distinct(GO_term, sign_coef)
+}
+```
+
+## G:  Bar Plot 
+
+```{r, fig.width = 3, fig.height = 5.5}
+jaccard_threshold <- 0.5
+qvalue_threshold <- 0.1
+
+# make colors
+bar_colors <- c(
+  "Enriched Aging"  = "#FF918A",
+  "Enriched Dying"  = "#D63B24",
+  "Depleted Aging"  = "#7E88BA",
+  "Depleted Dying"  = "#21336B"
+)
+
+# clean proteins
+enrich_proteins_clean <- enrich_proteins %>%
+  dplyr::filter(grepl("^GOBP_", GO_term)) %>%
+  dplyr::mutate(
+    omics = "P",
+    Overlap_Compounds = purrr::map_chr(
+      stringr::str_split(geneID, "/"),
+      ~ stringr::str_c(sort(.x), collapse = "/")
+    )
+  )
+
+# clean metabolites and add proteins
+enrich_all_clean <- enrich_metab %>%
+  dplyr::mutate(
+    omics = "M",
+    Overlap_Compounds = purrr::map_chr(
+      stringr::str_split(Overlap_Compounds, "\\|"),
+      ~ stringr::str_c(sort(.x), collapse = "/")
+    )
+  ) %>%
+  dplyr::bind_rows(enrich_proteins_clean) %>%
+  dplyr::mutate(
+    type = ifelse(grepl("Aging", model_term), "Aging", "Dying"),
+    FE_use = `Fold Enrichment` * sign_coef
+  )
+
+# get go terms to plot
+go_term_use_all <- enrich_all_clean %>%
+  dplyr::filter(qvalue < qvalue_threshold, Overlap > 3) %>%
+  dplyr::group_by(Overlap_Compounds) %>%
+  dplyr::arrange(Process) %>%
+  dplyr::slice_head(n = 1) %>%
+  dplyr::ungroup() %>%
+  jaccard_dedup(compound_col = "Overlap_Compounds", sep = "/", threshold = jaccard_threshold)
+
+combined <- enrich_all_clean %>%
+  dplyr::inner_join(go_term_use_all, by = c("GO_term", "sign_coef")) %>%
+  dplyr::mutate(
+    GO_term_label = dplyr::case_when(
+      omics == "M" ~ stringr::str_replace(GO_name, "^(.)(?![[:upper:]])", stringr::str_to_upper),
+      omics == "P" ~ GO_term %>% gsub("^GOBP_", "", .) %>% gsub("_", " ", .) %>% stringr::str_to_sentence(),
+      TRUE ~ GO_term
+    )
+  ) %>%
+  dplyr::filter(qvalue < qvalue_threshold) %>%
+  dplyr::mutate(
+    y_label = paste0(GO_term_label, " (", omics, ")"),
+    group = dplyr::case_when(
+      sign_coef == 1 & type == "Aging" ~ "Enriched Aging",
+      sign_coef == 1 & type == "Dying" ~ "Enriched Dying",
+      sign_coef == -1 & type == "Aging" ~ "Depleted Aging",
+      sign_coef == -1 & type == "Dying" ~ "Depleted Dying"
+    )
+  )
+
+# make facets
+sig_facet <- combined %>%
+  dplyr::distinct(y_label, sign_coef, type) %>%
+  dplyr::group_by(y_label, sign_coef) %>%
+  dplyr::summarise(
+    has_aging = any(type == "Aging"),
+    has_dying = any(type == "Dying"),
+    .groups   = "drop"
+  ) %>%
+  dplyr::mutate(
+    sig_group = dplyr::case_when(
+      has_aging & has_dying ~ "Both",
+      has_dying ~ "Dying only",
+      has_aging ~ "Aging only"
+    ),
+    sig_group = factor(sig_group, levels = c("Both", "Aging only", "Dying only"))
+  ) %>%
+  dplyr::select(y_label, sign_coef, sig_group)
+
+combined_plot <- combined %>%
+  dplyr::left_join(sig_facet, by = c("y_label", "sign_coef"))
+
+# make plot
+label_overrides <- c(
+  "Humoral immune response mediated by circulating immunoglobulin (P)" = "Humoral immune response mediated by Ig (P)",
+  "tRNA aminoacylation for mitochondrial protein translation (M)" = "Mitochondrial tRNA aminoacylation (M)",
+  "Negative regulation of protein containing complex assembly (P)" = "Neg. regulation of protein complex assembly (P)",
+  "Proteasome mediated ubiquitin dependent protein catabolic process (P)" = "UPS-mediated protein degradation (P)",
+  "Nucleobase-containing small molecule biosynthetic process (M)" = "Nucleobase-containing biosynthesis (M)",
+  "Positive regulation of protein containing complex assembly (P)" = "Pos. regulation of protein complex assembly (P)",
+  "Negative regulation of intracellular signal transduction (P)" = "Neg. regulation of intracellular signal transduction (P)"
+)
+
+plot_data <- combined_plot %>%
+  dplyr::mutate(
+    group = factor(group, levels = names(bar_colors))
+  ) %>%
+  dplyr::mutate(y_label = dplyr::recode(y_label, !!!label_overrides))
+
+y_order <- plot_data %>%
+  dplyr::group_by(y_label, sig_group, sign_coef) %>%
+  dplyr::summarise(
+    dying_fe = suppressWarnings(max(abs(FE_use[type == "Dying"]), na.rm = TRUE)),
+    aging_fe = suppressWarnings(max(abs(FE_use[type == "Aging"]), na.rm = TRUE)),
+    .groups  = "drop"
+  ) %>%
+  dplyr::mutate(
+    dying_fe = ifelse(is.infinite(dying_fe), 0, dying_fe),
+    aging_fe = ifelse(is.infinite(aging_fe), 0, aging_fe)
+  ) %>%
+  dplyr::arrange(sig_group, desc(sign_coef), dying_fe, aging_fe) %>%
+  dplyr::pull(y_label) %>%
+  unique()
+
+plot_data <- plot_data %>%
+  dplyr::mutate(y_label = factor(y_label, levels = y_order))
+
+g_combined <- ggplot(plot_data) +
+  docr_ggplot_theme(
+    x_text_angle    = 0,
+    x_text_hjust    = 0.5,
+    legend_position = "none"
+  ) +
+  geom_col(
+    data = ~ dplyr::filter(., sig_group == "Both"),
+    aes(y = y_label, x = FE_use, fill = group, color = group),
+    position = position_dodge2(preserve = "single", padding = 0.1),
+    width = 0.7,
+    linewidth = 0.3
+  ) +
+  geom_col(
+    data = ~ dplyr::filter(., sig_group != "Both"),
+    aes(y = y_label, x = FE_use, fill = group, color = group),
+    position = position_dodge2(preserve = "single", padding = 0.1),
+    width = 0.7,
+    linewidth = 0.3
+  ) +
+  scale_fill_manual(name = "", values = bar_colors, drop = FALSE) +
+  scale_color_manual(name = "", values = bar_colors, drop = FALSE) +
+  scale_y_discrete(position = "right") +
+  docr_ggplot_line(x = 0) +
+  facet_grid(
+    rows   = vars(sig_group),
+    scales = "free_y",
+    space  = "free_y",
+    switch = "y"
+  ) +
+  labs(title = "GO Enrichment", y = "", x = expression("Fold Enrichment")) +
+  theme(
+    axis.text.y = element_text(size = 5),
+    axis.text.y.right = element_text(size = 5),
+    strip.text.y.left = element_text(
+      size = 6, hjust = 0.5, angle = 90,
+      margin = margin(2, 2, 2, 2)
+    ),
+    plot.title = element_text(margin = margin(b = 2)),
+    panel.spacing = unit(2, "pt")
+  ) +
+  ggplot2::guides(
+    fill  = guide_legend(nrow = 2, byrow = TRUE),
+    color = guide_legend(nrow = 2, byrow = TRUE)
+  )
+
+print(g_combined)
+
+# docr_ggsave(g_combined, "Fig_3G_GO_All", plot_height = 5.3, 3, local_filepath = local_filepath)
+```
+
+# Supplement
+
+## Table S5
+
+```{r}
+conv_key <- inchii_key %>%
+  dplyr::mutate(
+    inchi_key = gsub("\\xca", "E", inchi_key, useBytes = TRUE),
+    inchi_key = sub("-.*", "", inchi_key)
+  ) %>%
+  dplyr::left_join(name_conversion_use, by = "feature_id") %>%
+  dplyr::select(name_use, go_key = inchi_key) %>%
+  dplyr::bind_rows(go_data %>% dplyr::distinct(name_use, go_key = entrez_id))
+
+table_s7 <- plot_data %>%
+  dplyr::mutate(
+    Molecules = sapply(strsplit(Overlap_Compounds, "/"), function(keys) {
+      paste(conv_key$name_use[match(keys, conv_key$go_key)], collapse = ", ")
+    })
+  ) %>%
+  dplyr::select(GO_term,
+    GO_name = y_label, Overlap, Process, Input, All,
+    Fold_Enrichment = `Fold Enrichment`, FE_use, Group = group,
+    Facet = sig_group, Pvalue, FDR = qvalue, Molecules
+  ) %>%
+  dplyr::arrange(Facet, FE_use)
+
+# write.csv(table_s5,
+#           file.path(local_filepath, "supplemental_tables_final", "Table_S5_GO_Enrichment.csv"),
+#           row.names = FALSE)
+```
+
+## 2B: Cluster Data
+
+```{r, fig.width = 5.9, fig.height = 2.3}
+# Potential to overlap biological information on this
+count_data <- pll_gam_summaries %>%
+  dplyr::filter(significant) %>%
+  dplyr::group_by(cluster) %>%
+  dplyr::summarise(count = n(), .groups = "drop") %>%
+  dplyr::mutate(
+    label_print = paste0("n = ", count),
+    cluster = as.factor(cluster)
+  )
+
+g <- ggplot2::ggplot(pll_gam_summaries %>% dplyr::filter(significant)) +
+  ggplot2::geom_bar(aes(
+    y = stringr::str_to_title(modality),
+    fill = cluster
+  )) +
+  ggplot2::labs(
+    title = "Number of features per cluster by modality",
+    x = "Number of Features",
+    y = ""
+  ) +
+  ggplot2::geom_text(
+    data = count_data,
+    mapping = aes(x = Inf, y = -Inf, label = label_print),
+    color = "black",
+    hjust = 1.2,
+    vjust = -1,
+    size = 2.2
+  ) +
+  docr_ggplot_theme(
+    x_text_angle = 0,
+    x_text_hjust = 0.5
+  ) +
+  ggplot2::facet_wrap(~cluster, ncol = 5)
+
+print(g)
+# docr_ggsave(plot_object = g,
+#             "Fig_S4_ModalityN",
+#             plot_width = 5.64,
+#             plot_height = 2.3,
+#             local_filepath = local_filepath)
+```
+
