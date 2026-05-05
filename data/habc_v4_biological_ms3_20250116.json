@@ -1,0 +1,16 @@
+{
+  "searchVersion": ["HABC v3 biological - ms3"],
+  "ms1IsFindPrecursorIon": [false],
+  "ms1PpmTolr": [5],
+  "ms1ScanFilter": ["SIM"],
+  "ms3IsMs3Search": [true],
+  "ms3MinNumMatches": [1],
+  "ms3MinNumMs3MzMatches": [1],
+  "ms3AnalysisMs1PrecursorPpmTolr": [20],
+  "ms3PrecursorPpmTolr": [20],
+  "consensusIntensityAgglomerationType": ["MEDIAN"],
+  "ms3MinIntensity": [100],
+  "ms1IsRequireMonoisotopic": [false],
+  "isPreferSmallestScanMassWindow": [false],
+  "ms3MinFractionScans": [0.7]
+}

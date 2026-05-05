@@ -1,0 +1,172 @@
+{
+  "searchVersion": ["HABC v4 biological - pos"],
+  "consensusIntensityAgglomerationType": ["MEDIAN"],
+  "consensusMinFractionMs2Scans": [0.6],
+  "consensusMs1PpmTolr": [5],
+  "isReduceBySimpleParsimony": [false],
+  "spectralCompositionAlgorithm": ["AUTO_SUMMARIZED_IDENTICAL_FRAGMENTS"],
+  "ms1PpmTolr": [3],
+  "ms1ScanFilter": ["SIM"],
+  "ms1IsFindPrecursorIon": [true],
+  "ms1IsRequireMonoisotopic": [false],
+  "ms2PpmTolr": [10],
+  "ms2MinNumMatches": [0],
+  "ms2MinNumDiagnosticMatches": [0],
+  "ms1IsMPlusOneValidPrecursor": [false],
+  "normClassMap": [
+    {
+      "lipidClass": "Alkyl_PC",
+      "normLipidClass": "Alkenyl_PC"
+    },
+    {
+      "lipidClass": "Alkyl_PE",
+      "normLipidClass": "Alkenyl_PE"
+    }
+  ],
+  "ms1IonList": [
+    {
+      "lipidClass": "Alkyl_PE",
+      "adductName": "[M+H]+",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": false
+    },
+    {
+      "lipidClass": "Alkenyl_PC",
+      "adductName": "[M+H]+",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": false
+    },
+    {
+      "lipidClass": "Alkenyl_PC",
+      "adductName": "[M+Na]+",
+      "ms1IsMajorIon": false,
+      "ms1IsPreferredQuantIon": false
+    },
+    {
+      "lipidClass": "Alkenyl_PE",
+      "adductName": "[M+H]+",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": false
+    },
+    {
+      "lipidClass": "Carn",
+      "adductName": "[M+H]+",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": true
+    },
+    {
+      "lipidClass": "CE",
+      "adductName": "[M+NH4]+",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": true
+    },
+    {
+      "lipidClass": "Ceramide",
+      "adductName": "[M+H]+",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": false
+    },
+    {
+      "lipidClass": "Cholesterol-H2O",
+      "adductName": "[M+H]+",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": true
+    },
+    {
+      "lipidClass": "DG",
+      "adductName": "[M+NH4]+",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": true
+    },
+    {
+      "lipidClass": "HexCer",
+      "adductName": "[M+H]+",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": false
+    },
+    {
+      "lipidClass": "LPC",
+      "adductName": "[M+H]+",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": false
+    },
+    {
+      "lipidClass": "LPE",
+      "adductName": "[M+H]+",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": false
+    },
+    {
+      "lipidClass": "MG",
+      "adductName": "[M+H]+",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": true
+    },
+    {
+      "lipidClass": "MG",
+      "adductName": "[M+Na]+",
+      "ms1IsMajorIon": false,
+      "ms1IsPreferredQuantIon": false
+    },
+    {
+      "lipidClass": "MG",
+      "adductName": "[M+NH4]+",
+      "ms1IsMajorIon": false,
+      "ms1IsPreferredQuantIon": false
+    },
+    {
+      "lipidClass": "PC",
+      "adductName": "[M+H]+",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": false
+    },
+    {
+      "lipidClass": "PC",
+      "adductName": "[M+Na]+",
+      "ms1IsMajorIon": false,
+      "ms1IsPreferredQuantIon": false
+    },
+    {
+      "lipidClass": "PE",
+      "adductName": "[M+H]+",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": false
+    },
+    {
+      "lipidClass": "PG",
+      "adductName": "[M+NH4]+",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": false
+    },
+    {
+      "lipidClass": "PG",
+      "adductName": "[M+Na]+",
+      "ms1IsMajorIon": false,
+      "ms1IsPreferredQuantIon": false
+    },
+    {
+      "lipidClass": "PI",
+      "adductName": "[M+NH4]+",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": false
+    },
+    {
+      "lipidClass": "PS",
+      "adductName": "[M+H]+",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": false
+    },
+    {
+      "lipidClass": "SM",
+      "adductName": "[M+H]+",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": true
+    },
+    {
+      "lipidClass": "SM",
+      "adductName": "[M+Na]+",
+      "ms1IsMajorIon": false,
+      "ms1IsPreferredQuantIon": false
+    }
+  ]
+}

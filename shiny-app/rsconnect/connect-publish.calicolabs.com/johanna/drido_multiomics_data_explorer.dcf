@@ -1,0 +1,12 @@
+name: drido_multiomics_data_explorer
+title: DRiDO Multiomics Data Explorer
+username: johanna
+account: johanna
+server: connect-publish.calicolabs.com
+hostUrl: https://connect-publish.calicolabs.com/__api__
+appId: 1108
+bundleId: 4144
+url: https://connect-publish.calicolabs.com/content/66ef6043-5d21-49f9-a92b-72134a5b2312/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
