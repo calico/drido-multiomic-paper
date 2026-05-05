@@ -1,0 +1,684 @@
+{
+  "searchVersion": ["HABC v4 bulkpool"],
+  "bulkpoolGoodMinFracIntensity": [0.5],
+  "bulkpoolGoodMinFracDetected": [0.5],
+  "bulkpoolGoodMs3MinTotalMatches": [4],
+  "bulkpoolGoodMs3MinIntensitySum": [1000],
+  "bulkpoolMinGoodPerPlate": [2],
+  "bulkpoolMajorAdductMinFraction": [0.85],
+  "bulkpoolMinorAdductMinFraction": [0.14],
+  "bulkpoolM1MinFraction": [0.1],
+  "bulkpoolMinPosNegCtlRatio": [2],
+  "bulkpoolCtlRatioMinPlateFraction": [0.8],
+  "whitelistCompoundIonModePolicy": ["EITHER_MODE"],
+  "ms1IonList": [
+    {
+      "lipidClass": "Alkyl_PE",
+      "adductName": "[M+H]+",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": false
+    },
+    {
+      "lipidClass": "Alkenyl_PC",
+      "adductName": "[M+H]+",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": false
+    },
+    {
+      "lipidClass": "Alkenyl_PC",
+      "adductName": "[M+Na]+",
+      "ms1IsMajorIon": false,
+      "ms1IsPreferredQuantIon": false
+    },
+    {
+      "lipidClass": "Alkenyl_PE",
+      "adductName": "[M+H]+",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": false
+    },
+    {
+      "lipidClass": "Carn",
+      "adductName": "[M+H]+",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": true
+    },
+    {
+      "lipidClass": "CE",
+      "adductName": "[M+NH4]+",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": true
+    },
+    {
+      "lipidClass": "Ceramide",
+      "adductName": "[M+H]+",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": false
+    },
+    {
+      "lipidClass": "Cholesterol-H2O",
+      "adductName": "[M+H]+",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": true
+    },
+    {
+      "lipidClass": "DG",
+      "adductName": "[M+NH4]+",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": true
+    },
+    {
+      "lipidClass": "HexCer",
+      "adductName": "[M+H]+",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": false
+    },
+    {
+      "lipidClass": "LPC",
+      "adductName": "[M+H]+",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": false
+    },
+    {
+      "lipidClass": "LPE",
+      "adductName": "[M+H]+",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": false
+    },
+    {
+      "lipidClass": "MG",
+      "adductName": "[M+H]+",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": true
+    },
+    {
+      "lipidClass": "MG",
+      "adductName": "[M+Na]+",
+      "ms1IsMajorIon": false,
+      "ms1IsPreferredQuantIon": false
+    },
+    {
+      "lipidClass": "MG",
+      "adductName": "[M+NH4]+",
+      "ms1IsMajorIon": false,
+      "ms1IsPreferredQuantIon": false
+    },
+    {
+      "lipidClass": "PC",
+      "adductName": "[M+H]+",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": false
+    },
+    {
+      "lipidClass": "PC",
+      "adductName": "[M+Na]+",
+      "ms1IsMajorIon": false,
+      "ms1IsPreferredQuantIon": false
+    },
+    {
+      "lipidClass": "PE",
+      "adductName": "[M+H]+",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": false
+    },
+    {
+      "lipidClass": "PG",
+      "adductName": "[M+NH4]+",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": false
+    },
+    {
+      "lipidClass": "PG",
+      "adductName": "[M+Na]+",
+      "ms1IsMajorIon": false,
+      "ms1IsPreferredQuantIon": false
+    },
+    {
+      "lipidClass": "PI",
+      "adductName": "[M+NH4]+",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": false
+    },
+    {
+      "lipidClass": "PS",
+      "adductName": "[M+H]+",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": false
+    },
+    {
+      "lipidClass": "SM",
+      "adductName": "[M+H]+",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": true
+    },
+    {
+      "lipidClass": "SM",
+      "adductName": "[M+Na]+",
+      "ms1IsMajorIon": false,
+      "ms1IsPreferredQuantIon": false
+    },
+    {
+      "lipidClass": "Alkyl_PC",
+      "adductName": "[M+AcOH-H]-",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": true
+    },
+    {
+      "lipidClass": "Alkyl_PE",
+      "adductName": "[M-H]-",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": true
+    },
+    {
+      "lipidClass": "Alkenyl_PC",
+      "adductName": "[M+AcOH-H]-",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": true
+    },
+    {
+      "lipidClass": "Alkenyl_PE",
+      "adductName": "[M-H]-",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": true
+    },
+    {
+      "lipidClass": "Ceramide",
+      "adductName": "[M+AcOH-H]-",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": true
+    },
+    {
+      "lipidClass": "FA",
+      "adductName": "[M-H]-",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": true
+    },
+    {
+      "lipidClass": "HexCer",
+      "adductName": "[M+AcOH-H]-",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": true
+    },
+    {
+      "lipidClass": "LPC",
+      "adductName": "[M+AcOH-H]-",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": true
+    },
+    {
+      "lipidClass": "LPE",
+      "adductName": "[M-H]-",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": true
+    },
+    {
+      "lipidClass": "PA",
+      "adductName": "[M-H]-",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": true
+    },
+    {
+      "lipidClass": "PC",
+      "adductName": "[M+AcOH-H]-",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": true
+    },
+    {
+      "lipidClass": "PC",
+      "adductName": "[M+Cl]-",
+      "ms1IsMajorIon": false,
+      "ms1IsPreferredQuantIon": false
+    },
+    {
+      "lipidClass": "PE",
+      "adductName": "[M-H]-",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": true
+    },
+    {
+      "lipidClass": "PG",
+      "adductName": "[M-H]-",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": true
+    },
+    {
+      "lipidClass": "PI",
+      "adductName": "[M-H]-",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": true
+    },
+    {
+      "lipidClass": "PS",
+      "adductName": "[M-H]-",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": true
+    },
+    {
+      "lipidClass": "SM",
+      "adductName": "[M+AcOH-H]-",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": false
+    }
+  ],
+  "ms3IonList": [
+    {
+      "lipidClass": "TG",
+      "adductName": "[M+NH4]+",
+      "ms1IsMajorIon": true,
+      "ms1IsPreferredQuantIon": true  
+    }
+  ],
+  "ms1IsRequireMPlusOneByLipidClassAndAdduct": [
+    {
+      "lipidClass": "Alkyl_PE",
+      "adductName": "[M+H]+",
+      "ms1IsRequireMPlusOne": false
+    },
+    {
+      "lipidClass": "Alkenyl_PC",
+      "adductName": "[M+H]+",
+      "ms1IsRequireMPlusOne": false
+    },
+    {
+      "lipidClass": "Alkenyl_PC",
+      "adductName": "[M+Na]+",
+      "ms1IsRequireMPlusOne": false
+    },
+    {
+      "lipidClass": "Alkenyl_PE",
+      "adductName": "[M+H]+",
+      "ms1IsRequireMPlusOne": false
+    },
+    {
+      "lipidClass": "Carn",
+      "adductName": "[M+H]+",
+      "ms1IsRequireMPlusOne": false
+    },
+    {
+      "lipidClass": "CE",
+      "adductName": "[M+NH4]+",
+      "ms1IsRequireMPlusOne": false
+    },
+    {
+      "lipidClass": "Ceramide",
+      "adductName": "[M+H]+",
+      "ms1IsRequireMPlusOne": false
+    },
+    {
+      "lipidClass": "Cholesterol-H2O",
+      "adductName": "[M+H]+",
+      "ms1IsRequireMPlusOne": true
+    },
+    {
+      "lipidClass": "DG",
+      "adductName": "[M+NH4]+",
+      "ms1IsRequireMPlusOne": false
+    },
+    {
+      "lipidClass": "HexCer",
+      "adductName": "[M+H]+",
+      "ms1IsRequireMPlusOne": false
+    },
+    {
+      "lipidClass": "LPC",
+      "adductName": "[M+H]+",
+      "ms1IsRequireMPlusOne": false
+    },
+    {
+      "lipidClass": "LPE",
+      "adductName": "[M+H]+",
+      "ms1IsRequireMPlusOne": false
+    },
+    {
+      "lipidClass": "MG",
+      "adductName": "[M+H]+",
+      "ms1IsRequireMPlusOne": false
+    },
+    {
+      "lipidClass": "MG",
+      "adductName": "[M+Na]+",
+      "ms1IsRequireMPlusOne": false
+    },
+    {
+      "lipidClass": "MG",
+      "adductName": "[M+NH4]+",
+      "ms1IsRequireMPlusOne": false
+    },
+    {
+      "lipidClass": "PC",
+      "adductName": "[M+H]+",
+      "ms1IsRequireMPlusOne": false
+    },
+    {
+      "lipidClass": "PC",
+      "adductName": "[M+Na]+",
+      "ms1IsRequireMPlusOne": false
+    },
+    {
+      "lipidClass": "PE",
+      "adductName": "[M+H]+",
+      "ms1IsRequireMPlusOne": false
+    },
+    {
+      "lipidClass": "PG",
+      "adductName": "[M+NH4]+",
+      "ms1IsRequireMPlusOne": false
+    },
+    {
+      "lipidClass": "PG",
+      "adductName": "[M+Na]+",
+      "ms1IsRequireMPlusOne": false
+    },
+    {
+      "lipidClass": "PI",
+      "adductName": "[M+NH4]+",
+      "ms1IsRequireMPlusOne": false
+    },
+    {
+      "lipidClass": "PS",
+      "adductName": "[M+H]+",
+      "ms1IsRequireMPlusOne": false
+    },
+    {
+      "lipidClass": "SM",
+      "adductName": "[M+H]+",
+      "ms1IsRequireMPlusOne": false
+    },
+    {
+      "lipidClass": "SM",
+      "adductName": "[M+Na]+",
+      "ms1IsRequireMPlusOne": false
+    },
+    {
+      "lipidClass": "Alkyl_PC",
+      "adductName": "[M+AcOH-H]-",
+      "ms1IsRequireMPlusOne": false
+    },
+    {
+      "lipidClass": "Alkyl_PE",
+      "adductName": "[M-H]-",
+      "ms1IsRequireMPlusOne": false
+    },
+    {
+      "lipidClass": "Alkenyl_PC",
+      "adductName": "[M+AcOH-H]-",
+      "ms1IsRequireMPlusOne": false
+    },
+    {
+      "lipidClass": "Alkenyl_PE",
+      "adductName": "[M-H]-",
+      "ms1IsRequireMPlusOne": false
+    },
+    {
+      "lipidClass": "Ceramide",
+      "adductName": "[M+AcOH-H]-",
+      "ms1IsRequireMPlusOne": false
+    },
+    {
+      "lipidClass": "FA",
+      "adductName": "[M-H]-",
+      "ms1IsRequireMPlusOne": true
+    },
+    {
+      "lipidClass": "HexCer",
+      "adductName": "[M+AcOH-H]-",
+      "ms1IsRequireMPlusOne": false
+    },
+    {
+      "lipidClass": "LPC",
+      "adductName": "[M+AcOH-H]-",
+      "ms1IsRequireMPlusOne": false
+    },
+    {
+      "lipidClass": "LPE",
+      "adductName": "[M-H]-",
+      "ms1IsRequireMPlusOne": false
+    },
+    {
+      "lipidClass": "PA",
+      "adductName": "[M-H]-",
+      "ms1IsRequireMPlusOne": false
+    },
+    {
+      "lipidClass": "PC",
+      "adductName": "[M+AcOH-H]-",
+      "ms1IsRequireMPlusOne": false
+    },
+    {
+      "lipidClass": "PC",
+      "adductName": "[M+Cl]-",
+      "ms1IsRequireMPlusOne": false
+    },
+    {
+      "lipidClass": "PE",
+      "adductName": "[M-H]-",
+      "ms1IsRequireMPlusOne": false
+    },
+    {
+      "lipidClass": "PG",
+      "adductName": "[M-H]-",
+      "ms1IsRequireMPlusOne": false
+    },
+    {
+      "lipidClass": "PI",
+      "adductName": "[M-H]-",
+      "ms1IsRequireMPlusOne": false
+    },
+    {
+      "lipidClass": "PS",
+      "adductName": "[M-H]-",
+      "ms1IsRequireMPlusOne": false
+    },
+    {
+      "lipidClass": "SM",
+      "adductName": "[M+AcOH-H]-",
+      "ms1IsRequireMPlusOne": false
+    }
+  ],
+  "ms1IsRequireMPlusTwoByLipidClassAndAdduct": [
+    {
+      "lipidClass": "Alkyl_PE",
+      "adductName": "[M+H]+",
+      "ms1IsRequireMPlusTwo": false
+    },
+    {
+      "lipidClass": "Alkenyl_PC",
+      "adductName": "[M+H]+",
+      "ms1IsRequireMPlusTwo": false
+    },
+    {
+      "lipidClass": "Alkenyl_PC",
+      "adductName": "[M+Na]+",
+      "ms1IsRequireMPlusTwo": false
+    },
+    {
+      "lipidClass": "Alkenyl_PE",
+      "adductName": "[M+H]+",
+      "ms1IsRequireMPlusTwo": false
+    },
+    {
+      "lipidClass": "Carn",
+      "adductName": "[M+H]+",
+      "ms1IsRequireMPlusTwo": false
+    },
+    {
+      "lipidClass": "CE",
+      "adductName": "[M+NH4]+",
+      "ms1IsRequireMPlusTwo": false
+    },
+    {
+      "lipidClass": "Ceramide",
+      "adductName": "[M+H]+",
+      "ms1IsRequireMPlusTwo": false
+    },
+    {
+      "lipidClass": "Cholesterol-H2O",
+      "adductName": "[M+H]+",
+      "ms1IsRequireMPlusTwo": true
+    },
+    {
+      "lipidClass": "DG",
+      "adductName": "[M+NH4]+",
+      "ms1IsRequireMPlusTwo": false
+    },
+    {
+      "lipidClass": "HexCer",
+      "adductName": "[M+H]+",
+      "ms1IsRequireMPlusTwo": false
+    },
+    {
+      "lipidClass": "LPC",
+      "adductName": "[M+H]+",
+      "ms1IsRequireMPlusTwo": false
+    },
+    {
+      "lipidClass": "LPE",
+      "adductName": "[M+H]+",
+      "ms1IsRequireMPlusTwo": false
+    },
+    {
+      "lipidClass": "MG",
+      "adductName": "[M+H]+",
+      "ms1IsRequireMPlusTwo": false
+    },
+    {
+      "lipidClass": "MG",
+      "adductName": "[M+Na]+",
+      "ms1IsRequireMPlusTwo": false
+    },
+    {
+      "lipidClass": "MG",
+      "adductName": "[M+NH4]+",
+      "ms1IsRequireMPlusTwo": false
+    },
+    {
+      "lipidClass": "PC",
+      "adductName": "[M+H]+",
+      "ms1IsRequireMPlusTwo": false
+    },
+    {
+      "lipidClass": "PC",
+      "adductName": "[M+Na]+",
+      "ms1IsRequireMPlusTwo": false
+    },
+    {
+      "lipidClass": "PE",
+      "adductName": "[M+H]+",
+      "ms1IsRequireMPlusTwo": false
+    },
+    {
+      "lipidClass": "PG",
+      "adductName": "[M+NH4]+",
+      "ms1IsRequireMPlusTwo": false
+    },
+    {
+      "lipidClass": "PG",
+      "adductName": "[M+Na]+",
+      "ms1IsRequireMPlusTwo": false
+    },
+    {
+      "lipidClass": "PI",
+      "adductName": "[M+NH4]+",
+      "ms1IsRequireMPlusTwo": false
+    },
+    {
+      "lipidClass": "PS",
+      "adductName": "[M+H]+",
+      "ms1IsRequireMPlusTwo": false
+    },
+    {
+      "lipidClass": "SM",
+      "adductName": "[M+H]+",
+      "ms1IsRequireMPlusTwo": false
+    },
+    {
+      "lipidClass": "SM",
+      "adductName": "[M+Na]+",
+      "ms1IsRequireMPlusTwo": false
+    },
+    {
+      "lipidClass": "Alkyl_PC",
+      "adductName": "[M+AcOH-H]-",
+      "ms1IsRequireMPlusTwo": false
+    },
+    {
+      "lipidClass": "Alkyl_PE",
+      "adductName": "[M-H]-",
+      "ms1IsRequireMPlusTwo": false
+    },
+    {
+      "lipidClass": "Alkenyl_PC",
+      "adductName": "[M+AcOH-H]-",
+      "ms1IsRequireMPlusTwo": false
+    },
+    {
+      "lipidClass": "Alkenyl_PE",
+      "adductName": "[M-H]-",
+      "ms1IsRequireMPlusTwo": false
+    },
+    {
+      "lipidClass": "Ceramide",
+      "adductName": "[M+AcOH-H]-",
+      "ms1IsRequireMPlusTwo": false
+    },
+    {
+      "lipidClass": "FA",
+      "adductName": "[M-H]-",
+      "ms1IsRequireMPlusTwo": true
+    },
+    {
+      "lipidClass": "HexCer",
+      "adductName": "[M+AcOH-H]-",
+      "ms1IsRequireMPlusTwo": false
+    },
+    {
+      "lipidClass": "LPC",
+      "adductName": "[M+AcOH-H]-",
+      "ms1IsRequireMPlusTwo": false
+    },
+    {
+      "lipidClass": "LPE",
+      "adductName": "[M-H]-",
+      "ms1IsRequireMPlusTwo": false
+    },
+    {
+      "lipidClass": "PA",
+      "adductName": "[M-H]-",
+      "ms1IsRequireMPlusTwo": false
+    },
+    {
+      "lipidClass": "PC",
+      "adductName": "[M+AcOH-H]-",
+      "ms1IsRequireMPlusTwo": false
+    },
+    {
+      "lipidClass": "PC",
+      "adductName": "[M+Cl]-",
+      "ms1IsRequireMPlusTwo": false
+    },
+    {
+      "lipidClass": "PE",
+      "adductName": "[M-H]-",
+      "ms1IsRequireMPlusTwo": false
+    },
+    {
+      "lipidClass": "PG",
+      "adductName": "[M-H]-",
+      "ms1IsRequireMPlusTwo": false
+    },
+    {
+      "lipidClass": "PI",
+      "adductName": "[M-H]-",
+      "ms1IsRequireMPlusTwo": false
+    },
+    {
+      "lipidClass": "PS",
+      "adductName": "[M-H]-",
+      "ms1IsRequireMPlusTwo": false
+    },
+    {
+      "lipidClass": "SM",
+      "adductName": "[M+AcOH-H]-",
+      "ms1IsRequireMPlusTwo": false
+    }
+  ]
+}

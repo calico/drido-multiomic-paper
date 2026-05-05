@@ -1,0 +1,198 @@
+feature_id,name_use,Description
+AS_MeanLog,ABR mean voltage,The adjusted mean of log10 transformed average voltage across all trials excluding the baseline (no sound) trials. Units: log10[millivolts]
+AS_SlopeLog,ABR voltage-intensity slope,The adjusted slope of the regression `log10[average voltage] ~ sound intensity` Units: log10[millivolts]/dB
+BW_BW,Body weight,Body weight (g)
+BW_Delta,Body weight change,Change in body weight as log2(end weight/start weight)
+BW_PhenoDelta,Body weight change (phenotyping),Change in body weight over phenotying period as log2(end weight/start weight)
+CBC_CH,MCH,measured mean cellular hemoglobin content (pg) adjusted for batch
+CBC_CHCM,MCHC,measured mean cellular hemoglobin concentration (g/dL) adjusted for batch
+CBC_CHm,Mature RBC hemoglobin,mean cellular hemoglobin content of mature RBCs (pg) adjusted for batch
+CBC_CHr,Reticulocyte hemoglobin,mean cellular hemoglobin content of reticulocytes (pg) adjusted for batch
+CBC_Hct,Hematocrit %,hematocrit (%) adjusted for batch; calculation = (NumRBC * MCV) / 10
+CBC_HDWcv,Hemoglobin conc. CV,log-transformed coefficient of variation of cellular hemoglobin concentration (ln[%]) adjusted for batch; calculation = (HDWsd / CHCM) * 100%
+CBC_Hgb,Hemoglobin,measured blood hemoglobin concentration (g/dL) adjusted for batch
+CBC_MCV,MCV,log-transformed mean corpuscular (ln[RBC]) volume (fL) adjusted for batch
+CBC_MPM,Mean platelet mass,log-transformed mean platelet mass (ln[pg]) adjusted for batch and platelet clumps
+CBC_MPV,Mean platelet volume,log-transformed mean platelet volume (ln[fL]) adjusted for batch and platelet clumps
+CBC_NLR,Neutrophil-lymphocyte ratio,log-transformed ratio of neutrophils to lymphocytes adjusted for batch; calculation = NumNeut / NumLymph
+CBC_NumEos,Eosinophil count,log-transformed eosinophil count (ln[10^3/uL]) adjusted for batch and platelet clumps
+CBC_NumLymph,Lymphocyte count,log-transformed lymphocyte count (ln[10^3/uL]) adjusted for batch
+CBC_NumMono,Monocyte count,log-transformed monocyte count (ln[10^3/uL]) adjusted for batch
+CBC_NumNeut,Neutrophil count,log-transformed neutrophil count (ln[10^3/uL]) adjusted for batch
+CBC_NumPlt,Platelet count,log-transformed platelet count (ln[10^3/uL]) adjusted for batch and platelet clumps
+CBC_NumRBC,RBC count,RBC count (10^6/uL) adjusted for batch
+CBC_NumRetic,Reticulocyte count,log-transformed reticulocyte count (ln[10^6/uL]) adjusted for batch
+CBC_NumWBC,WBC count,log-transformed total WBC count (ln[10^3/uL]) adjusted for batch; calculation = NumLymph + NumNeut + NumMono + NumEos
+CBC_PDWcv,Platelet volume CV,log-transformed coefficient of variation of platelet volume (ln[%]) adjusted for batch and platelet clumps
+CBC_PercEos,% Eosinophils,logit-transformed percent eosinophils (logit[%]) adjusted for batch and platelet clumps; calculation = NumEos / NumWBC
+CBC_PercLymph,% Lymphocytes,logit-transformed percent lymphocytes (logit[%]) adjusted for batch; calculation = NumLymph / NumWBC
+CBC_PercMono,% Monocytes,logit-transformed percent monocytes (logit[%]) adjusted for batch; calculation = NumMono / NumWBC
+CBC_PercNeut,% Neutrophils,logit-transformed percent neutrophils (logit[%]) adjusted for batch; calculation = NumNeut / NumWBC
+CBC_PercRetic,% Reticulocytes,logit-transformed percent reticulocytes of total RBCs (logit[%]) adjusted for batch; calculation = (NumRetic / NumRBC) * 100
+CBC_RDWcv,RBC volume CV,log-transformed coefficient of variation of RBC volume (ln[%]) adjusted for batch
+Echo_BPM,Heart rate,Heart rate (beats per minute) adjusted for batch
+Echo_CardiacOutput,Cardiac output,Cardiac output (micro liters per minute) adjusted for batch and bodyweight
+Echo_EF,Ejection fraction,Ejection fraction (%) adjusted for batch
+Echo_FS,Fractional shortening,Fractional shortening (%) adjusted for batch
+Echo_IVSdia,IVS thickness (dia),Diastolic inter-ventricular septum thickness (mm) adjusted for batch and bodyweight
+Echo_IVSsys,IVS thickness (sys),Systolic inter-ventricular septum thickness (mm) adjusted for batch and bodyweight
+Echo_LVIDdia,LVID (dia),Diastolic left ventricular internal diameter (mm) adjusted for batch and bodyweight
+Echo_LVIDsys,LVID (sys),Systolic left ventricular internal diameter (mm) adjusted for batch and bodyweight
+Echo_LVMass,LV mass,Left ventricle mass (mg) adjusted for batch and bodyweight
+Echo_LVPWdia,LVPW thickness (dia),Diastolic left ventricular posterior wall thickness (mm) adjusted for batch and bodyweight
+Echo_LVPWsys,LVPW thickness (sys),Systolic left ventricular posterior wall thickness (mm) adjusted for batch and bodyweight
+Echo_LVVoldia,LV volume (dia),Diastolic left ventricle volume (micro liters) adjusted for batch and bodyweight
+Echo_LVVolsys,LV volume (sys),Systolic left ventricle volume (micro liters) adjusted for batch and bodyweight
+Echo_StrokeVolume,Stroke volume,Left ventricle stroke volume (micro liters) adjusted for batch and bodyweight
+FACS_B.CD11BposPercB,Memory B cells (% B),Memory B cells = logit transformed proportion of B cells that are CD11+
+FACS_B.CD62LposPercB,Naive B cells (% B),Naive B cells = logit transformed proportion of B cells that are CD62L+
+FACS_B.NKG2DposPercB,Immature B1a cells (% B),Immature B1a cells = logit transformed proportion of B cells that are NGK2D+
+FACS_B.PercLymph,B cells (% lymph),B cells = logit transformed proportion of lymphocytes that are B cells
+FACS_CD4T.CD25posPercCD4T,Act/reg CD4 T cells (% CD4),Activated or regulatory CD4 T cells = logit transformed proportion of CD4+ T cells that are CD25+
+FACS_CD4T.CD62LnegCD44negPercCD4T,DN CD4 T cells (% CD4),CD4 T cells = logit transformed proportion of CD4+ T cells that are CD62L- and CD44-
+FACS_CD4T.CD62LnegCD44posPercCD4T,Effector CD4 T cells (% CD4),Effector/activated CD4 T cells = logit transformed proportion of CD4+ T cells that are CD62L- and CD44+
+FACS_CD4T.CD62LposCD44negPercCD4T,Naive CD4 T cells (% CD4),Naive CD4 T cells = logit transformed proportion of CD4+ T cells that are CD62L+ and CD44-
+FACS_CD4T.CD62LposCD44posPercCD4T,CM CD4 T cells (% CD4),Central memory CD4 T cells = logit transformed proportion of CD4+ T cells that are CD62L+ and CD44+
+FACS_CD4T.NKG2DposPercCD4T,NKG2D+ CD4 T cells (% CD4),Activated CD4 T cells = logit transformed proportion of CD4+ T cells that are NKG2D+
+FACS_CD4T.PercT,CD4 T cells (% T),CD4 T cells = logit transformed proportion of T cells that are CD4+
+FACS_CD8T.CD62LnegCD44negPercCD8T,DN CD8 T cells (% CD8),CD8 T cells = logit transformed proportion of CD8+ T cells that are CD62L- and CD44-
+FACS_CD8T.CD62LnegCD44posPercCD8T,Effector CD8 T cells (% CD8),Effector memory/activated CD8 T cells = logit transformed proportion of CD8+ T cells that are CD62L- and CD44+
+FACS_CD8T.CD62LposCD44negPercCD8T,Naive CD8 T cells (% CD8),Naive CD8 T cells = logit transformed proportion of CD8+ T cells that are CD62L+ and CD44-
+FACS_CD8T.CD62LposCD44posPercCD8T,CM CD8 T cells (% CD8),Central memory CD8 T cells = logit transformed proportion of CD8+ T cells that are CD62L+ and CD44+
+FACS_CD8T.NKG2DposPercCD8T,NKG2D+ CD8 T cells (% CD8),Activated CD8 = logit transformed proportion of CD8+ T cells that are NKG2D+
+FACS_CD8T.PercT,CD8 T cells (% T),CD8 T cells = logit transformed proportion of T cells that are CD8+
+FACS_CLLlike.PercViable,CLL-like cells (% viable),CLL like = logit transformed proportion of viable cells that are chronic lymphocytic leukemia (CLL) like
+FACS_DNT.CD25posPercDNT,B220+ DNT (% DNT),B220+ DNT = logit transformed proportion of double negative T cells that are B220+
+FACS_DNT.CD62LnegCD44negPercDNT,DN DNT (% DNT),logit transformed proportion of double negative T cells that are CD62L- and CD44-
+FACS_DNT.CD62LnegCD44posPercDNT,Effector DNT (% DNT),logit transformed proportion of double negative T cells that are CD62L- and CD44+
+FACS_DNT.CD62LposCD44negPercDNT,Naive DNT (% DNT),logit transformed proportion of double negative T cells that are CD62L+ and CD44-
+FACS_DNT.CD62LposCD44posPercDNT,CM DNT (% DNT),logit transformed proportion of double negative T cells that are CD62L+ and CD44+
+FACS_DNT.NKG2DposPercDNT,NKG2D+ DNT (% DNT),logit transformed proportion of double negative T cells that are NKG2D+
+FACS_Eos.PercMyeloid,Eosinophils (% myeloid),Eosinophils = logit transformed proportion of myeloid cells that are eosinophils
+FACS_Lymph.PercViable,Lymphocytes (% viable),Lymphocytes = logit transformed proportion of viable cells that are lymphoid
+FACS_Mono.CD11CposCD62LposPercMono,CD11C+CD62L+ mono (% mono),logit transformed proportion of monocytes that are CD11C+ and CD62L+
+FACS_Mono.InflPercMono,Inflammatory mono (% mono),Inflammatory monocytes = logit transformed proportion of monocytes that are CD11C- and CD62L+
+FACS_Mono.PercMyeloid,Monocytes (% myeloid),Monocytes = logit transformed proportion of myeloid cells that are monocytes
+FACS_Mono.ResidPercMono,Resident mono (% mono),Resident monocytes = logit transformed proportion of monocytes that are CD11C+ and CD62L-
+FACS_Myeloid.PercViable,Myeloid cells (% viable),Myeloid cells = logit transformed proportion of viable cells that are myeloid
+FACS_Neut.CD62LposPercNeut,CD62L+ neutrophils (% neut),CD62L Neutrophils = logit transformed proportion of neutrophils that are CD62L+
+FACS_Neut.PercMyeloid,Neutrophils (% myeloid),Neutrophils = logit transformed proportion of myeloid cells that are neutrophils
+FACS_NK.B220posPercNK,B220+ NK cells (% NK),B220+ NK cells = logit transformed proportion of natural killer cells that are B220+
+FACS_NK.CD11BnegCD11CnegPercCD62LposNK,CD11B-CD11C- NK (% CD62L+ NK),NK cells = logit transformed proportion of lymphocytes that are natural killer cells
+FACS_NK.CD11BnegCD11CnegPercNK,Immature NK cells (% NK),Immature NK cells = logit transformed proportion of natural killer cells that are CD11B- and CD11C-
+FACS_NK.CD11BnegCD11CposPercCD62LposNK,CD11B-CD11C+ NK (% CD62L+ NK),NK cells = logit transformed proportion of CD62L+ natural killer cells that are CD11B- and CD11C+
+FACS_NK.CD11BnegCD11CposPercNK,CD11B-CD11C+ NK (% NK),NK cells = logit transformed proportion of natural killer cells that are CD11B- and CD11C+
+FACS_NK.CD11BposCD11CnegPercCD62LposNK,CD11B+CD11C- NK (% CD62L+ NK),NK cells = logit transformed proportion of CD62L+ natural killer cells that are CD11B- and CD11C+
+FACS_NK.CD11BposCD11CnegPercNK,Mature NK cells (% NK),Mature NK cells = logit transformed proportion of natural killer cells that are CD11B+ and CD11C-
+FACS_NK.CD11BposCD11CposPercCD62LposNK,CD11B+CD11C+ NK (% CD62L+ NK),NK cells = logit transformed proportion of CD62L+ natural killer cells that are CD11B+ and CD11C+
+FACS_NK.CD11BposCD11CposPercNK,CD11B+CD11C+ NK (% NK),NK cells = logit transformed proportion of natural killer cells that are CD11B+ and CD11C+
+FACS_NK.CD62LposPercNK,CD62L+ NK cells (% NK),CD62L+ NK cells = logit transformed proportion of natural killer cells that are CD62L+
+FACS_NK.PercLymph,NK cells (% lymph),NK cells = logit transformed proportion of lymphocytes that are natural killer cells
+FACS_NKG2DposT.CD4posPercNKG2DposT,Act CD4 T (% NKG2D+ T),Activated CD4 T cells = logit transformed proportion of NKG2D+ T cells that are CD4+
+FACS_NKG2DposT.CD8posPercNKG2DposT,Act CD8 T (% NKG2D+ T),Activated CD8 T cells = logit transformed proportion of NKG2D+ T cells that are CD8+
+FACS_NKG2DposT.DNPercNKG2DposT,Act DN T (% NKG2D+ T),Activated DN T cells = logit transformed proportion of NKG2D+ T cells that are CD4- and CD8-
+FACS_NKG2DposT.PercT,NKG2D+ T cells (% T),Activated T cells = logit transformed proportion of T cells that are NKG2D+
+FACS_T.PercLymph,T cells (% lymph),T cells = logit transformed proportion of lymphocytes that are T cells
+Frailty_Alopecia,Alopecia,"Fur loss (0, 0.5, 1)"
+Frailty_BodyCondition,Body condition,"Lacking flesh around hips (0, 0.5, 1)"
+Frailty_BreathingRateDepth,Breathing abnormality,"Gasping or abnormal rate/depth of breathing (0, 0.5, 1)"
+Frailty_Cataracts,Cataracts,Presence of cataracts
+Frailty_CoatCondition,Coat condition,"Poor grooming (0, 0.5, 1)"
+Frailty_CornealOpacity,Corneal opacity,"White spots or clouding of cornea (0, 0.5, 1)"
+Frailty_Dermatitis,Dermatitis,"Skin lesions (0, 0.5, 1)"
+Frailty_DistendedAbdomen,Distended abdomen,"Bulging abdomen (0, 0.5, 1)"
+Frailty_EyeDischargeOrSwelling,Eye discharge/swelling,"Eye discharge or swelling (0, 0.5, 1)"
+Frailty_Frailty,Frailty index,frailty index - sum of item scores
+Frailty_FrailtyAdj,Frailty index (adj),"The composite (mean of component indices) frailty score adjusted for batch, technician, and coat color. Possible values range from 0 to 1."
+Frailty_GaitDisorders,Gait disorder,"Abnormalities in gait (0, 0.5, 1)"
+Frailty_Kyphosis,Kyphosis,"Curvature of spine (0, 0.5, 1)"
+Frailty_LossOfFurColor,Fur depigmentation,"Loss of fur color (0, 0.5, 1)"
+Frailty_LossOfWhiskers,Whisker loss,"Reduction in number of whiskers (0, 0.5, 1)"
+Frailty_MenaceReflex,Menace reflex,"Lack of menace reflex, does not blink when object moved towards face (0, 0.5, 1)"
+Frailty_Microphthalmia,Microphthalmia,"Small or sunken eyes (0, 0.5, 1)"
+Frailty_Piloerection,Piloerection,"Piloerection (0, 0.5, 1)"
+Frailty_RightingReflex,Righting reflex,"Poor righting reflex (0, 0.5, 1)"
+Frailty_TailStiffening,Tail stiffness,"Tail stiff, does not curl around finger (0, 0.5, 1)"
+Frailty_Temperature,Body temperature,Body temperature (Celsius) adjusted for batch and coat color
+Frailty_Tremor,Tremor,"Presence of tremor (0, 0.5, 1)"
+Frailty_Tumours,Tumors,"Presence of tumors (0, 0.5, 1)"
+Frailty_VestibDisturbance,Vestibular disturbance,"Vestibular disturbance when lowered by tail towards a flat surface (0, 0.5, 1)"
+Frailty_VisionLoss,Vision loss,"Vision loss, height at which mouse reaches towards a surface when lowered (0, 0.5, 1)"
+Glu.F_Glucose,Fasted glucose,Serum glucose following 4 hour fast mg/dl
+Glu.NF_Glucose,Non-fasted glucose,Serum glucose following non-fasting mg/dl
+Grip_All,All-paw grip strength,The batch- and bodyweight-adjusted trimmed-mean of all-paw grip strength (grams)
+Grip_Fore,Forepaw grip strength,The batch- and bodyweight-adjusted trimmed mean of fore-paw grip strength (grams)
+MetCage_ChangeRQ,Daily RQ range,"Median daily range (5th to 95th percentile) of RQ, unitless"
+MetCage_EE,Energy expenditure,Energy expenditure (kcal/hr)
+MetCage_EE.dark,Energy expenditure (dark),Mean energy expenditure during dark cycle (kcal/hr)
+MetCage_EE.light,Energy expenditure (light),Mean energy expenditure during light cycle (kcal/hr)
+MetCage_ExpectedOffWheelBout.dark,Off-wheel bout duration (dark),Mean bout duration no wheel running in dark phase (min)
+MetCage_ExpectedOffWheelBout.light,Off-wheel bout duration (light),Mean bout duration no wheel running in light phase (min)
+MetCage_ExpectedWheelRunningBout.dark,Wheel running bout (dark),Mean bout duration wheel running in dark phase (min)
+MetCage_ExpectedWheelRunningBout.light,Wheel running bout (light),Mean bout duration wheel running in light phase (min)
+MetCage_Food,Food intake,Mass of food consumed during time interval (g/5 min)
+MetCage_Food.dark,Food intake (dark),Mean mass of food consumed during dark cycle (g/5 min)
+MetCage_Food.light,Food intake (light),Mean mass of food consumed during light cycle (g/5 min)
+MetCage_PedMeters,Ambulatory distance,"Sum of all directed ambulatory locomotion within the beam break system, excluding all wheel locomotion, in meters (m per 5 min)."
+MetCage_PedMeters.dark,Ambulatory distance (dark),"Sum of all directed ambulatory locomotion within the beam break system, during the dark cycle, excluding all wheel locomotion, in meters (m per 5 min)."
+MetCage_PedMeters.light,Ambulatory distance (light),"Sum of all directed ambulatory locomotion within the beam break system, during the light cycle, excluding all wheel locomotion, in meters (m per 5 min)."
+MetCage_PedSpeed,Ambulatory speed,"Mean directed ambulatory locomotion speed, in meters per second (m/s)."
+MetCage_PedSpeed.dark,Ambulatory speed (dark),Mean directed ambulatory locomotion speed during the dark cycle in meters per second (m/s).
+MetCage_PedSpeed.light,Ambulatory speed (light),Mean directed ambulatory locomotion speed during the light cycle in meters per second (m/s).
+MetCage_RQ,Respiratory quotient,"Respiratory quotient, VCO2/VO2, unit-less"
+MetCage_RQ.dark,Respiratory quotient (dark),"Mean respiratory quotient during dark cycle, VCO2/VO2, unit-less"
+MetCage_RQ.light,Respiratory quotient (light),"Mean respiratory quotient during light cycle, VCO2/VO2, unit-less"
+MetCage_TimeFasting,Fasting duration,Duration of fasting (%/100)
+MetCage_VCO2,VCO2,Rate of carbon dioxide emission (ml/min)
+MetCage_VCO2.dark,VCO2 (dark),Mean carbon dioxide emission during dark cycle (ml/min)
+MetCage_VCO2.light,VCO2 (light),Mean carbon dioxide emission during light cycle (ml/min)
+MetCage_VH2O,Water vapor loss,Water vapor loss (ml/min)
+MetCage_VH2O.dark,Water vapor loss (dark),Mean water vapor loss during dark cycle (ml/min)
+MetCage_VH2O.light,Water vapor loss (light),Mean water vapor loss during light cycle (ml/min)
+MetCage_VO2,VO2,Rate of oxygen consumption (ml/min)
+MetCage_VO2.dark,VO2 (dark),Mean oxygen consumption during dark cycle (ml/min)
+MetCage_VO2.light,VO2 (light),Mean oxygen consumption during light cycle (ml/min)
+MetCage_Water,Water intake,Mass of water consumed during time interval (g per 5 min)
+MetCage_Water.dark,Water intake (dark),Mean mass of water consumed during dark cycle (g)
+MetCage_Water.light,Water intake (light),Mean mass of water consumed during light cycle (g)
+MetCage_WheelMeters,Wheel distance,The number of meters (m per 5 min) run on the wheel
+MetCage_WheelMeters.dark,Wheel distance (dark),Distance in meters (m per 5 min) run on the wheel during dark cycle
+MetCage_WheelMeters.light,Wheel distance (light),Distance in meters (m per 5 min) run on the wheel during light cycle
+MetCage_WheelSpeed,Wheel speed,"Mean wheel speed when animal is running on wheel, in meters per second (m/s)"
+MetCage_WheelSpeed.dark,Wheel speed (dark),"Mean wheel speed when animal is running on wheel during the dark cycle, in meters per second (m/s)"
+MetCage_WheelSpeed.light,Wheel speed (light),"Mean wheel speed when animal is running on wheel during the light cycle, in meters per second (m/s)"
+MetCage_XBreak,X-axis beam breaks,Number of X-axis beam breaks (number per 5 min)
+MetCage_XBreak.dark,X-axis beam breaks (dark),Number of X-axis beam breaks (number per 5 min) during the dark cycle
+MetCage_XBreak.light,X-axis beam breaks (light),Number of X-axis beam breaks (number per 5 min) during the light cycle
+MetCage_YBreak,Y-axis beam breaks,Number of Y-axis beam breaks (number per 5 min)
+MetCage_YBreak.dark,Y-axis beam breaks (dark),Number of Y-axis beam breaks (number per 5 min) during the dark cycle
+MetCage_YBreak.light,Y-axis beam breaks (light),Number of Y-axis beam breaks (number per 5 min) during the light cycle
+MetCage_ZBreak,Z-axis beam breaks,Number of Z-axis beam breaks (number per 5 min)
+MetCage_ZBreak.dark,Z-axis beam breaks (dark),Number of Z-axis beam breaks (number per 5 min) during the dark cycle
+MetCage_ZBreak.light,Z-axis beam breaks (light),Number of Z-axis beam breaks (number per 5 min) during the light cycle
+PIXI_BMD,Bone mineral density,"Bone mineral density (~grams/cm^2), adjusted for batch."
+PIXI_LTM,Lean tissue mass,"Lean tissue mass (grams), adjusted for batch."
+PIXI_PercFat,% Fat mass,"Percent of total soft tissue mass that is fat tissue, adjusted for batch."
+PIXI_TTM,Total soft tissue mass,"Total soft tissue (excluding bone) mass (grams), adjusted for batch."
+Rotarod_ImmediateFalls,Rotarod immediate falls,"The number of trials (0, 1, 2, or 3) in which the mouse immediately fell off the rod"
+Rotarod_Mean,Rotarod latency,The mean (of three trials) latency time (seconds) adjusted for batch and bodyweight
+Rotarod_NoFalls,Rotarod no-fall trials,"The number of trials (0, 1, 2, or 3) without a fall (mouse stayed on for 300 seconds)"
+Rotarod_Slope,Rotarod learning slope,The average change in latency time per trial (seconds/trial)
+Void_logMicroN,Microvoid count,No. of microvoids (<20ml)
+Void_logMicroVol,Microvoid volume,Mean volume of microvoids (<20 ml) in ml
+Void_logPrimaryN,Primary void count,No. of primary voids (>20 ml)
+Void_logPrimaryVol,Primary void volume,Mean primary void volume (>20 ml) in ml
+Void_logTotalN,Total void count,Total no. of urine spots in 4 hr
+Void_logTotalVol,Total urine volume,Total urine volume in 4 hr (ml)
+Wheel_AvgDistDay,Wheel distance (day),base-2 log-transformed batch adjusted wheel meters per 12 hours (6am-6pm)
+Wheel_AvgDistLFC,Wheel distance night/day FC,base-2 log of the fold-change in adjusted wheel meters (night/day)
+Wheel_AvgDistNight,Wheel distance (night),base-2 log-transformed batch adjusted wheel meters per 12 hours (6pm-6am)
+Wheel_AvgSpeedDay,Wheel speed (day),base-2 log-transformed batch adjusted total dist / total time on wheel (6am-6pm)
+Wheel_AvgSpeedLFC,Wheel speed night/day FC,base-2 log of the fold-change in adjusted average speed (night/day)
+Wheel_AvgSpeedNight,Wheel speed (night),base-2 log-transformed batch adjusted total dist / total time on wheel (6pm-6am)
+Wheel_AvgTimeDay,Wheel run time (day),base-2 log-transformed batch adjusted time running on wheel in 12 hours (6am-6pm)
+Wheel_AvgTimeLFC,Wheel run time night/day FC,base-2 log of the fold-change in adjusted wheel time (night/day)
+Wheel_AvgTimeNight,Wheel run time (night),base-2 log-transformed batch adjusted time running on wheel in 12 hours (6pm-6am)
+Wheel_Q95SpeedDay,Wheel peak speed (day),base-2 log-transformed batch adjusted 95th quantile of maximum speed in 30min interval (6am-6pm)
+Wheel_Q95SpeedLFC,Wheel peak speed night/day FC,base-2 log of the fold-change in adjusted 95th quantile of maximum speed (night/day)
+Wheel_Q95SpeedNight,Wheel peak speed (night),base-2 log-transformed batch adjusted 95th quantile of maximum speed in 30min interval (6pm-6am)

@@ -1,0 +1,904 @@
+---
+title: "DRiDO Figures 1 and 2"
+author: "Johanna Fleischman"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    toc_depth: 4
+    code_folding: hide 
+---
+
+# Setup 
+
+## Install Packages
+
+```{r, message=F, warning=F}
+suppressMessages(library(patchwork))
+suppressMessages(library(flexclust))
+suppressMessages(library(ggrepel))
+suppressMessages(library(RColorBrewer))
+suppressMessages(library(survival))
+suppressMessages(library(VennDiagram))
+suppressMessages(library(ggh4x))
+suppressMessages(library(ggpmisc))
+suppressMessages(library(tidyverse))
+suppressMessages(library(mclust))
+suppressMessages(library(GGally))
+
+knitr::opts_chunk$set(echo = TRUE, eval = TRUE, out.height = "100%", out.width = "100%", warning = F, message = F)
+```
+
+## Load and Clean Data
+
+```{r}
+# set
+# local_filepath <- "~/drido-multiomic-paper"
+
+source(file.path(local_filepath, "R/statistics_functions.R"))
+source(file.path(local_filepath, "R/figure_functions.R"))
+
+lipidomics_data <- "inst/extdata/20250128-Normalized-Lipidomics-Data.Rds"
+metabolomics_data <- "inst/extdata/20250128-Normalized-Metabolomics-Data.Rds"
+proteomics_data <- "inst/extdata/20250129-Normalized-Proteomics-Data.Rds"
+phenotype_data <- "inst/extdata/DOCR_Phenotype_Data.csv"
+name_conv_file <- "inst/supp_tables/Table_S1_CompoundAnnotations.csv"
+lm_res_file <- "inst/extdata/20250417-Linear-MM-Age-Diet-Results.Rds"
+
+# Read in model analyses
+lm_res <- readRDS(file.path(local_filepath, lm_res_file))
+
+# Clean compound names
+compound_summary <- read.csv(file.path(local_filepath, name_conv_file))
+name_conversion_use <- read.csv(file.path(local_filepath, name_conv_file)) %>%
+  dplyr::select(name_use, feature_id)
+
+# Make final DO-CR raw data frame
+# Retains pre-diet intervention data
+data_use <- docr_make_final_data(
+  metabolomics_data_filepath = file.path(local_filepath, metabolomics_data),
+  proteomics_data_filepath = file.path(local_filepath, proteomics_data),
+  lipidomics_data_filepath = file.path(local_filepath, lipidomics_data),
+  phenotype_data_filepath = file.path(local_filepath, phenotype_data),
+  name_conversion_key = name_conversion_use
+)
+```
+
+## Clean Model Data
+
+```{r}
+lm_res_pretty <- lm_res %>%
+  dplyr::left_join(., name_conversion_use, by = "feature_id") %>%
+  dplyr::filter(!is.na(name_use)) %>%
+  dplyr::select(
+    feature_id, compoundName, name_use, model_term, model, coef, se_coef,
+    p_value_coef, padj, modality
+  ) %>%
+  dplyr::mutate(
+    model = make_names_pretty(model),
+    model_term = make_names_pretty(model_term)
+  ) %>%
+  dplyr::mutate(Significant = ifelse(padj < 1e-3 & abs(coef) > 0.5, "Yes", "No")) %>%
+  dplyr::mutate(
+    Platform = stringr::str_to_title(modality),
+    Platform = factor(Platform, levels = c("Metabolomics", "Lipidomics", "Proteomics"))
+  )
+```
+
+# Figure 1 
+
+## B: N per diet per timepoint
+
+```{r, fig.width = 0.8, fig.height = 2}
+mouse_data <- data_use %>%
+  dplyr::filter(modality != "physiological") %>%
+  dplyr::select(mouse_id, diet, age_years) %>%
+  dplyr::distinct()
+
+# Calculate counts per diet and age_years
+count_data <- mouse_data %>%
+  group_by(age_years, diet) %>%
+  summarise(n_samples = n(), .groups = "drop")
+
+gg <- ggplot(
+  count_data %>%
+    dplyr::mutate(Age = factor(gsub("year", "", age_years),
+      levels = rev(sort(unique(gsub("year", "", age_years))))
+    )),
+  aes(
+    y = Age,
+    x = n_samples,
+    fill = diet
+  )
+) +
+  geom_bar(
+    stat = "identity",
+    position = position_dodge(
+      width = 0.9,
+      preserve = "single"
+    )
+  ) +
+  labs(
+    y = "Age (Year)",
+    x = "Count",
+    fill = "Diet",
+    title = "Sample N",
+    subtitle = ""
+  ) +
+  theme_classic() +
+  scale_fill_manual(values = docr_get_diet_colors()) +
+  coord_cartesian(xlim = c(0, 200)) +
+  scale_x_continuous(breaks = c(0, 100, 200)) +
+  annotate("text",
+    y = "1",
+    x = Inf,
+    label = paste0("Year 1 AL\nn = ", max(count_data$n_samples)),
+    hjust = 1.3,
+    vjust = 0,
+    size = 5,
+    size.unit = "pt"
+  ) +
+  docr_ggplot_theme(x_text_angle = 0, x_text_hjust = 0.5)
+
+gg
+
+# docr_ggsave(plot_object = gg,
+#             "Fig_1B_SampleN_narrow",
+#             plot_width = 0.8,
+#             plot_height = 2,
+#             local_filepath = local_filepath)
+```
+
+## C: Survival Plot
+
+```{r, fig.width = 2, fig.height = 1.8}
+# Extract mouse survival data only
+mouse_data <- data_use %>%
+  dplyr::filter(
+    !is.na(age_years),
+    modality != "physiological"
+  ) %>%
+  dplyr::mutate(age_days = surv_days - days_remaining) %>%
+  dplyr::select(mouse_id, diet, diet_assignment, age_years, age_days, surv_days) %>%
+  dplyr::distinct()
+
+# Define the time points in days for the vertical lines
+timepoint_days <- mouse_data %>%
+  dplyr::group_by(age_years) %>%
+  dplyr::summarise(
+    days = median(age_days, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+mouse_data <- mouse_data %>%
+  dplyr::select(mouse_id, diet = diet_assignment, surv_days) %>%
+  dplyr::distinct()
+
+# Create survival objects and calculate survival probabilities
+surv_obj <- survival::survfit(Surv(surv_days) ~ diet,
+  data = mouse_data
+)
+surv_data <- data.frame(
+  time = surv_obj$time,
+  surv_prob = surv_obj$surv,
+  n.event = surv_obj$n.event,
+  n.censor = surv_obj$n.censor,
+  strata = rep(names(surv_obj$strata), surv_obj$strata)
+) %>%
+  dplyr::mutate(diet = gsub("diet=", "", strata))
+
+# Calculate the number of animals starting in each diet group
+n_at_risk <- mouse_data %>%
+  dplyr::group_by(diet) %>%
+  dplyr::summarise(n_start = dplyr::n(), .groups = "drop")
+
+# Join with survival data to calculate percent surviving
+surv_data <- surv_data %>%
+  dplyr::left_join(n_at_risk, by = "diet") %>%
+  dplyr::mutate(percent_surviving = surv_prob * 100)
+
+# Calculate survival probability at the "year3" time point for each diet
+year3_timepoint <- timepoint_days %>%
+  dplyr::filter(age_years == "year3") %>%
+  dplyr::pull(days)
+
+year1_timepoint <- timepoint_days %>%
+  dplyr::filter(age_years == "year1") %>%
+  dplyr::pull(days)
+
+surv_at_year3 <- surv_data %>%
+  dplyr::group_by(diet) %>%
+  dplyr::filter(time <= year3_timepoint) %>%
+  dplyr::slice_max(time) %>%
+  dplyr::ungroup() %>%
+  dplyr::mutate(
+    percent_survive_label_pos = ifelse(diet == "1D",
+      percent_surviving - 5,
+      percent_surviving
+    ),
+    percent_surv_label_use = paste0(round(percent_surviving, 1), "%")
+  ) %>%
+  dplyr::select(-c("surv_prob", "n.event", "n.censor", "strata", "n_start")) %>%
+  bind_rows(data.frame(
+    time = year1_timepoint,
+    diet = "AL",
+    percent_surviving = 100,
+    percent_survive_label_pos = 100,
+    percent_surv_label_use = "DR start"
+  ))
+
+# Create the plot
+gg <- ggplot(
+  surv_data,
+  aes(
+    x = time,
+    y = percent_surviving,
+    color = diet
+  )
+) +
+  geom_step() +
+  geom_vline(
+    data = timepoint_days, aes(xintercept = days),
+    linetype = "dashed", color = "grey40"
+  ) +
+  geom_text(
+    data = timepoint_days,
+    aes(
+      x = days + 100, y = 105,
+      label = paste0("Year ", gsub("year", "", age_years))
+    ),
+    vjust = 0.2,
+    hjust = 0.4,
+    size = 5,
+    size.unit = "pt",
+    color = "grey40"
+  ) +
+  geom_segment(
+    data = surv_at_year3,
+    aes(
+      x = c(
+        rep(
+          year3_timepoint,
+          nrow(surv_at_year3) - 1
+        ),
+        year1_timepoint
+      ),
+      xend = max(surv_data$time) * 0.75,
+      y = percent_surviving,
+      yend = percent_surviving,
+      color = diet
+    ),
+    linetype = "dashed"
+  ) +
+  geom_text(
+    data = surv_at_year3,
+    aes(
+      x = max(surv_data$time) * 0.77,
+      y = percent_survive_label_pos,
+      label = percent_surv_label_use
+    ),
+    hjust = 0,
+    vjust = 0.5,
+    size = 5,
+    size.unit = "pt",
+    show.legend = FALSE,
+    inherit.aes = FALSE
+  ) +
+  labs(
+    x = "Age (Days)",
+    y = "Percent Surviving",
+    color = "Diet",
+    title = "Survival with Sampling Timepoints"
+  ) +
+  scale_x_continuous(
+    limits = c(0, max(surv_data$time)), # Adjust x-axis limit for text
+    expand = c(0, 0)
+  ) +
+  scale_y_continuous(
+    limits = c(0, 115), # Adjust y-axis limit for text
+    breaks = c(0, 25, 50, 75, 100),
+    labels = c(0, 25, 50, 75, 100),
+    expand = c(0, 0)
+  ) +
+  scale_color_manual(values = docr_get_diet_colors()) +
+  docr_ggplot_theme(x_text_angle = 0, x_text_hjust = 0.5)
+print(gg)
+# docr_ggsave(plot_object = gg,
+#             "Fig_1C_Lifespan",
+#             plot_width = 2,
+#             plot_height = 1.8,
+#             local_filepath = local_filepath)
+```
+
+## D: Pie Charts
+
+```{r, fig.width = 2, fig.height = 1.2}
+summary_mods <- compound_summary %>%
+  dplyr::group_by(modality) %>%
+  dplyr::summarise(count = n(), .groups = "drop") %>%
+  dplyr::mutate(prop = count / sum(count) * 100) %>%
+  dplyr::mutate(
+    plot_label = paste0(
+      stringr::str_to_title(modality),
+      ", n = ", count, " (", round(prop, 1), "%)"
+    )
+  )
+
+for (mod in unique(compound_summary$modality)) {
+  summary1 <- compound_summary %>%
+    dplyr::filter(modality == mod) %>%
+    dplyr::group_by(Broad_Group) %>%
+    dplyr::summarise(count = n()) %>%
+    dplyr::mutate(prop = count / sum(count) * 100) %>%
+    dplyr::arrange(desc(count)) %>%
+    dplyr::filter(Broad_Group != "Predicted Gene") %>%
+    dplyr::mutate(Broad_Group = factor(Broad_Group, levels = Broad_Group))
+
+  mod_title <- summary_mods %>%
+    dplyr::filter(modality == mod) %>%
+    dplyr::pull(plot_label)
+
+  g <- ggplot2::ggplot(
+    summary1,
+    aes(
+      x = 1.8,
+      y = count,
+      fill = Broad_Group
+    )
+  ) +
+    geom_bar(stat = "identity", width = 1) +
+    scale_fill_brewer(
+      palette = "Paired"
+    ) +
+    coord_polar("y", start = 0) +
+    xlim(0.5, 2.5) +
+    labs(
+      title = mod_title,
+      x = "",
+      y = ""
+    ) +
+    docr_ggplot_theme(
+      x_text_angle = 0,
+      x_text_hjust = 0
+    ) +
+    theme(
+      panel.border = element_blank(),
+      axis.text.x = element_blank(),
+      axis.ticks.y = element_blank(),
+      axis.text.y = element_blank(),
+      legend.title = element_blank(),
+      legend.key.size = unit(0.2, "cm"),
+      plot.margin = unit(c(0.1, 1.8, 0.1, -1.8), "cm"),
+      legend.position = c(0.9, 0.5),
+      legend.justification = c("left", "center"),
+      plot.title = element_text(hjust = -0.3, vjust = -5)
+    )
+
+  print(g)
+  # docr_ggsave(plot_object = g,
+  #             paste0("Fig_1D_", stringr::str_to_title(mod)),
+  #             plot_width = 2,
+  #             plot_height = 1.2,
+  #             local_filepath = local_filepath)
+}
+```
+
+## E: Caterpillar Plot 
+
+```{r, fig.width = 4.8, fig.height = 2.7}
+fdr_threshold <- 0.01
+
+# make color palette
+temp_colors <- c(docr_get_diet_colors(), docr_get_age_colors(), "white")
+names(temp_colors) <- c(
+  "DietAL", docr_get_diet_terms(),
+  "AgeYear1", docr_get_age_terms(),
+  "No"
+)
+
+temp_plot <- lm_res_pretty %>%
+  dplyr::filter(
+    model == "Compound ~ Age + Diet + Bodyweight + Fasting + (1|Mouse)",
+    !(model_term %in% c("(Intercept)", "Bodyweight", "FastingFast20", "FastingFast40"))
+  ) %>%
+  dplyr::mutate(model_term = factor(model_term, levels = c(docr_get_age_terms(), docr_get_diet_terms()))) %>%
+  dplyr::select(-padj) %>%
+  fdr_multi(
+    pval_var = "p_value_coef",
+    nest_vars = c("model", "model_term", "modality")
+  ) %>%
+  dplyr::mutate(Significant = ifelse(padj < fdr_threshold, "Yes", "No")) %>%
+  dplyr::mutate(fill_color = dplyr::case_when(
+    Significant == "No" ~ "No",
+    Significant == "Yes" ~ as.character(model_term)
+  ))
+
+temp_plot_ordered <- temp_plot %>%
+  dplyr::filter(grepl("^Diet", model_term)) %>%
+  dplyr::group_by(feature_id) %>%
+  dplyr::summarise(mean_diet_coef = mean(coef, na.rm = TRUE), .groups = "drop") %>%
+  dplyr::right_join(temp_plot, by = "feature_id") %>%
+  dplyr::group_by(Platform) %>%
+  dplyr::mutate(
+    rank_by_platform = rank(mean_diet_coef, ties.method = "min") / dplyr::n(),
+    ordered_id = forcats::fct_reorder(factor(feature_id), rank_by_platform, .desc = FALSE)
+  ) %>%
+  dplyr::ungroup() %>%
+  dplyr::mutate(
+    coef = ifelse(model_term == "Bodyweight",
+      coef * 30,
+      coef
+    ),
+    coef = ifelse(coef > 2, 2,
+      ifelse(coef < -2 & Platform != "Lipidomics", -2,
+        coef
+      )
+    )
+  )
+
+tg_line_data <- temp_plot_ordered %>%
+  dplyr::filter(modality == "lipidomics", grepl("^Diet", model_term))
+
+tg_line <- tg_line_data %>%
+  {
+    min(.$rank_by_platform[!grepl("^TG\\(", .$name_use)])
+  }
+
+count_data <- temp_plot %>%
+  dplyr::filter(Significant == "Yes") %>%
+  dplyr::group_by(model_term, Platform) %>%
+  dplyr::summarise(count = n(), .groups = "drop") %>%
+  dplyr::mutate(label_print = paste0("n = ", count))
+
+name_map <- c(
+  AgeYear2 = "Year2",
+  AgeYear3 = "Year3",
+  Diet1D = "IF-1D",
+  Diet2D = "IF-2D",
+  Diet20 = "CR-20",
+  Diet40 = "CR-40",
+  Metabolomics = "Metabolomics",
+  Proteomics = "Proteomics",
+  Lipidomics = "Lipidomics"
+)
+
+g <- ggplot2::ggplot(
+  data = temp_plot_ordered,
+  mapping = aes(
+    y = coef,
+    x = rank_by_platform
+  )
+) +
+  geom_hline(yintercept = 0, color = "grey30", alpha = 0.8) +
+  ggplot2::geom_point(
+    mapping = aes(
+      color = model_term,
+      fill = model_term,
+    ),
+    alpha = 0.3,
+    size = 0.5
+  ) +
+  ggplot2::geom_text(
+    data = count_data,
+    mapping = aes(x = 0.5, y = -Inf, label = label_print),
+    color = "black",
+    vjust = -0.5,
+    size = 5 / ggplot2::.pt
+  ) +
+  ggplot2::geom_vline(data = tg_line_data, aes(xintercept = tg_line), color = "grey50", linetype = "dashed") +
+  ggplot2::scale_color_manual(values = temp_colors) +
+  ggplot2::labs(
+    title = paste0("Each compound as a function of age and diet, adjusted for bodyweight and fasting, n count for FDR < ", fdr_threshold),
+    y = "Model Estimate",
+    x = "Rank-ordered compounds by mean diet estimate, per platform"
+  ) +
+  docr_ggplot_theme() +
+  ggplot2::scale_x_discrete(expand = expansion(mult = c(0.05, 0.05))) +
+  ggplot2::theme(
+    axis.text.x = ggplot2::element_blank(),
+    axis.ticks.x = ggplot2::element_blank(),
+    axis.text = element_text(size = 5),
+    plot.title = element_text(size = 6),
+    axis.title = element_text(size = 6)
+  ) +
+  ggplot2::facet_grid(
+    cols = vars(model_term),
+    rows = vars(Platform), labeller = as_labeller(name_map),
+    scales = "free", space = "free"
+  )
+
+print(g)
+
+# docr_ggsave(plot_object = g,
+#           plot_file_name = paste0("Fig_1E_CaterpillarPlot_NoCovariates_Narrow"),
+#           plot_height = 2.7,
+#           plot_width = 4.8,
+#           local_filepath = local_filepath)
+```
+
+## E: Coefficient Correlations
+
+```{r, fig.width = 1.35, fig.height = 1.1}
+cor_temp <- lm_res_pretty %>%
+  dplyr::filter(
+    model == "Compound ~ Age + Diet + Bodyweight + Fasting + (1|Mouse)",
+    model_term %in% c(docr_get_diet_terms(), docr_get_age_terms())
+  ) %>%
+  dplyr::select(feature_id, model_term, coef, modality) %>%
+  tidyr::pivot_wider(
+    names_from = "model_term",
+    values_from = "coef"
+  ) %>%
+  tibble::column_to_rownames("feature_id")
+
+name_map <- c(
+  AgeYear2 = "Year2",
+  AgeYear3 = "Year3",
+  Diet1D   = "IF-1D",
+  Diet2D   = "IF-2D",
+  Diet20   = "CR-20",
+  Diet40   = "CR-40"
+)
+
+rename_matrix <- function(mat, name_map) {
+  rownames(mat) <- name_map[rownames(mat)]
+  colnames(mat) <- name_map[colnames(mat)]
+  mat
+}
+
+for (m in unique(cor_temp$modality)) {
+  temp_lm_res_pretty <- cor_temp %>%
+    dplyr::filter(modality %in% m) %>%
+    dplyr::select(-modality)
+
+  rcorr_temp <- Hmisc::rcorr(
+    x = as.matrix(temp_lm_res_pretty),
+    type = "spearman"
+  )
+  display_r <- rcorr_temp$r
+
+  display_stars <- rcorr_temp$P %>%
+    as.data.frame() %>%
+    dplyr::mutate(across(everything(), function(x) {
+      case_when(
+        x < 0.001 ~ "\u00B7\u00B7\u00B7",
+        x < 0.01 ~ "\u00B7\u00B7",
+        x < 0.05 ~ "\u00B7",
+        # x < 0.001 ~ "***",
+        # x < 0.01 ~ "**",
+        # x < 0.05 ~ "*",
+        TRUE ~ ""
+      )
+    })) %>%
+    as.matrix()
+
+  display_p <- matrix(
+    display_stars,
+    nrow = nrow(display_r),
+    dimnames = dimnames(display_r)
+  )
+
+  display_r <- rename_matrix(display_r, name_map)
+  display_p <- rename_matrix(display_p, name_map)
+
+  ph <- pheatmap::pheatmap(
+    mat = display_r,
+    main = paste0(stringr::str_to_title(m)),
+    color = colorRampPalette(c("#21336B", "white", "#D63B24"))(length(seq(-1, 1, .02))),
+    display_numbers = display_p,
+    number_color = "black",
+    breaks = seq(-1, 1, .02),
+    fontsize = 5,
+    angle_col = 45,
+    fontsize_number = 6,
+    treeheight_col = 0,
+    treeheight_row = 0,
+    show_colnames = T,
+    show_rownames = T,
+    cluster_cols = T,
+    cluster_rows = T,
+    border_color = NA
+  )
+  print(ph)
+
+  # docr_ggsave(plot_object = ph,
+  #             plot_file_name = paste0("Fig_1E_CoefCorr_", m),
+  #             plot_height = 1.1,
+  #             plot_width = 1.35,
+  #             local_filepath = local_filepath)
+}
+```
+
+### Table S2
+
+```{r}
+table_s2 <- lm_res_pretty %>%
+  dplyr::filter(model == "Compound ~ Age + Diet + Bodyweight + Fasting + (1|Mouse)") %>%
+  dplyr::mutate(Term = dplyr::case_when(
+    grepl("FastingFast20", model_term) ~ "Fasting-Diet20",
+    grepl("FastingFast40", model_term) ~ "Fasting-Diet40",
+    TRUE ~ model_term
+  )) %>%
+  dplyr::select(-padj) %>%
+  fdr_multi(
+    pval_var = "p_value_coef",
+    nest_vars = c("model", "Term", "Platform")
+  ) %>%
+  dplyr::select(Platform,
+    Compound = name_use, Model = model,
+    Term, Estimate = coef,
+    Est_SE = se_coef, Pvalue = p_value_coef, FDR = padj
+  )
+
+# write.csv(table_s2, "/Users/johanna/Documents/DOCR-Paper-Files/MS1553_DO_CR_Paper_Normalization/supplemental_tables_final/Table_S2_Diet_Age_Model.csv", row.names = FALSE)
+```
+
+# Figure 2
+
+## Heatmaps
+
+```{r}
+get_top_terms <- function(term_fn, n = 70) {
+  test <- lm_res_pretty %>%
+    dplyr::filter(
+      model_term %in% term_fn(),
+      !grepl("TG", name_use),
+      model == "Compound ~ Age + Diet + Bodyweight + Fasting + (1|Mouse)"
+    ) %>%
+    dplyr::group_by(name_use) %>%
+    dplyr::summarise(
+      combined_padj = metap::sumlog(padj)$p,
+      .groups = "drop"
+    ) %>%
+    dplyr::mutate(heatmap_name = sub(" \\([+-]\\)$", "", name_use)) %>%
+    dplyr::group_by(heatmap_name) %>%
+    dplyr::arrange(combined_padj) %>%
+    dplyr::slice_head(n = 1) %>% # keep best-ranking polarity per heatmap_name
+    dplyr::ungroup() %>%
+    dplyr::arrange(combined_padj) %>%
+    dplyr::slice_head(n = n) %>%
+    dplyr::pull(heatmap_name)
+}
+
+diet_terms <- get_top_terms(docr_get_diet_terms)
+aging_terms <- get_top_terms(docr_get_age_terms)
+
+both <- intersect(diet_terms, aging_terms)
+list_loop <- list(
+  `Top Aging and Diet` = both,
+  `Top Aging Only` = setdiff(aging_terms, both),
+  `Top Diet Only` = setdiff(diet_terms, both)
+)
+
+global_breaks <- seq(-2, 2, length.out = 101) # max out coefficient at 2--outliers take all color otherwise
+n_colors <- length(global_breaks) - 1
+global_colors <- colorRampPalette(docr_get_high_low_colors())(n_colors)
+
+annotation_col <- docr_pheatmap_annotations(
+  temp_plot,
+  `Term` = c(
+    "Diet1D" = "1D", "Diet2D" = "2D", "Diet20" = "20", "Diet40" = "40",
+    "AgeYear2" = "AgeYear2", "AgeYear3" = "AgeYear3"
+  ),
+)
+annotation_colors <- docr_pheatmap_colors(
+  annotation_col,
+  `Term` = c(docr_get_diet_colors()[2:5], docr_get_age_colors()[2:3])
+)
+
+for (ll in names(list_loop)) {
+  temp_plot_use <- lm_res_pretty %>%
+    dplyr::filter(
+      model_term %in% c(docr_get_age_terms(), docr_get_diet_terms()),
+      model == "Compound ~ Age + Diet + Bodyweight + Fasting + (1|Mouse)"
+    ) %>%
+    dplyr::mutate(
+      model_term   = factor(model_term, levels = c(docr_get_age_terms(), docr_get_diet_terms())),
+      heatmap_name = sub(" \\([+-]\\)$", "", name_use)
+    ) %>%
+    dplyr::filter(heatmap_name %in% list_loop[[ll]]) %>%
+    dplyr::group_by(model_term, heatmap_name) %>%
+    dplyr::mutate(
+      coef = mean(.data$coef, na.rm = TRUE),
+      padj = max(.data$padj, na.rm = TRUE)
+    ) %>%
+    dplyr::slice(1) %>%
+    dplyr::ungroup()
+
+  ph <- docr_pheatmap(
+    temp_plot_use,
+    main = ll,
+    y_axis_var = "heatmap_name",
+    annotation_col = annotation_col,
+    cluster_rows = TRUE,
+    show_rownames = TRUE,
+    gaps_col = 2,
+    fontsize = 5,
+    fontsize_row = 5,
+    fontsize_number = 9,
+    sig_symbol = "\u00B7",
+    sig_numbers = c(0.001, 0.01, 0.05),
+    annotation_colors = annotation_colors,
+    display_var = "padj",
+    pvalue_stars = TRUE,
+    cellwidth = 11,
+    cellheight = 5,
+    treeheight_row = 0,
+    color = global_colors,
+    breaks = global_breaks
+  )
+
+  # docr_ggsave(plot_object = ph,
+  #             plot_file_name = paste0("Fig_2B_Heatmap_Top70_P_", ll),
+  #             plot_height = nrow(temp_plot_use) * 0.02,
+  #             plot_width = 4,
+  #             local_filepath = local_filepath)
+}
+```
+
+### Text: Correlated Term Calculation
+
+```{r}
+test <- lm_res_pretty %>%
+  dplyr::filter(
+    model_term %in% docr_get_diet_terms(),
+    model == "Compound ~ Age + Diet + Bodyweight + Fasting + (1|Mouse)",
+    padj < 0.01
+  ) %>%
+  dplyr::select(name_use, coef, model_term) %>%
+  dplyr::group_by(name_use) %>%
+  dplyr::filter(dplyr::n_distinct(model_term) >= 2) %>%
+  dplyr::ungroup()
+
+cat("n total significant diet terms:", length(unique(test$name_use)), "\n")
+
+# remove name_use with fewer than 2 model_terms
+test_filtered <- test %>%
+  dplyr::group_by(name_use) %>%
+  dplyr::filter(dplyr::n_distinct(model_term) >= 2) %>%
+  dplyr::filter(!(all(coef > 0) | all(coef < 0))) %>%
+  dplyr::ungroup()
+
+# Scount anti-correlated name_use
+n_anticorrelated <- dplyr::n_distinct(test_filtered$name_use)
+
+# model_terms that appear in anti-correlated name_use
+anticorrelated_split <- test_filtered %>%
+  dplyr::mutate(model_term = factor(model_term, levels = c("Diet1D", "Diet2D", "Diet20", "Diet40"))) %>%
+  dplyr::group_by(name_use) %>%
+  dplyr::summarise(
+    term_pair = {
+      pos <- paste(sort(model_term[coef > 0]), collapse = ":")
+      neg <- paste(sort(model_term[coef < 0]), collapse = ":")
+      sides <- c(pos, neg)
+      first_terms <- factor(
+        stringr::str_extract(sides, "^[^:]+"),
+        levels = c("Diet1D", "Diet2D", "Diet20", "Diet40")
+      )
+      paste(sides[order(first_terms)], collapse = " / ")
+    },
+    .groups = "drop"
+  )
+
+cat("n anti-correlated name_use:", n_anticorrelated, "\n")
+anticorrelated_split %>% dplyr::count(term_pair, sort = TRUE)
+```
+
+## Boxplots
+
+```{r, fig.width = 2.8, fig.height = 3.3}
+plots <- purrr::map(both, \(i) {
+  data_temp <- data_use %>%
+    dplyr::filter(name_use == i) %>%
+    tidyr::drop_na(trait_value) %>%
+    dplyr::mutate(Age = ifelse(Age == "Year 1", "1", Age)) %>%
+    dplyr::rename(Diet = "diet")
+
+  title <- dplyr::case_when(
+    i == "ALBU" ~ "Albumin",
+    i == "ADIPO" ~ "Adiponectin",
+    i == "C9" ~ "Complement C9",
+    i == "FA5" ~ "Coagulation F5",
+    i == "F13B" ~ "Coagulation F13",
+    i == "CFAI" ~ "Complement FI",
+    i == "SODE" ~ "Superoxide dismutase 3",
+    i == "ITIH3" ~ "ITI-H3",
+    i == "AFAM" ~ "Afamin",
+    i == "MUP9" ~ "Mup9",
+    .default = i
+  )
+
+  ggplot2::ggplot(data_temp, aes(x = Diet, color = Diet, fill = Diet, y = trait_value)) +
+    ggplot2::geom_boxplot(
+      alpha = 0.5, outliers = FALSE, width = 0.7,
+      position = position_dodge2(preserve = "single")
+    ) +
+    scale_color_manual(values = docr_get_diet_colors()) +
+    scale_fill_manual(values = docr_get_diet_colors()) +
+    docr_ggplot_theme(legend_position = "bottom") +
+    scale_y_continuous(
+      limits = \(x) c(min(x[1], -1), max(x[2], 1)),
+      breaks = \(x) pretty(x, n = 3)
+    ) +
+    facet_grid(cols = vars(Age), scales = "free_x", space = "free_x") +
+    labs(title = title, y = expression("Log"[2] * " Abundance"), x = "") +
+    theme(
+      panel.spacing.x = unit(0.05, "cm"),
+      plot.title = element_text(size = 5),
+      axis.title = element_text(size = 5),
+      axis.text = element_text(size = 5),
+      axis.text.x = element_blank(),
+      axis.ticks.x = element_blank()
+    )
+})
+
+pp <- patchwork::wrap_plots(plots, ncol = 3) +
+  patchwork::plot_layout(guides = "collect", axis_titles = "collect") &
+  theme(
+    legend.position = "bottom",
+    plot.margin = margin(1, 1, 5, 1),
+    axis.title.y = element_text(size = 5, margin = margin(r = 1)),
+    plot.title = element_text(size = 5, margin = margin(0, 0, 1, 0)),
+    legend.margin = margin(t = -15, 0, 0, 0),
+    legend.spacing.x = unit(1, "pt"),
+    legend.key.size = unit(7, "pt"),
+    legend.text = element_text(size = 5),
+    strip.text = element_text(size = 5, margin = margin(1, 0, 1, 0))
+  )
+pp
+
+# docr_ggsave(pp, "Fig_2A_All_Boxplots", plot_height = 3.2, plot_width = 2.8, local_filepath = local_filepath)
+``` 
+
+# Figure 5
+
+## F-H: Spline fits
+
+```{r, fig.height = 1.3, fig.width = 1}
+top_traits <- c("CD5L", "ENV2", "IGHM")
+
+for (trait_use in top_traits) {
+  new_data <- data_use %>%
+    dplyr::filter(name_use == trait_use) %>%
+    tidyr::drop_na(trait_value)
+
+  custom_title <- trait_use
+
+  gg <- ggplot2::ggplot(new_data) +
+    docr_ggplot_theme(x_text_angle = 0, x_text_hjust = 0.5) +
+    geom_smooth(aes(x = PLL, y = trait_value, color = diet, fill = diet),
+      method = "loess", level = 0.8, size = 0.5
+    ) +
+    labs(title = custom_title, y = "Log2 Abundance") +
+    scale_color_manual(values = docr_get_diet_colors()) +
+    scale_fill_manual(values = docr_get_diet_colors()) +
+    scale_y_continuous(breaks = function(x) seq(floor(min(x)), ceiling(max(x)), by = 1)) +
+    scale_x_continuous(breaks = c(0.25, 0.85)) +
+    theme(
+      axis.title.y = element_text(size = 5, margin = margin(r = 1)),
+      axis.title.x = element_text(size = 5, margin = margin(r = 1)),
+      axis.text.x = element_text(size = 5),
+      axis.text.y = element_text(size = 5),
+      panel.border = element_rect(colour = "black", fill = NA, linewidth = 0.75),
+      plot.title = element_text(size = 6, margin = margin(0, 0, 2, 0))
+    )
+
+  print(gg)
+
+  # docr_ggsave(gg,
+  #           paste0("Fig_5_loess_", custom_title),
+  #           plot_height = 1.3, plot_width = 1,
+  #           local_filepath = local_filepath)
+}
+```
+
+
+
+
+
+
+
+
+
+

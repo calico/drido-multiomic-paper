@@ -1,0 +1,6580 @@
+Name: TG(12:0/14:0/22:2)
+Id: TG(12:0/14:0/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C51H94O6
+PrecursorMz: 820.7388637
+ExactMass: 802.7050407
+MW: 802.7050407
+CLASS: TG
+SumComposition: TG(48:2)
+SumChainLengths: TG(12:0_14:0_22:2)
+NumPeaks: 6
+183.1743465 1 ms3-{467.4094867} @sn1 acylium ion
+183.1743465 1 ms3-{575.5033871} @sn1 acylium ion
+211.2056466 1 ms3-{467.4094867} $sn2 acylium ion
+211.2056466 1 ms3-{603.5346872} $sn2 acylium ion
+319.2995470 1 ms3-{575.5033871} !sn3 acylium ion
+319.2995470 1 ms3-{603.5346872} !sn3 acylium ion
+
+
+Name: TG(12:0/16:0/22:1)
+Id: TG(12:0/16:0/22:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C53H100O6
+PrecursorMz: 850.7858139
+ExactMass: 832.7519909
+MW: 832.7519909
+CLASS: TG
+SumComposition: TG(50:1)
+SumChainLengths: TG(12:0_16:0_22:1)
+NumPeaks: 6
+183.1743465 1 ms3-{495.4407868} @sn1 acylium ion
+183.1743465 1 ms3-{577.5190371} @sn1 acylium ion
+239.2369467 1 ms3-{495.4407868} $sn2 acylium ion
+239.2369467 1 ms3-{633.5816374} $sn2 acylium ion
+321.3151970 1 ms3-{577.5190371} !sn3 acylium ion
+321.3151970 1 ms3-{633.5816374} !sn3 acylium ion
+
+
+Name: TG(12:0/16:0/22:2)
+Id: TG(12:0/16:0/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C53H98O6
+PrecursorMz: 848.7701639
+ExactMass: 830.7363409
+MW: 830.7363409
+CLASS: TG
+SumComposition: TG(50:2)
+SumChainLengths: TG(12:0_16:0_22:2)
+NumPeaks: 6
+183.1743465 1 ms3-{495.4407868} @sn1 acylium ion
+183.1743465 1 ms3-{575.5033871} @sn1 acylium ion
+239.2369467 1 ms3-{495.4407868} $sn2 acylium ion
+239.2369467 1 ms3-{631.5659873} $sn2 acylium ion
+319.2995470 1 ms3-{575.5033871} !sn3 acylium ion
+319.2995470 1 ms3-{631.5659873} !sn3 acylium ion
+
+
+Name: TG(12:0/16:0/22:3)
+Id: TG(12:0/16:0/22:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C53H96O6
+PrecursorMz: 846.7545138
+ExactMass: 828.7206908
+MW: 828.7206908
+CLASS: TG
+SumComposition: TG(50:3)
+SumChainLengths: TG(12:0_16:0_22:3)
+NumPeaks: 6
+183.1743465 1 ms3-{495.4407868} @sn1 acylium ion
+183.1743465 1 ms3-{573.487737} @sn1 acylium ion
+239.2369467 1 ms3-{495.4407868} $sn2 acylium ion
+239.2369467 1 ms3-{629.5503373} $sn2 acylium ion
+317.2838969 1 ms3-{573.487737} !sn3 acylium ion
+317.2838969 1 ms3-{629.5503373} !sn3 acylium ion
+
+
+Name: TG(12:0/16:0/24:3)
+Id: TG(12:0/16:0/24:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H100O6
+PrecursorMz: 874.7858139
+ExactMass: 856.7519909
+MW: 856.7519909
+CLASS: TG
+SumComposition: TG(52:3)
+SumChainLengths: TG(12:0_16:0_24:3)
+NumPeaks: 6
+183.1743465 1 ms3-{495.4407868} @sn1 acylium ion
+183.1743465 1 ms3-{601.5190371} @sn1 acylium ion
+239.2369467 1 ms3-{495.4407868} $sn2 acylium ion
+239.2369467 1 ms3-{657.5816374} $sn2 acylium ion
+345.3151970 1 ms3-{601.5190371} !sn3 acylium ion
+345.3151970 1 ms3-{657.5816374} !sn3 acylium ion
+
+
+Name: TG(12:0/16:0/24:4)
+Id: TG(12:0/16:0/24:4) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H98O6
+PrecursorMz: 872.7701639
+ExactMass: 854.7363409
+MW: 854.7363409
+CLASS: TG
+SumComposition: TG(52:4)
+SumChainLengths: TG(12:0_16:0_24:4)
+NumPeaks: 6
+183.1743465 1 ms3-{495.4407868} @sn1 acylium ion
+183.1743465 1 ms3-{599.5033871} @sn1 acylium ion
+239.2369467 1 ms3-{495.4407868} $sn2 acylium ion
+239.2369467 1 ms3-{655.5659873} $sn2 acylium ion
+343.2995470 1 ms3-{599.5033871} !sn3 acylium ion
+343.2995470 1 ms3-{655.5659873} !sn3 acylium ion
+
+
+Name: TG(12:0/16:1/22:1)
+Id: TG(12:0/16:1/22:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C53H98O6
+PrecursorMz: 848.7701639
+ExactMass: 830.7363409
+MW: 830.7363409
+CLASS: TG
+SumComposition: TG(50:2)
+SumChainLengths: TG(12:0_16:1_22:1)
+NumPeaks: 6
+183.1743465 1 ms3-{493.4251367} @sn1 acylium ion
+183.1743465 1 ms3-{577.5190371} @sn1 acylium ion
+237.2212967 1 ms3-{493.4251367} $sn2 acylium ion
+237.2212967 1 ms3-{631.5659873} $sn2 acylium ion
+321.3151970 1 ms3-{577.5190371} !sn3 acylium ion
+321.3151970 1 ms3-{631.5659873} !sn3 acylium ion
+
+
+Name: TG(12:0/16:1/22:2)
+Id: TG(12:0/16:1/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C53H96O6
+PrecursorMz: 846.7545138
+ExactMass: 828.7206908
+MW: 828.7206908
+CLASS: TG
+SumComposition: TG(50:3)
+SumChainLengths: TG(12:0_16:1_22:2)
+NumPeaks: 6
+183.1743465 1 ms3-{493.4251367} @sn1 acylium ion
+183.1743465 1 ms3-{575.5033871} @sn1 acylium ion
+237.2212967 1 ms3-{493.4251367} $sn2 acylium ion
+237.2212967 1 ms3-{629.5503373} $sn2 acylium ion
+319.2995470 1 ms3-{575.5033871} !sn3 acylium ion
+319.2995470 1 ms3-{629.5503373} !sn3 acylium ion
+
+
+Name: TG(12:0/16:1/22:3)
+Id: TG(12:0/16:1/22:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C53H94O6
+PrecursorMz: 844.7388637
+ExactMass: 826.7050407
+MW: 826.7050407
+CLASS: TG
+SumComposition: TG(50:4)
+SumChainLengths: TG(12:0_16:1_22:3)
+NumPeaks: 6
+183.1743465 1 ms3-{493.4251367} @sn1 acylium ion
+183.1743465 1 ms3-{573.487737} @sn1 acylium ion
+237.2212967 1 ms3-{493.4251367} $sn2 acylium ion
+237.2212967 1 ms3-{627.5346872} $sn2 acylium ion
+317.2838969 1 ms3-{573.487737} !sn3 acylium ion
+317.2838969 1 ms3-{627.5346872} !sn3 acylium ion
+
+
+Name: TG(12:0/16:2;O/22:2)
+Id: TG(12:0/16:2;O/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C53H94O7
+PrecursorMz: 860.7337783
+ExactMass: 842.6999553
+MW: 842.6999553
+CLASS: TG
+SumComposition: TG(50:4;O)
+SumChainLengths: TG(12:0_16:2;O_22:2)
+NumPeaks: 6
+183.1743465 1 ms3-{507.40440131956} @sn1 acylium ion
+183.1743465 1 ms3-{575.5033871} @sn1 acylium ion
+251.2005612 1 ms3-{507.40440131956} sn2 acylium ion ox
+251.2005612 1 ms3-{643.52960181956} sn2 acylium ion ox
+319.2995470 1 ms3-{575.5033871} !sn3 acylium ion
+319.2995470 1 ms3-{643.52960181956} !sn3 acylium ion
+
+
+Name: TG(12:0/16:2/24:1)
+Id: TG(12:0/16:2/24:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H100O6
+PrecursorMz: 874.7858139
+ExactMass: 856.7519909
+MW: 856.7519909
+CLASS: TG
+SumComposition: TG(52:3)
+SumChainLengths: TG(12:0_16:2_24:1)
+NumPeaks: 6
+183.1743465 1 ms3-{491.4094867} @sn1 acylium ion
+183.1743465 1 ms3-{605.5503373} @sn1 acylium ion
+235.2056466 1 ms3-{491.4094867} $sn2 acylium ion
+235.2056466 1 ms3-{657.5816374} $sn2 acylium ion
+349.3464972 1 ms3-{605.5503373} !sn3 acylium ion
+349.3464972 1 ms3-{657.5816374} !sn3 acylium ion
+
+
+Name: TG(12:0/16:3/24:0)
+Id: TG(12:0/16:3/24:0) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H100O6
+PrecursorMz: 874.7858139
+ExactMass: 856.7519909
+MW: 856.7519909
+CLASS: TG
+SumComposition: TG(52:3)
+SumChainLengths: TG(12:0_16:3_24:0)
+NumPeaks: 6
+183.1743465 1 ms3-{489.3938366} @sn1 acylium ion
+183.1743465 1 ms3-{607.5659873} @sn1 acylium ion
+233.1899965 1 ms3-{489.3938366} $sn2 acylium ion
+233.1899965 1 ms3-{657.5816374} $sn2 acylium ion
+351.3621472 1 ms3-{607.5659873} !sn3 acylium ion
+351.3621472 1 ms3-{657.5816374} !sn3 acylium ion
+
+
+Name: TG(12:0/18:0/22:1)
+Id: TG(12:0/18:0/22:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H104O6
+PrecursorMz: 878.8171141
+ExactMass: 860.7832911
+MW: 860.7832911
+CLASS: TG
+SumComposition: TG(52:1)
+SumChainLengths: TG(12:0_18:0_22:1)
+NumPeaks: 6
+183.1743465 1 ms3-{523.4720869} @sn1 acylium ion
+183.1743465 1 ms3-{577.5190371} @sn1 acylium ion
+267.2682469 1 ms3-{523.4720869} $sn2 acylium ion
+267.2682469 1 ms3-{661.6129375} $sn2 acylium ion
+321.3151970 1 ms3-{577.5190371} !sn3 acylium ion
+321.3151970 1 ms3-{661.6129375} !sn3 acylium ion
+
+
+Name: TG(12:0/18:0/22:2)
+Id: TG(12:0/18:0/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H102O6
+PrecursorMz: 876.8014640
+ExactMass: 858.7676410
+MW: 858.7676410
+CLASS: TG
+SumComposition: TG(52:2)
+SumChainLengths: TG(12:0_18:0_22:2)
+NumPeaks: 6
+183.1743465 1 ms3-{523.4720869} @sn1 acylium ion
+183.1743465 1 ms3-{575.5033871} @sn1 acylium ion
+267.2682469 1 ms3-{523.4720869} $sn2 acylium ion
+267.2682469 1 ms3-{659.5972874} $sn2 acylium ion
+319.2995470 1 ms3-{575.5033871} !sn3 acylium ion
+319.2995470 1 ms3-{659.5972874} !sn3 acylium ion
+
+
+Name: TG(12:0/18:0/22:3)
+Id: TG(12:0/18:0/22:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H100O6
+PrecursorMz: 874.7858139
+ExactMass: 856.7519909
+MW: 856.7519909
+CLASS: TG
+SumComposition: TG(52:3)
+SumChainLengths: TG(12:0_18:0_22:3)
+NumPeaks: 6
+183.1743465 1 ms3-{523.4720869} @sn1 acylium ion
+183.1743465 1 ms3-{573.487737} @sn1 acylium ion
+267.2682469 1 ms3-{523.4720869} $sn2 acylium ion
+267.2682469 1 ms3-{657.5816374} $sn2 acylium ion
+317.2838969 1 ms3-{573.487737} !sn3 acylium ion
+317.2838969 1 ms3-{657.5816374} !sn3 acylium ion
+
+
+Name: TG(12:0/18:1/20:1)
+Id: TG(12:0/18:1/20:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C53H98O6
+PrecursorMz: 848.7701639
+ExactMass: 830.7363409
+MW: 830.7363409
+CLASS: TG
+SumComposition: TG(50:2)
+SumChainLengths: TG(12:0_18:1_20:1)
+NumPeaks: 6
+183.1743465 1 ms3-{521.4564369} @sn1 acylium ion
+183.1743465 1 ms3-{549.487737} @sn1 acylium ion
+265.2525968 1 ms3-{521.4564369} $sn2 acylium ion
+265.2525968 1 ms3-{631.5659873} $sn2 acylium ion
+293.2838969 1 ms3-{549.487737} !sn3 acylium ion
+293.2838969 1 ms3-{631.5659873} !sn3 acylium ion
+
+
+Name: TG(12:0/18:1/22:0)
+Id: TG(12:0/18:1/22:0) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H104O6
+PrecursorMz: 878.8171141
+ExactMass: 860.7832911
+MW: 860.7832911
+CLASS: TG
+SumComposition: TG(52:1)
+SumChainLengths: TG(12:0_18:1_22:0)
+NumPeaks: 6
+183.1743465 1 ms3-{521.4564369} @sn1 acylium ion
+183.1743465 1 ms3-{579.5346872} @sn1 acylium ion
+265.2525968 1 ms3-{521.4564369} $sn2 acylium ion
+265.2525968 1 ms3-{661.6129375} $sn2 acylium ion
+323.3308471 1 ms3-{579.5346872} !sn3 acylium ion
+323.3308471 1 ms3-{661.6129375} !sn3 acylium ion
+
+
+Name: TG(12:0/18:1/22:1)
+Id: TG(12:0/18:1/22:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H102O6
+PrecursorMz: 876.8014640
+ExactMass: 858.7676410
+MW: 858.7676410
+CLASS: TG
+SumComposition: TG(52:2)
+SumChainLengths: TG(12:0_18:1_22:1)
+NumPeaks: 6
+183.1743465 1 ms3-{521.4564369} @sn1 acylium ion
+183.1743465 1 ms3-{577.5190371} @sn1 acylium ion
+265.2525968 1 ms3-{521.4564369} $sn2 acylium ion
+265.2525968 1 ms3-{659.5972874} $sn2 acylium ion
+321.3151970 1 ms3-{577.5190371} !sn3 acylium ion
+321.3151970 1 ms3-{659.5972874} !sn3 acylium ion
+
+
+Name: TG(12:0/18:1/22:2)
+Id: TG(12:0/18:1/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H100O6
+PrecursorMz: 874.7858139
+ExactMass: 856.7519909
+MW: 856.7519909
+CLASS: TG
+SumComposition: TG(52:3)
+SumChainLengths: TG(12:0_18:1_22:2)
+NumPeaks: 6
+183.1743465 1 ms3-{521.4564369} @sn1 acylium ion
+183.1743465 1 ms3-{575.5033871} @sn1 acylium ion
+265.2525968 1 ms3-{521.4564369} $sn2 acylium ion
+265.2525968 1 ms3-{657.5816374} $sn2 acylium ion
+319.2995470 1 ms3-{575.5033871} !sn3 acylium ion
+319.2995470 1 ms3-{657.5816374} !sn3 acylium ion
+
+
+Name: TG(12:0/18:1/22:3)
+Id: TG(12:0/18:1/22:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H98O6
+PrecursorMz: 872.7701639
+ExactMass: 854.7363409
+MW: 854.7363409
+CLASS: TG
+SumComposition: TG(52:4)
+SumChainLengths: TG(12:0_18:1_22:3)
+NumPeaks: 6
+183.1743465 1 ms3-{521.4564369} @sn1 acylium ion
+183.1743465 1 ms3-{573.487737} @sn1 acylium ion
+265.2525968 1 ms3-{521.4564369} $sn2 acylium ion
+265.2525968 1 ms3-{655.5659873} $sn2 acylium ion
+317.2838969 1 ms3-{573.487737} !sn3 acylium ion
+317.2838969 1 ms3-{655.5659873} !sn3 acylium ion
+
+
+Name: TG(12:0/18:1/22:4)
+Id: TG(12:0/18:1/22:4) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H96O6
+PrecursorMz: 870.7545138
+ExactMass: 852.7206908
+MW: 852.7206908
+CLASS: TG
+SumComposition: TG(52:5)
+SumChainLengths: TG(12:0_18:1_22:4)
+NumPeaks: 6
+183.1743465 1 ms3-{521.4564369} @sn1 acylium ion
+183.1743465 1 ms3-{571.4720869} @sn1 acylium ion
+265.2525968 1 ms3-{521.4564369} $sn2 acylium ion
+265.2525968 1 ms3-{653.5503373} $sn2 acylium ion
+315.2682469 1 ms3-{571.4720869} !sn3 acylium ion
+315.2682469 1 ms3-{653.5503373} !sn3 acylium ion
+
+
+Name: TG(12:0/18:1/24:2)
+Id: TG(12:0/18:1/24:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H104O6
+PrecursorMz: 902.8171141
+ExactMass: 884.7832911
+MW: 884.7832911
+CLASS: TG
+SumComposition: TG(54:3)
+SumChainLengths: TG(12:0_18:1_24:2)
+NumPeaks: 6
+183.1743465 1 ms3-{521.4564369} @sn1 acylium ion
+183.1743465 1 ms3-{603.5346872} @sn1 acylium ion
+265.2525968 1 ms3-{521.4564369} $sn2 acylium ion
+265.2525968 1 ms3-{685.6129375} $sn2 acylium ion
+347.3308471 1 ms3-{603.5346872} !sn3 acylium ion
+347.3308471 1 ms3-{685.6129375} !sn3 acylium ion
+
+
+Name: TG(12:0/18:1/24:3)
+Id: TG(12:0/18:1/24:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H102O6
+PrecursorMz: 900.8014640
+ExactMass: 882.7676410
+MW: 882.7676410
+CLASS: TG
+SumComposition: TG(54:4)
+SumChainLengths: TG(12:0_18:1_24:3)
+NumPeaks: 6
+183.1743465 1 ms3-{521.4564369} @sn1 acylium ion
+183.1743465 1 ms3-{601.5190371} @sn1 acylium ion
+265.2525968 1 ms3-{521.4564369} $sn2 acylium ion
+265.2525968 1 ms3-{683.5972874} $sn2 acylium ion
+345.3151970 1 ms3-{601.5190371} !sn3 acylium ion
+345.3151970 1 ms3-{683.5972874} !sn3 acylium ion
+
+
+Name: TG(12:0/18:1/24:4)
+Id: TG(12:0/18:1/24:4) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H100O6
+PrecursorMz: 898.7858139
+ExactMass: 880.7519909
+MW: 880.7519909
+CLASS: TG
+SumComposition: TG(54:5)
+SumChainLengths: TG(12:0_18:1_24:4)
+NumPeaks: 6
+183.1743465 1 ms3-{521.4564369} @sn1 acylium ion
+183.1743465 1 ms3-{599.5033871} @sn1 acylium ion
+265.2525968 1 ms3-{521.4564369} $sn2 acylium ion
+265.2525968 1 ms3-{681.5816374} $sn2 acylium ion
+343.2995470 1 ms3-{599.5033871} !sn3 acylium ion
+343.2995470 1 ms3-{681.5816374} !sn3 acylium ion
+
+
+Name: TG(12:0/18:1/24:5)
+Id: TG(12:0/18:1/24:5) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H98O6
+PrecursorMz: 896.7701639
+ExactMass: 878.7363409
+MW: 878.7363409
+CLASS: TG
+SumComposition: TG(54:6)
+SumChainLengths: TG(12:0_18:1_24:5)
+NumPeaks: 6
+183.1743465 1 ms3-{521.4564369} @sn1 acylium ion
+183.1743465 1 ms3-{597.487737} @sn1 acylium ion
+265.2525968 1 ms3-{521.4564369} $sn2 acylium ion
+265.2525968 1 ms3-{679.5659873} $sn2 acylium ion
+341.2838969 1 ms3-{597.487737} !sn3 acylium ion
+341.2838969 1 ms3-{679.5659873} !sn3 acylium ion
+
+
+Name: TG(12:0/18:2/20:1)
+Id: TG(12:0/18:2/20:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C53H96O6
+PrecursorMz: 846.7545138
+ExactMass: 828.7206908
+MW: 828.7206908
+CLASS: TG
+SumComposition: TG(50:3)
+SumChainLengths: TG(12:0_18:2_20:1)
+NumPeaks: 6
+183.1743465 1 ms3-{519.4407868} @sn1 acylium ion
+183.1743465 1 ms3-{549.487737} @sn1 acylium ion
+263.2369467 1 ms3-{519.4407868} $sn2 acylium ion
+263.2369467 1 ms3-{629.5503373} $sn2 acylium ion
+293.2838969 1 ms3-{549.487737} !sn3 acylium ion
+293.2838969 1 ms3-{629.5503373} !sn3 acylium ion
+
+
+Name: TG(12:0/18:2/22:1)
+Id: TG(12:0/18:2/22:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H100O6
+PrecursorMz: 874.7858139
+ExactMass: 856.7519909
+MW: 856.7519909
+CLASS: TG
+SumComposition: TG(52:3)
+SumChainLengths: TG(12:0_18:2_22:1)
+NumPeaks: 6
+183.1743465 1 ms3-{519.4407868} @sn1 acylium ion
+183.1743465 1 ms3-{577.5190371} @sn1 acylium ion
+263.2369467 1 ms3-{519.4407868} $sn2 acylium ion
+263.2369467 1 ms3-{657.5816374} $sn2 acylium ion
+321.3151970 1 ms3-{577.5190371} !sn3 acylium ion
+321.3151970 1 ms3-{657.5816374} !sn3 acylium ion
+
+
+Name: TG(12:0/18:2/22:2)
+Id: TG(12:0/18:2/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H98O6
+PrecursorMz: 872.7701639
+ExactMass: 854.7363409
+MW: 854.7363409
+CLASS: TG
+SumComposition: TG(52:4)
+SumChainLengths: TG(12:0_18:2_22:2)
+NumPeaks: 6
+183.1743465 1 ms3-{519.4407868} @sn1 acylium ion
+183.1743465 1 ms3-{575.5033871} @sn1 acylium ion
+263.2369467 1 ms3-{519.4407868} $sn2 acylium ion
+263.2369467 1 ms3-{655.5659873} $sn2 acylium ion
+319.2995470 1 ms3-{575.5033871} !sn3 acylium ion
+319.2995470 1 ms3-{655.5659873} !sn3 acylium ion
+
+
+Name: TG(12:0/18:2/22:3)
+Id: TG(12:0/18:2/22:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H96O6
+PrecursorMz: 870.7545138
+ExactMass: 852.7206908
+MW: 852.7206908
+CLASS: TG
+SumComposition: TG(52:5)
+SumChainLengths: TG(12:0_18:2_22:3)
+NumPeaks: 6
+183.1743465 1 ms3-{519.4407868} @sn1 acylium ion
+183.1743465 1 ms3-{573.487737} @sn1 acylium ion
+263.2369467 1 ms3-{519.4407868} $sn2 acylium ion
+263.2369467 1 ms3-{653.5503373} $sn2 acylium ion
+317.2838969 1 ms3-{573.487737} !sn3 acylium ion
+317.2838969 1 ms3-{653.5503373} !sn3 acylium ion
+
+
+Name: TG(12:0/18:2/24:3)
+Id: TG(12:0/18:2/24:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H100O6
+PrecursorMz: 898.7858139
+ExactMass: 880.7519909
+MW: 880.7519909
+CLASS: TG
+SumComposition: TG(54:5)
+SumChainLengths: TG(12:0_18:2_24:3)
+NumPeaks: 6
+183.1743465 1 ms3-{519.4407868} @sn1 acylium ion
+183.1743465 1 ms3-{601.5190371} @sn1 acylium ion
+263.2369467 1 ms3-{519.4407868} $sn2 acylium ion
+263.2369467 1 ms3-{681.5816374} $sn2 acylium ion
+345.3151970 1 ms3-{601.5190371} !sn3 acylium ion
+345.3151970 1 ms3-{681.5816374} !sn3 acylium ion
+
+
+Name: TG(12:0/18:2/24:4)
+Id: TG(12:0/18:2/24:4) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H98O6
+PrecursorMz: 896.7701639
+ExactMass: 878.7363409
+MW: 878.7363409
+CLASS: TG
+SumComposition: TG(54:6)
+SumChainLengths: TG(12:0_18:2_24:4)
+NumPeaks: 6
+183.1743465 1 ms3-{519.4407868} @sn1 acylium ion
+183.1743465 1 ms3-{599.5033871} @sn1 acylium ion
+263.2369467 1 ms3-{519.4407868} $sn2 acylium ion
+263.2369467 1 ms3-{679.5659873} $sn2 acylium ion
+343.2995470 1 ms3-{599.5033871} !sn3 acylium ion
+343.2995470 1 ms3-{679.5659873} !sn3 acylium ion
+
+
+Name: TG(12:0/18:2/24:5)
+Id: TG(12:0/18:2/24:5) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H96O6
+PrecursorMz: 894.7545138
+ExactMass: 876.7206908
+MW: 876.7206908
+CLASS: TG
+SumComposition: TG(54:7)
+SumChainLengths: TG(12:0_18:2_24:5)
+NumPeaks: 6
+183.1743465 1 ms3-{519.4407868} @sn1 acylium ion
+183.1743465 1 ms3-{597.487737} @sn1 acylium ion
+263.2369467 1 ms3-{519.4407868} $sn2 acylium ion
+263.2369467 1 ms3-{677.5503373} $sn2 acylium ion
+341.2838969 1 ms3-{597.487737} !sn3 acylium ion
+341.2838969 1 ms3-{677.5503373} !sn3 acylium ion
+
+
+Name: TG(12:0/18:3/22:1)
+Id: TG(12:0/18:3/22:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H98O6
+PrecursorMz: 872.7701639
+ExactMass: 854.7363409
+MW: 854.7363409
+CLASS: TG
+SumComposition: TG(52:4)
+SumChainLengths: TG(12:0_18:3_22:1)
+NumPeaks: 6
+183.1743465 1 ms3-{517.4251367} @sn1 acylium ion
+183.1743465 1 ms3-{577.5190371} @sn1 acylium ion
+261.2212967 1 ms3-{517.4251367} $sn2 acylium ion
+261.2212967 1 ms3-{655.5659873} $sn2 acylium ion
+321.3151970 1 ms3-{577.5190371} !sn3 acylium ion
+321.3151970 1 ms3-{655.5659873} !sn3 acylium ion
+
+
+Name: TG(12:0/18:3/22:2)
+Id: TG(12:0/18:3/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H96O6
+PrecursorMz: 870.7545138
+ExactMass: 852.7206908
+MW: 852.7206908
+CLASS: TG
+SumComposition: TG(52:5)
+SumChainLengths: TG(12:0_18:3_22:2)
+NumPeaks: 6
+183.1743465 1 ms3-{517.4251367} @sn1 acylium ion
+183.1743465 1 ms3-{575.5033871} @sn1 acylium ion
+261.2212967 1 ms3-{517.4251367} $sn2 acylium ion
+261.2212967 1 ms3-{653.5503373} $sn2 acylium ion
+319.2995470 1 ms3-{575.5033871} !sn3 acylium ion
+319.2995470 1 ms3-{653.5503373} !sn3 acylium ion
+
+
+Name: TG(12:0/20:1/22:2)
+Id: TG(12:0/20:1/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H104O6
+PrecursorMz: 902.8171141
+ExactMass: 884.7832911
+MW: 884.7832911
+CLASS: TG
+SumComposition: TG(54:3)
+SumChainLengths: TG(12:0_20:1_22:2)
+NumPeaks: 6
+183.1743465 1 ms3-{549.487737} @sn1 acylium ion
+183.1743465 1 ms3-{575.5033871} @sn1 acylium ion
+293.2838969 1 ms3-{549.487737} $sn2 acylium ion
+293.2838969 1 ms3-{685.6129375} $sn2 acylium ion
+319.2995470 1 ms3-{575.5033871} !sn3 acylium ion
+319.2995470 1 ms3-{685.6129375} !sn3 acylium ion
+
+
+Name: TG(12:0/20:3/22:2)
+Id: TG(12:0/20:3/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H100O6
+PrecursorMz: 898.7858139
+ExactMass: 880.7519909
+MW: 880.7519909
+CLASS: TG
+SumComposition: TG(54:5)
+SumChainLengths: TG(12:0_20:3_22:2)
+NumPeaks: 6
+183.1743465 1 ms3-{545.4564369} @sn1 acylium ion
+183.1743465 1 ms3-{575.5033871} @sn1 acylium ion
+289.2525968 1 ms3-{545.4564369} $sn2 acylium ion
+289.2525968 1 ms3-{681.5816374} $sn2 acylium ion
+319.2995470 1 ms3-{575.5033871} !sn3 acylium ion
+319.2995470 1 ms3-{681.5816374} !sn3 acylium ion
+
+
+Name: TG(12:0/20:4/22:1)
+Id: TG(12:0/20:4/22:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H100O6
+PrecursorMz: 898.7858139
+ExactMass: 880.7519909
+MW: 880.7519909
+CLASS: TG
+SumComposition: TG(54:5)
+SumChainLengths: TG(12:0_20:4_22:1)
+NumPeaks: 6
+183.1743465 1 ms3-{543.4407868} @sn1 acylium ion
+183.1743465 1 ms3-{577.5190371} @sn1 acylium ion
+287.2369467 1 ms3-{543.4407868} $sn2 acylium ion
+287.2369467 1 ms3-{681.5816374} $sn2 acylium ion
+321.3151970 1 ms3-{577.5190371} !sn3 acylium ion
+321.3151970 1 ms3-{681.5816374} !sn3 acylium ion
+
+
+Name: TG(12:0/20:4/22:2)
+Id: TG(12:0/20:4/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H98O6
+PrecursorMz: 896.7701639
+ExactMass: 878.7363409
+MW: 878.7363409
+CLASS: TG
+SumComposition: TG(54:6)
+SumChainLengths: TG(12:0_20:4_22:2)
+NumPeaks: 6
+183.1743465 1 ms3-{543.4407868} @sn1 acylium ion
+183.1743465 1 ms3-{575.5033871} @sn1 acylium ion
+287.2369467 1 ms3-{543.4407868} $sn2 acylium ion
+287.2369467 1 ms3-{679.5659873} $sn2 acylium ion
+319.2995470 1 ms3-{575.5033871} !sn3 acylium ion
+319.2995470 1 ms3-{679.5659873} !sn3 acylium ion
+
+
+Name: TG(12:0/20:5/22:1)
+Id: TG(12:0/20:5/22:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H98O6
+PrecursorMz: 896.7701639
+ExactMass: 878.7363409
+MW: 878.7363409
+CLASS: TG
+SumComposition: TG(54:6)
+SumChainLengths: TG(12:0_20:5_22:1)
+NumPeaks: 6
+183.1743465 1 ms3-{541.4251367} @sn1 acylium ion
+183.1743465 1 ms3-{577.5190371} @sn1 acylium ion
+285.2212967 1 ms3-{541.4251367} $sn2 acylium ion
+285.2212967 1 ms3-{679.5659873} $sn2 acylium ion
+321.3151970 1 ms3-{577.5190371} !sn3 acylium ion
+321.3151970 1 ms3-{679.5659873} !sn3 acylium ion
+
+
+Name: TG(12:0/20:5/22:2)
+Id: TG(12:0/20:5/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H96O6
+PrecursorMz: 894.7545138
+ExactMass: 876.7206908
+MW: 876.7206908
+CLASS: TG
+SumComposition: TG(54:7)
+SumChainLengths: TG(12:0_20:5_22:2)
+NumPeaks: 6
+183.1743465 1 ms3-{541.4251367} @sn1 acylium ion
+183.1743465 1 ms3-{575.5033871} @sn1 acylium ion
+285.2212967 1 ms3-{541.4251367} $sn2 acylium ion
+285.2212967 1 ms3-{677.5503373} $sn2 acylium ion
+319.2995470 1 ms3-{575.5033871} !sn3 acylium ion
+319.2995470 1 ms3-{677.5503373} !sn3 acylium ion
+
+
+Name: TG(12:0/22:1/22:5)
+Id: TG(12:0/22:1/22:5) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H102O6
+PrecursorMz: 924.8014640
+ExactMass: 906.7676410
+MW: 906.7676410
+CLASS: TG
+SumComposition: TG(56:6)
+SumChainLengths: TG(12:0_22:1_22:5)
+NumPeaks: 6
+183.1743465 1 ms3-{569.4564369} @sn1 acylium ion
+183.1743465 1 ms3-{577.5190371} @sn1 acylium ion
+313.2525968 1 ms3-{569.4564369} !sn3 acylium ion
+313.2525968 1 ms3-{707.5972874} !sn3 acylium ion
+321.3151970 1 ms3-{577.5190371} $sn2 acylium ion
+321.3151970 1 ms3-{707.5972874} $sn2 acylium ion
+
+
+Name: TG(12:0/22:1/22:6)
+Id: TG(12:0/22:1/22:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H100O6
+PrecursorMz: 922.7858139
+ExactMass: 904.7519909
+MW: 904.7519909
+CLASS: TG
+SumComposition: TG(56:7)
+SumChainLengths: TG(12:0_22:1_22:6)
+NumPeaks: 6
+183.1743465 1 ms3-{567.4407868} @sn1 acylium ion
+183.1743465 1 ms3-{577.5190371} @sn1 acylium ion
+311.2369467 1 ms3-{567.4407868} !sn3 acylium ion
+311.2369467 1 ms3-{705.5816374} !sn3 acylium ion
+321.3151970 1 ms3-{577.5190371} $sn2 acylium ion
+321.3151970 1 ms3-{705.5816374} $sn2 acylium ion
+
+
+Name: TG(12:0/22:2/22:5)
+Id: TG(12:0/22:2/22:5) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H100O6
+PrecursorMz: 922.7858139
+ExactMass: 904.7519909
+MW: 904.7519909
+CLASS: TG
+SumComposition: TG(56:7)
+SumChainLengths: TG(12:0_22:2_22:5)
+NumPeaks: 6
+183.1743465 1 ms3-{569.4564369} @sn1 acylium ion
+183.1743465 1 ms3-{575.5033871} @sn1 acylium ion
+313.2525968 1 ms3-{569.4564369} !sn3 acylium ion
+313.2525968 1 ms3-{705.5816374} !sn3 acylium ion
+319.2995470 1 ms3-{575.5033871} $sn2 acylium ion
+319.2995470 1 ms3-{705.5816374} $sn2 acylium ion
+
+
+Name: TG(12:0/22:2/22:6)
+Id: TG(12:0/22:2/22:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H98O6
+PrecursorMz: 920.7701639
+ExactMass: 902.7363409
+MW: 902.7363409
+CLASS: TG
+SumComposition: TG(56:8)
+SumChainLengths: TG(12:0_22:2_22:6)
+NumPeaks: 6
+183.1743465 1 ms3-{567.4407868} @sn1 acylium ion
+183.1743465 1 ms3-{575.5033871} @sn1 acylium ion
+311.2369467 1 ms3-{567.4407868} !sn3 acylium ion
+311.2369467 1 ms3-{703.5659873} !sn3 acylium ion
+319.2995470 1 ms3-{575.5033871} $sn2 acylium ion
+319.2995470 1 ms3-{703.5659873} $sn2 acylium ion
+
+
+Name: TG(12:0/22:3/22:5)
+Id: TG(12:0/22:3/22:5) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H98O6
+PrecursorMz: 920.7701639
+ExactMass: 902.7363409
+MW: 902.7363409
+CLASS: TG
+SumComposition: TG(56:8)
+SumChainLengths: TG(12:0_22:3_22:5)
+NumPeaks: 6
+183.1743465 1 ms3-{569.4564369} @sn1 acylium ion
+183.1743465 1 ms3-{573.487737} @sn1 acylium ion
+313.2525968 1 ms3-{569.4564369} !sn3 acylium ion
+313.2525968 1 ms3-{703.5659873} !sn3 acylium ion
+317.2838969 1 ms3-{573.487737} $sn2 acylium ion
+317.2838969 1 ms3-{703.5659873} $sn2 acylium ion
+
+
+Name: TG(12:0/22:3/22:6)
+Id: TG(12:0/22:3/22:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H96O6
+PrecursorMz: 918.7545138
+ExactMass: 900.7206908
+MW: 900.7206908
+CLASS: TG
+SumComposition: TG(56:9)
+SumChainLengths: TG(12:0_22:3_22:6)
+NumPeaks: 6
+183.1743465 1 ms3-{567.4407868} @sn1 acylium ion
+183.1743465 1 ms3-{573.487737} @sn1 acylium ion
+311.2369467 1 ms3-{567.4407868} !sn3 acylium ion
+311.2369467 1 ms3-{701.5503373} !sn3 acylium ion
+317.2838969 1 ms3-{573.487737} $sn2 acylium ion
+317.2838969 1 ms3-{701.5503373} $sn2 acylium ion
+
+
+Name: TG(12:1;O/18:1/22:2)
+Id: TG(12:1;O/18:1/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H98O7
+PrecursorMz: 888.7650785
+ExactMass: 870.7312555
+MW: 870.7312555
+CLASS: TG
+SumComposition: TG(52:4;O)
+SumChainLengths: TG(12:1;O_18:1_22:2)
+NumPeaks: 6
+197.1536110 1 ms3-{535.43570141956} sn1 acylium ion ox
+197.1536110 1 ms3-{589.48265161956} sn1 acylium ion ox
+265.2525968 1 ms3-{535.43570141956} $sn2 acylium ion
+265.2525968 1 ms3-{657.5816374} $sn2 acylium ion
+319.2995470 1 ms3-{589.48265161956} !sn3 acylium ion
+319.2995470 1 ms3-{657.5816374} !sn3 acylium ion
+
+
+Name: TG(12:1/16:0/22:1)
+Id: TG(12:1/16:0/22:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C53H98O6
+PrecursorMz: 848.7701639
+ExactMass: 830.7363409
+MW: 830.7363409
+CLASS: TG
+SumComposition: TG(50:2)
+SumChainLengths: TG(12:1_16:0_22:1)
+NumPeaks: 6
+181.1586964 1 ms3-{493.4251367} @sn1 acylium ion
+181.1586964 1 ms3-{575.5033871} @sn1 acylium ion
+239.2369467 1 ms3-{493.4251367} $sn2 acylium ion
+239.2369467 1 ms3-{633.5816374} $sn2 acylium ion
+321.3151970 1 ms3-{575.5033871} !sn3 acylium ion
+321.3151970 1 ms3-{633.5816374} !sn3 acylium ion
+
+
+Name: TG(12:1/16:0/22:2)
+Id: TG(12:1/16:0/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C53H96O6
+PrecursorMz: 846.7545138
+ExactMass: 828.7206908
+MW: 828.7206908
+CLASS: TG
+SumComposition: TG(50:3)
+SumChainLengths: TG(12:1_16:0_22:2)
+NumPeaks: 6
+181.1586964 1 ms3-{493.4251367} @sn1 acylium ion
+181.1586964 1 ms3-{573.487737} @sn1 acylium ion
+239.2369467 1 ms3-{493.4251367} $sn2 acylium ion
+239.2369467 1 ms3-{631.5659873} $sn2 acylium ion
+319.2995470 1 ms3-{573.487737} !sn3 acylium ion
+319.2995470 1 ms3-{631.5659873} !sn3 acylium ion
+
+
+Name: TG(12:1/16:0/22:3)
+Id: TG(12:1/16:0/22:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C53H94O6
+PrecursorMz: 844.7388637
+ExactMass: 826.7050407
+MW: 826.7050407
+CLASS: TG
+SumComposition: TG(50:4)
+SumChainLengths: TG(12:1_16:0_22:3)
+NumPeaks: 6
+181.1586964 1 ms3-{493.4251367} @sn1 acylium ion
+181.1586964 1 ms3-{571.4720869} @sn1 acylium ion
+239.2369467 1 ms3-{493.4251367} $sn2 acylium ion
+239.2369467 1 ms3-{629.5503373} $sn2 acylium ion
+317.2838969 1 ms3-{571.4720869} !sn3 acylium ion
+317.2838969 1 ms3-{629.5503373} !sn3 acylium ion
+
+
+Name: TG(12:1/16:0/24:2)
+Id: TG(12:1/16:0/24:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H100O6
+PrecursorMz: 874.7858139
+ExactMass: 856.7519909
+MW: 856.7519909
+CLASS: TG
+SumComposition: TG(52:3)
+SumChainLengths: TG(12:1_16:0_24:2)
+NumPeaks: 6
+181.1586964 1 ms3-{493.4251367} @sn1 acylium ion
+181.1586964 1 ms3-{601.5190371} @sn1 acylium ion
+239.2369467 1 ms3-{493.4251367} $sn2 acylium ion
+239.2369467 1 ms3-{659.5972874} $sn2 acylium ion
+347.3308471 1 ms3-{601.5190371} !sn3 acylium ion
+347.3308471 1 ms3-{659.5972874} !sn3 acylium ion
+
+
+Name: TG(12:1/16:0/24:3)
+Id: TG(12:1/16:0/24:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H98O6
+PrecursorMz: 872.7701639
+ExactMass: 854.7363409
+MW: 854.7363409
+CLASS: TG
+SumComposition: TG(52:4)
+SumChainLengths: TG(12:1_16:0_24:3)
+NumPeaks: 6
+181.1586964 1 ms3-{493.4251367} @sn1 acylium ion
+181.1586964 1 ms3-{599.5033871} @sn1 acylium ion
+239.2369467 1 ms3-{493.4251367} $sn2 acylium ion
+239.2369467 1 ms3-{657.5816374} $sn2 acylium ion
+345.3151970 1 ms3-{599.5033871} !sn3 acylium ion
+345.3151970 1 ms3-{657.5816374} !sn3 acylium ion
+
+
+Name: TG(12:1/16:1/22:1)
+Id: TG(12:1/16:1/22:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C53H96O6
+PrecursorMz: 846.7545138
+ExactMass: 828.7206908
+MW: 828.7206908
+CLASS: TG
+SumComposition: TG(50:3)
+SumChainLengths: TG(12:1_16:1_22:1)
+NumPeaks: 6
+181.1586964 1 ms3-{491.4094867} @sn1 acylium ion
+181.1586964 1 ms3-{575.5033871} @sn1 acylium ion
+237.2212967 1 ms3-{491.4094867} $sn2 acylium ion
+237.2212967 1 ms3-{631.5659873} $sn2 acylium ion
+321.3151970 1 ms3-{575.5033871} !sn3 acylium ion
+321.3151970 1 ms3-{631.5659873} !sn3 acylium ion
+
+
+Name: TG(12:1/16:1/22:2)
+Id: TG(12:1/16:1/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C53H94O6
+PrecursorMz: 844.7388637
+ExactMass: 826.7050407
+MW: 826.7050407
+CLASS: TG
+SumComposition: TG(50:4)
+SumChainLengths: TG(12:1_16:1_22:2)
+NumPeaks: 6
+181.1586964 1 ms3-{491.4094867} @sn1 acylium ion
+181.1586964 1 ms3-{573.487737} @sn1 acylium ion
+237.2212967 1 ms3-{491.4094867} $sn2 acylium ion
+237.2212967 1 ms3-{629.5503373} $sn2 acylium ion
+319.2995470 1 ms3-{573.487737} !sn3 acylium ion
+319.2995470 1 ms3-{629.5503373} !sn3 acylium ion
+
+
+Name: TG(12:1/18:1/22:0)
+Id: TG(12:1/18:1/22:0) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H102O6
+PrecursorMz: 876.8014640
+ExactMass: 858.7676410
+MW: 858.7676410
+CLASS: TG
+SumComposition: TG(52:2)
+SumChainLengths: TG(12:1_18:1_22:0)
+NumPeaks: 6
+181.1586964 1 ms3-{519.4407868} @sn1 acylium ion
+181.1586964 1 ms3-{577.5190371} @sn1 acylium ion
+265.2525968 1 ms3-{519.4407868} $sn2 acylium ion
+265.2525968 1 ms3-{661.6129375} $sn2 acylium ion
+323.3308471 1 ms3-{577.5190371} !sn3 acylium ion
+323.3308471 1 ms3-{661.6129375} !sn3 acylium ion
+
+
+Name: TG(12:1/18:1/22:1)
+Id: TG(12:1/18:1/22:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H100O6
+PrecursorMz: 874.7858139
+ExactMass: 856.7519909
+MW: 856.7519909
+CLASS: TG
+SumComposition: TG(52:3)
+SumChainLengths: TG(12:1_18:1_22:1)
+NumPeaks: 6
+181.1586964 1 ms3-{519.4407868} @sn1 acylium ion
+181.1586964 1 ms3-{575.5033871} @sn1 acylium ion
+265.2525968 1 ms3-{519.4407868} $sn2 acylium ion
+265.2525968 1 ms3-{659.5972874} $sn2 acylium ion
+321.3151970 1 ms3-{575.5033871} !sn3 acylium ion
+321.3151970 1 ms3-{659.5972874} !sn3 acylium ion
+
+
+Name: TG(12:1/18:1/22:2)
+Id: TG(12:1/18:1/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H98O6
+PrecursorMz: 872.7701639
+ExactMass: 854.7363409
+MW: 854.7363409
+CLASS: TG
+SumComposition: TG(52:4)
+SumChainLengths: TG(12:1_18:1_22:2)
+NumPeaks: 6
+181.1586964 1 ms3-{519.4407868} @sn1 acylium ion
+181.1586964 1 ms3-{573.487737} @sn1 acylium ion
+265.2525968 1 ms3-{519.4407868} $sn2 acylium ion
+265.2525968 1 ms3-{657.5816374} $sn2 acylium ion
+319.2995470 1 ms3-{573.487737} !sn3 acylium ion
+319.2995470 1 ms3-{657.5816374} !sn3 acylium ion
+
+
+Name: TG(12:1/18:1/22:3)
+Id: TG(12:1/18:1/22:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H96O6
+PrecursorMz: 870.7545138
+ExactMass: 852.7206908
+MW: 852.7206908
+CLASS: TG
+SumComposition: TG(52:5)
+SumChainLengths: TG(12:1_18:1_22:3)
+NumPeaks: 6
+181.1586964 1 ms3-{519.4407868} @sn1 acylium ion
+181.1586964 1 ms3-{571.4720869} @sn1 acylium ion
+265.2525968 1 ms3-{519.4407868} $sn2 acylium ion
+265.2525968 1 ms3-{655.5659873} $sn2 acylium ion
+317.2838969 1 ms3-{571.4720869} !sn3 acylium ion
+317.2838969 1 ms3-{655.5659873} !sn3 acylium ion
+
+
+Name: TG(12:1/18:1/24:2)
+Id: TG(12:1/18:1/24:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H102O6
+PrecursorMz: 900.8014640
+ExactMass: 882.7676410
+MW: 882.7676410
+CLASS: TG
+SumComposition: TG(54:4)
+SumChainLengths: TG(12:1_18:1_24:2)
+NumPeaks: 6
+181.1586964 1 ms3-{519.4407868} @sn1 acylium ion
+181.1586964 1 ms3-{601.5190371} @sn1 acylium ion
+265.2525968 1 ms3-{519.4407868} $sn2 acylium ion
+265.2525968 1 ms3-{685.6129375} $sn2 acylium ion
+347.3308471 1 ms3-{601.5190371} !sn3 acylium ion
+347.3308471 1 ms3-{685.6129375} !sn3 acylium ion
+
+
+Name: TG(12:1/18:1/24:3)
+Id: TG(12:1/18:1/24:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H100O6
+PrecursorMz: 898.7858139
+ExactMass: 880.7519909
+MW: 880.7519909
+CLASS: TG
+SumComposition: TG(54:5)
+SumChainLengths: TG(12:1_18:1_24:3)
+NumPeaks: 6
+181.1586964 1 ms3-{519.4407868} @sn1 acylium ion
+181.1586964 1 ms3-{599.5033871} @sn1 acylium ion
+265.2525968 1 ms3-{519.4407868} $sn2 acylium ion
+265.2525968 1 ms3-{683.5972874} $sn2 acylium ion
+345.3151970 1 ms3-{599.5033871} !sn3 acylium ion
+345.3151970 1 ms3-{683.5972874} !sn3 acylium ion
+
+
+Name: TG(12:1/18:2/22:0)
+Id: TG(12:1/18:2/22:0) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H100O6
+PrecursorMz: 874.7858139
+ExactMass: 856.7519909
+MW: 856.7519909
+CLASS: TG
+SumComposition: TG(52:3)
+SumChainLengths: TG(12:1_18:2_22:0)
+NumPeaks: 6
+181.1586964 1 ms3-{517.4251367} @sn1 acylium ion
+181.1586964 1 ms3-{577.5190371} @sn1 acylium ion
+263.2369467 1 ms3-{517.4251367} $sn2 acylium ion
+263.2369467 1 ms3-{659.5972874} $sn2 acylium ion
+323.3308471 1 ms3-{577.5190371} !sn3 acylium ion
+323.3308471 1 ms3-{659.5972874} !sn3 acylium ion
+
+
+Name: TG(12:1/18:2/22:1)
+Id: TG(12:1/18:2/22:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H98O6
+PrecursorMz: 872.7701639
+ExactMass: 854.7363409
+MW: 854.7363409
+CLASS: TG
+SumComposition: TG(52:4)
+SumChainLengths: TG(12:1_18:2_22:1)
+NumPeaks: 6
+181.1586964 1 ms3-{517.4251367} @sn1 acylium ion
+181.1586964 1 ms3-{575.5033871} @sn1 acylium ion
+263.2369467 1 ms3-{517.4251367} $sn2 acylium ion
+263.2369467 1 ms3-{657.5816374} $sn2 acylium ion
+321.3151970 1 ms3-{575.5033871} !sn3 acylium ion
+321.3151970 1 ms3-{657.5816374} !sn3 acylium ion
+
+
+Name: TG(12:1/18:2/22:2)
+Id: TG(12:1/18:2/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H96O6
+PrecursorMz: 870.7545138
+ExactMass: 852.7206908
+MW: 852.7206908
+CLASS: TG
+SumComposition: TG(52:5)
+SumChainLengths: TG(12:1_18:2_22:2)
+NumPeaks: 6
+181.1586964 1 ms3-{517.4251367} @sn1 acylium ion
+181.1586964 1 ms3-{573.487737} @sn1 acylium ion
+263.2369467 1 ms3-{517.4251367} $sn2 acylium ion
+263.2369467 1 ms3-{655.5659873} $sn2 acylium ion
+319.2995470 1 ms3-{573.487737} !sn3 acylium ion
+319.2995470 1 ms3-{655.5659873} !sn3 acylium ion
+
+
+Name: TG(12:1/18:2/22:3)
+Id: TG(12:1/18:2/22:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H94O6
+PrecursorMz: 868.7388637
+ExactMass: 850.7050407
+MW: 850.7050407
+CLASS: TG
+SumComposition: TG(52:6)
+SumChainLengths: TG(12:1_18:2_22:3)
+NumPeaks: 6
+181.1586964 1 ms3-{517.4251367} @sn1 acylium ion
+181.1586964 1 ms3-{571.4720869} @sn1 acylium ion
+263.2369467 1 ms3-{517.4251367} $sn2 acylium ion
+263.2369467 1 ms3-{653.5503373} $sn2 acylium ion
+317.2838969 1 ms3-{571.4720869} !sn3 acylium ion
+317.2838969 1 ms3-{653.5503373} !sn3 acylium ion
+
+
+Name: TG(12:1/20:5/22:2)
+Id: TG(12:1/20:5/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H94O6
+PrecursorMz: 892.7388637
+ExactMass: 874.7050407
+MW: 874.7050407
+CLASS: TG
+SumComposition: TG(54:8)
+SumChainLengths: TG(12:1_20:5_22:2)
+NumPeaks: 6
+181.1586964 1 ms3-{539.4094867} @sn1 acylium ion
+181.1586964 1 ms3-{573.487737} @sn1 acylium ion
+285.2212967 1 ms3-{539.4094867} $sn2 acylium ion
+285.2212967 1 ms3-{677.5503373} $sn2 acylium ion
+319.2995470 1 ms3-{573.487737} !sn3 acylium ion
+319.2995470 1 ms3-{677.5503373} !sn3 acylium ion
+
+
+Name: TG(12:1/22:1/22:6)
+Id: TG(12:1/22:1/22:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H98O6
+PrecursorMz: 920.7701639
+ExactMass: 902.7363409
+MW: 902.7363409
+CLASS: TG
+SumComposition: TG(56:8)
+SumChainLengths: TG(12:1_22:1_22:6)
+NumPeaks: 6
+181.1586964 1 ms3-{565.4251367} @sn1 acylium ion
+181.1586964 1 ms3-{575.5033871} @sn1 acylium ion
+311.2369467 1 ms3-{565.4251367} !sn3 acylium ion
+311.2369467 1 ms3-{705.5816374} !sn3 acylium ion
+321.3151970 1 ms3-{575.5033871} $sn2 acylium ion
+321.3151970 1 ms3-{705.5816374} $sn2 acylium ion
+
+
+Name: TG(12:1/22:2/22:6)
+Id: TG(12:1/22:2/22:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H96O6
+PrecursorMz: 918.7545138
+ExactMass: 900.7206908
+MW: 900.7206908
+CLASS: TG
+SumComposition: TG(56:9)
+SumChainLengths: TG(12:1_22:2_22:6)
+NumPeaks: 6
+181.1586964 1 ms3-{565.4251367} @sn1 acylium ion
+181.1586964 1 ms3-{573.487737} @sn1 acylium ion
+311.2369467 1 ms3-{565.4251367} !sn3 acylium ion
+311.2369467 1 ms3-{703.5659873} !sn3 acylium ion
+319.2995470 1 ms3-{573.487737} $sn2 acylium ion
+319.2995470 1 ms3-{703.5659873} $sn2 acylium ion
+
+
+Name: TG(12:2/16:0/24:1)
+Id: TG(12:2/16:0/24:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H100O6
+PrecursorMz: 874.7858139
+ExactMass: 856.7519909
+MW: 856.7519909
+CLASS: TG
+SumComposition: TG(52:3)
+SumChainLengths: TG(12:2_16:0_24:1)
+NumPeaks: 6
+179.1430463 1 ms3-{491.4094867} @sn1 acylium ion
+179.1430463 1 ms3-{601.5190371} @sn1 acylium ion
+239.2369467 1 ms3-{491.4094867} $sn2 acylium ion
+239.2369467 1 ms3-{661.6129375} $sn2 acylium ion
+349.3464972 1 ms3-{601.5190371} !sn3 acylium ion
+349.3464972 1 ms3-{661.6129375} !sn3 acylium ion
+
+
+Name: TG(12:2/16:0/24:2)
+Id: TG(12:2/16:0/24:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H98O6
+PrecursorMz: 872.7701639
+ExactMass: 854.7363409
+MW: 854.7363409
+CLASS: TG
+SumComposition: TG(52:4)
+SumChainLengths: TG(12:2_16:0_24:2)
+NumPeaks: 6
+179.1430463 1 ms3-{491.4094867} @sn1 acylium ion
+179.1430463 1 ms3-{599.5033871} @sn1 acylium ion
+239.2369467 1 ms3-{491.4094867} $sn2 acylium ion
+239.2369467 1 ms3-{659.5972874} $sn2 acylium ion
+347.3308471 1 ms3-{599.5033871} !sn3 acylium ion
+347.3308471 1 ms3-{659.5972874} !sn3 acylium ion
+
+
+Name: TG(12:2/18:1/22:0)
+Id: TG(12:2/18:1/22:0) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H100O6
+PrecursorMz: 874.7858139
+ExactMass: 856.7519909
+MW: 856.7519909
+CLASS: TG
+SumComposition: TG(52:3)
+SumChainLengths: TG(12:2_18:1_22:0)
+NumPeaks: 6
+179.1430463 1 ms3-{517.4251367} @sn1 acylium ion
+179.1430463 1 ms3-{575.5033871} @sn1 acylium ion
+265.2525968 1 ms3-{517.4251367} $sn2 acylium ion
+265.2525968 1 ms3-{661.6129375} $sn2 acylium ion
+323.3308471 1 ms3-{575.5033871} !sn3 acylium ion
+323.3308471 1 ms3-{661.6129375} !sn3 acylium ion
+
+
+Name: TG(12:2/18:1/24:1)
+Id: TG(12:2/18:1/24:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H102O6
+PrecursorMz: 900.8014640
+ExactMass: 882.7676410
+MW: 882.7676410
+CLASS: TG
+SumComposition: TG(54:4)
+SumChainLengths: TG(12:2_18:1_24:1)
+NumPeaks: 6
+179.1430463 1 ms3-{517.4251367} @sn1 acylium ion
+179.1430463 1 ms3-{601.5190371} @sn1 acylium ion
+265.2525968 1 ms3-{517.4251367} $sn2 acylium ion
+265.2525968 1 ms3-{687.6285876} $sn2 acylium ion
+349.3464972 1 ms3-{601.5190371} !sn3 acylium ion
+349.3464972 1 ms3-{687.6285876} !sn3 acylium ion
+
+
+Name: TG(14:0/14:1/22:2)
+Id: TG(14:0/14:1/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C53H96O6
+PrecursorMz: 846.7545138
+ExactMass: 828.7206908
+MW: 828.7206908
+CLASS: TG
+SumComposition: TG(50:3)
+SumChainLengths: TG(14:0_14:1_22:2)
+NumPeaks: 6
+209.1899965 1 ms3-{493.4251367} $sn2 acylium ion
+209.1899965 1 ms3-{601.5190371} $sn2 acylium ion
+211.2056466 1 ms3-{493.4251367} @sn1 acylium ion
+211.2056466 1 ms3-{603.5346872} @sn1 acylium ion
+319.2995470 1 ms3-{601.5190371} !sn3 acylium ion
+319.2995470 1 ms3-{603.5346872} !sn3 acylium ion
+
+
+Name: TG(14:0/14:1/22:3)
+Id: TG(14:0/14:1/22:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C53H94O6
+PrecursorMz: 844.7388637
+ExactMass: 826.7050407
+MW: 826.7050407
+CLASS: TG
+SumComposition: TG(50:4)
+SumChainLengths: TG(14:0_14:1_22:3)
+NumPeaks: 6
+209.1899965 1 ms3-{493.4251367} $sn2 acylium ion
+209.1899965 1 ms3-{599.5033871} $sn2 acylium ion
+211.2056466 1 ms3-{493.4251367} @sn1 acylium ion
+211.2056466 1 ms3-{601.5190371} @sn1 acylium ion
+317.2838969 1 ms3-{599.5033871} !sn3 acylium ion
+317.2838969 1 ms3-{601.5190371} !sn3 acylium ion
+
+
+Name: TG(14:0/14:2/22:2)
+Id: TG(14:0/14:2/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C53H94O6
+PrecursorMz: 844.7388637
+ExactMass: 826.7050407
+MW: 826.7050407
+CLASS: TG
+SumComposition: TG(50:4)
+SumChainLengths: TG(14:0_14:2_22:2)
+NumPeaks: 6
+207.1743465 1 ms3-{491.4094867} $sn2 acylium ion
+207.1743465 1 ms3-{599.5033871} $sn2 acylium ion
+211.2056466 1 ms3-{491.4094867} @sn1 acylium ion
+211.2056466 1 ms3-{603.5346872} @sn1 acylium ion
+319.2995470 1 ms3-{599.5033871} !sn3 acylium ion
+319.2995470 1 ms3-{603.5346872} !sn3 acylium ion
+
+
+Name: TG(14:0/16:0/18:1)
+Id: TG(14:0/16:0/18:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C51H96O6
+PrecursorMz: 822.7545138
+ExactMass: 804.7206908
+MW: 804.7206908
+CLASS: TG
+SumComposition: TG(48:1)
+SumChainLengths: TG(14:0_16:0_18:1)
+NumPeaks: 6
+211.2056466 1 ms3-{523.4720869} @sn1 acylium ion
+211.2056466 1 ms3-{549.487737} @sn1 acylium ion
+239.2369467 1 ms3-{523.4720869} $sn2 acylium ion
+239.2369467 1 ms3-{577.5190371} $sn2 acylium ion
+265.2525968 1 ms3-{549.487737} !sn3 acylium ion
+265.2525968 1 ms3-{577.5190371} !sn3 acylium ion
+
+
+Name: TG(14:0/16:0/18:2)
+Id: TG(14:0/16:0/18:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C51H94O6
+PrecursorMz: 820.7388637
+ExactMass: 802.7050407
+MW: 802.7050407
+CLASS: TG
+SumComposition: TG(48:2)
+SumChainLengths: TG(14:0_16:0_18:2)
+NumPeaks: 6
+211.2056466 1 ms3-{523.4720869} @sn1 acylium ion
+211.2056466 1 ms3-{547.4720869} @sn1 acylium ion
+239.2369467 1 ms3-{523.4720869} $sn2 acylium ion
+239.2369467 1 ms3-{575.5033871} $sn2 acylium ion
+263.2369467 1 ms3-{547.4720869} !sn3 acylium ion
+263.2369467 1 ms3-{575.5033871} !sn3 acylium ion
+
+
+Name: TG(14:0/16:0/22:1;O)
+Id: TG(14:0/16:0/22:1;O) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H104O7
+PrecursorMz: 894.8120287
+ExactMass: 876.7782057
+MW: 876.7782057
+CLASS: TG
+SumComposition: TG(52:1;O)
+SumChainLengths: TG(14:0_16:0_22:1;O)
+NumPeaks: 6
+211.2056466 1 ms3-{523.4720869} @sn1 acylium ion
+211.2056466 1 ms3-{621.54525191956} @sn1 acylium ion
+239.2369467 1 ms3-{523.4720869} $sn2 acylium ion
+239.2369467 1 ms3-{649.57655201956} $sn2 acylium ion
+337.3101116 1 ms3-{621.54525191956} sn3 acylium ion ox
+337.3101116 1 ms3-{649.57655201956} sn3 acylium ion ox
+
+
+Name: TG(14:0/16:0/22:1)
+Id: TG(14:0/16:0/22:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H104O6
+PrecursorMz: 878.8171141
+ExactMass: 860.7832911
+MW: 860.7832911
+CLASS: TG
+SumComposition: TG(52:1)
+SumChainLengths: TG(14:0_16:0_22:1)
+NumPeaks: 6
+211.2056466 1 ms3-{523.4720869} @sn1 acylium ion
+211.2056466 1 ms3-{605.5503373} @sn1 acylium ion
+239.2369467 1 ms3-{523.4720869} $sn2 acylium ion
+239.2369467 1 ms3-{633.5816374} $sn2 acylium ion
+321.3151970 1 ms3-{605.5503373} !sn3 acylium ion
+321.3151970 1 ms3-{633.5816374} !sn3 acylium ion
+
+
+Name: TG(14:0/16:0/22:2)
+Id: TG(14:0/16:0/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H102O6
+PrecursorMz: 876.8014640
+ExactMass: 858.7676410
+MW: 858.7676410
+CLASS: TG
+SumComposition: TG(52:2)
+SumChainLengths: TG(14:0_16:0_22:2)
+NumPeaks: 6
+211.2056466 1 ms3-{523.4720869} @sn1 acylium ion
+211.2056466 1 ms3-{603.5346872} @sn1 acylium ion
+239.2369467 1 ms3-{523.4720869} $sn2 acylium ion
+239.2369467 1 ms3-{631.5659873} $sn2 acylium ion
+319.2995470 1 ms3-{603.5346872} !sn3 acylium ion
+319.2995470 1 ms3-{631.5659873} !sn3 acylium ion
+
+
+Name: TG(14:0/16:0/22:3)
+Id: TG(14:0/16:0/22:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H100O6
+PrecursorMz: 874.7858139
+ExactMass: 856.7519909
+MW: 856.7519909
+CLASS: TG
+SumComposition: TG(52:3)
+SumChainLengths: TG(14:0_16:0_22:3)
+NumPeaks: 6
+211.2056466 1 ms3-{523.4720869} @sn1 acylium ion
+211.2056466 1 ms3-{601.5190371} @sn1 acylium ion
+239.2369467 1 ms3-{523.4720869} $sn2 acylium ion
+239.2369467 1 ms3-{629.5503373} $sn2 acylium ion
+317.2838969 1 ms3-{601.5190371} !sn3 acylium ion
+317.2838969 1 ms3-{629.5503373} !sn3 acylium ion
+
+
+Name: TG(14:0/16:0/22:4)
+Id: TG(14:0/16:0/22:4) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H98O6
+PrecursorMz: 872.7701639
+ExactMass: 854.7363409
+MW: 854.7363409
+CLASS: TG
+SumComposition: TG(52:4)
+SumChainLengths: TG(14:0_16:0_22:4)
+NumPeaks: 6
+211.2056466 1 ms3-{523.4720869} @sn1 acylium ion
+211.2056466 1 ms3-{599.5033871} @sn1 acylium ion
+239.2369467 1 ms3-{523.4720869} $sn2 acylium ion
+239.2369467 1 ms3-{627.5346872} $sn2 acylium ion
+315.2682469 1 ms3-{599.5033871} !sn3 acylium ion
+315.2682469 1 ms3-{627.5346872} !sn3 acylium ion
+
+
+Name: TG(14:0/16:0/22:5)
+Id: TG(14:0/16:0/22:5) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H96O6
+PrecursorMz: 870.7545138
+ExactMass: 852.7206908
+MW: 852.7206908
+CLASS: TG
+SumComposition: TG(52:5)
+SumChainLengths: TG(14:0_16:0_22:5)
+NumPeaks: 6
+211.2056466 1 ms3-{523.4720869} @sn1 acylium ion
+211.2056466 1 ms3-{597.487737} @sn1 acylium ion
+239.2369467 1 ms3-{523.4720869} $sn2 acylium ion
+239.2369467 1 ms3-{625.5190371} $sn2 acylium ion
+313.2525968 1 ms3-{597.487737} !sn3 acylium ion
+313.2525968 1 ms3-{625.5190371} !sn3 acylium ion
+
+
+Name: TG(14:0/16:0/24:6)
+Id: TG(14:0/16:0/24:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H98O6
+PrecursorMz: 896.7701639
+ExactMass: 878.7363409
+MW: 878.7363409
+CLASS: TG
+SumComposition: TG(54:6)
+SumChainLengths: TG(14:0_16:0_24:6)
+NumPeaks: 6
+211.2056466 1 ms3-{523.4720869} @sn1 acylium ion
+211.2056466 1 ms3-{623.5033871} @sn1 acylium ion
+239.2369467 1 ms3-{523.4720869} $sn2 acylium ion
+239.2369467 1 ms3-{651.5346872} $sn2 acylium ion
+339.2682469 1 ms3-{623.5033871} !sn3 acylium ion
+339.2682469 1 ms3-{651.5346872} !sn3 acylium ion
+
+
+Name: TG(14:0/16:1/22:1;O)
+Id: TG(14:0/16:1/22:1;O) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H102O7
+PrecursorMz: 892.7963786
+ExactMass: 874.7625556
+MW: 874.7625556
+CLASS: TG
+SumComposition: TG(52:2;O)
+SumChainLengths: TG(14:0_16:1_22:1;O)
+NumPeaks: 6
+211.2056466 1 ms3-{521.4564369} @sn1 acylium ion
+211.2056466 1 ms3-{621.54525191956} @sn1 acylium ion
+237.2212967 1 ms3-{521.4564369} $sn2 acylium ion
+237.2212967 1 ms3-{647.56090191956} $sn2 acylium ion
+337.3101116 1 ms3-{621.54525191956} sn3 acylium ion ox
+337.3101116 1 ms3-{647.56090191956} sn3 acylium ion ox
+
+
+Name: TG(14:0/16:1/22:2)
+Id: TG(14:0/16:1/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H100O6
+PrecursorMz: 874.7858139
+ExactMass: 856.7519909
+MW: 856.7519909
+CLASS: TG
+SumComposition: TG(52:3)
+SumChainLengths: TG(14:0_16:1_22:2)
+NumPeaks: 6
+211.2056466 1 ms3-{521.4564369} @sn1 acylium ion
+211.2056466 1 ms3-{603.5346872} @sn1 acylium ion
+237.2212967 1 ms3-{521.4564369} $sn2 acylium ion
+237.2212967 1 ms3-{629.5503373} $sn2 acylium ion
+319.2995470 1 ms3-{603.5346872} !sn3 acylium ion
+319.2995470 1 ms3-{629.5503373} !sn3 acylium ion
+
+
+Name: TG(14:0/16:1/24:6)
+Id: TG(14:0/16:1/24:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H96O6
+PrecursorMz: 894.7545138
+ExactMass: 876.7206908
+MW: 876.7206908
+CLASS: TG
+SumComposition: TG(54:7)
+SumChainLengths: TG(14:0_16:1_24:6)
+NumPeaks: 6
+211.2056466 1 ms3-{521.4564369} @sn1 acylium ion
+211.2056466 1 ms3-{623.5033871} @sn1 acylium ion
+237.2212967 1 ms3-{521.4564369} $sn2 acylium ion
+237.2212967 1 ms3-{649.5190371} $sn2 acylium ion
+339.2682469 1 ms3-{623.5033871} !sn3 acylium ion
+339.2682469 1 ms3-{649.5190371} !sn3 acylium ion
+
+
+Name: TG(14:0/18:0/22:2)
+Id: TG(14:0/18:0/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H106O6
+PrecursorMz: 904.8327641
+ExactMass: 886.7989411
+MW: 886.7989411
+CLASS: TG
+SumComposition: TG(54:2)
+SumChainLengths: TG(14:0_18:0_22:2)
+NumPeaks: 6
+211.2056466 1 ms3-{551.5033871} @sn1 acylium ion
+211.2056466 1 ms3-{603.5346872} @sn1 acylium ion
+267.2682469 1 ms3-{551.5033871} $sn2 acylium ion
+267.2682469 1 ms3-{659.5972874} $sn2 acylium ion
+319.2995470 1 ms3-{603.5346872} !sn3 acylium ion
+319.2995470 1 ms3-{659.5972874} !sn3 acylium ion
+
+
+Name: TG(14:0/18:0/22:3)
+Id: TG(14:0/18:0/22:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H104O6
+PrecursorMz: 902.8171141
+ExactMass: 884.7832911
+MW: 884.7832911
+CLASS: TG
+SumComposition: TG(54:3)
+SumChainLengths: TG(14:0_18:0_22:3)
+NumPeaks: 6
+211.2056466 1 ms3-{551.5033871} @sn1 acylium ion
+211.2056466 1 ms3-{601.5190371} @sn1 acylium ion
+267.2682469 1 ms3-{551.5033871} $sn2 acylium ion
+267.2682469 1 ms3-{657.5816374} $sn2 acylium ion
+317.2838969 1 ms3-{601.5190371} !sn3 acylium ion
+317.2838969 1 ms3-{657.5816374} !sn3 acylium ion
+
+
+Name: TG(14:0/18:0/24:6)
+Id: TG(14:0/18:0/24:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H102O6
+PrecursorMz: 924.8014640
+ExactMass: 906.7676410
+MW: 906.7676410
+CLASS: TG
+SumComposition: TG(56:6)
+SumChainLengths: TG(14:0_18:0_24:6)
+NumPeaks: 6
+211.2056466 1 ms3-{551.5033871} @sn1 acylium ion
+211.2056466 1 ms3-{623.5033871} @sn1 acylium ion
+267.2682469 1 ms3-{551.5033871} $sn2 acylium ion
+267.2682469 1 ms3-{679.5659873} $sn2 acylium ion
+339.2682469 1 ms3-{623.5033871} !sn3 acylium ion
+339.2682469 1 ms3-{679.5659873} !sn3 acylium ion
+
+
+Name: TG(14:0/18:1/18:1)
+Id: TG(14:0/18:1/18:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C53H98O6
+PrecursorMz: 848.7701639
+ExactMass: 830.7363409
+MW: 830.7363409
+CLASS: TG
+SumComposition: TG(50:2)
+SumChainLengths: TG(14:0_18:1_18:1)
+NumPeaks: 2
+211.2056466 1 ms3-{549.487737} @sn1 acylium ion
+265.2525968 1 ms3-{603.5346872} $sn2 acylium ion/!sn3 acylium ion
+
+
+Name: TG(14:0/18:1/18:2)
+Id: TG(14:0/18:1/18:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C53H96O6
+PrecursorMz: 846.7545138
+ExactMass: 828.7206908
+MW: 828.7206908
+CLASS: TG
+SumComposition: TG(50:3)
+SumChainLengths: TG(14:0_18:1_18:2)
+NumPeaks: 6
+211.2056466 1 ms3-{547.4720869} @sn1 acylium ion
+211.2056466 1 ms3-{549.487737} @sn1 acylium ion
+263.2369467 1 ms3-{547.4720869} !sn3 acylium ion
+263.2369467 1 ms3-{601.5190371} !sn3 acylium ion
+265.2525968 1 ms3-{549.487737} $sn2 acylium ion
+265.2525968 1 ms3-{601.5190371} $sn2 acylium ion
+
+
+Name: TG(14:0/18:1/22:1)
+Id: TG(14:0/18:1/22:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H106O6
+PrecursorMz: 904.8327641
+ExactMass: 886.7989411
+MW: 886.7989411
+CLASS: TG
+SumComposition: TG(54:2)
+SumChainLengths: TG(14:0_18:1_22:1)
+NumPeaks: 6
+211.2056466 1 ms3-{549.487737} @sn1 acylium ion
+211.2056466 1 ms3-{605.5503373} @sn1 acylium ion
+265.2525968 1 ms3-{549.487737} $sn2 acylium ion
+265.2525968 1 ms3-{659.5972874} $sn2 acylium ion
+321.3151970 1 ms3-{605.5503373} !sn3 acylium ion
+321.3151970 1 ms3-{659.5972874} !sn3 acylium ion
+
+
+Name: TG(14:0/18:1/22:2)
+Id: TG(14:0/18:1/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H104O6
+PrecursorMz: 902.8171141
+ExactMass: 884.7832911
+MW: 884.7832911
+CLASS: TG
+SumComposition: TG(54:3)
+SumChainLengths: TG(14:0_18:1_22:2)
+NumPeaks: 6
+211.2056466 1 ms3-{549.487737} @sn1 acylium ion
+211.2056466 1 ms3-{603.5346872} @sn1 acylium ion
+265.2525968 1 ms3-{549.487737} $sn2 acylium ion
+265.2525968 1 ms3-{657.5816374} $sn2 acylium ion
+319.2995470 1 ms3-{603.5346872} !sn3 acylium ion
+319.2995470 1 ms3-{657.5816374} !sn3 acylium ion
+
+
+Name: TG(14:0/18:1/22:3)
+Id: TG(14:0/18:1/22:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H102O6
+PrecursorMz: 900.8014640
+ExactMass: 882.7676410
+MW: 882.7676410
+CLASS: TG
+SumComposition: TG(54:4)
+SumChainLengths: TG(14:0_18:1_22:3)
+NumPeaks: 6
+211.2056466 1 ms3-{549.487737} @sn1 acylium ion
+211.2056466 1 ms3-{601.5190371} @sn1 acylium ion
+265.2525968 1 ms3-{549.487737} $sn2 acylium ion
+265.2525968 1 ms3-{655.5659873} $sn2 acylium ion
+317.2838969 1 ms3-{601.5190371} !sn3 acylium ion
+317.2838969 1 ms3-{655.5659873} !sn3 acylium ion
+
+
+Name: TG(14:0/18:1/22:5)
+Id: TG(14:0/18:1/22:5) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H98O6
+PrecursorMz: 896.7701639
+ExactMass: 878.7363409
+MW: 878.7363409
+CLASS: TG
+SumComposition: TG(54:6)
+SumChainLengths: TG(14:0_18:1_22:5)
+NumPeaks: 6
+211.2056466 1 ms3-{549.487737} @sn1 acylium ion
+211.2056466 1 ms3-{597.487737} @sn1 acylium ion
+265.2525968 1 ms3-{549.487737} $sn2 acylium ion
+265.2525968 1 ms3-{651.5346872} $sn2 acylium ion
+313.2525968 1 ms3-{597.487737} !sn3 acylium ion
+313.2525968 1 ms3-{651.5346872} !sn3 acylium ion
+
+
+Name: TG(14:0/18:1/22:6)
+Id: TG(14:0/18:1/22:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H96O6
+PrecursorMz: 894.7545138
+ExactMass: 876.7206908
+MW: 876.7206908
+CLASS: TG
+SumComposition: TG(54:7)
+SumChainLengths: TG(14:0_18:1_22:6)
+NumPeaks: 6
+211.2056466 1 ms3-{549.487737} @sn1 acylium ion
+211.2056466 1 ms3-{595.4720869} @sn1 acylium ion
+265.2525968 1 ms3-{549.487737} $sn2 acylium ion
+265.2525968 1 ms3-{649.5190371} $sn2 acylium ion
+311.2369467 1 ms3-{595.4720869} !sn3 acylium ion
+311.2369467 1 ms3-{649.5190371} !sn3 acylium ion
+
+
+Name: TG(14:0/18:1/24:5)
+Id: TG(14:0/18:1/24:5) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H102O6
+PrecursorMz: 924.8014640
+ExactMass: 906.7676410
+MW: 906.7676410
+CLASS: TG
+SumComposition: TG(56:6)
+SumChainLengths: TG(14:0_18:1_24:5)
+NumPeaks: 6
+211.2056466 1 ms3-{549.487737} @sn1 acylium ion
+211.2056466 1 ms3-{625.5190371} @sn1 acylium ion
+265.2525968 1 ms3-{549.487737} $sn2 acylium ion
+265.2525968 1 ms3-{679.5659873} $sn2 acylium ion
+341.2838969 1 ms3-{625.5190371} !sn3 acylium ion
+341.2838969 1 ms3-{679.5659873} !sn3 acylium ion
+
+
+Name: TG(14:0/18:1/24:6)
+Id: TG(14:0/18:1/24:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H100O6
+PrecursorMz: 922.7858139
+ExactMass: 904.7519909
+MW: 904.7519909
+CLASS: TG
+SumComposition: TG(56:7)
+SumChainLengths: TG(14:0_18:1_24:6)
+NumPeaks: 6
+211.2056466 1 ms3-{549.487737} @sn1 acylium ion
+211.2056466 1 ms3-{623.5033871} @sn1 acylium ion
+265.2525968 1 ms3-{549.487737} $sn2 acylium ion
+265.2525968 1 ms3-{677.5503373} $sn2 acylium ion
+339.2682469 1 ms3-{623.5033871} !sn3 acylium ion
+339.2682469 1 ms3-{677.5503373} !sn3 acylium ion
+
+
+Name: TG(14:0/18:2/18:2)
+Id: TG(14:0/18:2/18:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C53H94O6
+PrecursorMz: 844.7388637
+ExactMass: 826.7050407
+MW: 826.7050407
+CLASS: TG
+SumComposition: TG(50:4)
+SumChainLengths: TG(14:0_18:2_18:2)
+NumPeaks: 2
+211.2056466 1 ms3-{547.4720869} @sn1 acylium ion
+263.2369467 1 ms3-{599.5033871} $sn2 acylium ion/!sn3 acylium ion
+
+
+Name: TG(14:0/18:2/22:1;O)
+Id: TG(14:0/18:2/22:1;O) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H104O7
+PrecursorMz: 918.8120287
+ExactMass: 900.7782057
+MW: 900.7782057
+CLASS: TG
+SumComposition: TG(54:3;O)
+SumChainLengths: TG(14:0_18:2_22:1;O)
+NumPeaks: 6
+211.2056466 1 ms3-{547.4720869} @sn1 acylium ion
+211.2056466 1 ms3-{621.54525191956} @sn1 acylium ion
+263.2369467 1 ms3-{547.4720869} $sn2 acylium ion
+263.2369467 1 ms3-{673.57655201956} $sn2 acylium ion
+337.3101116 1 ms3-{621.54525191956} sn3 acylium ion ox
+337.3101116 1 ms3-{673.57655201956} sn3 acylium ion ox
+
+
+Name: TG(14:0/18:2/22:1)
+Id: TG(14:0/18:2/22:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H104O6
+PrecursorMz: 902.8171141
+ExactMass: 884.7832911
+MW: 884.7832911
+CLASS: TG
+SumComposition: TG(54:3)
+SumChainLengths: TG(14:0_18:2_22:1)
+NumPeaks: 6
+211.2056466 1 ms3-{547.4720869} @sn1 acylium ion
+211.2056466 1 ms3-{605.5503373} @sn1 acylium ion
+263.2369467 1 ms3-{547.4720869} $sn2 acylium ion
+263.2369467 1 ms3-{657.5816374} $sn2 acylium ion
+321.3151970 1 ms3-{605.5503373} !sn3 acylium ion
+321.3151970 1 ms3-{657.5816374} !sn3 acylium ion
+
+
+Name: TG(14:0/18:2/22:2)
+Id: TG(14:0/18:2/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H102O6
+PrecursorMz: 900.8014640
+ExactMass: 882.7676410
+MW: 882.7676410
+CLASS: TG
+SumComposition: TG(54:4)
+SumChainLengths: TG(14:0_18:2_22:2)
+NumPeaks: 6
+211.2056466 1 ms3-{547.4720869} @sn1 acylium ion
+211.2056466 1 ms3-{603.5346872} @sn1 acylium ion
+263.2369467 1 ms3-{547.4720869} $sn2 acylium ion
+263.2369467 1 ms3-{655.5659873} $sn2 acylium ion
+319.2995470 1 ms3-{603.5346872} !sn3 acylium ion
+319.2995470 1 ms3-{655.5659873} !sn3 acylium ion
+
+
+Name: TG(14:0/18:2/22:3)
+Id: TG(14:0/18:2/22:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H100O6
+PrecursorMz: 898.7858139
+ExactMass: 880.7519909
+MW: 880.7519909
+CLASS: TG
+SumComposition: TG(54:5)
+SumChainLengths: TG(14:0_18:2_22:3)
+NumPeaks: 6
+211.2056466 1 ms3-{547.4720869} @sn1 acylium ion
+211.2056466 1 ms3-{601.5190371} @sn1 acylium ion
+263.2369467 1 ms3-{547.4720869} $sn2 acylium ion
+263.2369467 1 ms3-{653.5503373} $sn2 acylium ion
+317.2838969 1 ms3-{601.5190371} !sn3 acylium ion
+317.2838969 1 ms3-{653.5503373} !sn3 acylium ion
+
+
+Name: TG(14:0/18:2/22:5)
+Id: TG(14:0/18:2/22:5) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H96O6
+PrecursorMz: 894.7545138
+ExactMass: 876.7206908
+MW: 876.7206908
+CLASS: TG
+SumComposition: TG(54:7)
+SumChainLengths: TG(14:0_18:2_22:5)
+NumPeaks: 6
+211.2056466 1 ms3-{547.4720869} @sn1 acylium ion
+211.2056466 1 ms3-{597.487737} @sn1 acylium ion
+263.2369467 1 ms3-{547.4720869} $sn2 acylium ion
+263.2369467 1 ms3-{649.5190371} $sn2 acylium ion
+313.2525968 1 ms3-{597.487737} !sn3 acylium ion
+313.2525968 1 ms3-{649.5190371} !sn3 acylium ion
+
+
+Name: TG(14:0/18:2/22:6)
+Id: TG(14:0/18:2/22:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H94O6
+PrecursorMz: 892.7388637
+ExactMass: 874.7050407
+MW: 874.7050407
+CLASS: TG
+SumComposition: TG(54:8)
+SumChainLengths: TG(14:0_18:2_22:6)
+NumPeaks: 6
+211.2056466 1 ms3-{547.4720869} @sn1 acylium ion
+211.2056466 1 ms3-{595.4720869} @sn1 acylium ion
+263.2369467 1 ms3-{547.4720869} $sn2 acylium ion
+263.2369467 1 ms3-{647.5033871} $sn2 acylium ion
+311.2369467 1 ms3-{595.4720869} !sn3 acylium ion
+311.2369467 1 ms3-{647.5033871} !sn3 acylium ion
+
+
+Name: TG(14:0/18:2/24:5)
+Id: TG(14:0/18:2/24:5) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H100O6
+PrecursorMz: 922.7858139
+ExactMass: 904.7519909
+MW: 904.7519909
+CLASS: TG
+SumComposition: TG(56:7)
+SumChainLengths: TG(14:0_18:2_24:5)
+NumPeaks: 6
+211.2056466 1 ms3-{547.4720869} @sn1 acylium ion
+211.2056466 1 ms3-{625.5190371} @sn1 acylium ion
+263.2369467 1 ms3-{547.4720869} $sn2 acylium ion
+263.2369467 1 ms3-{677.5503373} $sn2 acylium ion
+341.2838969 1 ms3-{625.5190371} !sn3 acylium ion
+341.2838969 1 ms3-{677.5503373} !sn3 acylium ion
+
+
+Name: TG(14:0/18:2/24:6)
+Id: TG(14:0/18:2/24:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H98O6
+PrecursorMz: 920.7701639
+ExactMass: 902.7363409
+MW: 902.7363409
+CLASS: TG
+SumComposition: TG(56:8)
+SumChainLengths: TG(14:0_18:2_24:6)
+NumPeaks: 6
+211.2056466 1 ms3-{547.4720869} @sn1 acylium ion
+211.2056466 1 ms3-{623.5033871} @sn1 acylium ion
+263.2369467 1 ms3-{547.4720869} $sn2 acylium ion
+263.2369467 1 ms3-{675.5346872} $sn2 acylium ion
+339.2682469 1 ms3-{623.5033871} !sn3 acylium ion
+339.2682469 1 ms3-{675.5346872} !sn3 acylium ion
+
+
+Name: TG(14:0/18:3/22:2)
+Id: TG(14:0/18:3/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H100O6
+PrecursorMz: 898.7858139
+ExactMass: 880.7519909
+MW: 880.7519909
+CLASS: TG
+SumComposition: TG(54:5)
+SumChainLengths: TG(14:0_18:3_22:2)
+NumPeaks: 6
+211.2056466 1 ms3-{545.4564369} @sn1 acylium ion
+211.2056466 1 ms3-{603.5346872} @sn1 acylium ion
+261.2212967 1 ms3-{545.4564369} $sn2 acylium ion
+261.2212967 1 ms3-{653.5503373} $sn2 acylium ion
+319.2995470 1 ms3-{603.5346872} !sn3 acylium ion
+319.2995470 1 ms3-{653.5503373} !sn3 acylium ion
+
+
+Name: TG(14:0/20:4/22:1;O)
+Id: TG(14:0/20:4/22:1;O) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H104O7
+PrecursorMz: 942.8120287
+ExactMass: 924.7782057
+MW: 924.7782057
+CLASS: TG
+SumComposition: TG(56:5;O)
+SumChainLengths: TG(14:0_20:4_22:1;O)
+NumPeaks: 6
+211.2056466 1 ms3-{571.4720869} @sn1 acylium ion
+211.2056466 1 ms3-{621.54525191956} @sn1 acylium ion
+287.2369467 1 ms3-{571.4720869} $sn2 acylium ion
+287.2369467 1 ms3-{697.57655201956} $sn2 acylium ion
+337.3101116 1 ms3-{621.54525191956} sn3 acylium ion ox
+337.3101116 1 ms3-{697.57655201956} sn3 acylium ion ox
+
+
+Name: TG(14:0/20:4/22:2)
+Id: TG(14:0/20:4/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H102O6
+PrecursorMz: 924.8014640
+ExactMass: 906.7676410
+MW: 906.7676410
+CLASS: TG
+SumComposition: TG(56:6)
+SumChainLengths: TG(14:0_20:4_22:2)
+NumPeaks: 6
+211.2056466 1 ms3-{571.4720869} @sn1 acylium ion
+211.2056466 1 ms3-{603.5346872} @sn1 acylium ion
+287.2369467 1 ms3-{571.4720869} $sn2 acylium ion
+287.2369467 1 ms3-{679.5659873} $sn2 acylium ion
+319.2995470 1 ms3-{603.5346872} !sn3 acylium ion
+319.2995470 1 ms3-{679.5659873} !sn3 acylium ion
+
+
+Name: TG(14:0/20:4/22:5)
+Id: TG(14:0/20:4/22:5) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H96O6
+PrecursorMz: 918.7545138
+ExactMass: 900.7206908
+MW: 900.7206908
+CLASS: TG
+SumComposition: TG(56:9)
+SumChainLengths: TG(14:0_20:4_22:5)
+NumPeaks: 6
+211.2056466 1 ms3-{571.4720869} @sn1 acylium ion
+211.2056466 1 ms3-{597.487737} @sn1 acylium ion
+287.2369467 1 ms3-{571.4720869} $sn2 acylium ion
+287.2369467 1 ms3-{673.5190371} $sn2 acylium ion
+313.2525968 1 ms3-{597.487737} !sn3 acylium ion
+313.2525968 1 ms3-{673.5190371} !sn3 acylium ion
+
+
+Name: TG(14:0/20:4/24:6)
+Id: TG(14:0/20:4/24:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C61H98O6
+PrecursorMz: 944.7701639
+ExactMass: 926.7363409
+MW: 926.7363409
+CLASS: TG
+SumComposition: TG(58:10)
+SumChainLengths: TG(14:0_20:4_24:6)
+NumPeaks: 6
+211.2056466 1 ms3-{571.4720869} @sn1 acylium ion
+211.2056466 1 ms3-{623.5033871} @sn1 acylium ion
+287.2369467 1 ms3-{571.4720869} $sn2 acylium ion
+287.2369467 1 ms3-{699.5346872} $sn2 acylium ion
+339.2682469 1 ms3-{623.5033871} !sn3 acylium ion
+339.2682469 1 ms3-{699.5346872} !sn3 acylium ion
+
+
+Name: TG(14:0/20:5/22:1;O)
+Id: TG(14:0/20:5/22:1;O) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H102O7
+PrecursorMz: 940.7963786
+ExactMass: 922.7625556
+MW: 922.7625556
+CLASS: TG
+SumComposition: TG(56:6;O)
+SumChainLengths: TG(14:0_20:5_22:1;O)
+NumPeaks: 6
+211.2056466 1 ms3-{569.4564369} @sn1 acylium ion
+211.2056466 1 ms3-{621.54525191956} @sn1 acylium ion
+285.2212967 1 ms3-{569.4564369} $sn2 acylium ion
+285.2212967 1 ms3-{695.56090191956} $sn2 acylium ion
+337.3101116 1 ms3-{621.54525191956} sn3 acylium ion ox
+337.3101116 1 ms3-{695.56090191956} sn3 acylium ion ox
+
+
+Name: TG(14:0/20:5/24:6)
+Id: TG(14:0/20:5/24:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C61H96O6
+PrecursorMz: 942.7545138
+ExactMass: 924.7206908
+MW: 924.7206908
+CLASS: TG
+SumComposition: TG(58:11)
+SumChainLengths: TG(14:0_20:5_24:6)
+NumPeaks: 6
+211.2056466 1 ms3-{569.4564369} @sn1 acylium ion
+211.2056466 1 ms3-{623.5033871} @sn1 acylium ion
+285.2212967 1 ms3-{569.4564369} $sn2 acylium ion
+285.2212967 1 ms3-{697.5190371} $sn2 acylium ion
+339.2682469 1 ms3-{623.5033871} !sn3 acylium ion
+339.2682469 1 ms3-{697.5190371} !sn3 acylium ion
+
+
+Name: TG(14:0/22:1;O/22:6)
+Id: TG(14:0/22:1;O/22:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C61H104O7
+PrecursorMz: 966.8120287
+ExactMass: 948.7782057
+MW: 948.7782057
+CLASS: TG
+SumComposition: TG(58:7;O)
+SumChainLengths: TG(14:0_22:1;O_22:6)
+NumPeaks: 6
+211.2056466 1 ms3-{595.4720869} @sn1 acylium ion
+211.2056466 1 ms3-{621.54525191956} @sn1 acylium ion
+311.2369467 1 ms3-{595.4720869} !sn3 acylium ion
+311.2369467 1 ms3-{721.57655201956} !sn3 acylium ion
+337.3101116 1 ms3-{621.54525191956} sn2 acylium ion ox
+337.3101116 1 ms3-{721.57655201956} sn2 acylium ion ox
+
+
+Name: TG(14:0/22:2/22:6)
+Id: TG(14:0/22:2/22:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C61H102O6
+PrecursorMz: 948.8014640
+ExactMass: 930.7676410
+MW: 930.7676410
+CLASS: TG
+SumComposition: TG(58:8)
+SumChainLengths: TG(14:0_22:2_22:6)
+NumPeaks: 6
+211.2056466 1 ms3-{595.4720869} @sn1 acylium ion
+211.2056466 1 ms3-{603.5346872} @sn1 acylium ion
+311.2369467 1 ms3-{595.4720869} !sn3 acylium ion
+311.2369467 1 ms3-{703.5659873} !sn3 acylium ion
+319.2995470 1 ms3-{603.5346872} $sn2 acylium ion
+319.2995470 1 ms3-{703.5659873} $sn2 acylium ion
+
+
+Name: TG(14:0/22:5/22:6)
+Id: TG(14:0/22:5/22:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C61H96O6
+PrecursorMz: 942.7545138
+ExactMass: 924.7206908
+MW: 924.7206908
+CLASS: TG
+SumComposition: TG(58:11)
+SumChainLengths: TG(14:0_22:5_22:6)
+NumPeaks: 6
+211.2056466 1 ms3-{595.4720869} @sn1 acylium ion
+211.2056466 1 ms3-{597.487737} @sn1 acylium ion
+311.2369467 1 ms3-{595.4720869} !sn3 acylium ion
+311.2369467 1 ms3-{697.5190371} !sn3 acylium ion
+313.2525968 1 ms3-{597.487737} $sn2 acylium ion
+313.2525968 1 ms3-{697.5190371} $sn2 acylium ion
+
+
+Name: TG(14:0/22:5/24:6)
+Id: TG(14:0/22:5/24:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C63H100O6
+PrecursorMz: 970.7858139
+ExactMass: 952.7519909
+MW: 952.7519909
+CLASS: TG
+SumComposition: TG(60:11)
+SumChainLengths: TG(14:0_22:5_24:6)
+NumPeaks: 6
+211.2056466 1 ms3-{597.487737} @sn1 acylium ion
+211.2056466 1 ms3-{623.5033871} @sn1 acylium ion
+313.2525968 1 ms3-{597.487737} $sn2 acylium ion
+313.2525968 1 ms3-{725.5503373} $sn2 acylium ion
+339.2682469 1 ms3-{623.5033871} !sn3 acylium ion
+339.2682469 1 ms3-{725.5503373} !sn3 acylium ion
+
+
+Name: TG(14:0/22:6/24:5)
+Id: TG(14:0/22:6/24:5) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C63H100O6
+PrecursorMz: 970.7858139
+ExactMass: 952.7519909
+MW: 952.7519909
+CLASS: TG
+SumComposition: TG(60:11)
+SumChainLengths: TG(14:0_22:6_24:5)
+NumPeaks: 6
+211.2056466 1 ms3-{595.4720869} @sn1 acylium ion
+211.2056466 1 ms3-{625.5190371} @sn1 acylium ion
+311.2369467 1 ms3-{595.4720869} $sn2 acylium ion
+311.2369467 1 ms3-{725.5503373} $sn2 acylium ion
+341.2838969 1 ms3-{625.5190371} !sn3 acylium ion
+341.2838969 1 ms3-{725.5503373} !sn3 acylium ion
+
+
+Name: TG(14:0/22:6/24:6)
+Id: TG(14:0/22:6/24:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C63H98O6
+PrecursorMz: 968.7701639
+ExactMass: 950.7363409
+MW: 950.7363409
+CLASS: TG
+SumComposition: TG(60:12)
+SumChainLengths: TG(14:0_22:6_24:6)
+NumPeaks: 6
+211.2056466 1 ms3-{595.4720869} @sn1 acylium ion
+211.2056466 1 ms3-{623.5033871} @sn1 acylium ion
+311.2369467 1 ms3-{595.4720869} $sn2 acylium ion
+311.2369467 1 ms3-{723.5346872} $sn2 acylium ion
+339.2682469 1 ms3-{623.5033871} !sn3 acylium ion
+339.2682469 1 ms3-{723.5346872} !sn3 acylium ion
+
+
+Name: TG(14:1/16:0/20:1)
+Id: TG(14:1/16:0/20:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C53H98O6
+PrecursorMz: 848.7701639
+ExactMass: 830.7363409
+MW: 830.7363409
+CLASS: TG
+SumComposition: TG(50:2)
+SumChainLengths: TG(14:1_16:0_20:1)
+NumPeaks: 6
+209.1899965 1 ms3-{521.4564369} @sn1 acylium ion
+209.1899965 1 ms3-{575.5033871} @sn1 acylium ion
+239.2369467 1 ms3-{521.4564369} $sn2 acylium ion
+239.2369467 1 ms3-{605.5503373} $sn2 acylium ion
+293.2838969 1 ms3-{575.5033871} !sn3 acylium ion
+293.2838969 1 ms3-{605.5503373} !sn3 acylium ion
+
+
+Name: TG(14:1/16:0/20:2)
+Id: TG(14:1/16:0/20:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C53H96O6
+PrecursorMz: 846.7545138
+ExactMass: 828.7206908
+MW: 828.7206908
+CLASS: TG
+SumComposition: TG(50:3)
+SumChainLengths: TG(14:1_16:0_20:2)
+NumPeaks: 6
+209.1899965 1 ms3-{521.4564369} @sn1 acylium ion
+209.1899965 1 ms3-{573.487737} @sn1 acylium ion
+239.2369467 1 ms3-{521.4564369} $sn2 acylium ion
+239.2369467 1 ms3-{603.5346872} $sn2 acylium ion
+291.2682469 1 ms3-{573.487737} !sn3 acylium ion
+291.2682469 1 ms3-{603.5346872} !sn3 acylium ion
+
+
+Name: TG(14:1/16:0/22:0)
+Id: TG(14:1/16:0/22:0) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H104O6
+PrecursorMz: 878.8171141
+ExactMass: 860.7832911
+MW: 860.7832911
+CLASS: TG
+SumComposition: TG(52:1)
+SumChainLengths: TG(14:1_16:0_22:0)
+NumPeaks: 6
+209.1899965 1 ms3-{521.4564369} @sn1 acylium ion
+209.1899965 1 ms3-{605.5503373} @sn1 acylium ion
+239.2369467 1 ms3-{521.4564369} $sn2 acylium ion
+239.2369467 1 ms3-{635.5972874} $sn2 acylium ion
+323.3308471 1 ms3-{605.5503373} !sn3 acylium ion
+323.3308471 1 ms3-{635.5972874} !sn3 acylium ion
+
+
+Name: TG(14:1/16:0/22:1)
+Id: TG(14:1/16:0/22:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H102O6
+PrecursorMz: 876.8014640
+ExactMass: 858.7676410
+MW: 858.7676410
+CLASS: TG
+SumComposition: TG(52:2)
+SumChainLengths: TG(14:1_16:0_22:1)
+NumPeaks: 6
+209.1899965 1 ms3-{521.4564369} @sn1 acylium ion
+209.1899965 1 ms3-{603.5346872} @sn1 acylium ion
+239.2369467 1 ms3-{521.4564369} $sn2 acylium ion
+239.2369467 1 ms3-{633.5816374} $sn2 acylium ion
+321.3151970 1 ms3-{603.5346872} !sn3 acylium ion
+321.3151970 1 ms3-{633.5816374} !sn3 acylium ion
+
+
+Name: TG(14:1/16:0/22:2)
+Id: TG(14:1/16:0/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H100O6
+PrecursorMz: 874.7858139
+ExactMass: 856.7519909
+MW: 856.7519909
+CLASS: TG
+SumComposition: TG(52:3)
+SumChainLengths: TG(14:1_16:0_22:2)
+NumPeaks: 6
+209.1899965 1 ms3-{521.4564369} @sn1 acylium ion
+209.1899965 1 ms3-{601.5190371} @sn1 acylium ion
+239.2369467 1 ms3-{521.4564369} $sn2 acylium ion
+239.2369467 1 ms3-{631.5659873} $sn2 acylium ion
+319.2995470 1 ms3-{601.5190371} !sn3 acylium ion
+319.2995470 1 ms3-{631.5659873} !sn3 acylium ion
+
+
+Name: TG(14:1/16:0/22:3)
+Id: TG(14:1/16:0/22:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H98O6
+PrecursorMz: 872.7701639
+ExactMass: 854.7363409
+MW: 854.7363409
+CLASS: TG
+SumComposition: TG(52:4)
+SumChainLengths: TG(14:1_16:0_22:3)
+NumPeaks: 6
+209.1899965 1 ms3-{521.4564369} @sn1 acylium ion
+209.1899965 1 ms3-{599.5033871} @sn1 acylium ion
+239.2369467 1 ms3-{521.4564369} $sn2 acylium ion
+239.2369467 1 ms3-{629.5503373} $sn2 acylium ion
+317.2838969 1 ms3-{599.5033871} !sn3 acylium ion
+317.2838969 1 ms3-{629.5503373} !sn3 acylium ion
+
+
+Name: TG(14:1/16:0/22:4)
+Id: TG(14:1/16:0/22:4) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H96O6
+PrecursorMz: 870.7545138
+ExactMass: 852.7206908
+MW: 852.7206908
+CLASS: TG
+SumComposition: TG(52:5)
+SumChainLengths: TG(14:1_16:0_22:4)
+NumPeaks: 6
+209.1899965 1 ms3-{521.4564369} @sn1 acylium ion
+209.1899965 1 ms3-{597.487737} @sn1 acylium ion
+239.2369467 1 ms3-{521.4564369} $sn2 acylium ion
+239.2369467 1 ms3-{627.5346872} $sn2 acylium ion
+315.2682469 1 ms3-{597.487737} !sn3 acylium ion
+315.2682469 1 ms3-{627.5346872} !sn3 acylium ion
+
+
+Name: TG(14:1/16:0/24:2)
+Id: TG(14:1/16:0/24:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H104O6
+PrecursorMz: 902.8171141
+ExactMass: 884.7832911
+MW: 884.7832911
+CLASS: TG
+SumComposition: TG(54:3)
+SumChainLengths: TG(14:1_16:0_24:2)
+NumPeaks: 6
+209.1899965 1 ms3-{521.4564369} @sn1 acylium ion
+209.1899965 1 ms3-{629.5503373} @sn1 acylium ion
+239.2369467 1 ms3-{521.4564369} $sn2 acylium ion
+239.2369467 1 ms3-{659.5972874} $sn2 acylium ion
+347.3308471 1 ms3-{629.5503373} !sn3 acylium ion
+347.3308471 1 ms3-{659.5972874} !sn3 acylium ion
+
+
+Name: TG(14:1/16:0/24:3)
+Id: TG(14:1/16:0/24:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H102O6
+PrecursorMz: 900.8014640
+ExactMass: 882.7676410
+MW: 882.7676410
+CLASS: TG
+SumComposition: TG(54:4)
+SumChainLengths: TG(14:1_16:0_24:3)
+NumPeaks: 6
+209.1899965 1 ms3-{521.4564369} @sn1 acylium ion
+209.1899965 1 ms3-{627.5346872} @sn1 acylium ion
+239.2369467 1 ms3-{521.4564369} $sn2 acylium ion
+239.2369467 1 ms3-{657.5816374} $sn2 acylium ion
+345.3151970 1 ms3-{627.5346872} !sn3 acylium ion
+345.3151970 1 ms3-{657.5816374} !sn3 acylium ion
+
+
+Name: TG(14:1/16:0/24:4)
+Id: TG(14:1/16:0/24:4) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H100O6
+PrecursorMz: 898.7858139
+ExactMass: 880.7519909
+MW: 880.7519909
+CLASS: TG
+SumComposition: TG(54:5)
+SumChainLengths: TG(14:1_16:0_24:4)
+NumPeaks: 6
+209.1899965 1 ms3-{521.4564369} @sn1 acylium ion
+209.1899965 1 ms3-{625.5190371} @sn1 acylium ion
+239.2369467 1 ms3-{521.4564369} $sn2 acylium ion
+239.2369467 1 ms3-{655.5659873} $sn2 acylium ion
+343.2995470 1 ms3-{625.5190371} !sn3 acylium ion
+343.2995470 1 ms3-{655.5659873} !sn3 acylium ion
+
+
+Name: TG(14:1/16:0/24:5)
+Id: TG(14:1/16:0/24:5) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H98O6
+PrecursorMz: 896.7701639
+ExactMass: 878.7363409
+MW: 878.7363409
+CLASS: TG
+SumComposition: TG(54:6)
+SumChainLengths: TG(14:1_16:0_24:5)
+NumPeaks: 6
+209.1899965 1 ms3-{521.4564369} @sn1 acylium ion
+209.1899965 1 ms3-{623.5033871} @sn1 acylium ion
+239.2369467 1 ms3-{521.4564369} $sn2 acylium ion
+239.2369467 1 ms3-{653.5503373} $sn2 acylium ion
+341.2838969 1 ms3-{623.5033871} !sn3 acylium ion
+341.2838969 1 ms3-{653.5503373} !sn3 acylium ion
+
+
+Name: TG(14:1/16:1;O/22:2)
+Id: TG(14:1/16:1;O/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H98O7
+PrecursorMz: 888.7650785
+ExactMass: 870.7312555
+MW: 870.7312555
+CLASS: TG
+SumComposition: TG(52:4;O)
+SumChainLengths: TG(14:1_16:1;O_22:2)
+NumPeaks: 6
+209.1899965 1 ms3-{535.43570141956} @sn1 acylium ion
+209.1899965 1 ms3-{601.5190371} @sn1 acylium ion
+253.2162113 1 ms3-{535.43570141956} sn2 acylium ion ox
+253.2162113 1 ms3-{645.54525191956} sn2 acylium ion ox
+319.2995470 1 ms3-{601.5190371} !sn3 acylium ion
+319.2995470 1 ms3-{645.54525191956} !sn3 acylium ion
+
+
+Name: TG(14:1/16:1/22:1)
+Id: TG(14:1/16:1/22:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H100O6
+PrecursorMz: 874.7858139
+ExactMass: 856.7519909
+MW: 856.7519909
+CLASS: TG
+SumComposition: TG(52:3)
+SumChainLengths: TG(14:1_16:1_22:1)
+NumPeaks: 6
+209.1899965 1 ms3-{519.4407868} @sn1 acylium ion
+209.1899965 1 ms3-{603.5346872} @sn1 acylium ion
+237.2212967 1 ms3-{519.4407868} $sn2 acylium ion
+237.2212967 1 ms3-{631.5659873} $sn2 acylium ion
+321.3151970 1 ms3-{603.5346872} !sn3 acylium ion
+321.3151970 1 ms3-{631.5659873} !sn3 acylium ion
+
+
+Name: TG(14:1/16:1/22:2)
+Id: TG(14:1/16:1/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H98O6
+PrecursorMz: 872.7701639
+ExactMass: 854.7363409
+MW: 854.7363409
+CLASS: TG
+SumComposition: TG(52:4)
+SumChainLengths: TG(14:1_16:1_22:2)
+NumPeaks: 6
+209.1899965 1 ms3-{519.4407868} @sn1 acylium ion
+209.1899965 1 ms3-{601.5190371} @sn1 acylium ion
+237.2212967 1 ms3-{519.4407868} $sn2 acylium ion
+237.2212967 1 ms3-{629.5503373} $sn2 acylium ion
+319.2995470 1 ms3-{601.5190371} !sn3 acylium ion
+319.2995470 1 ms3-{629.5503373} !sn3 acylium ion
+
+
+Name: TG(14:1/16:1/22:3)
+Id: TG(14:1/16:1/22:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H96O6
+PrecursorMz: 870.7545138
+ExactMass: 852.7206908
+MW: 852.7206908
+CLASS: TG
+SumComposition: TG(52:5)
+SumChainLengths: TG(14:1_16:1_22:3)
+NumPeaks: 6
+209.1899965 1 ms3-{519.4407868} @sn1 acylium ion
+209.1899965 1 ms3-{599.5033871} @sn1 acylium ion
+237.2212967 1 ms3-{519.4407868} $sn2 acylium ion
+237.2212967 1 ms3-{627.5346872} $sn2 acylium ion
+317.2838969 1 ms3-{599.5033871} !sn3 acylium ion
+317.2838969 1 ms3-{627.5346872} !sn3 acylium ion
+
+
+Name: TG(14:1/18:0/22:1)
+Id: TG(14:1/18:0/22:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H106O6
+PrecursorMz: 904.8327641
+ExactMass: 886.7989411
+MW: 886.7989411
+CLASS: TG
+SumComposition: TG(54:2)
+SumChainLengths: TG(14:1_18:0_22:1)
+NumPeaks: 6
+209.1899965 1 ms3-{549.487737} @sn1 acylium ion
+209.1899965 1 ms3-{603.5346872} @sn1 acylium ion
+267.2682469 1 ms3-{549.487737} $sn2 acylium ion
+267.2682469 1 ms3-{661.6129375} $sn2 acylium ion
+321.3151970 1 ms3-{603.5346872} !sn3 acylium ion
+321.3151970 1 ms3-{661.6129375} !sn3 acylium ion
+
+
+Name: TG(14:1/18:0/22:2)
+Id: TG(14:1/18:0/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H104O6
+PrecursorMz: 902.8171141
+ExactMass: 884.7832911
+MW: 884.7832911
+CLASS: TG
+SumComposition: TG(54:3)
+SumChainLengths: TG(14:1_18:0_22:2)
+NumPeaks: 6
+209.1899965 1 ms3-{549.487737} @sn1 acylium ion
+209.1899965 1 ms3-{601.5190371} @sn1 acylium ion
+267.2682469 1 ms3-{549.487737} $sn2 acylium ion
+267.2682469 1 ms3-{659.5972874} $sn2 acylium ion
+319.2995470 1 ms3-{601.5190371} !sn3 acylium ion
+319.2995470 1 ms3-{659.5972874} !sn3 acylium ion
+
+
+Name: TG(14:1/18:0/22:3)
+Id: TG(14:1/18:0/22:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H102O6
+PrecursorMz: 900.8014640
+ExactMass: 882.7676410
+MW: 882.7676410
+CLASS: TG
+SumComposition: TG(54:4)
+SumChainLengths: TG(14:1_18:0_22:3)
+NumPeaks: 6
+209.1899965 1 ms3-{549.487737} @sn1 acylium ion
+209.1899965 1 ms3-{599.5033871} @sn1 acylium ion
+267.2682469 1 ms3-{549.487737} $sn2 acylium ion
+267.2682469 1 ms3-{657.5816374} $sn2 acylium ion
+317.2838969 1 ms3-{599.5033871} !sn3 acylium ion
+317.2838969 1 ms3-{657.5816374} !sn3 acylium ion
+
+
+Name: TG(14:1/18:1/20:0)
+Id: TG(14:1/18:1/20:0) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H102O6
+PrecursorMz: 876.8014640
+ExactMass: 858.7676410
+MW: 858.7676410
+CLASS: TG
+SumComposition: TG(52:2)
+SumChainLengths: TG(14:1_18:1_20:0)
+NumPeaks: 6
+209.1899965 1 ms3-{547.4720869} @sn1 acylium ion
+209.1899965 1 ms3-{577.5190371} @sn1 acylium ion
+265.2525968 1 ms3-{547.4720869} $sn2 acylium ion
+265.2525968 1 ms3-{633.5816374} $sn2 acylium ion
+295.2995470 1 ms3-{577.5190371} !sn3 acylium ion
+295.2995470 1 ms3-{633.5816374} !sn3 acylium ion
+
+
+Name: TG(14:1/18:1/20:1)
+Id: TG(14:1/18:1/20:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H100O6
+PrecursorMz: 874.7858139
+ExactMass: 856.7519909
+MW: 856.7519909
+CLASS: TG
+SumComposition: TG(52:3)
+SumChainLengths: TG(14:1_18:1_20:1)
+NumPeaks: 6
+209.1899965 1 ms3-{547.4720869} @sn1 acylium ion
+209.1899965 1 ms3-{575.5033871} @sn1 acylium ion
+265.2525968 1 ms3-{547.4720869} $sn2 acylium ion
+265.2525968 1 ms3-{631.5659873} $sn2 acylium ion
+293.2838969 1 ms3-{575.5033871} !sn3 acylium ion
+293.2838969 1 ms3-{631.5659873} !sn3 acylium ion
+
+
+Name: TG(14:1/18:1/22:1)
+Id: TG(14:1/18:1/22:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H104O6
+PrecursorMz: 902.8171141
+ExactMass: 884.7832911
+MW: 884.7832911
+CLASS: TG
+SumComposition: TG(54:3)
+SumChainLengths: TG(14:1_18:1_22:1)
+NumPeaks: 6
+209.1899965 1 ms3-{547.4720869} @sn1 acylium ion
+209.1899965 1 ms3-{603.5346872} @sn1 acylium ion
+265.2525968 1 ms3-{547.4720869} $sn2 acylium ion
+265.2525968 1 ms3-{659.5972874} $sn2 acylium ion
+321.3151970 1 ms3-{603.5346872} !sn3 acylium ion
+321.3151970 1 ms3-{659.5972874} !sn3 acylium ion
+
+
+Name: TG(14:1/18:1/22:2)
+Id: TG(14:1/18:1/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H102O6
+PrecursorMz: 900.8014640
+ExactMass: 882.7676410
+MW: 882.7676410
+CLASS: TG
+SumComposition: TG(54:4)
+SumChainLengths: TG(14:1_18:1_22:2)
+NumPeaks: 6
+209.1899965 1 ms3-{547.4720869} @sn1 acylium ion
+209.1899965 1 ms3-{601.5190371} @sn1 acylium ion
+265.2525968 1 ms3-{547.4720869} $sn2 acylium ion
+265.2525968 1 ms3-{657.5816374} $sn2 acylium ion
+319.2995470 1 ms3-{601.5190371} !sn3 acylium ion
+319.2995470 1 ms3-{657.5816374} !sn3 acylium ion
+
+
+Name: TG(14:1/18:1/22:3)
+Id: TG(14:1/18:1/22:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H100O6
+PrecursorMz: 898.7858139
+ExactMass: 880.7519909
+MW: 880.7519909
+CLASS: TG
+SumComposition: TG(54:5)
+SumChainLengths: TG(14:1_18:1_22:3)
+NumPeaks: 6
+209.1899965 1 ms3-{547.4720869} @sn1 acylium ion
+209.1899965 1 ms3-{599.5033871} @sn1 acylium ion
+265.2525968 1 ms3-{547.4720869} $sn2 acylium ion
+265.2525968 1 ms3-{655.5659873} $sn2 acylium ion
+317.2838969 1 ms3-{599.5033871} !sn3 acylium ion
+317.2838969 1 ms3-{655.5659873} !sn3 acylium ion
+
+
+Name: TG(14:1/18:1/22:4)
+Id: TG(14:1/18:1/22:4) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H98O6
+PrecursorMz: 896.7701639
+ExactMass: 878.7363409
+MW: 878.7363409
+CLASS: TG
+SumComposition: TG(54:6)
+SumChainLengths: TG(14:1_18:1_22:4)
+NumPeaks: 6
+209.1899965 1 ms3-{547.4720869} @sn1 acylium ion
+209.1899965 1 ms3-{597.487737} @sn1 acylium ion
+265.2525968 1 ms3-{547.4720869} $sn2 acylium ion
+265.2525968 1 ms3-{653.5503373} $sn2 acylium ion
+315.2682469 1 ms3-{597.487737} !sn3 acylium ion
+315.2682469 1 ms3-{653.5503373} !sn3 acylium ion
+
+
+Name: TG(14:1/18:1/24:2)
+Id: TG(14:1/18:1/24:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H106O6
+PrecursorMz: 928.8327641
+ExactMass: 910.7989411
+MW: 910.7989411
+CLASS: TG
+SumComposition: TG(56:4)
+SumChainLengths: TG(14:1_18:1_24:2)
+NumPeaks: 6
+209.1899965 1 ms3-{547.4720869} @sn1 acylium ion
+209.1899965 1 ms3-{629.5503373} @sn1 acylium ion
+265.2525968 1 ms3-{547.4720869} $sn2 acylium ion
+265.2525968 1 ms3-{685.6129375} $sn2 acylium ion
+347.3308471 1 ms3-{629.5503373} !sn3 acylium ion
+347.3308471 1 ms3-{685.6129375} !sn3 acylium ion
+
+
+Name: TG(14:1/18:1/24:3)
+Id: TG(14:1/18:1/24:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H104O6
+PrecursorMz: 926.8171141
+ExactMass: 908.7832911
+MW: 908.7832911
+CLASS: TG
+SumComposition: TG(56:5)
+SumChainLengths: TG(14:1_18:1_24:3)
+NumPeaks: 6
+209.1899965 1 ms3-{547.4720869} @sn1 acylium ion
+209.1899965 1 ms3-{627.5346872} @sn1 acylium ion
+265.2525968 1 ms3-{547.4720869} $sn2 acylium ion
+265.2525968 1 ms3-{683.5972874} $sn2 acylium ion
+345.3151970 1 ms3-{627.5346872} !sn3 acylium ion
+345.3151970 1 ms3-{683.5972874} !sn3 acylium ion
+
+
+Name: TG(14:1/18:1/24:4)
+Id: TG(14:1/18:1/24:4) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H102O6
+PrecursorMz: 924.8014640
+ExactMass: 906.7676410
+MW: 906.7676410
+CLASS: TG
+SumComposition: TG(56:6)
+SumChainLengths: TG(14:1_18:1_24:4)
+NumPeaks: 6
+209.1899965 1 ms3-{547.4720869} @sn1 acylium ion
+209.1899965 1 ms3-{625.5190371} @sn1 acylium ion
+265.2525968 1 ms3-{547.4720869} $sn2 acylium ion
+265.2525968 1 ms3-{681.5816374} $sn2 acylium ion
+343.2995470 1 ms3-{625.5190371} !sn3 acylium ion
+343.2995470 1 ms3-{681.5816374} !sn3 acylium ion
+
+
+Name: TG(14:1/18:1/24:5)
+Id: TG(14:1/18:1/24:5) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H100O6
+PrecursorMz: 922.7858139
+ExactMass: 904.7519909
+MW: 904.7519909
+CLASS: TG
+SumComposition: TG(56:7)
+SumChainLengths: TG(14:1_18:1_24:5)
+NumPeaks: 6
+209.1899965 1 ms3-{547.4720869} @sn1 acylium ion
+209.1899965 1 ms3-{623.5033871} @sn1 acylium ion
+265.2525968 1 ms3-{547.4720869} $sn2 acylium ion
+265.2525968 1 ms3-{679.5659873} $sn2 acylium ion
+341.2838969 1 ms3-{623.5033871} !sn3 acylium ion
+341.2838969 1 ms3-{679.5659873} !sn3 acylium ion
+
+
+Name: TG(14:1/18:2/20:0)
+Id: TG(14:1/18:2/20:0) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H100O6
+PrecursorMz: 874.7858139
+ExactMass: 856.7519909
+MW: 856.7519909
+CLASS: TG
+SumComposition: TG(52:3)
+SumChainLengths: TG(14:1_18:2_20:0)
+NumPeaks: 6
+209.1899965 1 ms3-{545.4564369} @sn1 acylium ion
+209.1899965 1 ms3-{577.5190371} @sn1 acylium ion
+263.2369467 1 ms3-{545.4564369} $sn2 acylium ion
+263.2369467 1 ms3-{631.5659873} $sn2 acylium ion
+295.2995470 1 ms3-{577.5190371} !sn3 acylium ion
+295.2995470 1 ms3-{631.5659873} !sn3 acylium ion
+
+
+Name: TG(14:1/18:2/20:1)
+Id: TG(14:1/18:2/20:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H98O6
+PrecursorMz: 872.7701639
+ExactMass: 854.7363409
+MW: 854.7363409
+CLASS: TG
+SumComposition: TG(52:4)
+SumChainLengths: TG(14:1_18:2_20:1)
+NumPeaks: 6
+209.1899965 1 ms3-{545.4564369} @sn1 acylium ion
+209.1899965 1 ms3-{575.5033871} @sn1 acylium ion
+263.2369467 1 ms3-{545.4564369} $sn2 acylium ion
+263.2369467 1 ms3-{629.5503373} $sn2 acylium ion
+293.2838969 1 ms3-{575.5033871} !sn3 acylium ion
+293.2838969 1 ms3-{629.5503373} !sn3 acylium ion
+
+
+Name: TG(14:1/18:2/22:1)
+Id: TG(14:1/18:2/22:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H102O6
+PrecursorMz: 900.8014640
+ExactMass: 882.7676410
+MW: 882.7676410
+CLASS: TG
+SumComposition: TG(54:4)
+SumChainLengths: TG(14:1_18:2_22:1)
+NumPeaks: 6
+209.1899965 1 ms3-{545.4564369} @sn1 acylium ion
+209.1899965 1 ms3-{603.5346872} @sn1 acylium ion
+263.2369467 1 ms3-{545.4564369} $sn2 acylium ion
+263.2369467 1 ms3-{657.5816374} $sn2 acylium ion
+321.3151970 1 ms3-{603.5346872} !sn3 acylium ion
+321.3151970 1 ms3-{657.5816374} !sn3 acylium ion
+
+
+Name: TG(14:1/18:2/22:2)
+Id: TG(14:1/18:2/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H100O6
+PrecursorMz: 898.7858139
+ExactMass: 880.7519909
+MW: 880.7519909
+CLASS: TG
+SumComposition: TG(54:5)
+SumChainLengths: TG(14:1_18:2_22:2)
+NumPeaks: 6
+209.1899965 1 ms3-{545.4564369} @sn1 acylium ion
+209.1899965 1 ms3-{601.5190371} @sn1 acylium ion
+263.2369467 1 ms3-{545.4564369} $sn2 acylium ion
+263.2369467 1 ms3-{655.5659873} $sn2 acylium ion
+319.2995470 1 ms3-{601.5190371} !sn3 acylium ion
+319.2995470 1 ms3-{655.5659873} !sn3 acylium ion
+
+
+Name: TG(14:1/18:2/22:3)
+Id: TG(14:1/18:2/22:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H98O6
+PrecursorMz: 896.7701639
+ExactMass: 878.7363409
+MW: 878.7363409
+CLASS: TG
+SumComposition: TG(54:6)
+SumChainLengths: TG(14:1_18:2_22:3)
+NumPeaks: 6
+209.1899965 1 ms3-{545.4564369} @sn1 acylium ion
+209.1899965 1 ms3-{599.5033871} @sn1 acylium ion
+263.2369467 1 ms3-{545.4564369} $sn2 acylium ion
+263.2369467 1 ms3-{653.5503373} $sn2 acylium ion
+317.2838969 1 ms3-{599.5033871} !sn3 acylium ion
+317.2838969 1 ms3-{653.5503373} !sn3 acylium ion
+
+
+Name: TG(14:1/18:3/22:1)
+Id: TG(14:1/18:3/22:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H100O6
+PrecursorMz: 898.7858139
+ExactMass: 880.7519909
+MW: 880.7519909
+CLASS: TG
+SumComposition: TG(54:5)
+SumChainLengths: TG(14:1_18:3_22:1)
+NumPeaks: 6
+209.1899965 1 ms3-{543.4407868} @sn1 acylium ion
+209.1899965 1 ms3-{603.5346872} @sn1 acylium ion
+261.2212967 1 ms3-{543.4407868} $sn2 acylium ion
+261.2212967 1 ms3-{655.5659873} $sn2 acylium ion
+321.3151970 1 ms3-{603.5346872} !sn3 acylium ion
+321.3151970 1 ms3-{655.5659873} !sn3 acylium ion
+
+
+Name: TG(14:1/18:3/22:2)
+Id: TG(14:1/18:3/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H98O6
+PrecursorMz: 896.7701639
+ExactMass: 878.7363409
+MW: 878.7363409
+CLASS: TG
+SumComposition: TG(54:6)
+SumChainLengths: TG(14:1_18:3_22:2)
+NumPeaks: 6
+209.1899965 1 ms3-{543.4407868} @sn1 acylium ion
+209.1899965 1 ms3-{601.5190371} @sn1 acylium ion
+261.2212967 1 ms3-{543.4407868} $sn2 acylium ion
+261.2212967 1 ms3-{653.5503373} $sn2 acylium ion
+319.2995470 1 ms3-{601.5190371} !sn3 acylium ion
+319.2995470 1 ms3-{653.5503373} !sn3 acylium ion
+
+
+Name: TG(14:1/20:1/22:2)
+Id: TG(14:1/20:1/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H106O6
+PrecursorMz: 928.8327641
+ExactMass: 910.7989411
+MW: 910.7989411
+CLASS: TG
+SumComposition: TG(56:4)
+SumChainLengths: TG(14:1_20:1_22:2)
+NumPeaks: 6
+209.1899965 1 ms3-{575.5033871} @sn1 acylium ion
+209.1899965 1 ms3-{601.5190371} @sn1 acylium ion
+293.2838969 1 ms3-{575.5033871} $sn2 acylium ion
+293.2838969 1 ms3-{685.6129375} $sn2 acylium ion
+319.2995470 1 ms3-{601.5190371} !sn3 acylium ion
+319.2995470 1 ms3-{685.6129375} !sn3 acylium ion
+
+
+Name: TG(14:1/20:3/22:2)
+Id: TG(14:1/20:3/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H102O6
+PrecursorMz: 924.8014640
+ExactMass: 906.7676410
+MW: 906.7676410
+CLASS: TG
+SumComposition: TG(56:6)
+SumChainLengths: TG(14:1_20:3_22:2)
+NumPeaks: 6
+209.1899965 1 ms3-{571.4720869} @sn1 acylium ion
+209.1899965 1 ms3-{601.5190371} @sn1 acylium ion
+289.2525968 1 ms3-{571.4720869} $sn2 acylium ion
+289.2525968 1 ms3-{681.5816374} $sn2 acylium ion
+319.2995470 1 ms3-{601.5190371} !sn3 acylium ion
+319.2995470 1 ms3-{681.5816374} !sn3 acylium ion
+
+
+Name: TG(14:1/20:4/22:1)
+Id: TG(14:1/20:4/22:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H102O6
+PrecursorMz: 924.8014640
+ExactMass: 906.7676410
+MW: 906.7676410
+CLASS: TG
+SumComposition: TG(56:6)
+SumChainLengths: TG(14:1_20:4_22:1)
+NumPeaks: 6
+209.1899965 1 ms3-{569.4564369} @sn1 acylium ion
+209.1899965 1 ms3-{603.5346872} @sn1 acylium ion
+287.2369467 1 ms3-{569.4564369} $sn2 acylium ion
+287.2369467 1 ms3-{681.5816374} $sn2 acylium ion
+321.3151970 1 ms3-{603.5346872} !sn3 acylium ion
+321.3151970 1 ms3-{681.5816374} !sn3 acylium ion
+
+
+Name: TG(14:1/20:4/22:2)
+Id: TG(14:1/20:4/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H100O6
+PrecursorMz: 922.7858139
+ExactMass: 904.7519909
+MW: 904.7519909
+CLASS: TG
+SumComposition: TG(56:7)
+SumChainLengths: TG(14:1_20:4_22:2)
+NumPeaks: 6
+209.1899965 1 ms3-{569.4564369} @sn1 acylium ion
+209.1899965 1 ms3-{601.5190371} @sn1 acylium ion
+287.2369467 1 ms3-{569.4564369} $sn2 acylium ion
+287.2369467 1 ms3-{679.5659873} $sn2 acylium ion
+319.2995470 1 ms3-{601.5190371} !sn3 acylium ion
+319.2995470 1 ms3-{679.5659873} !sn3 acylium ion
+
+
+Name: TG(14:1/20:5/22:1)
+Id: TG(14:1/20:5/22:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H100O6
+PrecursorMz: 922.7858139
+ExactMass: 904.7519909
+MW: 904.7519909
+CLASS: TG
+SumComposition: TG(56:7)
+SumChainLengths: TG(14:1_20:5_22:1)
+NumPeaks: 6
+209.1899965 1 ms3-{567.4407868} @sn1 acylium ion
+209.1899965 1 ms3-{603.5346872} @sn1 acylium ion
+285.2212967 1 ms3-{567.4407868} $sn2 acylium ion
+285.2212967 1 ms3-{679.5659873} $sn2 acylium ion
+321.3151970 1 ms3-{603.5346872} !sn3 acylium ion
+321.3151970 1 ms3-{679.5659873} !sn3 acylium ion
+
+
+Name: TG(14:1/20:5/22:2)
+Id: TG(14:1/20:5/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H98O6
+PrecursorMz: 920.7701639
+ExactMass: 902.7363409
+MW: 902.7363409
+CLASS: TG
+SumComposition: TG(56:8)
+SumChainLengths: TG(14:1_20:5_22:2)
+NumPeaks: 6
+209.1899965 1 ms3-{567.4407868} @sn1 acylium ion
+209.1899965 1 ms3-{601.5190371} @sn1 acylium ion
+285.2212967 1 ms3-{567.4407868} $sn2 acylium ion
+285.2212967 1 ms3-{677.5503373} $sn2 acylium ion
+319.2995470 1 ms3-{601.5190371} !sn3 acylium ion
+319.2995470 1 ms3-{677.5503373} !sn3 acylium ion
+
+
+Name: TG(14:1/22:1/22:6)
+Id: TG(14:1/22:1/22:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C61H102O6
+PrecursorMz: 948.8014640
+ExactMass: 930.7676410
+MW: 930.7676410
+CLASS: TG
+SumComposition: TG(58:8)
+SumChainLengths: TG(14:1_22:1_22:6)
+NumPeaks: 6
+209.1899965 1 ms3-{593.4564369} @sn1 acylium ion
+209.1899965 1 ms3-{603.5346872} @sn1 acylium ion
+311.2369467 1 ms3-{593.4564369} !sn3 acylium ion
+311.2369467 1 ms3-{705.5816374} !sn3 acylium ion
+321.3151970 1 ms3-{603.5346872} $sn2 acylium ion
+321.3151970 1 ms3-{705.5816374} $sn2 acylium ion
+
+
+Name: TG(14:1/22:2/22:5)
+Id: TG(14:1/22:2/22:5) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C61H102O6
+PrecursorMz: 948.8014640
+ExactMass: 930.7676410
+MW: 930.7676410
+CLASS: TG
+SumComposition: TG(58:8)
+SumChainLengths: TG(14:1_22:2_22:5)
+NumPeaks: 6
+209.1899965 1 ms3-{595.4720869} @sn1 acylium ion
+209.1899965 1 ms3-{601.5190371} @sn1 acylium ion
+313.2525968 1 ms3-{595.4720869} !sn3 acylium ion
+313.2525968 1 ms3-{705.5816374} !sn3 acylium ion
+319.2995470 1 ms3-{601.5190371} $sn2 acylium ion
+319.2995470 1 ms3-{705.5816374} $sn2 acylium ion
+
+
+Name: TG(14:1/22:2/22:6)
+Id: TG(14:1/22:2/22:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C61H100O6
+PrecursorMz: 946.7858139
+ExactMass: 928.7519909
+MW: 928.7519909
+CLASS: TG
+SumComposition: TG(58:9)
+SumChainLengths: TG(14:1_22:2_22:6)
+NumPeaks: 6
+209.1899965 1 ms3-{593.4564369} @sn1 acylium ion
+209.1899965 1 ms3-{601.5190371} @sn1 acylium ion
+311.2369467 1 ms3-{593.4564369} !sn3 acylium ion
+311.2369467 1 ms3-{703.5659873} !sn3 acylium ion
+319.2995470 1 ms3-{601.5190371} $sn2 acylium ion
+319.2995470 1 ms3-{703.5659873} $sn2 acylium ion
+
+
+Name: TG(14:1/22:3/22:6)
+Id: TG(14:1/22:3/22:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C61H98O6
+PrecursorMz: 944.7701639
+ExactMass: 926.7363409
+MW: 926.7363409
+CLASS: TG
+SumComposition: TG(58:10)
+SumChainLengths: TG(14:1_22:3_22:6)
+NumPeaks: 6
+209.1899965 1 ms3-{593.4564369} @sn1 acylium ion
+209.1899965 1 ms3-{599.5033871} @sn1 acylium ion
+311.2369467 1 ms3-{593.4564369} !sn3 acylium ion
+311.2369467 1 ms3-{701.5503373} !sn3 acylium ion
+317.2838969 1 ms3-{599.5033871} $sn2 acylium ion
+317.2838969 1 ms3-{701.5503373} $sn2 acylium ion
+
+
+Name: TG(14:2/16:0/20:1)
+Id: TG(14:2/16:0/20:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C53H96O6
+PrecursorMz: 846.7545138
+ExactMass: 828.7206908
+MW: 828.7206908
+CLASS: TG
+SumComposition: TG(50:3)
+SumChainLengths: TG(14:2_16:0_20:1)
+NumPeaks: 6
+207.1743465 1 ms3-{519.4407868} @sn1 acylium ion
+207.1743465 1 ms3-{573.487737} @sn1 acylium ion
+239.2369467 1 ms3-{519.4407868} $sn2 acylium ion
+239.2369467 1 ms3-{605.5503373} $sn2 acylium ion
+293.2838969 1 ms3-{573.487737} !sn3 acylium ion
+293.2838969 1 ms3-{605.5503373} !sn3 acylium ion
+
+
+Name: TG(14:2/16:0/22:0)
+Id: TG(14:2/16:0/22:0) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H102O6
+PrecursorMz: 876.8014640
+ExactMass: 858.7676410
+MW: 858.7676410
+CLASS: TG
+SumComposition: TG(52:2)
+SumChainLengths: TG(14:2_16:0_22:0)
+NumPeaks: 6
+207.1743465 1 ms3-{519.4407868} @sn1 acylium ion
+207.1743465 1 ms3-{603.5346872} @sn1 acylium ion
+239.2369467 1 ms3-{519.4407868} $sn2 acylium ion
+239.2369467 1 ms3-{635.5972874} $sn2 acylium ion
+323.3308471 1 ms3-{603.5346872} !sn3 acylium ion
+323.3308471 1 ms3-{635.5972874} !sn3 acylium ion
+
+
+Name: TG(14:2/16:0/22:1)
+Id: TG(14:2/16:0/22:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H100O6
+PrecursorMz: 874.7858139
+ExactMass: 856.7519909
+MW: 856.7519909
+CLASS: TG
+SumComposition: TG(52:3)
+SumChainLengths: TG(14:2_16:0_22:1)
+NumPeaks: 6
+207.1743465 1 ms3-{519.4407868} @sn1 acylium ion
+207.1743465 1 ms3-{601.5190371} @sn1 acylium ion
+239.2369467 1 ms3-{519.4407868} $sn2 acylium ion
+239.2369467 1 ms3-{633.5816374} $sn2 acylium ion
+321.3151970 1 ms3-{601.5190371} !sn3 acylium ion
+321.3151970 1 ms3-{633.5816374} !sn3 acylium ion
+
+
+Name: TG(14:2/16:0/22:2)
+Id: TG(14:2/16:0/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H98O6
+PrecursorMz: 872.7701639
+ExactMass: 854.7363409
+MW: 854.7363409
+CLASS: TG
+SumComposition: TG(52:4)
+SumChainLengths: TG(14:2_16:0_22:2)
+NumPeaks: 6
+207.1743465 1 ms3-{519.4407868} @sn1 acylium ion
+207.1743465 1 ms3-{599.5033871} @sn1 acylium ion
+239.2369467 1 ms3-{519.4407868} $sn2 acylium ion
+239.2369467 1 ms3-{631.5659873} $sn2 acylium ion
+319.2995470 1 ms3-{599.5033871} !sn3 acylium ion
+319.2995470 1 ms3-{631.5659873} !sn3 acylium ion
+
+
+Name: TG(14:2/16:0/22:3)
+Id: TG(14:2/16:0/22:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H96O6
+PrecursorMz: 870.7545138
+ExactMass: 852.7206908
+MW: 852.7206908
+CLASS: TG
+SumComposition: TG(52:5)
+SumChainLengths: TG(14:2_16:0_22:3)
+NumPeaks: 6
+207.1743465 1 ms3-{519.4407868} @sn1 acylium ion
+207.1743465 1 ms3-{597.487737} @sn1 acylium ion
+239.2369467 1 ms3-{519.4407868} $sn2 acylium ion
+239.2369467 1 ms3-{629.5503373} $sn2 acylium ion
+317.2838969 1 ms3-{597.487737} !sn3 acylium ion
+317.2838969 1 ms3-{629.5503373} !sn3 acylium ion
+
+
+Name: TG(14:2/16:0/24:3)
+Id: TG(14:2/16:0/24:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H100O6
+PrecursorMz: 898.7858139
+ExactMass: 880.7519909
+MW: 880.7519909
+CLASS: TG
+SumComposition: TG(54:5)
+SumChainLengths: TG(14:2_16:0_24:3)
+NumPeaks: 6
+207.1743465 1 ms3-{519.4407868} @sn1 acylium ion
+207.1743465 1 ms3-{625.5190371} @sn1 acylium ion
+239.2369467 1 ms3-{519.4407868} $sn2 acylium ion
+239.2369467 1 ms3-{657.5816374} $sn2 acylium ion
+345.3151970 1 ms3-{625.5190371} !sn3 acylium ion
+345.3151970 1 ms3-{657.5816374} !sn3 acylium ion
+
+
+Name: TG(14:2/16:0/24:5)
+Id: TG(14:2/16:0/24:5) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H96O6
+PrecursorMz: 894.7545138
+ExactMass: 876.7206908
+MW: 876.7206908
+CLASS: TG
+SumComposition: TG(54:7)
+SumChainLengths: TG(14:2_16:0_24:5)
+NumPeaks: 6
+207.1743465 1 ms3-{519.4407868} @sn1 acylium ion
+207.1743465 1 ms3-{621.487737} @sn1 acylium ion
+239.2369467 1 ms3-{519.4407868} $sn2 acylium ion
+239.2369467 1 ms3-{653.5503373} $sn2 acylium ion
+341.2838969 1 ms3-{621.487737} !sn3 acylium ion
+341.2838969 1 ms3-{653.5503373} !sn3 acylium ion
+
+
+Name: TG(14:2/16:1/22:1)
+Id: TG(14:2/16:1/22:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H98O6
+PrecursorMz: 872.7701639
+ExactMass: 854.7363409
+MW: 854.7363409
+CLASS: TG
+SumComposition: TG(52:4)
+SumChainLengths: TG(14:2_16:1_22:1)
+NumPeaks: 6
+207.1743465 1 ms3-{517.4251367} @sn1 acylium ion
+207.1743465 1 ms3-{601.5190371} @sn1 acylium ion
+237.2212967 1 ms3-{517.4251367} $sn2 acylium ion
+237.2212967 1 ms3-{631.5659873} $sn2 acylium ion
+321.3151970 1 ms3-{601.5190371} !sn3 acylium ion
+321.3151970 1 ms3-{631.5659873} !sn3 acylium ion
+
+
+Name: TG(14:2/16:1/22:2)
+Id: TG(14:2/16:1/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H96O6
+PrecursorMz: 870.7545138
+ExactMass: 852.7206908
+MW: 852.7206908
+CLASS: TG
+SumComposition: TG(52:5)
+SumChainLengths: TG(14:2_16:1_22:2)
+NumPeaks: 6
+207.1743465 1 ms3-{517.4251367} @sn1 acylium ion
+207.1743465 1 ms3-{599.5033871} @sn1 acylium ion
+237.2212967 1 ms3-{517.4251367} $sn2 acylium ion
+237.2212967 1 ms3-{629.5503373} $sn2 acylium ion
+319.2995470 1 ms3-{599.5033871} !sn3 acylium ion
+319.2995470 1 ms3-{629.5503373} !sn3 acylium ion
+
+
+Name: TG(14:2/16:1/22:3)
+Id: TG(14:2/16:1/22:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H94O6
+PrecursorMz: 868.7388637
+ExactMass: 850.7050407
+MW: 850.7050407
+CLASS: TG
+SumComposition: TG(52:6)
+SumChainLengths: TG(14:2_16:1_22:3)
+NumPeaks: 6
+207.1743465 1 ms3-{517.4251367} @sn1 acylium ion
+207.1743465 1 ms3-{597.487737} @sn1 acylium ion
+237.2212967 1 ms3-{517.4251367} $sn2 acylium ion
+237.2212967 1 ms3-{627.5346872} $sn2 acylium ion
+317.2838969 1 ms3-{597.487737} !sn3 acylium ion
+317.2838969 1 ms3-{627.5346872} !sn3 acylium ion
+
+
+Name: TG(14:2/18:0/22:1)
+Id: TG(14:2/18:0/22:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H104O6
+PrecursorMz: 902.8171141
+ExactMass: 884.7832911
+MW: 884.7832911
+CLASS: TG
+SumComposition: TG(54:3)
+SumChainLengths: TG(14:2_18:0_22:1)
+NumPeaks: 6
+207.1743465 1 ms3-{547.4720869} @sn1 acylium ion
+207.1743465 1 ms3-{601.5190371} @sn1 acylium ion
+267.2682469 1 ms3-{547.4720869} $sn2 acylium ion
+267.2682469 1 ms3-{661.6129375} $sn2 acylium ion
+321.3151970 1 ms3-{601.5190371} !sn3 acylium ion
+321.3151970 1 ms3-{661.6129375} !sn3 acylium ion
+
+
+Name: TG(14:2/18:0/22:2)
+Id: TG(14:2/18:0/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H102O6
+PrecursorMz: 900.8014640
+ExactMass: 882.7676410
+MW: 882.7676410
+CLASS: TG
+SumComposition: TG(54:4)
+SumChainLengths: TG(14:2_18:0_22:2)
+NumPeaks: 6
+207.1743465 1 ms3-{547.4720869} @sn1 acylium ion
+207.1743465 1 ms3-{599.5033871} @sn1 acylium ion
+267.2682469 1 ms3-{547.4720869} $sn2 acylium ion
+267.2682469 1 ms3-{659.5972874} $sn2 acylium ion
+319.2995470 1 ms3-{599.5033871} !sn3 acylium ion
+319.2995470 1 ms3-{659.5972874} !sn3 acylium ion
+
+
+Name: TG(14:2/18:0/22:3)
+Id: TG(14:2/18:0/22:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H100O6
+PrecursorMz: 898.7858139
+ExactMass: 880.7519909
+MW: 880.7519909
+CLASS: TG
+SumComposition: TG(54:5)
+SumChainLengths: TG(14:2_18:0_22:3)
+NumPeaks: 6
+207.1743465 1 ms3-{547.4720869} @sn1 acylium ion
+207.1743465 1 ms3-{597.487737} @sn1 acylium ion
+267.2682469 1 ms3-{547.4720869} $sn2 acylium ion
+267.2682469 1 ms3-{657.5816374} $sn2 acylium ion
+317.2838969 1 ms3-{597.487737} !sn3 acylium ion
+317.2838969 1 ms3-{657.5816374} !sn3 acylium ion
+
+
+Name: TG(14:2/18:1/20:0)
+Id: TG(14:2/18:1/20:0) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H100O6
+PrecursorMz: 874.7858139
+ExactMass: 856.7519909
+MW: 856.7519909
+CLASS: TG
+SumComposition: TG(52:3)
+SumChainLengths: TG(14:2_18:1_20:0)
+NumPeaks: 6
+207.1743465 1 ms3-{545.4564369} @sn1 acylium ion
+207.1743465 1 ms3-{575.5033871} @sn1 acylium ion
+265.2525968 1 ms3-{545.4564369} $sn2 acylium ion
+265.2525968 1 ms3-{633.5816374} $sn2 acylium ion
+295.2995470 1 ms3-{575.5033871} !sn3 acylium ion
+295.2995470 1 ms3-{633.5816374} !sn3 acylium ion
+
+
+Name: TG(14:2/18:1/20:1)
+Id: TG(14:2/18:1/20:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H98O6
+PrecursorMz: 872.7701639
+ExactMass: 854.7363409
+MW: 854.7363409
+CLASS: TG
+SumComposition: TG(52:4)
+SumChainLengths: TG(14:2_18:1_20:1)
+NumPeaks: 6
+207.1743465 1 ms3-{545.4564369} @sn1 acylium ion
+207.1743465 1 ms3-{573.487737} @sn1 acylium ion
+265.2525968 1 ms3-{545.4564369} $sn2 acylium ion
+265.2525968 1 ms3-{631.5659873} $sn2 acylium ion
+293.2838969 1 ms3-{573.487737} !sn3 acylium ion
+293.2838969 1 ms3-{631.5659873} !sn3 acylium ion
+
+
+Name: TG(14:2/18:1/22:0)
+Id: TG(14:2/18:1/22:0) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H104O6
+PrecursorMz: 902.8171141
+ExactMass: 884.7832911
+MW: 884.7832911
+CLASS: TG
+SumComposition: TG(54:3)
+SumChainLengths: TG(14:2_18:1_22:0)
+NumPeaks: 6
+207.1743465 1 ms3-{545.4564369} @sn1 acylium ion
+207.1743465 1 ms3-{603.5346872} @sn1 acylium ion
+265.2525968 1 ms3-{545.4564369} $sn2 acylium ion
+265.2525968 1 ms3-{661.6129375} $sn2 acylium ion
+323.3308471 1 ms3-{603.5346872} !sn3 acylium ion
+323.3308471 1 ms3-{661.6129375} !sn3 acylium ion
+
+
+Name: TG(14:2/18:1/22:1)
+Id: TG(14:2/18:1/22:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H102O6
+PrecursorMz: 900.8014640
+ExactMass: 882.7676410
+MW: 882.7676410
+CLASS: TG
+SumComposition: TG(54:4)
+SumChainLengths: TG(14:2_18:1_22:1)
+NumPeaks: 6
+207.1743465 1 ms3-{545.4564369} @sn1 acylium ion
+207.1743465 1 ms3-{601.5190371} @sn1 acylium ion
+265.2525968 1 ms3-{545.4564369} $sn2 acylium ion
+265.2525968 1 ms3-{659.5972874} $sn2 acylium ion
+321.3151970 1 ms3-{601.5190371} !sn3 acylium ion
+321.3151970 1 ms3-{659.5972874} !sn3 acylium ion
+
+
+Name: TG(14:2/18:1/22:2)
+Id: TG(14:2/18:1/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H100O6
+PrecursorMz: 898.7858139
+ExactMass: 880.7519909
+MW: 880.7519909
+CLASS: TG
+SumComposition: TG(54:5)
+SumChainLengths: TG(14:2_18:1_22:2)
+NumPeaks: 6
+207.1743465 1 ms3-{545.4564369} @sn1 acylium ion
+207.1743465 1 ms3-{599.5033871} @sn1 acylium ion
+265.2525968 1 ms3-{545.4564369} $sn2 acylium ion
+265.2525968 1 ms3-{657.5816374} $sn2 acylium ion
+319.2995470 1 ms3-{599.5033871} !sn3 acylium ion
+319.2995470 1 ms3-{657.5816374} !sn3 acylium ion
+
+
+Name: TG(14:2/18:1/22:3)
+Id: TG(14:2/18:1/22:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H98O6
+PrecursorMz: 896.7701639
+ExactMass: 878.7363409
+MW: 878.7363409
+CLASS: TG
+SumComposition: TG(54:6)
+SumChainLengths: TG(14:2_18:1_22:3)
+NumPeaks: 6
+207.1743465 1 ms3-{545.4564369} @sn1 acylium ion
+207.1743465 1 ms3-{597.487737} @sn1 acylium ion
+265.2525968 1 ms3-{545.4564369} $sn2 acylium ion
+265.2525968 1 ms3-{655.5659873} $sn2 acylium ion
+317.2838969 1 ms3-{597.487737} !sn3 acylium ion
+317.2838969 1 ms3-{655.5659873} !sn3 acylium ion
+
+
+Name: TG(14:2/18:1/24:3)
+Id: TG(14:2/18:1/24:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H102O6
+PrecursorMz: 924.8014640
+ExactMass: 906.7676410
+MW: 906.7676410
+CLASS: TG
+SumComposition: TG(56:6)
+SumChainLengths: TG(14:2_18:1_24:3)
+NumPeaks: 6
+207.1743465 1 ms3-{545.4564369} @sn1 acylium ion
+207.1743465 1 ms3-{625.5190371} @sn1 acylium ion
+265.2525968 1 ms3-{545.4564369} $sn2 acylium ion
+265.2525968 1 ms3-{683.5972874} $sn2 acylium ion
+345.3151970 1 ms3-{625.5190371} !sn3 acylium ion
+345.3151970 1 ms3-{683.5972874} !sn3 acylium ion
+
+
+Name: TG(14:2/18:2/20:0)
+Id: TG(14:2/18:2/20:0) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H98O6
+PrecursorMz: 872.7701639
+ExactMass: 854.7363409
+MW: 854.7363409
+CLASS: TG
+SumComposition: TG(52:4)
+SumChainLengths: TG(14:2_18:2_20:0)
+NumPeaks: 6
+207.1743465 1 ms3-{543.4407868} @sn1 acylium ion
+207.1743465 1 ms3-{575.5033871} @sn1 acylium ion
+263.2369467 1 ms3-{543.4407868} $sn2 acylium ion
+263.2369467 1 ms3-{631.5659873} $sn2 acylium ion
+295.2995470 1 ms3-{575.5033871} !sn3 acylium ion
+295.2995470 1 ms3-{631.5659873} !sn3 acylium ion
+
+
+Name: TG(14:2/18:2/22:0)
+Id: TG(14:2/18:2/22:0) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H102O6
+PrecursorMz: 900.8014640
+ExactMass: 882.7676410
+MW: 882.7676410
+CLASS: TG
+SumComposition: TG(54:4)
+SumChainLengths: TG(14:2_18:2_22:0)
+NumPeaks: 6
+207.1743465 1 ms3-{543.4407868} @sn1 acylium ion
+207.1743465 1 ms3-{603.5346872} @sn1 acylium ion
+263.2369467 1 ms3-{543.4407868} $sn2 acylium ion
+263.2369467 1 ms3-{659.5972874} $sn2 acylium ion
+323.3308471 1 ms3-{603.5346872} !sn3 acylium ion
+323.3308471 1 ms3-{659.5972874} !sn3 acylium ion
+
+
+Name: TG(14:2/18:2/22:1)
+Id: TG(14:2/18:2/22:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H100O6
+PrecursorMz: 898.7858139
+ExactMass: 880.7519909
+MW: 880.7519909
+CLASS: TG
+SumComposition: TG(54:5)
+SumChainLengths: TG(14:2_18:2_22:1)
+NumPeaks: 6
+207.1743465 1 ms3-{543.4407868} @sn1 acylium ion
+207.1743465 1 ms3-{601.5190371} @sn1 acylium ion
+263.2369467 1 ms3-{543.4407868} $sn2 acylium ion
+263.2369467 1 ms3-{657.5816374} $sn2 acylium ion
+321.3151970 1 ms3-{601.5190371} !sn3 acylium ion
+321.3151970 1 ms3-{657.5816374} !sn3 acylium ion
+
+
+Name: TG(14:2/18:2/22:2)
+Id: TG(14:2/18:2/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H98O6
+PrecursorMz: 896.7701639
+ExactMass: 878.7363409
+MW: 878.7363409
+CLASS: TG
+SumComposition: TG(54:6)
+SumChainLengths: TG(14:2_18:2_22:2)
+NumPeaks: 6
+207.1743465 1 ms3-{543.4407868} @sn1 acylium ion
+207.1743465 1 ms3-{599.5033871} @sn1 acylium ion
+263.2369467 1 ms3-{543.4407868} $sn2 acylium ion
+263.2369467 1 ms3-{655.5659873} $sn2 acylium ion
+319.2995470 1 ms3-{599.5033871} !sn3 acylium ion
+319.2995470 1 ms3-{655.5659873} !sn3 acylium ion
+
+
+Name: TG(14:2/18:2/22:3)
+Id: TG(14:2/18:2/22:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H96O6
+PrecursorMz: 894.7545138
+ExactMass: 876.7206908
+MW: 876.7206908
+CLASS: TG
+SumComposition: TG(54:7)
+SumChainLengths: TG(14:2_18:2_22:3)
+NumPeaks: 6
+207.1743465 1 ms3-{543.4407868} @sn1 acylium ion
+207.1743465 1 ms3-{597.487737} @sn1 acylium ion
+263.2369467 1 ms3-{543.4407868} $sn2 acylium ion
+263.2369467 1 ms3-{653.5503373} $sn2 acylium ion
+317.2838969 1 ms3-{597.487737} !sn3 acylium ion
+317.2838969 1 ms3-{653.5503373} !sn3 acylium ion
+
+
+Name: TG(14:2/18:3/22:2)
+Id: TG(14:2/18:3/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H96O6
+PrecursorMz: 894.7545138
+ExactMass: 876.7206908
+MW: 876.7206908
+CLASS: TG
+SumComposition: TG(54:7)
+SumChainLengths: TG(14:2_18:3_22:2)
+NumPeaks: 6
+207.1743465 1 ms3-{541.4251367} @sn1 acylium ion
+207.1743465 1 ms3-{599.5033871} @sn1 acylium ion
+261.2212967 1 ms3-{541.4251367} $sn2 acylium ion
+261.2212967 1 ms3-{653.5503373} $sn2 acylium ion
+319.2995470 1 ms3-{599.5033871} !sn3 acylium ion
+319.2995470 1 ms3-{653.5503373} !sn3 acylium ion
+
+
+Name: TG(14:2/20:1/22:2)
+Id: TG(14:2/20:1/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H104O6
+PrecursorMz: 926.8171141
+ExactMass: 908.7832911
+MW: 908.7832911
+CLASS: TG
+SumComposition: TG(56:5)
+SumChainLengths: TG(14:2_20:1_22:2)
+NumPeaks: 6
+207.1743465 1 ms3-{573.487737} @sn1 acylium ion
+207.1743465 1 ms3-{599.5033871} @sn1 acylium ion
+293.2838969 1 ms3-{573.487737} $sn2 acylium ion
+293.2838969 1 ms3-{685.6129375} $sn2 acylium ion
+319.2995470 1 ms3-{599.5033871} !sn3 acylium ion
+319.2995470 1 ms3-{685.6129375} !sn3 acylium ion
+
+
+Name: TG(14:2/20:4/22:2)
+Id: TG(14:2/20:4/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H98O6
+PrecursorMz: 920.7701639
+ExactMass: 902.7363409
+MW: 902.7363409
+CLASS: TG
+SumComposition: TG(56:8)
+SumChainLengths: TG(14:2_20:4_22:2)
+NumPeaks: 6
+207.1743465 1 ms3-{567.4407868} @sn1 acylium ion
+207.1743465 1 ms3-{599.5033871} @sn1 acylium ion
+287.2369467 1 ms3-{567.4407868} $sn2 acylium ion
+287.2369467 1 ms3-{679.5659873} $sn2 acylium ion
+319.2995470 1 ms3-{599.5033871} !sn3 acylium ion
+319.2995470 1 ms3-{679.5659873} !sn3 acylium ion
+
+
+Name: TG(14:2/20:5/22:1)
+Id: TG(14:2/20:5/22:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H98O6
+PrecursorMz: 920.7701639
+ExactMass: 902.7363409
+MW: 902.7363409
+CLASS: TG
+SumComposition: TG(56:8)
+SumChainLengths: TG(14:2_20:5_22:1)
+NumPeaks: 6
+207.1743465 1 ms3-{565.4251367} @sn1 acylium ion
+207.1743465 1 ms3-{601.5190371} @sn1 acylium ion
+285.2212967 1 ms3-{565.4251367} $sn2 acylium ion
+285.2212967 1 ms3-{679.5659873} $sn2 acylium ion
+321.3151970 1 ms3-{601.5190371} !sn3 acylium ion
+321.3151970 1 ms3-{679.5659873} !sn3 acylium ion
+
+
+Name: TG(14:2/20:5/22:2)
+Id: TG(14:2/20:5/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H96O6
+PrecursorMz: 918.7545138
+ExactMass: 900.7206908
+MW: 900.7206908
+CLASS: TG
+SumComposition: TG(56:9)
+SumChainLengths: TG(14:2_20:5_22:2)
+NumPeaks: 6
+207.1743465 1 ms3-{565.4251367} @sn1 acylium ion
+207.1743465 1 ms3-{599.5033871} @sn1 acylium ion
+285.2212967 1 ms3-{565.4251367} $sn2 acylium ion
+285.2212967 1 ms3-{677.5503373} $sn2 acylium ion
+319.2995470 1 ms3-{599.5033871} !sn3 acylium ion
+319.2995470 1 ms3-{677.5503373} !sn3 acylium ion
+
+
+Name: TG(14:2/22:1/22:6)
+Id: TG(14:2/22:1/22:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C61H100O6
+PrecursorMz: 946.7858139
+ExactMass: 928.7519909
+MW: 928.7519909
+CLASS: TG
+SumComposition: TG(58:9)
+SumChainLengths: TG(14:2_22:1_22:6)
+NumPeaks: 6
+207.1743465 1 ms3-{591.4407868} @sn1 acylium ion
+207.1743465 1 ms3-{601.5190371} @sn1 acylium ion
+311.2369467 1 ms3-{591.4407868} !sn3 acylium ion
+311.2369467 1 ms3-{705.5816374} !sn3 acylium ion
+321.3151970 1 ms3-{601.5190371} $sn2 acylium ion
+321.3151970 1 ms3-{705.5816374} $sn2 acylium ion
+
+
+Name: TG(14:2/22:2/22:5)
+Id: TG(14:2/22:2/22:5) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C61H100O6
+PrecursorMz: 946.7858139
+ExactMass: 928.7519909
+MW: 928.7519909
+CLASS: TG
+SumComposition: TG(58:9)
+SumChainLengths: TG(14:2_22:2_22:5)
+NumPeaks: 6
+207.1743465 1 ms3-{593.4564369} @sn1 acylium ion
+207.1743465 1 ms3-{599.5033871} @sn1 acylium ion
+313.2525968 1 ms3-{593.4564369} !sn3 acylium ion
+313.2525968 1 ms3-{705.5816374} !sn3 acylium ion
+319.2995470 1 ms3-{599.5033871} $sn2 acylium ion
+319.2995470 1 ms3-{705.5816374} $sn2 acylium ion
+
+
+Name: TG(14:2/22:2/22:6)
+Id: TG(14:2/22:2/22:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C61H98O6
+PrecursorMz: 944.7701639
+ExactMass: 926.7363409
+MW: 926.7363409
+CLASS: TG
+SumComposition: TG(58:10)
+SumChainLengths: TG(14:2_22:2_22:6)
+NumPeaks: 6
+207.1743465 1 ms3-{591.4407868} @sn1 acylium ion
+207.1743465 1 ms3-{599.5033871} @sn1 acylium ion
+311.2369467 1 ms3-{591.4407868} !sn3 acylium ion
+311.2369467 1 ms3-{703.5659873} !sn3 acylium ion
+319.2995470 1 ms3-{599.5033871} $sn2 acylium ion
+319.2995470 1 ms3-{703.5659873} $sn2 acylium ion
+
+
+Name: TG(14:2/22:3/22:6)
+Id: TG(14:2/22:3/22:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C61H96O6
+PrecursorMz: 942.7545138
+ExactMass: 924.7206908
+MW: 924.7206908
+CLASS: TG
+SumComposition: TG(58:11)
+SumChainLengths: TG(14:2_22:3_22:6)
+NumPeaks: 6
+207.1743465 1 ms3-{591.4407868} @sn1 acylium ion
+207.1743465 1 ms3-{597.487737} @sn1 acylium ion
+311.2369467 1 ms3-{591.4407868} !sn3 acylium ion
+311.2369467 1 ms3-{701.5503373} !sn3 acylium ion
+317.2838969 1 ms3-{597.487737} $sn2 acylium ion
+317.2838969 1 ms3-{701.5503373} $sn2 acylium ion
+
+
+Name: TG(14:3/16:0/22:0)
+Id: TG(14:3/16:0/22:0) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H100O6
+PrecursorMz: 874.7858139
+ExactMass: 856.7519909
+MW: 856.7519909
+CLASS: TG
+SumComposition: TG(52:3)
+SumChainLengths: TG(14:3_16:0_22:0)
+NumPeaks: 6
+205.1586964 1 ms3-{517.4251367} @sn1 acylium ion
+205.1586964 1 ms3-{601.5190371} @sn1 acylium ion
+239.2369467 1 ms3-{517.4251367} $sn2 acylium ion
+239.2369467 1 ms3-{635.5972874} $sn2 acylium ion
+323.3308471 1 ms3-{601.5190371} !sn3 acylium ion
+323.3308471 1 ms3-{635.5972874} !sn3 acylium ion
+
+
+Name: TG(14:3/16:0/22:1)
+Id: TG(14:3/16:0/22:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H98O6
+PrecursorMz: 872.7701639
+ExactMass: 854.7363409
+MW: 854.7363409
+CLASS: TG
+SumComposition: TG(52:4)
+SumChainLengths: TG(14:3_16:0_22:1)
+NumPeaks: 6
+205.1586964 1 ms3-{517.4251367} @sn1 acylium ion
+205.1586964 1 ms3-{599.5033871} @sn1 acylium ion
+239.2369467 1 ms3-{517.4251367} $sn2 acylium ion
+239.2369467 1 ms3-{633.5816374} $sn2 acylium ion
+321.3151970 1 ms3-{599.5033871} !sn3 acylium ion
+321.3151970 1 ms3-{633.5816374} !sn3 acylium ion
+
+
+Name: TG(14:3/16:0/22:2)
+Id: TG(14:3/16:0/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H96O6
+PrecursorMz: 870.7545138
+ExactMass: 852.7206908
+MW: 852.7206908
+CLASS: TG
+SumComposition: TG(52:5)
+SumChainLengths: TG(14:3_16:0_22:2)
+NumPeaks: 6
+205.1586964 1 ms3-{517.4251367} @sn1 acylium ion
+205.1586964 1 ms3-{597.487737} @sn1 acylium ion
+239.2369467 1 ms3-{517.4251367} $sn2 acylium ion
+239.2369467 1 ms3-{631.5659873} $sn2 acylium ion
+319.2995470 1 ms3-{597.487737} !sn3 acylium ion
+319.2995470 1 ms3-{631.5659873} !sn3 acylium ion
+
+
+Name: TG(14:3/16:1/22:0)
+Id: TG(14:3/16:1/22:0) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H98O6
+PrecursorMz: 872.7701639
+ExactMass: 854.7363409
+MW: 854.7363409
+CLASS: TG
+SumComposition: TG(52:4)
+SumChainLengths: TG(14:3_16:1_22:0)
+NumPeaks: 6
+205.1586964 1 ms3-{515.4094867} @sn1 acylium ion
+205.1586964 1 ms3-{601.5190371} @sn1 acylium ion
+237.2212967 1 ms3-{515.4094867} $sn2 acylium ion
+237.2212967 1 ms3-{633.5816374} $sn2 acylium ion
+323.3308471 1 ms3-{601.5190371} !sn3 acylium ion
+323.3308471 1 ms3-{633.5816374} !sn3 acylium ion
+
+
+Name: TG(14:3/18:1/22:0)
+Id: TG(14:3/18:1/22:0) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H102O6
+PrecursorMz: 900.8014640
+ExactMass: 882.7676410
+MW: 882.7676410
+CLASS: TG
+SumComposition: TG(54:4)
+SumChainLengths: TG(14:3_18:1_22:0)
+NumPeaks: 6
+205.1586964 1 ms3-{543.4407868} @sn1 acylium ion
+205.1586964 1 ms3-{601.5190371} @sn1 acylium ion
+265.2525968 1 ms3-{543.4407868} $sn2 acylium ion
+265.2525968 1 ms3-{661.6129375} $sn2 acylium ion
+323.3308471 1 ms3-{601.5190371} !sn3 acylium ion
+323.3308471 1 ms3-{661.6129375} !sn3 acylium ion
+
+
+Name: TG(14:3/18:1/22:1)
+Id: TG(14:3/18:1/22:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H100O6
+PrecursorMz: 898.7858139
+ExactMass: 880.7519909
+MW: 880.7519909
+CLASS: TG
+SumComposition: TG(54:5)
+SumChainLengths: TG(14:3_18:1_22:1)
+NumPeaks: 6
+205.1586964 1 ms3-{543.4407868} @sn1 acylium ion
+205.1586964 1 ms3-{599.5033871} @sn1 acylium ion
+265.2525968 1 ms3-{543.4407868} $sn2 acylium ion
+265.2525968 1 ms3-{659.5972874} $sn2 acylium ion
+321.3151970 1 ms3-{599.5033871} !sn3 acylium ion
+321.3151970 1 ms3-{659.5972874} !sn3 acylium ion
+
+
+Name: TG(14:3/18:1/22:2)
+Id: TG(14:3/18:1/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H98O6
+PrecursorMz: 896.7701639
+ExactMass: 878.7363409
+MW: 878.7363409
+CLASS: TG
+SumComposition: TG(54:6)
+SumChainLengths: TG(14:3_18:1_22:2)
+NumPeaks: 6
+205.1586964 1 ms3-{543.4407868} @sn1 acylium ion
+205.1586964 1 ms3-{597.487737} @sn1 acylium ion
+265.2525968 1 ms3-{543.4407868} $sn2 acylium ion
+265.2525968 1 ms3-{657.5816374} $sn2 acylium ion
+319.2995470 1 ms3-{597.487737} !sn3 acylium ion
+319.2995470 1 ms3-{657.5816374} !sn3 acylium ion
+
+
+Name: TG(14:3/18:2/22:0)
+Id: TG(14:3/18:2/22:0) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H100O6
+PrecursorMz: 898.7858139
+ExactMass: 880.7519909
+MW: 880.7519909
+CLASS: TG
+SumComposition: TG(54:5)
+SumChainLengths: TG(14:3_18:2_22:0)
+NumPeaks: 6
+205.1586964 1 ms3-{541.4251367} @sn1 acylium ion
+205.1586964 1 ms3-{601.5190371} @sn1 acylium ion
+263.2369467 1 ms3-{541.4251367} $sn2 acylium ion
+263.2369467 1 ms3-{659.5972874} $sn2 acylium ion
+323.3308471 1 ms3-{601.5190371} !sn3 acylium ion
+323.3308471 1 ms3-{659.5972874} !sn3 acylium ion
+
+
+Name: TG(14:3/18:2/22:1)
+Id: TG(14:3/18:2/22:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H98O6
+PrecursorMz: 896.7701639
+ExactMass: 878.7363409
+MW: 878.7363409
+CLASS: TG
+SumComposition: TG(54:6)
+SumChainLengths: TG(14:3_18:2_22:1)
+NumPeaks: 6
+205.1586964 1 ms3-{541.4251367} @sn1 acylium ion
+205.1586964 1 ms3-{599.5033871} @sn1 acylium ion
+263.2369467 1 ms3-{541.4251367} $sn2 acylium ion
+263.2369467 1 ms3-{657.5816374} $sn2 acylium ion
+321.3151970 1 ms3-{599.5033871} !sn3 acylium ion
+321.3151970 1 ms3-{657.5816374} !sn3 acylium ion
+
+
+Name: TG(14:3/18:2/22:2)
+Id: TG(14:3/18:2/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H96O6
+PrecursorMz: 894.7545138
+ExactMass: 876.7206908
+MW: 876.7206908
+CLASS: TG
+SumComposition: TG(54:7)
+SumChainLengths: TG(14:3_18:2_22:2)
+NumPeaks: 6
+205.1586964 1 ms3-{541.4251367} @sn1 acylium ion
+205.1586964 1 ms3-{597.487737} @sn1 acylium ion
+263.2369467 1 ms3-{541.4251367} $sn2 acylium ion
+263.2369467 1 ms3-{655.5659873} $sn2 acylium ion
+319.2995470 1 ms3-{597.487737} !sn3 acylium ion
+319.2995470 1 ms3-{655.5659873} !sn3 acylium ion
+
+
+Name: TG(15:0/18:1/15:0)_IS
+Id: TG(15:0/18:1/15:0)_IS [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C51H89D7O6
+PrecursorMz: 829.7989502
+ExactMass: 811.7649536
+MW: 811.7649536
+CLASS: TG
+SumComposition: TG(48:1)
+SumChainLengths: TG(15:0_15:0_18:1)
+NumPeaks: 2
+225.2209930 1 ms3-{523.4719849} @sn1 acylium ion/!sn3 acylium ion
+272.2969360 1 ms3-{570.546936} $sn2 acylium ion
+
+
+Name: TG(16:0/16:0/16:1)
+Id: TG(16:0/16:0/16:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C51H96O6
+PrecursorMz: 822.7545138
+ExactMass: 804.7206908
+MW: 804.7206908
+CLASS: TG
+SumComposition: TG(48:1)
+SumChainLengths: TG(16:0_16:0_16:1)
+NumPeaks: 2
+237.2212967 1 ms3-{549.487737} !sn3 acylium ion
+239.2369467 1 ms3-{551.5033871} @sn1 acylium ion/$sn2 acylium ion
+
+
+Name: TG(16:0/16:0/18:0)
+Id: TG(16:0/16:0/18:0) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C53H102O6
+PrecursorMz: 852.8014640
+ExactMass: 834.7676410
+MW: 834.7676410
+CLASS: TG
+SumComposition: TG(50:0)
+SumChainLengths: TG(16:0_16:0_18:0)
+NumPeaks: 2
+239.2369467 1 ms3-{551.5033871} @sn1 acylium ion/$sn2 acylium ion
+267.2682469 1 ms3-{579.5346872} !sn3 acylium ion
+
+
+Name: TG(16:0/16:0/18:1)
+Id: TG(16:0/16:0/18:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C53H100O6
+PrecursorMz: 850.7858139
+ExactMass: 832.7519909
+MW: 832.7519909
+CLASS: TG
+SumComposition: TG(50:1)
+SumChainLengths: TG(16:0_16:0_18:1)
+NumPeaks: 2
+239.2369467 1 ms3-{551.5033871} @sn1 acylium ion/$sn2 acylium ion
+265.2525968 1 ms3-{577.5190371} !sn3 acylium ion
+
+
+Name: TG(16:0/16:0/18:2)
+Id: TG(16:0/16:0/18:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C53H98O6
+PrecursorMz: 848.7701639
+ExactMass: 830.7363409
+MW: 830.7363409
+CLASS: TG
+SumComposition: TG(50:2)
+SumChainLengths: TG(16:0_16:0_18:2)
+NumPeaks: 2
+239.2369467 1 ms3-{551.5033871} @sn1 acylium ion/$sn2 acylium ion
+263.2369467 1 ms3-{575.5033871} !sn3 acylium ion
+
+
+Name: TG(16:0/16:0/18:3)
+Id: TG(16:0/16:0/18:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C53H96O6
+PrecursorMz: 846.7545138
+ExactMass: 828.7206908
+MW: 828.7206908
+CLASS: TG
+SumComposition: TG(50:3)
+SumChainLengths: TG(16:0_16:0_18:3)
+NumPeaks: 2
+239.2369467 1 ms3-{551.5033871} @sn1 acylium ion/$sn2 acylium ion
+261.2212967 1 ms3-{573.487737} !sn3 acylium ion
+
+
+Name: TG(16:0/16:0/20:1)
+Id: TG(16:0/16:0/20:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H104O6
+PrecursorMz: 878.8171141
+ExactMass: 860.7832911
+MW: 860.7832911
+CLASS: TG
+SumComposition: TG(52:1)
+SumChainLengths: TG(16:0_16:0_20:1)
+NumPeaks: 2
+239.2369467 1 ms3-{551.5033871} @sn1 acylium ion/$sn2 acylium ion
+293.2838969 1 ms3-{605.5503373} !sn3 acylium ion
+
+
+Name: TG(16:0/16:0/20:3)
+Id: TG(16:0/16:0/20:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H100O6
+PrecursorMz: 874.7858139
+ExactMass: 856.7519909
+MW: 856.7519909
+CLASS: TG
+SumComposition: TG(52:3)
+SumChainLengths: TG(16:0_16:0_20:3)
+NumPeaks: 2
+239.2369467 1 ms3-{551.5033871} @sn1 acylium ion/$sn2 acylium ion
+289.2525968 1 ms3-{601.5190371} !sn3 acylium ion
+
+
+Name: TG(16:0/16:0/20:4)
+Id: TG(16:0/16:0/20:4) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H98O6
+PrecursorMz: 872.7701639
+ExactMass: 854.7363409
+MW: 854.7363409
+CLASS: TG
+SumComposition: TG(52:4)
+SumChainLengths: TG(16:0_16:0_20:4)
+NumPeaks: 2
+239.2369467 1 ms3-{551.5033871} @sn1 acylium ion/$sn2 acylium ion
+287.2369467 1 ms3-{599.5033871} !sn3 acylium ion
+
+
+Name: TG(16:0/16:0/20:5)
+Id: TG(16:0/16:0/20:5) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H96O6
+PrecursorMz: 870.7545138
+ExactMass: 852.7206908
+MW: 852.7206908
+CLASS: TG
+SumComposition: TG(52:5)
+SumChainLengths: TG(16:0_16:0_20:5)
+NumPeaks: 2
+239.2369467 1 ms3-{551.5033871} @sn1 acylium ion/$sn2 acylium ion
+285.2212967 1 ms3-{597.487737} !sn3 acylium ion
+
+
+Name: TG(16:0/16:0/22:5)
+Id: TG(16:0/16:0/22:5) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H100O6
+PrecursorMz: 898.7858139
+ExactMass: 880.7519909
+MW: 880.7519909
+CLASS: TG
+SumComposition: TG(54:5)
+SumChainLengths: TG(16:0_16:0_22:5)
+NumPeaks: 2
+239.2369467 1 ms3-{551.5033871} @sn1 acylium ion/$sn2 acylium ion
+313.2525968 1 ms3-{625.5190371} !sn3 acylium ion
+
+
+Name: TG(16:0/16:0/22:6)
+Id: TG(16:0/16:0/22:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H98O6
+PrecursorMz: 896.7701639
+ExactMass: 878.7363409
+MW: 878.7363409
+CLASS: TG
+SumComposition: TG(54:6)
+SumChainLengths: TG(16:0_16:0_22:6)
+NumPeaks: 2
+239.2369467 1 ms3-{551.5033871} @sn1 acylium ion/$sn2 acylium ion
+311.2369467 1 ms3-{623.5033871} !sn3 acylium ion
+
+
+Name: TG(16:0/16:0/24:6)
+Id: TG(16:0/16:0/24:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H102O6
+PrecursorMz: 924.8014640
+ExactMass: 906.7676410
+MW: 906.7676410
+CLASS: TG
+SumComposition: TG(56:6)
+SumChainLengths: TG(16:0_16:0_24:6)
+NumPeaks: 2
+239.2369467 1 ms3-{551.5033871} @sn1 acylium ion/$sn2 acylium ion
+339.2682469 1 ms3-{651.5346872} !sn3 acylium ion
+
+
+Name: TG(16:0/16:1/16:1)
+Id: TG(16:0/16:1/16:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C51H94O6
+PrecursorMz: 820.7388637
+ExactMass: 802.7050407
+MW: 802.7050407
+CLASS: TG
+SumComposition: TG(48:2)
+SumChainLengths: TG(16:0_16:1_16:1)
+NumPeaks: 2
+237.2212967 1 ms3-{547.4720869} $sn2 acylium ion/!sn3 acylium ion
+239.2369467 1 ms3-{549.487737} @sn1 acylium ion
+
+
+Name: TG(16:0/16:1/18:0)
+Id: TG(16:0/16:1/18:0) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C53H100O6
+PrecursorMz: 850.7858139
+ExactMass: 832.7519909
+MW: 832.7519909
+CLASS: TG
+SumComposition: TG(50:1)
+SumChainLengths: TG(16:0_16:1_18:0)
+NumPeaks: 6
+237.2212967 1 ms3-{549.487737} $sn2 acylium ion
+237.2212967 1 ms3-{577.5190371} $sn2 acylium ion
+239.2369467 1 ms3-{549.487737} @sn1 acylium ion
+239.2369467 1 ms3-{579.5346872} @sn1 acylium ion
+267.2682469 1 ms3-{577.5190371} !sn3 acylium ion
+267.2682469 1 ms3-{579.5346872} !sn3 acylium ion
+
+
+Name: TG(16:0/16:1/18:1)
+Id: TG(16:0/16:1/18:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C53H98O6
+PrecursorMz: 848.7701639
+ExactMass: 830.7363409
+MW: 830.7363409
+CLASS: TG
+SumComposition: TG(50:2)
+SumChainLengths: TG(16:0_16:1_18:1)
+NumPeaks: 6
+237.2212967 1 ms3-{549.487737} $sn2 acylium ion
+237.2212967 1 ms3-{575.5033871} $sn2 acylium ion
+239.2369467 1 ms3-{549.487737} @sn1 acylium ion
+239.2369467 1 ms3-{577.5190371} @sn1 acylium ion
+265.2525968 1 ms3-{575.5033871} !sn3 acylium ion
+265.2525968 1 ms3-{577.5190371} !sn3 acylium ion
+
+
+Name: TG(16:0/16:1/18:2)
+Id: TG(16:0/16:1/18:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C53H96O6
+PrecursorMz: 846.7545138
+ExactMass: 828.7206908
+MW: 828.7206908
+CLASS: TG
+SumComposition: TG(50:3)
+SumChainLengths: TG(16:0_16:1_18:2)
+NumPeaks: 6
+237.2212967 1 ms3-{549.487737} $sn2 acylium ion
+237.2212967 1 ms3-{573.487737} $sn2 acylium ion
+239.2369467 1 ms3-{549.487737} @sn1 acylium ion
+239.2369467 1 ms3-{575.5033871} @sn1 acylium ion
+263.2369467 1 ms3-{573.487737} !sn3 acylium ion
+263.2369467 1 ms3-{575.5033871} !sn3 acylium ion
+
+
+Name: TG(16:0/16:1/18:3)
+Id: TG(16:0/16:1/18:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C53H94O6
+PrecursorMz: 844.7388637
+ExactMass: 826.7050407
+MW: 826.7050407
+CLASS: TG
+SumComposition: TG(50:4)
+SumChainLengths: TG(16:0_16:1_18:3)
+NumPeaks: 6
+237.2212967 1 ms3-{549.487737} $sn2 acylium ion
+237.2212967 1 ms3-{571.4720869} $sn2 acylium ion
+239.2369467 1 ms3-{549.487737} @sn1 acylium ion
+239.2369467 1 ms3-{573.487737} @sn1 acylium ion
+261.2212967 1 ms3-{571.4720869} !sn3 acylium ion
+261.2212967 1 ms3-{573.487737} !sn3 acylium ion
+
+
+Name: TG(16:0/16:1/20:1)
+Id: TG(16:0/16:1/20:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H102O6
+PrecursorMz: 876.8014640
+ExactMass: 858.7676410
+MW: 858.7676410
+CLASS: TG
+SumComposition: TG(52:2)
+SumChainLengths: TG(16:0_16:1_20:1)
+NumPeaks: 6
+237.2212967 1 ms3-{549.487737} $sn2 acylium ion
+237.2212967 1 ms3-{603.5346872} $sn2 acylium ion
+239.2369467 1 ms3-{549.487737} @sn1 acylium ion
+239.2369467 1 ms3-{605.5503373} @sn1 acylium ion
+293.2838969 1 ms3-{603.5346872} !sn3 acylium ion
+293.2838969 1 ms3-{605.5503373} !sn3 acylium ion
+
+
+Name: TG(16:0/16:1/20:2)
+Id: TG(16:0/16:1/20:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H100O6
+PrecursorMz: 874.7858139
+ExactMass: 856.7519909
+MW: 856.7519909
+CLASS: TG
+SumComposition: TG(52:3)
+SumChainLengths: TG(16:0_16:1_20:2)
+NumPeaks: 6
+237.2212967 1 ms3-{549.487737} $sn2 acylium ion
+237.2212967 1 ms3-{601.5190371} $sn2 acylium ion
+239.2369467 1 ms3-{549.487737} @sn1 acylium ion
+239.2369467 1 ms3-{603.5346872} @sn1 acylium ion
+291.2682469 1 ms3-{601.5190371} !sn3 acylium ion
+291.2682469 1 ms3-{603.5346872} !sn3 acylium ion
+
+
+Name: TG(16:0/16:1/20:3)
+Id: TG(16:0/16:1/20:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H98O6
+PrecursorMz: 872.7701639
+ExactMass: 854.7363409
+MW: 854.7363409
+CLASS: TG
+SumComposition: TG(52:4)
+SumChainLengths: TG(16:0_16:1_20:3)
+NumPeaks: 6
+237.2212967 1 ms3-{549.487737} $sn2 acylium ion
+237.2212967 1 ms3-{599.5033871} $sn2 acylium ion
+239.2369467 1 ms3-{549.487737} @sn1 acylium ion
+239.2369467 1 ms3-{601.5190371} @sn1 acylium ion
+289.2525968 1 ms3-{599.5033871} !sn3 acylium ion
+289.2525968 1 ms3-{601.5190371} !sn3 acylium ion
+
+
+Name: TG(16:0/16:1/20:5)
+Id: TG(16:0/16:1/20:5) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H94O6
+PrecursorMz: 868.7388637
+ExactMass: 850.7050407
+MW: 850.7050407
+CLASS: TG
+SumComposition: TG(52:6)
+SumChainLengths: TG(16:0_16:1_20:5)
+NumPeaks: 6
+237.2212967 1 ms3-{549.487737} $sn2 acylium ion
+237.2212967 1 ms3-{595.4720869} $sn2 acylium ion
+239.2369467 1 ms3-{549.487737} @sn1 acylium ion
+239.2369467 1 ms3-{597.487737} @sn1 acylium ion
+285.2212967 1 ms3-{595.4720869} !sn3 acylium ion
+285.2212967 1 ms3-{597.487737} !sn3 acylium ion
+
+
+Name: TG(16:0/16:1/22:2)
+Id: TG(16:0/16:1/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H104O6
+PrecursorMz: 902.8171141
+ExactMass: 884.7832911
+MW: 884.7832911
+CLASS: TG
+SumComposition: TG(54:3)
+SumChainLengths: TG(16:0_16:1_22:2)
+NumPeaks: 6
+237.2212967 1 ms3-{549.487737} $sn2 acylium ion
+237.2212967 1 ms3-{629.5503373} $sn2 acylium ion
+239.2369467 1 ms3-{549.487737} @sn1 acylium ion
+239.2369467 1 ms3-{631.5659873} @sn1 acylium ion
+319.2995470 1 ms3-{629.5503373} !sn3 acylium ion
+319.2995470 1 ms3-{631.5659873} !sn3 acylium ion
+
+
+Name: TG(16:0/16:1/22:5)
+Id: TG(16:0/16:1/22:5) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H98O6
+PrecursorMz: 896.7701639
+ExactMass: 878.7363409
+MW: 878.7363409
+CLASS: TG
+SumComposition: TG(54:6)
+SumChainLengths: TG(16:0_16:1_22:5)
+NumPeaks: 6
+237.2212967 1 ms3-{549.487737} $sn2 acylium ion
+237.2212967 1 ms3-{623.5033871} $sn2 acylium ion
+239.2369467 1 ms3-{549.487737} @sn1 acylium ion
+239.2369467 1 ms3-{625.5190371} @sn1 acylium ion
+313.2525968 1 ms3-{623.5033871} !sn3 acylium ion
+313.2525968 1 ms3-{625.5190371} !sn3 acylium ion
+
+
+Name: TG(16:0/16:1/22:6)
+Id: TG(16:0/16:1/22:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H96O6
+PrecursorMz: 894.7545138
+ExactMass: 876.7206908
+MW: 876.7206908
+CLASS: TG
+SumComposition: TG(54:7)
+SumChainLengths: TG(16:0_16:1_22:6)
+NumPeaks: 6
+237.2212967 1 ms3-{549.487737} $sn2 acylium ion
+237.2212967 1 ms3-{621.487737} $sn2 acylium ion
+239.2369467 1 ms3-{549.487737} @sn1 acylium ion
+239.2369467 1 ms3-{623.5033871} @sn1 acylium ion
+311.2369467 1 ms3-{621.487737} !sn3 acylium ion
+311.2369467 1 ms3-{623.5033871} !sn3 acylium ion
+
+
+Name: TG(16:0/16:1/24:6)
+Id: TG(16:0/16:1/24:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H100O6
+PrecursorMz: 922.7858139
+ExactMass: 904.7519909
+MW: 904.7519909
+CLASS: TG
+SumComposition: TG(56:7)
+SumChainLengths: TG(16:0_16:1_24:6)
+NumPeaks: 6
+237.2212967 1 ms3-{549.487737} $sn2 acylium ion
+237.2212967 1 ms3-{649.5190371} $sn2 acylium ion
+239.2369467 1 ms3-{549.487737} @sn1 acylium ion
+239.2369467 1 ms3-{651.5346872} @sn1 acylium ion
+339.2682469 1 ms3-{649.5190371} !sn3 acylium ion
+339.2682469 1 ms3-{651.5346872} !sn3 acylium ion
+
+
+Name: TG(16:0/16:2;O/18:1)
+Id: TG(16:0/16:2;O/18:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C53H96O7
+PrecursorMz: 862.7494284
+ExactMass: 844.7156054
+MW: 844.7156054
+CLASS: TG
+SumComposition: TG(50:3;O)
+SumChainLengths: TG(16:0_16:2;O_18:1)
+NumPeaks: 6
+239.2369467 1 ms3-{563.46700151956} @sn1 acylium ion
+239.2369467 1 ms3-{577.5190371} @sn1 acylium ion
+251.2005612 1 ms3-{563.46700151956} sn2 acylium ion ox
+251.2005612 1 ms3-{589.48265161956} sn2 acylium ion ox
+265.2525968 1 ms3-{589.48265161956} !sn3 acylium ion
+265.2525968 1 ms3-{577.5190371} !sn3 acylium ion
+
+
+Name: TG(16:0/16:2;O/18:2)
+Id: TG(16:0/16:2;O/18:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C53H94O7
+PrecursorMz: 860.7337783
+ExactMass: 842.6999553
+MW: 842.6999553
+CLASS: TG
+SumComposition: TG(50:4;O)
+SumChainLengths: TG(16:0_16:2;O_18:2)
+NumPeaks: 6
+239.2369467 1 ms3-{563.46700151956} @sn1 acylium ion
+239.2369467 1 ms3-{575.5033871} @sn1 acylium ion
+251.2005612 1 ms3-{563.46700151956} sn2 acylium ion ox
+251.2005612 1 ms3-{587.46700151956} sn2 acylium ion ox
+263.2369467 1 ms3-{587.46700151956} !sn3 acylium ion
+263.2369467 1 ms3-{575.5033871} !sn3 acylium ion
+
+
+Name: TG(16:0/16:2/18:1)
+Id: TG(16:0/16:2/18:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C53H96O6
+PrecursorMz: 846.7545138
+ExactMass: 828.7206908
+MW: 828.7206908
+CLASS: TG
+SumComposition: TG(50:3)
+SumChainLengths: TG(16:0_16:2_18:1)
+NumPeaks: 6
+235.2056466 1 ms3-{547.4720869} $sn2 acylium ion
+235.2056466 1 ms3-{573.487737} $sn2 acylium ion
+239.2369467 1 ms3-{547.4720869} @sn1 acylium ion
+239.2369467 1 ms3-{577.5190371} @sn1 acylium ion
+265.2525968 1 ms3-{573.487737} !sn3 acylium ion
+265.2525968 1 ms3-{577.5190371} !sn3 acylium ion
+
+
+Name: TG(16:0/16:2/20:0)
+Id: TG(16:0/16:2/20:0) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H102O6
+PrecursorMz: 876.8014640
+ExactMass: 858.7676410
+MW: 858.7676410
+CLASS: TG
+SumComposition: TG(52:2)
+SumChainLengths: TG(16:0_16:2_20:0)
+NumPeaks: 6
+235.2056466 1 ms3-{547.4720869} $sn2 acylium ion
+235.2056466 1 ms3-{603.5346872} $sn2 acylium ion
+239.2369467 1 ms3-{547.4720869} @sn1 acylium ion
+239.2369467 1 ms3-{607.5659873} @sn1 acylium ion
+295.2995470 1 ms3-{603.5346872} !sn3 acylium ion
+295.2995470 1 ms3-{607.5659873} !sn3 acylium ion
+
+
+Name: TG(16:0/16:2/20:1)
+Id: TG(16:0/16:2/20:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H100O6
+PrecursorMz: 874.7858139
+ExactMass: 856.7519909
+MW: 856.7519909
+CLASS: TG
+SumComposition: TG(52:3)
+SumChainLengths: TG(16:0_16:2_20:1)
+NumPeaks: 6
+235.2056466 1 ms3-{547.4720869} $sn2 acylium ion
+235.2056466 1 ms3-{601.5190371} $sn2 acylium ion
+239.2369467 1 ms3-{547.4720869} @sn1 acylium ion
+239.2369467 1 ms3-{605.5503373} @sn1 acylium ion
+293.2838969 1 ms3-{601.5190371} !sn3 acylium ion
+293.2838969 1 ms3-{605.5503373} !sn3 acylium ion
+
+
+Name: TG(16:0/16:2/20:2)
+Id: TG(16:0/16:2/20:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H98O6
+PrecursorMz: 872.7701639
+ExactMass: 854.7363409
+MW: 854.7363409
+CLASS: TG
+SumComposition: TG(52:4)
+SumChainLengths: TG(16:0_16:2_20:2)
+NumPeaks: 6
+235.2056466 1 ms3-{547.4720869} $sn2 acylium ion
+235.2056466 1 ms3-{599.5033871} $sn2 acylium ion
+239.2369467 1 ms3-{547.4720869} @sn1 acylium ion
+239.2369467 1 ms3-{603.5346872} @sn1 acylium ion
+291.2682469 1 ms3-{599.5033871} !sn3 acylium ion
+291.2682469 1 ms3-{603.5346872} !sn3 acylium ion
+
+
+Name: TG(16:0/16:3/20:0)
+Id: TG(16:0/16:3/20:0) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H100O6
+PrecursorMz: 874.7858139
+ExactMass: 856.7519909
+MW: 856.7519909
+CLASS: TG
+SumComposition: TG(52:3)
+SumChainLengths: TG(16:0_16:3_20:0)
+NumPeaks: 6
+233.1899965 1 ms3-{545.4564369} $sn2 acylium ion
+233.1899965 1 ms3-{601.5190371} $sn2 acylium ion
+239.2369467 1 ms3-{545.4564369} @sn1 acylium ion
+239.2369467 1 ms3-{607.5659873} @sn1 acylium ion
+295.2995470 1 ms3-{601.5190371} !sn3 acylium ion
+295.2995470 1 ms3-{607.5659873} !sn3 acylium ion
+
+
+Name: TG(16:0/16:3/20:1)
+Id: TG(16:0/16:3/20:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H98O6
+PrecursorMz: 872.7701639
+ExactMass: 854.7363409
+MW: 854.7363409
+CLASS: TG
+SumComposition: TG(52:4)
+SumChainLengths: TG(16:0_16:3_20:1)
+NumPeaks: 6
+233.1899965 1 ms3-{545.4564369} $sn2 acylium ion
+233.1899965 1 ms3-{599.5033871} $sn2 acylium ion
+239.2369467 1 ms3-{545.4564369} @sn1 acylium ion
+239.2369467 1 ms3-{605.5503373} @sn1 acylium ion
+293.2838969 1 ms3-{599.5033871} !sn3 acylium ion
+293.2838969 1 ms3-{605.5503373} !sn3 acylium ion
+
+
+Name: TG(16:0/18:0/18:1;O)
+Id: TG(16:0/18:0/18:1;O) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H104O7
+PrecursorMz: 894.8120287
+ExactMass: 876.7782057
+MW: 876.7782057
+CLASS: TG
+SumComposition: TG(52:1;O)
+SumChainLengths: TG(16:0_18:0_18:1;O)
+NumPeaks: 6
+239.2369467 1 ms3-{593.51395171956} @sn1 acylium ion
+239.2369467 1 ms3-{579.5346872} @sn1 acylium ion
+267.2682469 1 ms3-{579.5346872} $sn2 acylium ion
+267.2682469 1 ms3-{621.54525191956} $sn2 acylium ion
+281.2475114 1 ms3-{593.51395171956} sn3 acylium ion ox
+281.2475114 1 ms3-{621.54525191956} sn3 acylium ion ox
+
+
+Name: TG(16:0/18:0/18:1)
+Id: TG(16:0/18:0/18:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H104O6
+PrecursorMz: 878.8171141
+ExactMass: 860.7832911
+MW: 860.7832911
+CLASS: TG
+SumComposition: TG(52:1)
+SumChainLengths: TG(16:0_18:0_18:1)
+NumPeaks: 6
+239.2369467 1 ms3-{577.5190371} @sn1 acylium ion
+239.2369467 1 ms3-{579.5346872} @sn1 acylium ion
+265.2525968 1 ms3-{577.5190371} !sn3 acylium ion
+265.2525968 1 ms3-{605.5503373} !sn3 acylium ion
+267.2682469 1 ms3-{579.5346872} $sn2 acylium ion
+267.2682469 1 ms3-{605.5503373} $sn2 acylium ion
+
+
+Name: TG(16:0/18:0/18:2)
+Id: TG(16:0/18:0/18:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H102O6
+PrecursorMz: 876.8014640
+ExactMass: 858.7676410
+MW: 858.7676410
+CLASS: TG
+SumComposition: TG(52:2)
+SumChainLengths: TG(16:0_18:0_18:2)
+NumPeaks: 6
+239.2369467 1 ms3-{575.5033871} @sn1 acylium ion
+239.2369467 1 ms3-{579.5346872} @sn1 acylium ion
+263.2369467 1 ms3-{575.5033871} !sn3 acylium ion
+263.2369467 1 ms3-{603.5346872} !sn3 acylium ion
+267.2682469 1 ms3-{579.5346872} $sn2 acylium ion
+267.2682469 1 ms3-{603.5346872} $sn2 acylium ion
+
+
+Name: TG(16:0/18:0/18:3)
+Id: TG(16:0/18:0/18:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H100O6
+PrecursorMz: 874.7858139
+ExactMass: 856.7519909
+MW: 856.7519909
+CLASS: TG
+SumComposition: TG(52:3)
+SumChainLengths: TG(16:0_18:0_18:3)
+NumPeaks: 6
+239.2369467 1 ms3-{573.487737} @sn1 acylium ion
+239.2369467 1 ms3-{579.5346872} @sn1 acylium ion
+261.2212967 1 ms3-{573.487737} !sn3 acylium ion
+261.2212967 1 ms3-{601.5190371} !sn3 acylium ion
+267.2682469 1 ms3-{579.5346872} $sn2 acylium ion
+267.2682469 1 ms3-{601.5190371} $sn2 acylium ion
+
+
+Name: TG(16:0/18:0/18:4)
+Id: TG(16:0/18:0/18:4) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H98O6
+PrecursorMz: 872.7701639
+ExactMass: 854.7363409
+MW: 854.7363409
+CLASS: TG
+SumComposition: TG(52:4)
+SumChainLengths: TG(16:0_18:0_18:4)
+NumPeaks: 6
+239.2369467 1 ms3-{571.4720869} @sn1 acylium ion
+239.2369467 1 ms3-{579.5346872} @sn1 acylium ion
+259.2056466 1 ms3-{571.4720869} !sn3 acylium ion
+259.2056466 1 ms3-{599.5033871} !sn3 acylium ion
+267.2682469 1 ms3-{579.5346872} $sn2 acylium ion
+267.2682469 1 ms3-{599.5033871} $sn2 acylium ion
+
+
+Name: TG(16:0/18:0/22:6)
+Id: TG(16:0/18:0/22:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H102O6
+PrecursorMz: 924.8014640
+ExactMass: 906.7676410
+MW: 906.7676410
+CLASS: TG
+SumComposition: TG(56:6)
+SumChainLengths: TG(16:0_18:0_22:6)
+NumPeaks: 6
+239.2369467 1 ms3-{579.5346872} @sn1 acylium ion
+239.2369467 1 ms3-{623.5033871} @sn1 acylium ion
+267.2682469 1 ms3-{579.5346872} $sn2 acylium ion
+267.2682469 1 ms3-{651.5346872} $sn2 acylium ion
+311.2369467 1 ms3-{623.5033871} !sn3 acylium ion
+311.2369467 1 ms3-{651.5346872} !sn3 acylium ion
+
+
+Name: TG(16:0/18:1/18:1)
+Id: TG(16:0/18:1/18:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H102O6
+PrecursorMz: 876.8014640
+ExactMass: 858.7676410
+MW: 858.7676410
+CLASS: TG
+SumComposition: TG(52:2)
+SumChainLengths: TG(16:0_18:1_18:1)
+NumPeaks: 2
+239.2369467 1 ms3-{577.5190371} @sn1 acylium ion
+265.2525968 1 ms3-{603.5346872} $sn2 acylium ion/!sn3 acylium ion
+
+
+Name: TG(16:0/18:1/18:2)
+Id: TG(16:0/18:1/18:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H100O6
+PrecursorMz: 874.7858139
+ExactMass: 856.7519909
+MW: 856.7519909
+CLASS: TG
+SumComposition: TG(52:3)
+SumChainLengths: TG(16:0_18:1_18:2)
+NumPeaks: 6
+239.2369467 1 ms3-{575.5033871} @sn1 acylium ion
+239.2369467 1 ms3-{577.5190371} @sn1 acylium ion
+263.2369467 1 ms3-{575.5033871} !sn3 acylium ion
+263.2369467 1 ms3-{601.5190371} !sn3 acylium ion
+265.2525968 1 ms3-{577.5190371} $sn2 acylium ion
+265.2525968 1 ms3-{601.5190371} $sn2 acylium ion
+
+
+Name: TG(16:0/18:1/18:3)
+Id: TG(16:0/18:1/18:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H98O6
+PrecursorMz: 872.7701639
+ExactMass: 854.7363409
+MW: 854.7363409
+CLASS: TG
+SumComposition: TG(52:4)
+SumChainLengths: TG(16:0_18:1_18:3)
+NumPeaks: 6
+239.2369467 1 ms3-{573.487737} @sn1 acylium ion
+239.2369467 1 ms3-{577.5190371} @sn1 acylium ion
+261.2212967 1 ms3-{573.487737} !sn3 acylium ion
+261.2212967 1 ms3-{599.5033871} !sn3 acylium ion
+265.2525968 1 ms3-{577.5190371} $sn2 acylium ion
+265.2525968 1 ms3-{599.5033871} $sn2 acylium ion
+
+
+Name: TG(16:0/18:1/18:4)
+Id: TG(16:0/18:1/18:4) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H96O6
+PrecursorMz: 870.7545138
+ExactMass: 852.7206908
+MW: 852.7206908
+CLASS: TG
+SumComposition: TG(52:5)
+SumChainLengths: TG(16:0_18:1_18:4)
+NumPeaks: 6
+239.2369467 1 ms3-{571.4720869} @sn1 acylium ion
+239.2369467 1 ms3-{577.5190371} @sn1 acylium ion
+259.2056466 1 ms3-{571.4720869} !sn3 acylium ion
+259.2056466 1 ms3-{597.487737} !sn3 acylium ion
+265.2525968 1 ms3-{577.5190371} $sn2 acylium ion
+265.2525968 1 ms3-{597.487737} $sn2 acylium ion
+
+
+Name: TG(16:0/18:1/20:0)
+Id: TG(16:0/18:1/20:0) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H108O6
+PrecursorMz: 906.8484142
+ExactMass: 888.8145912
+MW: 888.8145912
+CLASS: TG
+SumComposition: TG(54:1)
+SumChainLengths: TG(16:0_18:1_20:0)
+NumPeaks: 6
+239.2369467 1 ms3-{577.5190371} @sn1 acylium ion
+239.2369467 1 ms3-{607.5659873} @sn1 acylium ion
+265.2525968 1 ms3-{577.5190371} $sn2 acylium ion
+265.2525968 1 ms3-{633.5816374} $sn2 acylium ion
+295.2995470 1 ms3-{607.5659873} !sn3 acylium ion
+295.2995470 1 ms3-{633.5816374} !sn3 acylium ion
+
+
+Name: TG(16:0/18:1/20:1)
+Id: TG(16:0/18:1/20:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H106O6
+PrecursorMz: 904.8327641
+ExactMass: 886.7989411
+MW: 886.7989411
+CLASS: TG
+SumComposition: TG(54:2)
+SumChainLengths: TG(16:0_18:1_20:1)
+NumPeaks: 6
+239.2369467 1 ms3-{577.5190371} @sn1 acylium ion
+239.2369467 1 ms3-{605.5503373} @sn1 acylium ion
+265.2525968 1 ms3-{577.5190371} $sn2 acylium ion
+265.2525968 1 ms3-{631.5659873} $sn2 acylium ion
+293.2838969 1 ms3-{605.5503373} !sn3 acylium ion
+293.2838969 1 ms3-{631.5659873} !sn3 acylium ion
+
+
+Name: TG(16:0/18:1/20:2)
+Id: TG(16:0/18:1/20:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H104O6
+PrecursorMz: 902.8171141
+ExactMass: 884.7832911
+MW: 884.7832911
+CLASS: TG
+SumComposition: TG(54:3)
+SumChainLengths: TG(16:0_18:1_20:2)
+NumPeaks: 6
+239.2369467 1 ms3-{577.5190371} @sn1 acylium ion
+239.2369467 1 ms3-{603.5346872} @sn1 acylium ion
+265.2525968 1 ms3-{577.5190371} $sn2 acylium ion
+265.2525968 1 ms3-{629.5503373} $sn2 acylium ion
+291.2682469 1 ms3-{603.5346872} !sn3 acylium ion
+291.2682469 1 ms3-{629.5503373} !sn3 acylium ion
+
+
+Name: TG(16:0/18:1/20:3)
+Id: TG(16:0/18:1/20:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H102O6
+PrecursorMz: 900.8014640
+ExactMass: 882.7676410
+MW: 882.7676410
+CLASS: TG
+SumComposition: TG(54:4)
+SumChainLengths: TG(16:0_18:1_20:3)
+NumPeaks: 6
+239.2369467 1 ms3-{577.5190371} @sn1 acylium ion
+239.2369467 1 ms3-{601.5190371} @sn1 acylium ion
+265.2525968 1 ms3-{577.5190371} $sn2 acylium ion
+265.2525968 1 ms3-{627.5346872} $sn2 acylium ion
+289.2525968 1 ms3-{601.5190371} !sn3 acylium ion
+289.2525968 1 ms3-{627.5346872} !sn3 acylium ion
+
+
+Name: TG(16:0/18:1/20:4)
+Id: TG(16:0/18:1/20:4) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H100O6
+PrecursorMz: 898.7858139
+ExactMass: 880.7519909
+MW: 880.7519909
+CLASS: TG
+SumComposition: TG(54:5)
+SumChainLengths: TG(16:0_18:1_20:4)
+NumPeaks: 6
+239.2369467 1 ms3-{577.5190371} @sn1 acylium ion
+239.2369467 1 ms3-{599.5033871} @sn1 acylium ion
+265.2525968 1 ms3-{577.5190371} $sn2 acylium ion
+265.2525968 1 ms3-{625.5190371} $sn2 acylium ion
+287.2369467 1 ms3-{599.5033871} !sn3 acylium ion
+287.2369467 1 ms3-{625.5190371} !sn3 acylium ion
+
+
+Name: TG(16:0/18:1/20:5)
+Id: TG(16:0/18:1/20:5) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H98O6
+PrecursorMz: 896.7701639
+ExactMass: 878.7363409
+MW: 878.7363409
+CLASS: TG
+SumComposition: TG(54:6)
+SumChainLengths: TG(16:0_18:1_20:5)
+NumPeaks: 6
+239.2369467 1 ms3-{577.5190371} @sn1 acylium ion
+239.2369467 1 ms3-{597.487737} @sn1 acylium ion
+265.2525968 1 ms3-{577.5190371} $sn2 acylium ion
+265.2525968 1 ms3-{623.5033871} $sn2 acylium ion
+285.2212967 1 ms3-{597.487737} !sn3 acylium ion
+285.2212967 1 ms3-{623.5033871} !sn3 acylium ion
+
+
+Name: TG(16:0/18:1/22:5)
+Id: TG(16:0/18:1/22:5) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H102O6
+PrecursorMz: 924.8014640
+ExactMass: 906.7676410
+MW: 906.7676410
+CLASS: TG
+SumComposition: TG(56:6)
+SumChainLengths: TG(16:0_18:1_22:5)
+NumPeaks: 6
+239.2369467 1 ms3-{577.5190371} @sn1 acylium ion
+239.2369467 1 ms3-{625.5190371} @sn1 acylium ion
+265.2525968 1 ms3-{577.5190371} $sn2 acylium ion
+265.2525968 1 ms3-{651.5346872} $sn2 acylium ion
+313.2525968 1 ms3-{625.5190371} !sn3 acylium ion
+313.2525968 1 ms3-{651.5346872} !sn3 acylium ion
+
+
+Name: TG(16:0/18:1/22:6)
+Id: TG(16:0/18:1/22:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H100O6
+PrecursorMz: 922.7858139
+ExactMass: 904.7519909
+MW: 904.7519909
+CLASS: TG
+SumComposition: TG(56:7)
+SumChainLengths: TG(16:0_18:1_22:6)
+NumPeaks: 6
+239.2369467 1 ms3-{577.5190371} @sn1 acylium ion
+239.2369467 1 ms3-{623.5033871} @sn1 acylium ion
+265.2525968 1 ms3-{577.5190371} $sn2 acylium ion
+265.2525968 1 ms3-{649.5190371} $sn2 acylium ion
+311.2369467 1 ms3-{623.5033871} !sn3 acylium ion
+311.2369467 1 ms3-{649.5190371} !sn3 acylium ion
+
+
+Name: TG(16:0/18:1/24:6)
+Id: TG(16:0/18:1/24:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C61H104O6
+PrecursorMz: 950.8171141
+ExactMass: 932.7832911
+MW: 932.7832911
+CLASS: TG
+SumComposition: TG(58:7)
+SumChainLengths: TG(16:0_18:1_24:6)
+NumPeaks: 6
+239.2369467 1 ms3-{577.5190371} @sn1 acylium ion
+239.2369467 1 ms3-{651.5346872} @sn1 acylium ion
+265.2525968 1 ms3-{577.5190371} $sn2 acylium ion
+265.2525968 1 ms3-{677.5503373} $sn2 acylium ion
+339.2682469 1 ms3-{651.5346872} !sn3 acylium ion
+339.2682469 1 ms3-{677.5503373} !sn3 acylium ion
+
+
+Name: TG(16:0/18:2/18:2)
+Id: TG(16:0/18:2/18:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H98O6
+PrecursorMz: 872.7701639
+ExactMass: 854.7363409
+MW: 854.7363409
+CLASS: TG
+SumComposition: TG(52:4)
+SumChainLengths: TG(16:0_18:2_18:2)
+NumPeaks: 2
+239.2369467 1 ms3-{575.5033871} @sn1 acylium ion
+263.2369467 1 ms3-{599.5033871} $sn2 acylium ion/!sn3 acylium ion
+
+
+Name: TG(16:0/18:2/18:3)
+Id: TG(16:0/18:2/18:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H96O6
+PrecursorMz: 870.7545138
+ExactMass: 852.7206908
+MW: 852.7206908
+CLASS: TG
+SumComposition: TG(52:5)
+SumChainLengths: TG(16:0_18:2_18:3)
+NumPeaks: 6
+239.2369467 1 ms3-{573.487737} @sn1 acylium ion
+239.2369467 1 ms3-{575.5033871} @sn1 acylium ion
+261.2212967 1 ms3-{573.487737} !sn3 acylium ion
+261.2212967 1 ms3-{597.487737} !sn3 acylium ion
+263.2369467 1 ms3-{575.5033871} $sn2 acylium ion
+263.2369467 1 ms3-{597.487737} $sn2 acylium ion
+
+
+Name: TG(16:0/18:2/20:1)
+Id: TG(16:0/18:2/20:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H104O6
+PrecursorMz: 902.8171141
+ExactMass: 884.7832911
+MW: 884.7832911
+CLASS: TG
+SumComposition: TG(54:3)
+SumChainLengths: TG(16:0_18:2_20:1)
+NumPeaks: 6
+239.2369467 1 ms3-{575.5033871} @sn1 acylium ion
+239.2369467 1 ms3-{605.5503373} @sn1 acylium ion
+263.2369467 1 ms3-{575.5033871} $sn2 acylium ion
+263.2369467 1 ms3-{629.5503373} $sn2 acylium ion
+293.2838969 1 ms3-{605.5503373} !sn3 acylium ion
+293.2838969 1 ms3-{629.5503373} !sn3 acylium ion
+
+
+Name: TG(16:0/18:2/20:2)
+Id: TG(16:0/18:2/20:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H102O6
+PrecursorMz: 900.8014640
+ExactMass: 882.7676410
+MW: 882.7676410
+CLASS: TG
+SumComposition: TG(54:4)
+SumChainLengths: TG(16:0_18:2_20:2)
+NumPeaks: 6
+239.2369467 1 ms3-{575.5033871} @sn1 acylium ion
+239.2369467 1 ms3-{603.5346872} @sn1 acylium ion
+263.2369467 1 ms3-{575.5033871} $sn2 acylium ion
+263.2369467 1 ms3-{627.5346872} $sn2 acylium ion
+291.2682469 1 ms3-{603.5346872} !sn3 acylium ion
+291.2682469 1 ms3-{627.5346872} !sn3 acylium ion
+
+
+Name: TG(16:0/18:2/20:3)
+Id: TG(16:0/18:2/20:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H100O6
+PrecursorMz: 898.7858139
+ExactMass: 880.7519909
+MW: 880.7519909
+CLASS: TG
+SumComposition: TG(54:5)
+SumChainLengths: TG(16:0_18:2_20:3)
+NumPeaks: 6
+239.2369467 1 ms3-{575.5033871} @sn1 acylium ion
+239.2369467 1 ms3-{601.5190371} @sn1 acylium ion
+263.2369467 1 ms3-{575.5033871} $sn2 acylium ion
+263.2369467 1 ms3-{625.5190371} $sn2 acylium ion
+289.2525968 1 ms3-{601.5190371} !sn3 acylium ion
+289.2525968 1 ms3-{625.5190371} !sn3 acylium ion
+
+
+Name: TG(16:0/18:2/20:4)
+Id: TG(16:0/18:2/20:4) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H98O6
+PrecursorMz: 896.7701639
+ExactMass: 878.7363409
+MW: 878.7363409
+CLASS: TG
+SumComposition: TG(54:6)
+SumChainLengths: TG(16:0_18:2_20:4)
+NumPeaks: 6
+239.2369467 1 ms3-{575.5033871} @sn1 acylium ion
+239.2369467 1 ms3-{599.5033871} @sn1 acylium ion
+263.2369467 1 ms3-{575.5033871} $sn2 acylium ion
+263.2369467 1 ms3-{623.5033871} $sn2 acylium ion
+287.2369467 1 ms3-{599.5033871} !sn3 acylium ion
+287.2369467 1 ms3-{623.5033871} !sn3 acylium ion
+
+
+Name: TG(16:0/18:2/20:5)
+Id: TG(16:0/18:2/20:5) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H96O6
+PrecursorMz: 894.7545138
+ExactMass: 876.7206908
+MW: 876.7206908
+CLASS: TG
+SumComposition: TG(54:7)
+SumChainLengths: TG(16:0_18:2_20:5)
+NumPeaks: 6
+239.2369467 1 ms3-{575.5033871} @sn1 acylium ion
+239.2369467 1 ms3-{597.487737} @sn1 acylium ion
+263.2369467 1 ms3-{575.5033871} $sn2 acylium ion
+263.2369467 1 ms3-{621.487737} $sn2 acylium ion
+285.2212967 1 ms3-{597.487737} !sn3 acylium ion
+285.2212967 1 ms3-{621.487737} !sn3 acylium ion
+
+
+Name: TG(16:0/18:2/22:5)
+Id: TG(16:0/18:2/22:5) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H100O6
+PrecursorMz: 922.7858139
+ExactMass: 904.7519909
+MW: 904.7519909
+CLASS: TG
+SumComposition: TG(56:7)
+SumChainLengths: TG(16:0_18:2_22:5)
+NumPeaks: 6
+239.2369467 1 ms3-{575.5033871} @sn1 acylium ion
+239.2369467 1 ms3-{625.5190371} @sn1 acylium ion
+263.2369467 1 ms3-{575.5033871} $sn2 acylium ion
+263.2369467 1 ms3-{649.5190371} $sn2 acylium ion
+313.2525968 1 ms3-{625.5190371} !sn3 acylium ion
+313.2525968 1 ms3-{649.5190371} !sn3 acylium ion
+
+
+Name: TG(16:0/18:2/22:6)
+Id: TG(16:0/18:2/22:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H98O6
+PrecursorMz: 920.7701639
+ExactMass: 902.7363409
+MW: 902.7363409
+CLASS: TG
+SumComposition: TG(56:8)
+SumChainLengths: TG(16:0_18:2_22:6)
+NumPeaks: 6
+239.2369467 1 ms3-{575.5033871} @sn1 acylium ion
+239.2369467 1 ms3-{623.5033871} @sn1 acylium ion
+263.2369467 1 ms3-{575.5033871} $sn2 acylium ion
+263.2369467 1 ms3-{647.5033871} $sn2 acylium ion
+311.2369467 1 ms3-{623.5033871} !sn3 acylium ion
+311.2369467 1 ms3-{647.5033871} !sn3 acylium ion
+
+
+Name: TG(16:0/18:2/24:6)
+Id: TG(16:0/18:2/24:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C61H102O6
+PrecursorMz: 948.8014640
+ExactMass: 930.7676410
+MW: 930.7676410
+CLASS: TG
+SumComposition: TG(58:8)
+SumChainLengths: TG(16:0_18:2_24:6)
+NumPeaks: 6
+239.2369467 1 ms3-{575.5033871} @sn1 acylium ion
+239.2369467 1 ms3-{651.5346872} @sn1 acylium ion
+263.2369467 1 ms3-{575.5033871} $sn2 acylium ion
+263.2369467 1 ms3-{675.5346872} $sn2 acylium ion
+339.2682469 1 ms3-{651.5346872} !sn3 acylium ion
+339.2682469 1 ms3-{675.5346872} !sn3 acylium ion
+
+
+Name: TG(16:0/18:3/22:6)
+Id: TG(16:0/18:3/22:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H96O6
+PrecursorMz: 918.7545138
+ExactMass: 900.7206908
+MW: 900.7206908
+CLASS: TG
+SumComposition: TG(56:9)
+SumChainLengths: TG(16:0_18:3_22:6)
+NumPeaks: 6
+239.2369467 1 ms3-{573.487737} @sn1 acylium ion
+239.2369467 1 ms3-{623.5033871} @sn1 acylium ion
+261.2212967 1 ms3-{573.487737} $sn2 acylium ion
+261.2212967 1 ms3-{645.487737} $sn2 acylium ion
+311.2369467 1 ms3-{623.5033871} !sn3 acylium ion
+311.2369467 1 ms3-{645.487737} !sn3 acylium ion
+
+
+Name: TG(16:1;O/18:1/18:1)
+Id: TG(16:1;O/18:1/18:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H100O7
+PrecursorMz: 890.7807285
+ExactMass: 872.7469055
+MW: 872.7469055
+CLASS: TG
+SumComposition: TG(52:3;O)
+SumChainLengths: TG(16:1;O_18:1_18:1)
+NumPeaks: 2
+253.2162113 1 ms3-{591.49830171956} sn1 acylium ion ox
+265.2525968 1 ms3-{603.5346872} $sn2 acylium ion/!sn3 acylium ion
+
+
+Name: TG(16:1;O/18:1/18:2)
+Id: TG(16:1;O/18:1/18:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H98O7
+PrecursorMz: 888.7650785
+ExactMass: 870.7312555
+MW: 870.7312555
+CLASS: TG
+SumComposition: TG(52:4;O)
+SumChainLengths: TG(16:1;O_18:1_18:2)
+NumPeaks: 6
+253.2162113 1 ms3-{589.48265161956} sn1 acylium ion ox
+253.2162113 1 ms3-{591.49830171956} sn1 acylium ion ox
+263.2369467 1 ms3-{589.48265161956} !sn3 acylium ion
+263.2369467 1 ms3-{601.5190371} !sn3 acylium ion
+265.2525968 1 ms3-{591.49830171956} $sn2 acylium ion
+265.2525968 1 ms3-{601.5190371} $sn2 acylium ion
+
+
+Name: TG(16:1/16:1/18:1)
+Id: TG(16:1/16:1/18:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C53H96O6
+PrecursorMz: 846.7545138
+ExactMass: 828.7206908
+MW: 828.7206908
+CLASS: TG
+SumComposition: TG(50:3)
+SumChainLengths: TG(16:1_16:1_18:1)
+NumPeaks: 2
+237.2212967 1 ms3-{547.4720869} @sn1 acylium ion/$sn2 acylium ion
+265.2525968 1 ms3-{575.5033871} !sn3 acylium ion
+
+
+Name: TG(16:1/16:1/18:2)
+Id: TG(16:1/16:1/18:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C53H94O6
+PrecursorMz: 844.7388637
+ExactMass: 826.7050407
+MW: 826.7050407
+CLASS: TG
+SumComposition: TG(50:4)
+SumChainLengths: TG(16:1_16:1_18:2)
+NumPeaks: 2
+237.2212967 1 ms3-{547.4720869} @sn1 acylium ion/$sn2 acylium ion
+263.2369467 1 ms3-{573.487737} !sn3 acylium ion
+
+
+Name: TG(16:1/16:1/24:6)
+Id: TG(16:1/16:1/24:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H98O6
+PrecursorMz: 920.7701639
+ExactMass: 902.7363409
+MW: 902.7363409
+CLASS: TG
+SumComposition: TG(56:8)
+SumChainLengths: TG(16:1_16:1_24:6)
+NumPeaks: 2
+237.2212967 1 ms3-{547.4720869} @sn1 acylium ion/$sn2 acylium ion
+339.2682469 1 ms3-{649.5190371} !sn3 acylium ion
+
+
+Name: TG(16:1/16:2/20:1)
+Id: TG(16:1/16:2/20:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H98O6
+PrecursorMz: 872.7701639
+ExactMass: 854.7363409
+MW: 854.7363409
+CLASS: TG
+SumComposition: TG(52:4)
+SumChainLengths: TG(16:1_16:2_20:1)
+NumPeaks: 6
+235.2056466 1 ms3-{545.4564369} $sn2 acylium ion
+235.2056466 1 ms3-{601.5190371} $sn2 acylium ion
+237.2212967 1 ms3-{545.4564369} @sn1 acylium ion
+237.2212967 1 ms3-{603.5346872} @sn1 acylium ion
+293.2838969 1 ms3-{601.5190371} !sn3 acylium ion
+293.2838969 1 ms3-{603.5346872} !sn3 acylium ion
+
+
+Name: TG(16:1/18:0/18:1)
+Id: TG(16:1/18:0/18:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H102O6
+PrecursorMz: 876.8014640
+ExactMass: 858.7676410
+MW: 858.7676410
+CLASS: TG
+SumComposition: TG(52:2)
+SumChainLengths: TG(16:1_18:0_18:1)
+NumPeaks: 6
+237.2212967 1 ms3-{575.5033871} @sn1 acylium ion
+237.2212967 1 ms3-{577.5190371} @sn1 acylium ion
+265.2525968 1 ms3-{575.5033871} !sn3 acylium ion
+265.2525968 1 ms3-{605.5503373} !sn3 acylium ion
+267.2682469 1 ms3-{577.5190371} $sn2 acylium ion
+267.2682469 1 ms3-{605.5503373} $sn2 acylium ion
+
+
+Name: TG(16:1/18:0/18:2)
+Id: TG(16:1/18:0/18:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H100O6
+PrecursorMz: 874.7858139
+ExactMass: 856.7519909
+MW: 856.7519909
+CLASS: TG
+SumComposition: TG(52:3)
+SumChainLengths: TG(16:1_18:0_18:2)
+NumPeaks: 6
+237.2212967 1 ms3-{573.487737} @sn1 acylium ion
+237.2212967 1 ms3-{577.5190371} @sn1 acylium ion
+263.2369467 1 ms3-{573.487737} !sn3 acylium ion
+263.2369467 1 ms3-{603.5346872} !sn3 acylium ion
+267.2682469 1 ms3-{577.5190371} $sn2 acylium ion
+267.2682469 1 ms3-{603.5346872} $sn2 acylium ion
+
+
+Name: TG(16:1/18:1/18:1)
+Id: TG(16:1/18:1/18:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H100O6
+PrecursorMz: 874.7858139
+ExactMass: 856.7519909
+MW: 856.7519909
+CLASS: TG
+SumComposition: TG(52:3)
+SumChainLengths: TG(16:1_18:1_18:1)
+NumPeaks: 2
+237.2212967 1 ms3-{575.5033871} @sn1 acylium ion
+265.2525968 1 ms3-{603.5346872} $sn2 acylium ion/!sn3 acylium ion
+
+
+Name: TG(16:1/18:1/18:2)
+Id: TG(16:1/18:1/18:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H98O6
+PrecursorMz: 872.7701639
+ExactMass: 854.7363409
+MW: 854.7363409
+CLASS: TG
+SumComposition: TG(52:4)
+SumChainLengths: TG(16:1_18:1_18:2)
+NumPeaks: 6
+237.2212967 1 ms3-{573.487737} @sn1 acylium ion
+237.2212967 1 ms3-{575.5033871} @sn1 acylium ion
+263.2369467 1 ms3-{573.487737} !sn3 acylium ion
+263.2369467 1 ms3-{601.5190371} !sn3 acylium ion
+265.2525968 1 ms3-{575.5033871} $sn2 acylium ion
+265.2525968 1 ms3-{601.5190371} $sn2 acylium ion
+
+
+Name: TG(16:1/18:1/18:3)
+Id: TG(16:1/18:1/18:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H96O6
+PrecursorMz: 870.7545138
+ExactMass: 852.7206908
+MW: 852.7206908
+CLASS: TG
+SumComposition: TG(52:5)
+SumChainLengths: TG(16:1_18:1_18:3)
+NumPeaks: 6
+237.2212967 1 ms3-{571.4720869} @sn1 acylium ion
+237.2212967 1 ms3-{575.5033871} @sn1 acylium ion
+261.2212967 1 ms3-{571.4720869} !sn3 acylium ion
+261.2212967 1 ms3-{599.5033871} !sn3 acylium ion
+265.2525968 1 ms3-{575.5033871} $sn2 acylium ion
+265.2525968 1 ms3-{599.5033871} $sn2 acylium ion
+
+
+Name: TG(16:1/18:1/20:1)
+Id: TG(16:1/18:1/20:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H104O6
+PrecursorMz: 902.8171141
+ExactMass: 884.7832911
+MW: 884.7832911
+CLASS: TG
+SumComposition: TG(54:3)
+SumChainLengths: TG(16:1_18:1_20:1)
+NumPeaks: 6
+237.2212967 1 ms3-{575.5033871} @sn1 acylium ion
+237.2212967 1 ms3-{603.5346872} @sn1 acylium ion
+265.2525968 1 ms3-{575.5033871} $sn2 acylium ion
+265.2525968 1 ms3-{631.5659873} $sn2 acylium ion
+293.2838969 1 ms3-{603.5346872} !sn3 acylium ion
+293.2838969 1 ms3-{631.5659873} !sn3 acylium ion
+
+
+Name: TG(16:1/18:1/20:2)
+Id: TG(16:1/18:1/20:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H102O6
+PrecursorMz: 900.8014640
+ExactMass: 882.7676410
+MW: 882.7676410
+CLASS: TG
+SumComposition: TG(54:4)
+SumChainLengths: TG(16:1_18:1_20:2)
+NumPeaks: 6
+237.2212967 1 ms3-{575.5033871} @sn1 acylium ion
+237.2212967 1 ms3-{601.5190371} @sn1 acylium ion
+265.2525968 1 ms3-{575.5033871} $sn2 acylium ion
+265.2525968 1 ms3-{629.5503373} $sn2 acylium ion
+291.2682469 1 ms3-{601.5190371} !sn3 acylium ion
+291.2682469 1 ms3-{629.5503373} !sn3 acylium ion
+
+
+Name: TG(16:1/18:1/20:3)
+Id: TG(16:1/18:1/20:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H100O6
+PrecursorMz: 898.7858139
+ExactMass: 880.7519909
+MW: 880.7519909
+CLASS: TG
+SumComposition: TG(54:5)
+SumChainLengths: TG(16:1_18:1_20:3)
+NumPeaks: 6
+237.2212967 1 ms3-{575.5033871} @sn1 acylium ion
+237.2212967 1 ms3-{599.5033871} @sn1 acylium ion
+265.2525968 1 ms3-{575.5033871} $sn2 acylium ion
+265.2525968 1 ms3-{627.5346872} $sn2 acylium ion
+289.2525968 1 ms3-{599.5033871} !sn3 acylium ion
+289.2525968 1 ms3-{627.5346872} !sn3 acylium ion
+
+
+Name: TG(16:1/18:1/20:4)
+Id: TG(16:1/18:1/20:4) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H98O6
+PrecursorMz: 896.7701639
+ExactMass: 878.7363409
+MW: 878.7363409
+CLASS: TG
+SumComposition: TG(54:6)
+SumChainLengths: TG(16:1_18:1_20:4)
+NumPeaks: 6
+237.2212967 1 ms3-{575.5033871} @sn1 acylium ion
+237.2212967 1 ms3-{597.487737} @sn1 acylium ion
+265.2525968 1 ms3-{575.5033871} $sn2 acylium ion
+265.2525968 1 ms3-{625.5190371} $sn2 acylium ion
+287.2369467 1 ms3-{597.487737} !sn3 acylium ion
+287.2369467 1 ms3-{625.5190371} !sn3 acylium ion
+
+
+Name: TG(16:1/18:1/20:5)
+Id: TG(16:1/18:1/20:5) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H96O6
+PrecursorMz: 894.7545138
+ExactMass: 876.7206908
+MW: 876.7206908
+CLASS: TG
+SumComposition: TG(54:7)
+SumChainLengths: TG(16:1_18:1_20:5)
+NumPeaks: 6
+237.2212967 1 ms3-{575.5033871} @sn1 acylium ion
+237.2212967 1 ms3-{595.4720869} @sn1 acylium ion
+265.2525968 1 ms3-{575.5033871} $sn2 acylium ion
+265.2525968 1 ms3-{623.5033871} $sn2 acylium ion
+285.2212967 1 ms3-{595.4720869} !sn3 acylium ion
+285.2212967 1 ms3-{623.5033871} !sn3 acylium ion
+
+
+Name: TG(16:1/18:1/22:2)
+Id: TG(16:1/18:1/22:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H106O6
+PrecursorMz: 928.8327641
+ExactMass: 910.7989411
+MW: 910.7989411
+CLASS: TG
+SumComposition: TG(56:4)
+SumChainLengths: TG(16:1_18:1_22:2)
+NumPeaks: 6
+237.2212967 1 ms3-{575.5033871} @sn1 acylium ion
+237.2212967 1 ms3-{629.5503373} @sn1 acylium ion
+265.2525968 1 ms3-{575.5033871} $sn2 acylium ion
+265.2525968 1 ms3-{657.5816374} $sn2 acylium ion
+319.2995470 1 ms3-{629.5503373} !sn3 acylium ion
+319.2995470 1 ms3-{657.5816374} !sn3 acylium ion
+
+
+Name: TG(16:1/18:1/22:5)
+Id: TG(16:1/18:1/22:5) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H100O6
+PrecursorMz: 922.7858139
+ExactMass: 904.7519909
+MW: 904.7519909
+CLASS: TG
+SumComposition: TG(56:7)
+SumChainLengths: TG(16:1_18:1_22:5)
+NumPeaks: 6
+237.2212967 1 ms3-{575.5033871} @sn1 acylium ion
+237.2212967 1 ms3-{623.5033871} @sn1 acylium ion
+265.2525968 1 ms3-{575.5033871} $sn2 acylium ion
+265.2525968 1 ms3-{651.5346872} $sn2 acylium ion
+313.2525968 1 ms3-{623.5033871} !sn3 acylium ion
+313.2525968 1 ms3-{651.5346872} !sn3 acylium ion
+
+
+Name: TG(16:1/18:1/22:6)
+Id: TG(16:1/18:1/22:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H98O6
+PrecursorMz: 920.7701639
+ExactMass: 902.7363409
+MW: 902.7363409
+CLASS: TG
+SumComposition: TG(56:8)
+SumChainLengths: TG(16:1_18:1_22:6)
+NumPeaks: 6
+237.2212967 1 ms3-{575.5033871} @sn1 acylium ion
+237.2212967 1 ms3-{621.487737} @sn1 acylium ion
+265.2525968 1 ms3-{575.5033871} $sn2 acylium ion
+265.2525968 1 ms3-{649.5190371} $sn2 acylium ion
+311.2369467 1 ms3-{621.487737} !sn3 acylium ion
+311.2369467 1 ms3-{649.5190371} !sn3 acylium ion
+
+
+Name: TG(16:1/18:1/24:6)
+Id: TG(16:1/18:1/24:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C61H102O6
+PrecursorMz: 948.8014640
+ExactMass: 930.7676410
+MW: 930.7676410
+CLASS: TG
+SumComposition: TG(58:8)
+SumChainLengths: TG(16:1_18:1_24:6)
+NumPeaks: 6
+237.2212967 1 ms3-{575.5033871} @sn1 acylium ion
+237.2212967 1 ms3-{649.5190371} @sn1 acylium ion
+265.2525968 1 ms3-{575.5033871} $sn2 acylium ion
+265.2525968 1 ms3-{677.5503373} $sn2 acylium ion
+339.2682469 1 ms3-{649.5190371} !sn3 acylium ion
+339.2682469 1 ms3-{677.5503373} !sn3 acylium ion
+
+
+Name: TG(16:1/18:2/18:2)
+Id: TG(16:1/18:2/18:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H96O6
+PrecursorMz: 870.7545138
+ExactMass: 852.7206908
+MW: 852.7206908
+CLASS: TG
+SumComposition: TG(52:5)
+SumChainLengths: TG(16:1_18:2_18:2)
+NumPeaks: 2
+237.2212967 1 ms3-{573.487737} @sn1 acylium ion
+263.2369467 1 ms3-{599.5033871} $sn2 acylium ion/!sn3 acylium ion
+
+
+Name: TG(16:1/18:2/18:3)
+Id: TG(16:1/18:2/18:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H94O6
+PrecursorMz: 868.7388637
+ExactMass: 850.7050407
+MW: 850.7050407
+CLASS: TG
+SumComposition: TG(52:6)
+SumChainLengths: TG(16:1_18:2_18:3)
+NumPeaks: 6
+237.2212967 1 ms3-{571.4720869} @sn1 acylium ion
+237.2212967 1 ms3-{573.487737} @sn1 acylium ion
+261.2212967 1 ms3-{571.4720869} !sn3 acylium ion
+261.2212967 1 ms3-{597.487737} !sn3 acylium ion
+263.2369467 1 ms3-{573.487737} $sn2 acylium ion
+263.2369467 1 ms3-{597.487737} $sn2 acylium ion
+
+
+Name: TG(16:1/18:2/20:5)
+Id: TG(16:1/18:2/20:5) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H94O6
+PrecursorMz: 892.7388637
+ExactMass: 874.7050407
+MW: 874.7050407
+CLASS: TG
+SumComposition: TG(54:8)
+SumChainLengths: TG(16:1_18:2_20:5)
+NumPeaks: 6
+237.2212967 1 ms3-{573.487737} @sn1 acylium ion
+237.2212967 1 ms3-{595.4720869} @sn1 acylium ion
+263.2369467 1 ms3-{573.487737} $sn2 acylium ion
+263.2369467 1 ms3-{621.487737} $sn2 acylium ion
+285.2212967 1 ms3-{595.4720869} !sn3 acylium ion
+285.2212967 1 ms3-{621.487737} !sn3 acylium ion
+
+
+Name: TG(16:1/18:2/22:5)
+Id: TG(16:1/18:2/22:5) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H98O6
+PrecursorMz: 920.7701639
+ExactMass: 902.7363409
+MW: 902.7363409
+CLASS: TG
+SumComposition: TG(56:8)
+SumChainLengths: TG(16:1_18:2_22:5)
+NumPeaks: 6
+237.2212967 1 ms3-{573.487737} @sn1 acylium ion
+237.2212967 1 ms3-{623.5033871} @sn1 acylium ion
+263.2369467 1 ms3-{573.487737} $sn2 acylium ion
+263.2369467 1 ms3-{649.5190371} $sn2 acylium ion
+313.2525968 1 ms3-{623.5033871} !sn3 acylium ion
+313.2525968 1 ms3-{649.5190371} !sn3 acylium ion
+
+
+Name: TG(16:1/18:2/22:6)
+Id: TG(16:1/18:2/22:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H96O6
+PrecursorMz: 918.7545138
+ExactMass: 900.7206908
+MW: 900.7206908
+CLASS: TG
+SumComposition: TG(56:9)
+SumChainLengths: TG(16:1_18:2_22:6)
+NumPeaks: 6
+237.2212967 1 ms3-{573.487737} @sn1 acylium ion
+237.2212967 1 ms3-{621.487737} @sn1 acylium ion
+263.2369467 1 ms3-{573.487737} $sn2 acylium ion
+263.2369467 1 ms3-{647.5033871} $sn2 acylium ion
+311.2369467 1 ms3-{621.487737} !sn3 acylium ion
+311.2369467 1 ms3-{647.5033871} !sn3 acylium ion
+
+
+Name: TG(16:1/18:2/24:5)
+Id: TG(16:1/18:2/24:5) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C61H102O6
+PrecursorMz: 948.8014640
+ExactMass: 930.7676410
+MW: 930.7676410
+CLASS: TG
+SumComposition: TG(58:8)
+SumChainLengths: TG(16:1_18:2_24:5)
+NumPeaks: 6
+237.2212967 1 ms3-{573.487737} @sn1 acylium ion
+237.2212967 1 ms3-{651.5346872} @sn1 acylium ion
+263.2369467 1 ms3-{573.487737} $sn2 acylium ion
+263.2369467 1 ms3-{677.5503373} $sn2 acylium ion
+341.2838969 1 ms3-{651.5346872} !sn3 acylium ion
+341.2838969 1 ms3-{677.5503373} !sn3 acylium ion
+
+
+Name: TG(16:1/18:2/24:6)
+Id: TG(16:1/18:2/24:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C61H100O6
+PrecursorMz: 946.7858139
+ExactMass: 928.7519909
+MW: 928.7519909
+CLASS: TG
+SumComposition: TG(58:9)
+SumChainLengths: TG(16:1_18:2_24:6)
+NumPeaks: 6
+237.2212967 1 ms3-{573.487737} @sn1 acylium ion
+237.2212967 1 ms3-{649.5190371} @sn1 acylium ion
+263.2369467 1 ms3-{573.487737} $sn2 acylium ion
+263.2369467 1 ms3-{675.5346872} $sn2 acylium ion
+339.2682469 1 ms3-{649.5190371} !sn3 acylium ion
+339.2682469 1 ms3-{675.5346872} !sn3 acylium ion
+
+
+Name: TG(16:1/20:0/20:4;O)
+Id: TG(16:1/20:0/20:4;O) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H104O7
+PrecursorMz: 942.8120287
+ExactMass: 924.7782057
+MW: 924.7782057
+CLASS: TG
+SumComposition: TG(56:5;O)
+SumChainLengths: TG(16:1_20:0_20:4;O)
+NumPeaks: 6
+237.2212967 1 ms3-{613.48265161956} @sn1 acylium ion
+237.2212967 1 ms3-{605.5503373} @sn1 acylium ion
+295.2995470 1 ms3-{605.5503373} $sn2 acylium ion
+295.2995470 1 ms3-{671.56090191956} $sn2 acylium ion
+303.2318613 1 ms3-{613.48265161956} sn3 acylium ion ox
+303.2318613 1 ms3-{671.56090191956} sn3 acylium ion ox
+
+
+Name: TG(16:1/20:5/22:1;O)
+Id: TG(16:1/20:5/22:1;O) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C61H104O7
+PrecursorMz: 966.8120287
+ExactMass: 948.7782057
+MW: 948.7782057
+CLASS: TG
+SumComposition: TG(58:7;O)
+SumChainLengths: TG(16:1_20:5_22:1;O)
+NumPeaks: 6
+237.2212967 1 ms3-{595.4720869} @sn1 acylium ion
+237.2212967 1 ms3-{647.56090191956} @sn1 acylium ion
+285.2212967 1 ms3-{595.4720869} $sn2 acylium ion
+285.2212967 1 ms3-{695.56090191956} $sn2 acylium ion
+337.3101116 1 ms3-{647.56090191956} sn3 acylium ion ox
+337.3101116 1 ms3-{695.56090191956} sn3 acylium ion ox
+
+
+Name: TG(16:1/20:5/24:6)
+Id: TG(16:1/20:5/24:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C63H98O6
+PrecursorMz: 968.7701639
+ExactMass: 950.7363409
+MW: 950.7363409
+CLASS: TG
+SumComposition: TG(60:12)
+SumChainLengths: TG(16:1_20:5_24:6)
+NumPeaks: 6
+237.2212967 1 ms3-{595.4720869} @sn1 acylium ion
+237.2212967 1 ms3-{649.5190371} @sn1 acylium ion
+285.2212967 1 ms3-{595.4720869} $sn2 acylium ion
+285.2212967 1 ms3-{697.5190371} $sn2 acylium ion
+339.2682469 1 ms3-{649.5190371} !sn3 acylium ion
+339.2682469 1 ms3-{697.5190371} !sn3 acylium ion
+
+
+Name: TG(16:1/22:5/22:6)
+Id: TG(16:1/22:5/22:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C63H98O6
+PrecursorMz: 968.7701639
+ExactMass: 950.7363409
+MW: 950.7363409
+CLASS: TG
+SumComposition: TG(60:12)
+SumChainLengths: TG(16:1_22:5_22:6)
+NumPeaks: 6
+237.2212967 1 ms3-{621.487737} @sn1 acylium ion
+237.2212967 1 ms3-{623.5033871} @sn1 acylium ion
+311.2369467 1 ms3-{621.487737} !sn3 acylium ion
+311.2369467 1 ms3-{697.5190371} !sn3 acylium ion
+313.2525968 1 ms3-{623.5033871} $sn2 acylium ion
+313.2525968 1 ms3-{697.5190371} $sn2 acylium ion
+
+
+Name: TG(16:1/22:6/24:6)
+Id: TG(16:1/22:6/24:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C65H100O6
+PrecursorMz: 994.7858139
+ExactMass: 976.7519909
+MW: 976.7519909
+CLASS: TG
+SumComposition: TG(62:13)
+SumChainLengths: TG(16:1_22:6_24:6)
+NumPeaks: 6
+237.2212967 1 ms3-{621.487737} @sn1 acylium ion
+237.2212967 1 ms3-{649.5190371} @sn1 acylium ion
+311.2369467 1 ms3-{621.487737} $sn2 acylium ion
+311.2369467 1 ms3-{723.5346872} $sn2 acylium ion
+339.2682469 1 ms3-{649.5190371} !sn3 acylium ion
+339.2682469 1 ms3-{723.5346872} !sn3 acylium ion
+
+
+Name: TG(16:2;O/18:1/18:1)
+Id: TG(16:2;O/18:1/18:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H98O7
+PrecursorMz: 888.7650785
+ExactMass: 870.7312555
+MW: 870.7312555
+CLASS: TG
+SumComposition: TG(52:4;O)
+SumChainLengths: TG(16:2;O_18:1_18:1)
+NumPeaks: 2
+251.2005612 1 ms3-{589.48265161956} sn1 acylium ion ox
+265.2525968 1 ms3-{603.5346872} $sn2 acylium ion/!sn3 acylium ion
+
+
+Name: TG(16:2/18:0/18:1)
+Id: TG(16:2/18:0/18:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H100O6
+PrecursorMz: 874.7858139
+ExactMass: 856.7519909
+MW: 856.7519909
+CLASS: TG
+SumComposition: TG(52:3)
+SumChainLengths: TG(16:2_18:0_18:1)
+NumPeaks: 6
+235.2056466 1 ms3-{573.487737} @sn1 acylium ion
+235.2056466 1 ms3-{575.5033871} @sn1 acylium ion
+265.2525968 1 ms3-{573.487737} !sn3 acylium ion
+265.2525968 1 ms3-{605.5503373} !sn3 acylium ion
+267.2682469 1 ms3-{575.5033871} $sn2 acylium ion
+267.2682469 1 ms3-{605.5503373} $sn2 acylium ion
+
+
+Name: TG(16:2/18:0/18:2)
+Id: TG(16:2/18:0/18:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H98O6
+PrecursorMz: 872.7701639
+ExactMass: 854.7363409
+MW: 854.7363409
+CLASS: TG
+SumComposition: TG(52:4)
+SumChainLengths: TG(16:2_18:0_18:2)
+NumPeaks: 6
+235.2056466 1 ms3-{571.4720869} @sn1 acylium ion
+235.2056466 1 ms3-{575.5033871} @sn1 acylium ion
+263.2369467 1 ms3-{571.4720869} !sn3 acylium ion
+263.2369467 1 ms3-{603.5346872} !sn3 acylium ion
+267.2682469 1 ms3-{575.5033871} $sn2 acylium ion
+267.2682469 1 ms3-{603.5346872} $sn2 acylium ion
+
+
+Name: TG(16:2/18:0/22:6)
+Id: TG(16:2/18:0/22:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H98O6
+PrecursorMz: 920.7701639
+ExactMass: 902.7363409
+MW: 902.7363409
+CLASS: TG
+SumComposition: TG(56:8)
+SumChainLengths: TG(16:2_18:0_22:6)
+NumPeaks: 6
+235.2056466 1 ms3-{575.5033871} @sn1 acylium ion
+235.2056466 1 ms3-{619.4720869} @sn1 acylium ion
+267.2682469 1 ms3-{575.5033871} $sn2 acylium ion
+267.2682469 1 ms3-{651.5346872} $sn2 acylium ion
+311.2369467 1 ms3-{619.4720869} !sn3 acylium ion
+311.2369467 1 ms3-{651.5346872} !sn3 acylium ion
+
+
+Name: TG(16:2/18:1/18:1)
+Id: TG(16:2/18:1/18:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C55H98O6
+PrecursorMz: 872.7701639
+ExactMass: 854.7363409
+MW: 854.7363409
+CLASS: TG
+SumComposition: TG(52:4)
+SumChainLengths: TG(16:2_18:1_18:1)
+NumPeaks: 2
+235.2056466 1 ms3-{573.487737} @sn1 acylium ion
+265.2525968 1 ms3-{603.5346872} $sn2 acylium ion/!sn3 acylium ion
+
+
+Name: TG(16:2/18:1/20:1)
+Id: TG(16:2/18:1/20:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H102O6
+PrecursorMz: 900.8014640
+ExactMass: 882.7676410
+MW: 882.7676410
+CLASS: TG
+SumComposition: TG(54:4)
+SumChainLengths: TG(16:2_18:1_20:1)
+NumPeaks: 6
+235.2056466 1 ms3-{573.487737} @sn1 acylium ion
+235.2056466 1 ms3-{601.5190371} @sn1 acylium ion
+265.2525968 1 ms3-{573.487737} $sn2 acylium ion
+265.2525968 1 ms3-{631.5659873} $sn2 acylium ion
+293.2838969 1 ms3-{601.5190371} !sn3 acylium ion
+293.2838969 1 ms3-{631.5659873} !sn3 acylium ion
+
+
+Name: TG(16:2/18:1/20:2)
+Id: TG(16:2/18:1/20:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H100O6
+PrecursorMz: 898.7858139
+ExactMass: 880.7519909
+MW: 880.7519909
+CLASS: TG
+SumComposition: TG(54:5)
+SumChainLengths: TG(16:2_18:1_20:2)
+NumPeaks: 6
+235.2056466 1 ms3-{573.487737} @sn1 acylium ion
+235.2056466 1 ms3-{599.5033871} @sn1 acylium ion
+265.2525968 1 ms3-{573.487737} $sn2 acylium ion
+265.2525968 1 ms3-{629.5503373} $sn2 acylium ion
+291.2682469 1 ms3-{599.5033871} !sn3 acylium ion
+291.2682469 1 ms3-{629.5503373} !sn3 acylium ion
+
+
+Name: TG(16:2/18:2/20:1)
+Id: TG(16:2/18:2/20:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H100O6
+PrecursorMz: 898.7858139
+ExactMass: 880.7519909
+MW: 880.7519909
+CLASS: TG
+SumComposition: TG(54:5)
+SumChainLengths: TG(16:2_18:2_20:1)
+NumPeaks: 6
+235.2056466 1 ms3-{571.4720869} @sn1 acylium ion
+235.2056466 1 ms3-{601.5190371} @sn1 acylium ion
+263.2369467 1 ms3-{571.4720869} $sn2 acylium ion
+263.2369467 1 ms3-{629.5503373} $sn2 acylium ion
+293.2838969 1 ms3-{601.5190371} !sn3 acylium ion
+293.2838969 1 ms3-{629.5503373} !sn3 acylium ion
+
+
+Name: TG(16:2/18:2/20:2)
+Id: TG(16:2/18:2/20:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H98O6
+PrecursorMz: 896.7701639
+ExactMass: 878.7363409
+MW: 878.7363409
+CLASS: TG
+SumComposition: TG(54:6)
+SumChainLengths: TG(16:2_18:2_20:2)
+NumPeaks: 6
+235.2056466 1 ms3-{571.4720869} @sn1 acylium ion
+235.2056466 1 ms3-{599.5033871} @sn1 acylium ion
+263.2369467 1 ms3-{571.4720869} $sn2 acylium ion
+263.2369467 1 ms3-{627.5346872} $sn2 acylium ion
+291.2682469 1 ms3-{599.5033871} !sn3 acylium ion
+291.2682469 1 ms3-{627.5346872} !sn3 acylium ion
+
+
+Name: TG(16:3/18:1/20:0)
+Id: TG(16:3/18:1/20:0) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H102O6
+PrecursorMz: 900.8014640
+ExactMass: 882.7676410
+MW: 882.7676410
+CLASS: TG
+SumComposition: TG(54:4)
+SumChainLengths: TG(16:3_18:1_20:0)
+NumPeaks: 6
+233.1899965 1 ms3-{571.4720869} @sn1 acylium ion
+233.1899965 1 ms3-{601.5190371} @sn1 acylium ion
+265.2525968 1 ms3-{571.4720869} $sn2 acylium ion
+265.2525968 1 ms3-{633.5816374} $sn2 acylium ion
+295.2995470 1 ms3-{601.5190371} !sn3 acylium ion
+295.2995470 1 ms3-{633.5816374} !sn3 acylium ion
+
+
+Name: TG(18:0/18:0/18:1)
+Id: TG(18:0/18:0/18:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H108O6
+PrecursorMz: 906.8484142
+ExactMass: 888.8145912
+MW: 888.8145912
+CLASS: TG
+SumComposition: TG(54:1)
+SumChainLengths: TG(18:0_18:0_18:1)
+NumPeaks: 2
+265.2525968 1 ms3-{605.5503373} !sn3 acylium ion
+267.2682469 1 ms3-{607.5659873} @sn1 acylium ion/$sn2 acylium ion
+
+
+Name: TG(18:0/18:0/18:2)
+Id: TG(18:0/18:0/18:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H106O6
+PrecursorMz: 904.8327641
+ExactMass: 886.7989411
+MW: 886.7989411
+CLASS: TG
+SumComposition: TG(54:2)
+SumChainLengths: TG(18:0_18:0_18:2)
+NumPeaks: 2
+263.2369467 1 ms3-{603.5346872} !sn3 acylium ion
+267.2682469 1 ms3-{607.5659873} @sn1 acylium ion/$sn2 acylium ion
+
+
+Name: TG(18:0/18:1/18:1)
+Id: TG(18:0/18:1/18:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H106O6
+PrecursorMz: 904.8327641
+ExactMass: 886.7989411
+MW: 886.7989411
+CLASS: TG
+SumComposition: TG(54:2)
+SumChainLengths: TG(18:0_18:1_18:1)
+NumPeaks: 2
+265.2525968 1 ms3-{603.5346872} $sn2 acylium ion/!sn3 acylium ion
+267.2682469 1 ms3-{605.5503373} @sn1 acylium ion
+
+
+Name: TG(18:0/18:1/18:2)
+Id: TG(18:0/18:1/18:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H104O6
+PrecursorMz: 902.8171141
+ExactMass: 884.7832911
+MW: 884.7832911
+CLASS: TG
+SumComposition: TG(54:3)
+SumChainLengths: TG(18:0_18:1_18:2)
+NumPeaks: 6
+263.2369467 1 ms3-{601.5190371} !sn3 acylium ion
+263.2369467 1 ms3-{603.5346872} !sn3 acylium ion
+265.2525968 1 ms3-{601.5190371} $sn2 acylium ion
+265.2525968 1 ms3-{605.5503373} $sn2 acylium ion
+267.2682469 1 ms3-{603.5346872} @sn1 acylium ion
+267.2682469 1 ms3-{605.5503373} @sn1 acylium ion
+
+
+Name: TG(18:0/18:1/18:3)
+Id: TG(18:0/18:1/18:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H102O6
+PrecursorMz: 900.8014640
+ExactMass: 882.7676410
+MW: 882.7676410
+CLASS: TG
+SumComposition: TG(54:4)
+SumChainLengths: TG(18:0_18:1_18:3)
+NumPeaks: 6
+261.2212967 1 ms3-{599.5033871} !sn3 acylium ion
+261.2212967 1 ms3-{601.5190371} !sn3 acylium ion
+265.2525968 1 ms3-{599.5033871} $sn2 acylium ion
+265.2525968 1 ms3-{605.5503373} $sn2 acylium ion
+267.2682469 1 ms3-{601.5190371} @sn1 acylium ion
+267.2682469 1 ms3-{605.5503373} @sn1 acylium ion
+
+
+Name: TG(18:0/18:1/18:4)
+Id: TG(18:0/18:1/18:4) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H100O6
+PrecursorMz: 898.7858139
+ExactMass: 880.7519909
+MW: 880.7519909
+CLASS: TG
+SumComposition: TG(54:5)
+SumChainLengths: TG(18:0_18:1_18:4)
+NumPeaks: 6
+259.2056466 1 ms3-{597.487737} !sn3 acylium ion
+259.2056466 1 ms3-{599.5033871} !sn3 acylium ion
+265.2525968 1 ms3-{597.487737} $sn2 acylium ion
+265.2525968 1 ms3-{605.5503373} $sn2 acylium ion
+267.2682469 1 ms3-{599.5033871} @sn1 acylium ion
+267.2682469 1 ms3-{605.5503373} @sn1 acylium ion
+
+
+Name: TG(18:0/18:1/20:4)
+Id: TG(18:0/18:1/20:4) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H104O6
+PrecursorMz: 926.8171141
+ExactMass: 908.7832911
+MW: 908.7832911
+CLASS: TG
+SumComposition: TG(56:5)
+SumChainLengths: TG(18:0_18:1_20:4)
+NumPeaks: 6
+265.2525968 1 ms3-{605.5503373} $sn2 acylium ion
+265.2525968 1 ms3-{625.5190371} $sn2 acylium ion
+267.2682469 1 ms3-{605.5503373} @sn1 acylium ion
+267.2682469 1 ms3-{627.5346872} @sn1 acylium ion
+287.2369467 1 ms3-{625.5190371} !sn3 acylium ion
+287.2369467 1 ms3-{627.5346872} !sn3 acylium ion
+
+
+Name: TG(18:0/18:1/20:5)
+Id: TG(18:0/18:1/20:5) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H102O6
+PrecursorMz: 924.8014640
+ExactMass: 906.7676410
+MW: 906.7676410
+CLASS: TG
+SumComposition: TG(56:6)
+SumChainLengths: TG(18:0_18:1_20:5)
+NumPeaks: 6
+265.2525968 1 ms3-{605.5503373} $sn2 acylium ion
+265.2525968 1 ms3-{623.5033871} $sn2 acylium ion
+267.2682469 1 ms3-{605.5503373} @sn1 acylium ion
+267.2682469 1 ms3-{625.5190371} @sn1 acylium ion
+285.2212967 1 ms3-{623.5033871} !sn3 acylium ion
+285.2212967 1 ms3-{625.5190371} !sn3 acylium ion
+
+
+Name: TG(18:0/18:1/22:6)
+Id: TG(18:0/18:1/22:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C61H104O6
+PrecursorMz: 950.8171141
+ExactMass: 932.7832911
+MW: 932.7832911
+CLASS: TG
+SumComposition: TG(58:7)
+SumChainLengths: TG(18:0_18:1_22:6)
+NumPeaks: 6
+265.2525968 1 ms3-{605.5503373} $sn2 acylium ion
+265.2525968 1 ms3-{649.5190371} $sn2 acylium ion
+267.2682469 1 ms3-{605.5503373} @sn1 acylium ion
+267.2682469 1 ms3-{651.5346872} @sn1 acylium ion
+311.2369467 1 ms3-{649.5190371} !sn3 acylium ion
+311.2369467 1 ms3-{651.5346872} !sn3 acylium ion
+
+
+Name: TG(18:0/18:2/18:2)
+Id: TG(18:0/18:2/18:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H102O6
+PrecursorMz: 900.8014640
+ExactMass: 882.7676410
+MW: 882.7676410
+CLASS: TG
+SumComposition: TG(54:4)
+SumChainLengths: TG(18:0_18:2_18:2)
+NumPeaks: 2
+263.2369467 1 ms3-{599.5033871} $sn2 acylium ion/!sn3 acylium ion
+267.2682469 1 ms3-{603.5346872} @sn1 acylium ion
+
+
+Name: TG(18:0/18:2/18:3)
+Id: TG(18:0/18:2/18:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H100O6
+PrecursorMz: 898.7858139
+ExactMass: 880.7519909
+MW: 880.7519909
+CLASS: TG
+SumComposition: TG(54:5)
+SumChainLengths: TG(18:0_18:2_18:3)
+NumPeaks: 6
+261.2212967 1 ms3-{597.487737} !sn3 acylium ion
+261.2212967 1 ms3-{601.5190371} !sn3 acylium ion
+263.2369467 1 ms3-{597.487737} $sn2 acylium ion
+263.2369467 1 ms3-{603.5346872} $sn2 acylium ion
+267.2682469 1 ms3-{601.5190371} @sn1 acylium ion
+267.2682469 1 ms3-{603.5346872} @sn1 acylium ion
+
+
+Name: TG(18:0/18:2/20:1)
+Id: TG(18:0/18:2/20:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H108O6
+PrecursorMz: 930.8484142
+ExactMass: 912.8145912
+MW: 912.8145912
+CLASS: TG
+SumComposition: TG(56:3)
+SumChainLengths: TG(18:0_18:2_20:1)
+NumPeaks: 6
+263.2369467 1 ms3-{603.5346872} $sn2 acylium ion
+263.2369467 1 ms3-{629.5503373} $sn2 acylium ion
+267.2682469 1 ms3-{603.5346872} @sn1 acylium ion
+267.2682469 1 ms3-{633.5816374} @sn1 acylium ion
+293.2838969 1 ms3-{629.5503373} !sn3 acylium ion
+293.2838969 1 ms3-{633.5816374} !sn3 acylium ion
+
+
+Name: TG(18:0/18:2/20:4)
+Id: TG(18:0/18:2/20:4) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H102O6
+PrecursorMz: 924.8014640
+ExactMass: 906.7676410
+MW: 906.7676410
+CLASS: TG
+SumComposition: TG(56:6)
+SumChainLengths: TG(18:0_18:2_20:4)
+NumPeaks: 6
+263.2369467 1 ms3-{603.5346872} $sn2 acylium ion
+263.2369467 1 ms3-{623.5033871} $sn2 acylium ion
+267.2682469 1 ms3-{603.5346872} @sn1 acylium ion
+267.2682469 1 ms3-{627.5346872} @sn1 acylium ion
+287.2369467 1 ms3-{623.5033871} !sn3 acylium ion
+287.2369467 1 ms3-{627.5346872} !sn3 acylium ion
+
+
+Name: TG(18:0/18:2/20:5)
+Id: TG(18:0/18:2/20:5) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H100O6
+PrecursorMz: 922.7858139
+ExactMass: 904.7519909
+MW: 904.7519909
+CLASS: TG
+SumComposition: TG(56:7)
+SumChainLengths: TG(18:0_18:2_20:5)
+NumPeaks: 6
+263.2369467 1 ms3-{603.5346872} $sn2 acylium ion
+263.2369467 1 ms3-{621.487737} $sn2 acylium ion
+267.2682469 1 ms3-{603.5346872} @sn1 acylium ion
+267.2682469 1 ms3-{625.5190371} @sn1 acylium ion
+285.2212967 1 ms3-{621.487737} !sn3 acylium ion
+285.2212967 1 ms3-{625.5190371} !sn3 acylium ion
+
+
+Name: TG(18:0/18:2/22:6)
+Id: TG(18:0/18:2/22:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C61H102O6
+PrecursorMz: 948.8014640
+ExactMass: 930.7676410
+MW: 930.7676410
+CLASS: TG
+SumComposition: TG(58:8)
+SumChainLengths: TG(18:0_18:2_22:6)
+NumPeaks: 6
+263.2369467 1 ms3-{603.5346872} $sn2 acylium ion
+263.2369467 1 ms3-{647.5033871} $sn2 acylium ion
+267.2682469 1 ms3-{603.5346872} @sn1 acylium ion
+267.2682469 1 ms3-{651.5346872} @sn1 acylium ion
+311.2369467 1 ms3-{647.5033871} !sn3 acylium ion
+311.2369467 1 ms3-{651.5346872} !sn3 acylium ion
+
+
+Name: TG(18:1/18:1/18:2)
+Id: TG(18:1/18:1/18:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H102O6
+PrecursorMz: 900.8014640
+ExactMass: 882.7676410
+MW: 882.7676410
+CLASS: TG
+SumComposition: TG(54:4)
+SumChainLengths: TG(18:1_18:1_18:2)
+NumPeaks: 2
+263.2369467 1 ms3-{601.5190371} !sn3 acylium ion
+265.2525968 1 ms3-{603.5346872} @sn1 acylium ion/$sn2 acylium ion
+
+
+Name: TG(18:1/18:1/18:3)
+Id: TG(18:1/18:1/18:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H100O6
+PrecursorMz: 898.7858139
+ExactMass: 880.7519909
+MW: 880.7519909
+CLASS: TG
+SumComposition: TG(54:5)
+SumChainLengths: TG(18:1_18:1_18:3)
+NumPeaks: 2
+261.2212967 1 ms3-{599.5033871} !sn3 acylium ion
+265.2525968 1 ms3-{603.5346872} @sn1 acylium ion/$sn2 acylium ion
+
+
+Name: TG(18:1/18:1/18:4)
+Id: TG(18:1/18:1/18:4) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H98O6
+PrecursorMz: 896.7701639
+ExactMass: 878.7363409
+MW: 878.7363409
+CLASS: TG
+SumComposition: TG(54:6)
+SumChainLengths: TG(18:1_18:1_18:4)
+NumPeaks: 2
+259.2056466 1 ms3-{597.487737} !sn3 acylium ion
+265.2525968 1 ms3-{603.5346872} @sn1 acylium ion/$sn2 acylium ion
+
+
+Name: TG(18:1/18:1/20:1)
+Id: TG(18:1/18:1/20:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H108O6
+PrecursorMz: 930.8484142
+ExactMass: 912.8145912
+MW: 912.8145912
+CLASS: TG
+SumComposition: TG(56:3)
+SumChainLengths: TG(18:1_18:1_20:1)
+NumPeaks: 2
+265.2525968 1 ms3-{603.5346872} @sn1 acylium ion/$sn2 acylium ion
+293.2838969 1 ms3-{631.5659873} !sn3 acylium ion
+
+
+Name: TG(18:1/18:1/20:2)
+Id: TG(18:1/18:1/20:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H106O6
+PrecursorMz: 928.8327641
+ExactMass: 910.7989411
+MW: 910.7989411
+CLASS: TG
+SumComposition: TG(56:4)
+SumChainLengths: TG(18:1_18:1_20:2)
+NumPeaks: 2
+265.2525968 1 ms3-{603.5346872} @sn1 acylium ion/$sn2 acylium ion
+291.2682469 1 ms3-{629.5503373} !sn3 acylium ion
+
+
+Name: TG(18:1/18:1/20:3)
+Id: TG(18:1/18:1/20:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H104O6
+PrecursorMz: 926.8171141
+ExactMass: 908.7832911
+MW: 908.7832911
+CLASS: TG
+SumComposition: TG(56:5)
+SumChainLengths: TG(18:1_18:1_20:3)
+NumPeaks: 2
+265.2525968 1 ms3-{603.5346872} @sn1 acylium ion/$sn2 acylium ion
+289.2525968 1 ms3-{627.5346872} !sn3 acylium ion
+
+
+Name: TG(18:1/18:1/20:4)
+Id: TG(18:1/18:1/20:4) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H102O6
+PrecursorMz: 924.8014640
+ExactMass: 906.7676410
+MW: 906.7676410
+CLASS: TG
+SumComposition: TG(56:6)
+SumChainLengths: TG(18:1_18:1_20:4)
+NumPeaks: 2
+265.2525968 1 ms3-{603.5346872} @sn1 acylium ion/$sn2 acylium ion
+287.2369467 1 ms3-{625.5190371} !sn3 acylium ion
+
+
+Name: TG(18:1/18:1/20:5)
+Id: TG(18:1/18:1/20:5) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H100O6
+PrecursorMz: 922.7858139
+ExactMass: 904.7519909
+MW: 904.7519909
+CLASS: TG
+SumComposition: TG(56:7)
+SumChainLengths: TG(18:1_18:1_20:5)
+NumPeaks: 2
+265.2525968 1 ms3-{603.5346872} @sn1 acylium ion/$sn2 acylium ion
+285.2212967 1 ms3-{623.5033871} !sn3 acylium ion
+
+
+Name: TG(18:1/18:1/22:5)
+Id: TG(18:1/18:1/22:5) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C61H104O6
+PrecursorMz: 950.8171141
+ExactMass: 932.7832911
+MW: 932.7832911
+CLASS: TG
+SumComposition: TG(58:7)
+SumChainLengths: TG(18:1_18:1_22:5)
+NumPeaks: 2
+265.2525968 1 ms3-{603.5346872} @sn1 acylium ion/$sn2 acylium ion
+313.2525968 1 ms3-{651.5346872} !sn3 acylium ion
+
+
+Name: TG(18:1/18:1/22:6)
+Id: TG(18:1/18:1/22:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C61H102O6
+PrecursorMz: 948.8014640
+ExactMass: 930.7676410
+MW: 930.7676410
+CLASS: TG
+SumComposition: TG(58:8)
+SumChainLengths: TG(18:1_18:1_22:6)
+NumPeaks: 2
+265.2525968 1 ms3-{603.5346872} @sn1 acylium ion/$sn2 acylium ion
+311.2369467 1 ms3-{649.5190371} !sn3 acylium ion
+
+
+Name: TG(18:1/18:2/18:2)
+Id: TG(18:1/18:2/18:2) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H100O6
+PrecursorMz: 898.7858139
+ExactMass: 880.7519909
+MW: 880.7519909
+CLASS: TG
+SumComposition: TG(54:5)
+SumChainLengths: TG(18:1_18:2_18:2)
+NumPeaks: 2
+263.2369467 1 ms3-{599.5033871} $sn2 acylium ion/!sn3 acylium ion
+265.2525968 1 ms3-{601.5190371} @sn1 acylium ion
+
+
+Name: TG(18:1/18:2/18:3)
+Id: TG(18:1/18:2/18:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H98O6
+PrecursorMz: 896.7701639
+ExactMass: 878.7363409
+MW: 878.7363409
+CLASS: TG
+SumComposition: TG(54:6)
+SumChainLengths: TG(18:1_18:2_18:3)
+NumPeaks: 6
+261.2212967 1 ms3-{597.487737} !sn3 acylium ion
+261.2212967 1 ms3-{599.5033871} !sn3 acylium ion
+263.2369467 1 ms3-{597.487737} $sn2 acylium ion
+263.2369467 1 ms3-{601.5190371} $sn2 acylium ion
+265.2525968 1 ms3-{599.5033871} @sn1 acylium ion
+265.2525968 1 ms3-{601.5190371} @sn1 acylium ion
+
+
+Name: TG(18:1/18:2/20:1)
+Id: TG(18:1/18:2/20:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H106O6
+PrecursorMz: 928.8327641
+ExactMass: 910.7989411
+MW: 910.7989411
+CLASS: TG
+SumComposition: TG(56:4)
+SumChainLengths: TG(18:1_18:2_20:1)
+NumPeaks: 6
+263.2369467 1 ms3-{601.5190371} $sn2 acylium ion
+263.2369467 1 ms3-{629.5503373} $sn2 acylium ion
+265.2525968 1 ms3-{601.5190371} @sn1 acylium ion
+265.2525968 1 ms3-{631.5659873} @sn1 acylium ion
+293.2838969 1 ms3-{629.5503373} !sn3 acylium ion
+293.2838969 1 ms3-{631.5659873} !sn3 acylium ion
+
+
+Name: TG(18:1/18:2/20:3)
+Id: TG(18:1/18:2/20:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H102O6
+PrecursorMz: 924.8014640
+ExactMass: 906.7676410
+MW: 906.7676410
+CLASS: TG
+SumComposition: TG(56:6)
+SumChainLengths: TG(18:1_18:2_20:3)
+NumPeaks: 6
+263.2369467 1 ms3-{601.5190371} $sn2 acylium ion
+263.2369467 1 ms3-{625.5190371} $sn2 acylium ion
+265.2525968 1 ms3-{601.5190371} @sn1 acylium ion
+265.2525968 1 ms3-{627.5346872} @sn1 acylium ion
+289.2525968 1 ms3-{625.5190371} !sn3 acylium ion
+289.2525968 1 ms3-{627.5346872} !sn3 acylium ion
+
+
+Name: TG(18:1/18:2/20:4)
+Id: TG(18:1/18:2/20:4) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H100O6
+PrecursorMz: 922.7858139
+ExactMass: 904.7519909
+MW: 904.7519909
+CLASS: TG
+SumComposition: TG(56:7)
+SumChainLengths: TG(18:1_18:2_20:4)
+NumPeaks: 6
+263.2369467 1 ms3-{601.5190371} $sn2 acylium ion
+263.2369467 1 ms3-{623.5033871} $sn2 acylium ion
+265.2525968 1 ms3-{601.5190371} @sn1 acylium ion
+265.2525968 1 ms3-{625.5190371} @sn1 acylium ion
+287.2369467 1 ms3-{623.5033871} !sn3 acylium ion
+287.2369467 1 ms3-{625.5190371} !sn3 acylium ion
+
+
+Name: TG(18:1/18:2/20:5)
+Id: TG(18:1/18:2/20:5) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H98O6
+PrecursorMz: 920.7701639
+ExactMass: 902.7363409
+MW: 902.7363409
+CLASS: TG
+SumComposition: TG(56:8)
+SumChainLengths: TG(18:1_18:2_20:5)
+NumPeaks: 6
+263.2369467 1 ms3-{601.5190371} $sn2 acylium ion
+263.2369467 1 ms3-{621.487737} $sn2 acylium ion
+265.2525968 1 ms3-{601.5190371} @sn1 acylium ion
+265.2525968 1 ms3-{623.5033871} @sn1 acylium ion
+285.2212967 1 ms3-{621.487737} !sn3 acylium ion
+285.2212967 1 ms3-{623.5033871} !sn3 acylium ion
+
+
+Name: TG(18:1/18:2/22:5)
+Id: TG(18:1/18:2/22:5) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C61H102O6
+PrecursorMz: 948.8014640
+ExactMass: 930.7676410
+MW: 930.7676410
+CLASS: TG
+SumComposition: TG(58:8)
+SumChainLengths: TG(18:1_18:2_22:5)
+NumPeaks: 6
+263.2369467 1 ms3-{601.5190371} $sn2 acylium ion
+263.2369467 1 ms3-{649.5190371} $sn2 acylium ion
+265.2525968 1 ms3-{601.5190371} @sn1 acylium ion
+265.2525968 1 ms3-{651.5346872} @sn1 acylium ion
+313.2525968 1 ms3-{649.5190371} !sn3 acylium ion
+313.2525968 1 ms3-{651.5346872} !sn3 acylium ion
+
+
+Name: TG(18:1/18:2/22:6)
+Id: TG(18:1/18:2/22:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C61H100O6
+PrecursorMz: 946.7858139
+ExactMass: 928.7519909
+MW: 928.7519909
+CLASS: TG
+SumComposition: TG(58:9)
+SumChainLengths: TG(18:1_18:2_22:6)
+NumPeaks: 6
+263.2369467 1 ms3-{601.5190371} $sn2 acylium ion
+263.2369467 1 ms3-{647.5033871} $sn2 acylium ion
+265.2525968 1 ms3-{601.5190371} @sn1 acylium ion
+265.2525968 1 ms3-{649.5190371} @sn1 acylium ion
+311.2369467 1 ms3-{647.5033871} !sn3 acylium ion
+311.2369467 1 ms3-{649.5190371} !sn3 acylium ion
+
+
+Name: TG(18:1/18:3/22:6)
+Id: TG(18:1/18:3/22:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C61H98O6
+PrecursorMz: 944.7701639
+ExactMass: 926.7363409
+MW: 926.7363409
+CLASS: TG
+SumComposition: TG(58:10)
+SumChainLengths: TG(18:1_18:3_22:6)
+NumPeaks: 6
+261.2212967 1 ms3-{599.5033871} $sn2 acylium ion
+261.2212967 1 ms3-{645.487737} $sn2 acylium ion
+265.2525968 1 ms3-{599.5033871} @sn1 acylium ion
+265.2525968 1 ms3-{649.5190371} @sn1 acylium ion
+311.2369467 1 ms3-{645.487737} !sn3 acylium ion
+311.2369467 1 ms3-{649.5190371} !sn3 acylium ion
+
+
+Name: TG(18:2/18:2/18:3)
+Id: TG(18:2/18:2/18:3) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C57H96O6
+PrecursorMz: 894.7545138
+ExactMass: 876.7206908
+MW: 876.7206908
+CLASS: TG
+SumComposition: TG(54:7)
+SumChainLengths: TG(18:2_18:2_18:3)
+NumPeaks: 2
+261.2212967 1 ms3-{597.487737} !sn3 acylium ion
+263.2369467 1 ms3-{599.5033871} @sn1 acylium ion/$sn2 acylium ion
+
+
+Name: TG(18:2/18:2/20:1)
+Id: TG(18:2/18:2/20:1) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H104O6
+PrecursorMz: 926.8171141
+ExactMass: 908.7832911
+MW: 908.7832911
+CLASS: TG
+SumComposition: TG(56:5)
+SumChainLengths: TG(18:2_18:2_20:1)
+NumPeaks: 2
+263.2369467 1 ms3-{599.5033871} @sn1 acylium ion/$sn2 acylium ion
+293.2838969 1 ms3-{629.5503373} !sn3 acylium ion
+
+
+Name: TG(18:2/18:2/20:4)
+Id: TG(18:2/18:2/20:4) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H98O6
+PrecursorMz: 920.7701639
+ExactMass: 902.7363409
+MW: 902.7363409
+CLASS: TG
+SumComposition: TG(56:8)
+SumChainLengths: TG(18:2_18:2_20:4)
+NumPeaks: 2
+263.2369467 1 ms3-{599.5033871} @sn1 acylium ion/$sn2 acylium ion
+287.2369467 1 ms3-{623.5033871} !sn3 acylium ion
+
+
+Name: TG(18:2/18:2/20:5)
+Id: TG(18:2/18:2/20:5) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C59H96O6
+PrecursorMz: 918.7545138
+ExactMass: 900.7206908
+MW: 900.7206908
+CLASS: TG
+SumComposition: TG(56:9)
+SumChainLengths: TG(18:2_18:2_20:5)
+NumPeaks: 2
+263.2369467 1 ms3-{599.5033871} @sn1 acylium ion/$sn2 acylium ion
+285.2212967 1 ms3-{621.487737} !sn3 acylium ion
+
+
+Name: TG(18:2/18:2/22:6)
+Id: TG(18:2/18:2/22:6) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C61H98O6
+PrecursorMz: 944.7701639
+ExactMass: 926.7363409
+MW: 926.7363409
+CLASS: TG
+SumComposition: TG(58:10)
+SumChainLengths: TG(18:2_18:2_22:6)
+NumPeaks: 2
+263.2369467 1 ms3-{599.5033871} @sn1 acylium ion/$sn2 acylium ion
+311.2369467 1 ms3-{647.5033871} !sn3 acylium ion
+
+
+Name: TG(18:3/20:0/20:4;O)
+Id: TG(18:3/20:0/20:4;O) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C61H104O7
+PrecursorMz: 966.8120287
+ExactMass: 948.7782057
+MW: 948.7782057
+CLASS: TG
+SumComposition: TG(58:7;O)
+SumChainLengths: TG(18:3_20:0_20:4;O)
+NumPeaks: 6
+261.2212967 1 ms3-{637.48265161956} @sn1 acylium ion
+261.2212967 1 ms3-{629.5503373} @sn1 acylium ion
+295.2995470 1 ms3-{629.5503373} $sn2 acylium ion
+295.2995470 1 ms3-{671.56090191956} $sn2 acylium ion
+303.2318613 1 ms3-{637.48265161956} sn3 acylium ion ox
+303.2318613 1 ms3-{671.56090191956} sn3 acylium ion ox
+
+
+Name: TG(20:0/22:3/22:5;O)
+Id: TG(20:0/22:3/22:5;O) [M+NH4]+
+ADDUCT: [M+NH4]+
+Formula: C67H114O7
+PrecursorMz: 1048.8902790
+ExactMass: 1030.8564560
+MW: 1030.8564560
+CLASS: TG
+SumComposition: TG(64:8;O)
+SumChainLengths: TG(20:0_22:3_22:5;O)
+NumPeaks: 6
+295.2995470 1 ms3-{697.57655201956} @sn1 acylium ion
+295.2995470 1 ms3-{685.6129375} @sn1 acylium ion
+317.2838969 1 ms3-{685.6129375} $sn2 acylium ion
+317.2838969 1 ms3-{719.56090191956} $sn2 acylium ion
+329.2475114 1 ms3-{697.57655201956} sn3 acylium ion ox
+329.2475114 1 ms3-{719.56090191956} sn3 acylium ion ox
+
+
