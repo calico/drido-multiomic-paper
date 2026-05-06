@@ -21,6 +21,7 @@ suppressMessages(library(RColorBrewer))
 suppressMessages(library(ggh4x))
 suppressMessages(library(ggpmisc))
 suppressMessages(library(tidyverse))
+suppressMessages(library(vioplot))
 
 knitr::opts_chunk$set(echo = TRUE, eval = TRUE, out.height = "100%", out.width = "100%", warning = F, message = F)
 ```
@@ -30,17 +31,20 @@ knitr::opts_chunk$set(echo = TRUE, eval = TRUE, out.height = "100%", out.width =
 ```{r}
 # set
 # local_filepath <- "~/drido-multiomic-paper"
+local_filepath <- "~/GitHub/drido-multiomic-paper"
 
 source(file.path(local_filepath, "R/statistics_functions.R"))
 source(file.path(local_filepath, "R/figure_functions.R"))
 
 qtl_file <- "inst/supp_tables/Table_S9_QTLs.Rds"
 h2_file <- "inst/supp_tables/Table_S10_Heritability.Rds"
+pqtl_mat_file <- "inst/extdata/20260506-pQTL-position-matrix.Rds"
 qtl_corr_data <- "inst/extdata/20260408-Lifespan_colocalized_QTL_lifespan_allele_correlation.RDS"
 
 all_lod6 <- readRDS(file.path(local_filepath, qtl_file)) %>%
   dplyr::mutate(chr = factor(chr, levels = c(seq_len(19), "X")))
 all_h2 <- readRDS(file.path(local_filepath, h2_file))
+qtl_mat <- readRDS(file.path(local_filepath, pqtl_mat_file))
 rp <- readRDS(file.path(local_filepath, qtl_corr_data)) %>%
   dplyr::filter(year_data == age_years) %>%
   dplyr::select(trait, r, p, lifespan_qtl, label_use, facet_label)
@@ -118,6 +122,69 @@ gg
 #             plot_width = 2.8,
 #             plot_height = 2,
 #             local_filepath = local_filepath)
+```
+
+## B: cis-trans Barplot
+
+```{r}
+df <- all_lod6 %>%
+  dplyr::filter(!is.na(cis)) %>%
+  dplyr::mutate(
+    cis = ifelse(cis, "cis", "trans"),
+    pve = pve * 100
+  )
+counts <- table(df$cis)
+counts <- counts[c("cis", "trans")]
+par(mar = c(3, 5, 2, 2))
+b <- barplot(counts,
+  col = c("#EBB351", "#7871B2"),
+  border = "black",
+  axes = FALSE,
+  names.arg = rep("", 2), # Remove default labels
+  ylim = c(0, 4500),
+  ylab = "pQTL count"
+)
+axis(2, at = seq(0, 4000, 1000), labels = c("0", "1K", "2K", "3K", "4K"), las = 1)
+axis(1, at = b, labels = names(counts), lwd = 0, lwd.ticks = 1)
+dev.off()
+```
+
+## B: Violin Plot
+
+```{r}
+qtl_prot <- all_lod6 %>%
+  dplyr::mutate(pve = pve * 100)
+vio2 <- vioplot::vioplot(qtl_prot$pve[which(qtl_prot$cis == T)],
+  qtl_prot$pve[which(qtl_prot$cis == F)],
+  col = c("#EBB351", "#7871B2"),
+  xaxt = "n",
+  las = 1,
+  ylab = "% variance explained"
+)
+text(x = 1:2, y = par("usr")[3] - 0.05, labels = c("cis", "trans"), xpd = NA, adj = 1)
+vio2
+dev.off()
+```
+
+## C: Trans pQTL Map
+
+```{r}
+ends <- c(195.0423, 376.6824, 536.3135, 692.6533, 844.3112, 993.7799, 1138.6654, 1268.5853, 1392.5382, 1522.9219, 1644.7808, 1764.7620, 1884.3936, 2009.4098, 2112.9696, 2210.8677, 2306.0295, 2396.6481, 2457.8988, 2627.1864)
+
+starts <- c(0.0000, 196.0423, 377.6824, 537.3135, 693.6533, 845.3112, 994.7799, 1139.6654, 1269.5853, 1393.5382, 1523.9219, 1645.7808, 1765.7620, 1885.3936, 2010.4098, 2113.9696, 2211.8677, 2307.0295, 2397.6481, 2458.8988)
+
+label_pos <- c(97.5, 286.5, 457.0, 615.0, 769.0, 919.5, 1067.0, 1204.5, 1331.5, 1458.5, 1584.5, 1705.5, 1825.0, 1947.0, 2061.5, 2162.5, 2259.0, 2352.0, 2428.0, 2543.0)
+
+plot(0, 0,
+  xlab = "QTL genome position", ylab = "protein genome position",
+  las = 1,
+  xlim = c(0, ends[length(ends)]),
+  ylim = c(0, ends[length(ends)]),
+  pch = 16, col = alpha("white", 0), xaxs = "i", yaxs = "i", bty = "n", xaxt = "n", yaxt = "n"
+)
+points(qtl_mat$qtl, qtl_mat$prot, col = qtl_mat$col, pch = 16, cex = qtl_mat$cex)
+axis(1, at = label_pos, labels = c(1:19, "X"))
+axis(2, at = label_pos, labels = c(1:19, "X"), las = 1)
 ```
 
 ## D: Colocalized Lifespan QTL
