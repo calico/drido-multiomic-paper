@@ -4,7 +4,7 @@ _Companion R code for "A multiomic lifespan signature in genetically diverse, di
 
 ### Interactive Data Explorer App
 
-The data and modeling results can be explored in our interactive data explorer app here
+The data and modeling results can be explored in our interactive data explorer app [here](https://public-rstudio-connect.calicolabs.com/drido-multiomics/)
 
 --------------
 
@@ -44,6 +44,6 @@ With HTTPS: `git clone https://github.com/<GITHUB_USERNAME>/drido-multiomic-pape
 - **/shiny-app:**
   - Files for local deployment of interactive data explorer app
   - To deploy from the repository root, run `shiny::runApp('shiny-app')`
-  - The online data explorer app can be accessed here
+  - The online data explorer app can be accessed [here](https://public-rstudio-connect.calicolabs.com/drido-multiomics/)
   
 

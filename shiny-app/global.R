@@ -12,7 +12,7 @@ library(ggplot2)
 
 # ── Load all supplemental tables and data ─────────────────────────────────────
 # Local deployment
-# DATA_DIR <- "/Users/johanna/GitHub/mass_spec/analysis/do_cr_paper/shiny-app"
+# DATA_DIR <- "~/drido-multiomic-paper/shiny-app"
 # tbl_s1_annotations  <- read_csv(file.path(DATA_DIR, "data/Table_S1_CompoundAnnotations.csv"),  show_col_types = FALSE)
 # tbl_s2_qtls         <- readRDS(file.path(DATA_DIR, "data/Table_S9_QTLs.Rds"))
 # tbl_s4_diet_age     <- readRDS(file.path(DATA_DIR, "data/Table_S2_Diet_Age_Model.Rds"))
