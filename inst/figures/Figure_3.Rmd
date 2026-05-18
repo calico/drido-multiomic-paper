@@ -14,20 +14,14 @@ output:
 ## Install Packages
 
 ```{r, message=F, warning=F}
-suppressMessages(library(remotes))
+suppressMessages(library(here))
 suppressMessages(library(patchwork))
-suppressMessages(library(flexclust))
 suppressMessages(library(ggrepel))
 suppressMessages(library(RColorBrewer))
-suppressMessages(library(VennDiagram))
-suppressMessages(library(ggh4x))
-suppressMessages(library(ggpmisc))
 suppressMessages(library(tidyverse))
-suppressMessages(library(mclust))
 suppressMessages(library(clusterProfiler))
 suppressMessages(library(org.Mm.eg.db))
 suppressMessages(library(rrvgo))
-suppressMessages(library(GGally))
 suppressMessages(library(grid))
 
 knitr::opts_chunk$set(echo = TRUE, eval = TRUE, out.height = "100%", out.width = "100%", warning = F, message = F)
@@ -37,7 +31,7 @@ knitr::opts_chunk$set(echo = TRUE, eval = TRUE, out.height = "100%", out.width =
 
 ```{r}
 # set
-# local_filepath <- "~/drido-multiomic-paper"
+local_filepath <- here::here() # "~/drido-multiomic-paper"
 
 source(file.path(local_filepath, "R/statistics_functions.R"))
 source(file.path(local_filepath, "R/figure_functions.R"))
@@ -257,19 +251,19 @@ make_table_s4 <- function(pll_lm_long, normalization) {
 table_s4 <- dplyr::bind_rows(
   make_table_s4(
     build_pll_lm_long(
-      "20260220-Linear-Scaled-MM-PLL-Aging-Results.Rds",
-      "20260220-Linear-Scaled-MM-PLL-Dying-Results.Rds",
-      "20250528-Linear-MM-PLL-Aging-Phenotype-Results.Rds",
-      "20250528-Linear-MM-PLL-Dying-Phenotype-Results.Rds"
+      "inst/extdata/20260220-Linear-Scaled-MM-PLL-Aging-Results.Rds",
+      "inst/extdata/20260220-Linear-Scaled-MM-PLL-Dying-Results.Rds",
+      "inst/extdata/20250528-Linear-MM-PLL-Aging-Phenotype-Results.Rds",
+      "inst/extdata/20250528-Linear-MM-PLL-Dying-Phenotype-Results.Rds"
     ),
     "Z-score"
   ),
   make_table_s4(
     build_pll_lm_long(
-      "20250424-Linear-MM-PLL-Aging-Results.Rds",
-      "20250424-Linear-MM-PLL-Dying-Results.Rds",
-      "20250424-Linear-MM-PLL-Aging-Phenotype-Results.Rds",
-      "20250424-Linear-MM-PLL-Dying-Phenotype-Results.Rds"
+      "inst/extdata/20250424-Linear-MM-PLL-Aging-Results.Rds",
+      "inst/extdata/20250424-Linear-MM-PLL-Dying-Results.Rds",
+      "inst/extdata/20250424-Linear-MM-PLL-Aging-Phenotype-Results.Rds",
+      "inst/extdata/20250424-Linear-MM-PLL-Dying-Phenotype-Results.Rds"
     ),
     "Log2 Relative"
   )

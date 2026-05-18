@@ -18,8 +18,6 @@ output:
 suppressMessages(library(patchwork))
 suppressMessages(library(ggrepel))
 suppressMessages(library(RColorBrewer))
-suppressMessages(library(ggh4x))
-suppressMessages(library(ggpmisc))
 suppressMessages(library(tidyverse))
 suppressMessages(library(vioplot))
 

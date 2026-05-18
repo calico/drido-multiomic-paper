@@ -15,17 +15,12 @@ output:
 ## Install Packages
 
 ```{r, message=F, warning=F}
+suppressMessages(library(here))
 suppressMessages(library(patchwork))
-suppressMessages(library(flexclust))
 suppressMessages(library(ggrepel))
 suppressMessages(library(RColorBrewer))
 suppressMessages(library(survival))
-suppressMessages(library(VennDiagram))
-suppressMessages(library(ggh4x))
-suppressMessages(library(ggpmisc))
 suppressMessages(library(tidyverse))
-suppressMessages(library(mclust))
-suppressMessages(library(GGally))
 
 knitr::opts_chunk$set(echo = TRUE, eval = TRUE, out.height = "100%", out.width = "100%", warning = F, message = F)
 ```
@@ -34,7 +29,7 @@ knitr::opts_chunk$set(echo = TRUE, eval = TRUE, out.height = "100%", out.width =
 
 ```{r}
 # set
-# local_filepath <- "~/drido-multiomic-paper"
+local_filepath <- here::here() # "~/drido-multiomic-paper"
 
 source(file.path(local_filepath, "R/statistics_functions.R"))
 source(file.path(local_filepath, "R/figure_functions.R"))

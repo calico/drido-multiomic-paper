@@ -255,7 +255,8 @@ docr_process_plate <- function(
   rds_output_dir,
   mzrolldb_output_dir,
   is_ms3 = FALSE,
-  save_mzrolldb_as_rds = FALSE
+  save_mzrolldb_as_rds = FALSE,
+  default_tg_is_ms3
 ) {
   # files ######################################
   is_lib_file <- paste(lib_dir, is_lib_name, sep = "/")
@@ -320,7 +321,7 @@ docr_process_plate <- function(
 
   # MS2 searches ###############################
 
-  is_plate_valid_ms2 <- TRUE # TODO: implement whole-plate validation
+  is_plate_valid_ms2 <- TRUE
   if (is_plate_valid_ms2) {
     # IS library
     lib_subset_string <- ifelse(is_ms3, "\\+$", "\\-$")
@@ -500,9 +501,9 @@ docr_process_plate <- function(
     ms3_targets <- dplyr::inner_join(habc_ms3_lib_all_targets, samples_info$ms3_targets, by = c("prec_mzs"))
 
     habc_ms3_lib_filtered <- habc_ms3_lib %>%
-      clamr::to_ms3_lib() %>%
+      to_ms3_lib() %>%
       dplyr::filter(prec_mzs %in% ms3_targets$prec_mzs) %>%
-      clamr::to_ms2_lib() %>%
+      to_ms2_lib() %>%
       # for HABC, the TGs were added to the bulkpool_compounds list.
       # for DOCR, the TG library was re-made to include only compounds of interest.
       # dplyr::filter(compoundName %in% bulkpool_compounds$compoundName) %>%
@@ -513,7 +514,7 @@ docr_process_plate <- function(
     # MS3 biological search
     habc4_biological_ms3_search <- mzkitcpp::DI_pipeline_ms3_search(
       samples = samples_df_ms3_filtered$file,
-      is_lib = clamr::default_tg_is_ms3,
+      is_lib = default_tg_is_ms3,
       is_search_params = biological_ms3_search_params,
       search_lib = habc_ms3_lib_filtered,
       search_params = biological_ms3_search_params,

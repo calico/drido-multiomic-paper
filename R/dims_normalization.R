@@ -16,7 +16,8 @@ docr_process_dims_plate <- function(
   rds_output_dir,
   mzrolldb_output_dir,
   is_ms3 = FALSE,
-  save_mzrolldb_as_rds = FALSE
+  save_mzrolldb_as_rds = FALSE,
+  default_tg_is_ms3
 ) {
   # files ######################################
   is_lib_file <- paste(lib_dir, is_lib_name, sep = "/")

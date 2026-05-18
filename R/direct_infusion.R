@@ -59,7 +59,7 @@ to_ms3_lib <- function(ms2_lib) {
 #'
 #' @param ms3_lib
 #'     msp lipid library dataframe formatted in ms3 format
-#'     ms3 libraries can be created from ms2 libraries by clamr::to_ms3(ms2_lib)
+#'     ms3 libraries can be created from ms2 libraries by to_ms3_lib(ms2_lib)
 #'
 #' @export
 to_ms2_lib <- function(ms3_lib) {
@@ -1406,7 +1406,7 @@ DIMS_whitelist_search <- function(samples_df,
       dplyr::filter(sample == sample_name)
 
     sample_library <- full_library_w_13C %>% dplyr::filter(compoundName %in% sample_whitelist_compounds$compoundName)
-    sample_library_13C <- clamr::to_13C_lib(sample_library)
+    sample_library_13C <- to_13C_lib(sample_library)
     sample_library_full <- rbind(sample_library, sample_library_13C)
     sample_library_full_sliced <- mzkitcpp::DI_slice_library(ms2_ranges, sample_library_full)
 

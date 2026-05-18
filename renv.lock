@@ -1,0 +1,417 @@
+{
+  "R": {
+    "Version": "4.4.1",
+    "Repositories": [
+      {
+        "Name": "CRAN",
+        "URL": "https://cloud.r-project.org"
+      },
+      {
+        "Name": "Bioconductor",
+        "URL": "https://bioconductor.org/packages/3.19/bioc"
+      },
+      {
+        "Name": "BiocAnnotation",
+        "URL": "https://bioconductor.org/packages/3.19/data/annotation"
+      }
+    ]
+  },
+  "Packages": {
+    "AnnotationDbi": {
+      "Package": "AnnotationDbi",
+      "Version": "1.66.0",
+      "Requirements": ["DBI", "RSQLite", "S4Vectors", "stats", "KEGGREST"],
+      "Source": "Bioconductor",
+      "Repository": "Bioconductor"
+    },
+    "checkmate": {
+      "Package": "checkmate",
+      "Version": "2.3.2",
+      "Requirements": ["backports", "utils"],
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "claman": {
+      "Package": "claman",
+      "Version": "1.0.0",
+      "Requirements": ["broom", "checkmate", "DBI", "debugr", "dplyr", "ggplot2", "glue", "purrr", "readr", "rlang", "romic", "RSQLite", "stringr", "tibble", "tidyr"],
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteUsername": "calico",
+      "RemoteRepo": "claman",
+      "RemoteRef": "HEAD",
+      "RemoteSha": "fd375854541855c34c9d89b23f4d4580b0956279"
+    },
+    "cluster": {
+      "Package": "cluster",
+      "Version": "2.1.8.1",
+      "Requirements": ["graphics", "grDevices", "stats", "utils"],
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "clusterProfiler": {
+      "Package": "clusterProfiler",
+      "Version": "4.12.6",
+      "Requirements": ["AnnotationDbi", "downloader", "DOSE", "dplyr", "enrichplot", "GO.db", "GOSemSim", "gson", "httr", "igraph", "magrittr", "methods", "plyr", "qvalue", "rlang", "stats", "tidyr", "utils", "yulab.utils"],
+      "Source": "Bioconductor",
+      "Repository": "Bioconductor"
+    },
+    "DBI": {
+      "Package": "DBI",
+      "Version": "1.2.3",
+      "Requirements": [],
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "dplyr": {
+      "Package": "dplyr",
+      "Version": "1.1.4",
+      "Requirements": ["cli", "generics", "glue", "lifecycle", "magrittr", "methods", "pillar", "R6", "rlang", "tibble", "tidyselect", "utils", "vctrs"],
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "factoextra": {
+      "Package": "factoextra",
+      "Version": "1.0.7",
+      "Requirements": ["abind", "cluster", "dendextend", "FactoMineR", "ggpubr", "grid", "stats", "reshape2", "ggrepel", "tidyr"],
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "flexclust": {
+      "Package": "flexclust",
+      "Version": "1.5.0",
+      "Requirements": ["graphics", "grid", "lattice", "methods", "modeltools", "parallel", "stats", "stats4", "class"],
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "forcats": {
+      "Package": "forcats",
+      "Version": "1.0.0",
+      "Requirements": ["cli", "glue", "lifecycle", "magrittr", "rlang", "tibble"],
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "furrr": {
+      "Package": "furrr",
+      "Version": "0.3.1",
+      "Requirements": ["globals", "lifecycle", "purrr", "rlang", "vctrs"],
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "future": {
+      "Package": "future",
+      "Version": "1.58.0",
+      "Requirements": ["digest", "globals", "listenv", "parallel", "parallelly", "utils"],
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "ggcorrplot": {
+      "Package": "ggcorrplot",
+      "Version": "0.1.4.1",
+      "Requirements": ["reshape2", "stats"],
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "here": {
+      "Package": "here",
+      "Version": "1.0.2",
+      "Requirements": ["rprojroot"],
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "ggiraph": {
+      "Package": "ggiraph",
+      "Version": "0.9.2",
+      "Requirements": ["cli", "dplyr", "gdtools", "ggplot2", "grid", "htmltools", "htmlwidgets", "purrr", "Rcpp", "rlang", "S7", "stats", "systemfonts", "vctrs"],
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "ggplot2": {
+      "Package": "ggplot2",
+      "Version": "4.0.0",
+      "Requirements": ["cli", "grDevices", "grid", "gtable", "isoband", "lifecycle", "rlang", "S7", "scales", "stats", "vctrs", "withr"],
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "ggrepel": {
+      "Package": "ggrepel",
+      "Version": "0.9.6",
+      "Requirements": ["grid", "Rcpp", "rlang", "scales", "withr"],
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "ggtext": {
+      "Package": "ggtext",
+      "Version": "0.1.2",
+      "Requirements": ["ggplot2", "grid", "gridtext", "rlang", "scales"],
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "glmnet": {
+      "Package": "glmnet",
+      "Version": "4.1.9",
+      "Requirements": ["methods", "utils", "foreach", "shape", "survival", "Rcpp"],
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "glue": {
+      "Package": "glue",
+      "Version": "1.8.0",
+      "Requirements": "methods",
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "gratia": {
+      "Package": "gratia",
+      "Version": "0.10.0",
+      "Requirements": ["mgcv", "ggplot2", "tibble", "dplyr", "tidyr", "rlang", "patchwork", "vctrs", "grid", "mvnfast", "purrr", "stats", "tools", "grDevices", "stringr", "tidyselect", "lifecycle", "pillar", "cli", "nlme", "ggokabeito", "withr", "scales"],
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "grDevices": {
+      "Package": "grDevices",
+      "Version": "4.4.1",
+      "Requirements": [],
+      "Source": "Base"
+    },
+    "grid": {
+      "Package": "grid",
+      "Version": "4.4.1",
+      "Requirements": ["grDevices", "utils"],
+      "Source": "Base"
+    },
+    "Hmisc": {
+      "Package": "Hmisc",
+      "Version": "5.2.3",
+      "Requirements": ["methods", "ggplot2", "cluster", "rpart", "nnet", "foreign", "gtable", "grid", "gridExtra", "data.table", "htmlTable", "viridis", "htmltools", "base64enc", "colorspace", "rmarkdown", "knitr", "Formula"],
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "jsonlite": {
+      "Package": "jsonlite",
+      "Version": "2.0.0",
+      "Requirements": [],
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "knitr": {
+      "Package": "knitr",
+      "Version": "1.50",
+      "Requirements": ["evaluate", "highr", "methods", "tools", "xfun", "yaml"],
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "limma": {
+      "Package": "limma",
+      "Version": "3.60.6",
+      "Requirements": ["grDevices", "graphics", "stats", "utils", "methods", "statmod"],
+      "Source": "Bioconductor",
+      "Repository": "Bioconductor"
+    },
+    "lme4": {
+      "Package": "lme4",
+      "Version": "1.1.37",
+      "Requirements": ["graphics", "grid", "splines", "utils", "parallel", "MASS", "lattice", "boot", "nlme", "minqa", "nloptr", "reformulas"],
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "lmerTest": {
+      "Package": "lmerTest",
+      "Version": "3.1.3",
+      "Requirements": ["numDeriv", "MASS", "ggplot2"],
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "metap": {
+      "Package": "metap",
+      "Version": "1.12",
+      "Requirements": ["lattice", "Rdpack", "TFisher", "mutoss", "mathjaxr", "qqconf"],
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "mgcv": {
+      "Package": "mgcv",
+      "Version": "1.9.3",
+      "Requirements": ["methods", "stats", "graphics", "Matrix", "splines", "utils"],
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "msigdbr": {
+      "Package": "msigdbr",
+      "Version": "25.1.0",
+      "Requirements": ["assertthat", "babelgene", "curl", "dplyr", "lifecycle", "methods", "rlang", "tibble", "tidyselect", "tools"],
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "mzkitcpp": {
+      "Package": "mzkitcpp",
+      "Version": "1.2.0",
+      "Requirements": ["dplyr", "Rcpp", "BH"],
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteUsername": "calico",
+      "RemoteRepo": "mzkitcpp",
+      "RemoteRef": "HEAD",
+      "RemoteSha": "e6e8abcef873a08eb44ab636631a755fc105f995"
+    },
+    "org.Mm.eg.db": {
+      "Package": "org.Mm.eg.db",
+      "Version": "3.19.1",
+      "Requirements": [],
+      "Source": "Bioconductor",
+      "Repository": "Bioconductor"
+    },
+    "patchwork": {
+      "Package": "patchwork",
+      "Version": "1.3.2",
+      "Requirements": ["ggplot2", "gtable", "grid", "stats", "grDevices", "utils", "graphics", "rlang", "cli", "farver"],
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "pheatmap": {
+      "Package": "pheatmap",
+      "Version": "1.0.13",
+      "Requirements": ["grid", "RColorBrewer", "scales", "gtable", "stats", "grDevices", "graphics"],
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "purrr": {
+      "Package": "purrr",
+      "Version": "1.1.0",
+      "Requirements": ["cli", "lifecycle", "magrittr", "rlang", "vctrs"],
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "qvalue": {
+      "Package": "qvalue",
+      "Version": "2.36.0",
+      "Requirements": ["splines", "ggplot2", "grid", "reshape2"],
+      "Source": "Bioconductor",
+      "Repository": "Bioconductor"
+    },
+    "RColorBrewer": {
+      "Package": "RColorBrewer",
+      "Version": "1.1.3",
+      "Requirements": [],
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "readr": {
+      "Package": "readr",
+      "Version": "2.1.5",
+      "Requirements": ["cli", "clipr", "crayon", "hms", "lifecycle", "methods", "R6", "rlang", "tibble", "utils", "vroom"],
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "rlang": {
+      "Package": "rlang",
+      "Version": "1.1.6",
+      "Requirements": "utils",
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "romic": {
+      "Package": "romic",
+      "Version": "1.2.4",
+      "Requirements": ["checkmate", "cli", "dplyr", "ggplot2", "glue", "purrr", "readr", "reshape2", "rlang", "shiny", "stringr", "tibble", "tidyr"],
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteUsername": "calico",
+      "RemoteRepo": "romic",
+      "RemoteRef": "HEAD",
+      "RemoteSha": "791260b8c2744715586444a5b5dd49d6c86ae3cb"
+    },
+    "RSQLite": {
+      "Package": "RSQLite",
+      "Version": "2.4.1",
+      "Requirements": ["bit64", "blob", "DBI", "memoise", "methods", "pkgconfig", "rlang"],
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "rrvgo": {
+      "Package": "rrvgo",
+      "Version": "1.16.0",
+      "Requirements": ["GOSemSim", "AnnotationDbi", "GO.db", "pheatmap", "ggplot2", "ggrepel", "treemap", "tm", "wordcloud", "shiny", "grDevices", "grid", "stats", "methods", "umap"],
+      "Source": "Bioconductor",
+      "Repository": "Bioconductor"
+    },
+    "scales": {
+      "Package": "scales",
+      "Version": "1.4.0",
+      "Requirements": ["cli", "farver", "glue", "labeling", "lifecycle", "R6", "RColorBrewer", "rlang", "viridisLite"],
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "shiny": {
+      "Package": "shiny",
+      "Version": "1.11.1",
+      "Requirements": ["utils", "grDevices", "httpuv", "mime", "jsonlite", "xtable", "fontawesome", "htmltools", "R6", "sourcetools", "later", "promises", "tools", "cli", "rlang", "fastmap", "withr", "commonmark", "glue", "bslib", "cachem", "lifecycle"],
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "stats": {
+      "Package": "stats",
+      "Version": "4.4.1",
+      "Requirements": ["utils", "grDevices", "graphics"],
+      "Source": "Base"
+    },
+    "stringr": {
+      "Package": "stringr",
+      "Version": "1.5.1",
+      "Requirements": ["cli", "glue", "lifecycle", "magrittr", "rlang", "stringi", "vctrs"],
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "survival": {
+      "Package": "survival",
+      "Version": "3.8.3",
+      "Requirements": ["graphics", "Matrix", "methods", "splines", "stats", "utils"],
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "tibble": {
+      "Package": "tibble",
+      "Version": "3.3.0",
+      "Requirements": ["cli", "lifecycle", "magrittr", "methods", "pillar", "pkgconfig", "rlang", "utils", "vctrs"],
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "tidyr": {
+      "Package": "tidyr",
+      "Version": "1.3.1",
+      "Requirements": ["cli", "dplyr", "glue", "lifecycle", "magrittr", "purrr", "rlang", "stringr", "tibble", "tidyselect", "utils", "vctrs"],
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "tidyselect": {
+      "Package": "tidyselect",
+      "Version": "1.2.1",
+      "Requirements": ["cli", "glue", "lifecycle", "rlang", "vctrs", "withr"],
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "tidyverse": {
+      "Package": "tidyverse",
+      "Version": "2.0.0",
+      "Requirements": ["broom", "conflicted", "cli", "dbplyr", "dplyr", "dtplyr", "forcats", "ggplot2", "googledrive", "googlesheets4", "haven", "hms", "httr", "jsonlite", "lubridate", "magrittr", "modelr", "pillar", "purrr", "ragg", "readr", "readxl", "reprex", "rlang", "rstudioapi", "rvest", "stringr", "tibble", "tidyr", "xml2"],
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
+    "utils": {
+      "Package": "utils",
+      "Version": "4.4.1",
+      "Requirements": [],
+      "Source": "Base"
+    },
+    "vioplot": {
+      "Package": "vioplot",
+      "Version": "0.5.1",
+      "Requirements": [],
+      "Source": "Repository",
+      "Repository": "CRAN"
+    }
+  }
+}

@@ -18,6 +18,7 @@ source(file.path(local_filepath, "R/direct_infusion.R"))
 
 # Inputs for all processes
 top_level_dir <- file.path(local_filepath, "data")
+load(file.path(top_level_dir, "default_tg_is_ms3.rda"))
 bulkpool_compounds <- readRDS(file.path(top_level_dir, "20230213-bulkpool-compounds.rds"))
 is_search_params <- DIMS_read_search_params(file.path(top_level_dir, "habc_v4_IS.json"))
 bulkpool_params <- DIMS_read_search_params(file.path(top_level_dir, "habc_v4_bulkpool_20250116.json"))
@@ -62,7 +63,8 @@ for (p in list.files(positive_sample_plates)) {
     rds_output_dir,
     mzrolldb_output_dir,
     is_ms3,
-    save_mzrolldb_as_rds
+    save_mzrolldb_as_rds,
+    default_tg_is_ms3 = default_tg_is_ms3
   )
 
   print("")
