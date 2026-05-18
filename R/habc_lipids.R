@@ -1,3 +1,5 @@
+load(file.path(here::here(), "data", "default_tg_is_ms3.rda"))
+
 #' Print HABC Method info
 #'
 #' @description
@@ -1159,20 +1161,20 @@ habc_process_plate_pos_v1 <- function(
   cat("Starting TG Search... \n")
 
   habc_tg_lib_all_targets <- habc_tg_lib %>%
-    clamr::to_ms3_lib() %>%
+    to_ms3_lib() %>%
     dplyr::select(prec_mzs) %>%
     unique()
 
   targets_both <- dplyr::inner_join(habc_tg_lib_all_targets, ms3_targets, by = c("prec_mzs"))
 
   habc_tg_lib_filtered <- habc_tg_lib %>%
-    clamr::to_ms3_lib() %>%
+    to_ms3_lib() %>%
     dplyr::filter(prec_mzs %in% targets_both$prec_mzs) %>%
-    clamr::to_ms2_lib()
+    to_ms2_lib()
 
   tg_raw_results <- mzkitcpp::DI_pipeline_ms3_search(
     samples = samples_df_pos$file,
-    is_lib = clamr::default_tg_is_ms3,
+    is_lib = default_tg_is_ms3,
     is_search_params = ms3_search_params,
     search_lib = habc_tg_lib_filtered,
     search_params = ms3_search_params,
@@ -1207,7 +1209,7 @@ habc_process_plate_pos_v1 <- function(
 
   system(glue::glue("rm {old_mzroll_db_file} 2>&1", old_mzroll_db_file = mzrolldb_results_file))
 
-  clamr::add_direct_infusion_search_results(
+  add_direct_infusion_search_results(
     mzrolldb_results_file,
     samples_df_pos$file,
     ms2_ranges_pos,
@@ -1218,7 +1220,7 @@ habc_process_plate_pos_v1 <- function(
     pos_raw_results_is$search
   )
 
-  clamr::add_direct_infusion_search_results(
+  add_direct_infusion_search_results(
     mzrolldb_results_file,
     samples_df_pos$file,
     ms2_ranges_pos,
@@ -1229,7 +1231,7 @@ habc_process_plate_pos_v1 <- function(
     pos_pre_lle_is_results_is$search
   )
 
-  clamr::add_direct_infusion_search_results(
+  add_direct_infusion_search_results(
     mzrolldb_results_file,
     samples_df_pos$file,
     ms2_ranges_pos,
@@ -1240,7 +1242,7 @@ habc_process_plate_pos_v1 <- function(
     pos_raw_results$search
   )
 
-  clamr::add_targeted_ms3_search_results(
+  add_targeted_ms3_search_results(
     mzrolldb_results_file,
     samples_df_pos$file,
     tg_raw_results,
@@ -1413,7 +1415,7 @@ habc_process_plate_neg_v1 <- function(
 
   system(glue::glue("rm {old_mzroll_db_file} 2>&1", old_mzroll_db_file = mzrolldb_results_file))
 
-  clamr::add_direct_infusion_search_results(
+  add_direct_infusion_search_results(
     mzrolldb_results_file,
     samples_df_neg$file,
     ms2_ranges_neg,
@@ -1424,7 +1426,7 @@ habc_process_plate_neg_v1 <- function(
     neg_raw_results_is$search
   )
 
-  clamr::add_direct_infusion_search_results(
+  add_direct_infusion_search_results(
     mzrolldb_results_file,
     samples_df_neg$file,
     ms2_ranges_neg,
@@ -1435,7 +1437,7 @@ habc_process_plate_neg_v1 <- function(
     neg_pre_lle_is_results_is$search
   )
 
-  clamr::add_direct_infusion_search_results(
+  add_direct_infusion_search_results(
     mzrolldb_results_file,
     samples_df_neg$file,
     ms2_ranges_neg,
@@ -1788,7 +1790,7 @@ habc_process_all_plates_v1 <- function(
 #' HABC process plate version 1 (negative mode data)
 #'      Version 2 introduced September 2021
 #'
-#' Function uses clamr::habc_neg_search_params() for simple search
+#' Function uses habc_neg_search_params() for simple search
 #'
 #' @description
 #' Process a HABC plate collected in negative mode and save results on file system
@@ -1880,7 +1882,7 @@ habc_process_plate_neg_v2 <- function(
   samples_df_filtered <- samples_df %>% dplyr::filter(type != "BulkPool" | file %in% good_bulkpool_samples)
 
   # bulkpool whitelist search ##################
-  whitelist_search_parameters <- clamr::habc_neg_whitelist_params()
+  whitelist_search_parameters <- habc_neg_whitelist_params()
 
   habc_neg_lib <- mzkitcpp::import_msp_lipids_library(habc_neg_lib_file)
   neg_lib_full_sliced <- mzkitcpp::DI_slice_library(habc2_ms2_ranges, habc_neg_lib)
@@ -1925,7 +1927,7 @@ habc_process_plate_neg_v2 <- function(
 
   habc2_filtered_lib_mono <- habc_neg_lib %>% dplyr::filter(compoundName %in% bulkpool_compounds_w_frequency$compoundName)
 
-  habc2_filtered_lib <- rbind(habc2_filtered_lib_mono, clamr::to_13C_lib(habc2_filtered_lib_mono))
+  habc2_filtered_lib <- rbind(habc2_filtered_lib_mono, to_13C_lib(habc2_filtered_lib_mono))
 
   habc2_filtered_lib_sliced <- mzkitcpp::DI_slice_library(habc2_ms2_ranges, habc2_filtered_lib)
 
@@ -1934,9 +1936,9 @@ habc_process_plate_neg_v2 <- function(
     samples = samples_df_filtered$file,
     ms2_ranges = habc2_ms2_ranges,
     is_sliced_lib = is_lib_neg_sliced,
-    is_search_params = clamr::habc_is_search_params(),
+    is_search_params = habc_is_search_params(),
     sliced_lib = habc2_filtered_lib_sliced,
-    search_params = clamr::habc_neg_search_params(version_num = 2),
+    search_params = habc_neg_search_params(version_num = 2),
     adducts_file = adducts_file,
     debug = F
   )
@@ -1986,7 +1988,7 @@ habc_process_plate_neg_v2 <- function(
     saveRDS(mzrolldb_results, file = mzrolldb_results_file)
   } else {
     # Add IS search results
-    clamr::add_direct_infusion_search_results(
+    add_direct_infusion_search_results(
       mzroll_db_path = mzrolldb_results_file,
       samples = all_bulkpool_samples$file,
       ms2_ranges = habc2_ms2_ranges,
@@ -2001,7 +2003,7 @@ habc_process_plate_neg_v2 <- function(
     )
 
     # Add HABC neg search
-    clamr::add_direct_infusion_search_results(
+    add_direct_infusion_search_results(
       mzroll_db_path = mzrolldb_results_file,
       samples = samples_df_filtered$file,
       ms2_ranges = habc2_ms2_ranges,
@@ -2086,7 +2088,7 @@ habc_process_neg_plates_v2 <- function(
 
     cat(paste0("Samples for '", plate_name, "' retrieved from ", samples_file_path, "\n"))
 
-    clamr::habc_process_plate_neg_v2(
+    habc_process_plate_neg_v2(
       plate_name = plate_name,
       samples_file_path = samples_file_path,
       rds_dir = rds_dir,
@@ -2203,9 +2205,9 @@ habc_v3_stage1_process_plate <- function(
   if (is_ms3) {
     habc3_bulkpool_ms3_results <- mzkitcpp::DI_pipeline_ms3_search(
       samples = all_bulkpool_samples$file,
-      is_lib = clamr::default_tg_is_ms3,
+      is_lib = default_tg_is_ms3,
       is_search_params = is_search_params,
-      search_lib = clamr::default_tg_is_ms3,
+      search_lib = default_tg_is_ms3,
       search_params = whitelist_ms3_search_params,
       adducts_file = adducts_file,
       debug = F
@@ -2307,13 +2309,13 @@ habc_v3_stage1_process_plate <- function(
     ms3_targets <- dplyr::inner_join(habc_tg_lib_all_targets, samples_info$ms3_targets, by = c("prec_mzs"))
 
     habc_tg_lib_filtered <- habc_tg_lib %>%
-      clamr::to_ms3_lib() %>%
+      to_ms3_lib() %>%
       dplyr::filter(prec_mzs %in% ms3_targets$prec_mzs) %>%
-      clamr::to_ms2_lib()
+      to_ms2_lib()
 
     whitelist_bulkpool_ms3_search <- mzkitcpp::DI_pipeline_ms3_search(
       samples = good_ms3_samples$file,
-      is_lib = clamr::default_tg_is_ms3,
+      is_lib = default_tg_is_ms3,
       is_search_params = whitelist_ms3_search_params,
       search_lib = habc_tg_lib_filtered,
       search_params = whitelist_ms3_search_params,
@@ -2759,14 +2761,14 @@ habc_v3_stage3_process_plate <- function(
     ms3_targets <- dplyr::inner_join(habc_ms3_lib_all_targets, samples_info$ms3_targets, by = c("prec_mzs"))
 
     habc_ms3_lib_filtered <- habc_ms3_lib %>%
-      clamr::to_ms3_lib() %>%
+      to_ms3_lib() %>%
       dplyr::filter(prec_mzs %in% ms3_targets$prec_mzs) %>%
-      clamr::to_ms2_lib() %>%
+      to_ms2_lib() %>%
       dplyr::filter(compoundName %in% bulkpool_compounds) %>%
       dplyr::mutate(ms2_intensity = 1) %>%
       dplyr::select(colnames(habc_ms3_lib))
 
-    tg_IS_lib <- clamr::default_tg_is_ms3 %>%
+    tg_IS_lib <- default_tg_is_ms3 %>%
       dplyr::mutate(ms2_intensity = 1) %>%
       dplyr::select(colnames(habc_ms3_lib))
 
@@ -2775,7 +2777,7 @@ habc_v3_stage3_process_plate <- function(
     # MS3 biological search
     habc3_biological_ms3_search <- mzkitcpp::DI_pipeline_ms3_search(
       samples = samples_df_ms3_filtered$file,
-      is_lib = clamr::default_tg_is_ms3,
+      is_lib = default_tg_is_ms3,
       is_search_params = biological_ms3_search_params,
       search_lib = habc_ms3_lib_filtered_w_IS,
       search_params = biological_ms3_search_params,
@@ -2898,7 +2900,7 @@ habc_v3_stage3_process_plate <- function(
   } else {
     if (!is.null(habc3_IS_results)) {
       # Add IS search results
-      clamr::add_direct_infusion_search_results(
+      add_direct_infusion_search_results(
         mzroll_db_path = mzrolldb_results_file,
         samples = samples_df$file,
         ms2_ranges = habc3_ms2_ranges,
@@ -2915,7 +2917,7 @@ habc_v3_stage3_process_plate <- function(
 
     if (!is.null(habc3_quant_table)) {
       # Add biological search
-      clamr::add_direct_infusion_search_results(
+      add_direct_infusion_search_results(
         mzroll_db_path = mzrolldb_results_file,
         samples = samples_df_ms2_filtered$file,
         ms2_ranges = habc3_ms2_ranges,
@@ -2933,7 +2935,7 @@ habc_v3_stage3_process_plate <- function(
     # Add MS3 search
 
     if (!is.null(habc3_ms3_quant_table)) {
-      clamr::add_targeted_ms3_search_results(
+      add_targeted_ms3_search_results(
         mzroll_db_path = mzrolldb_results_file,
         samples = samples_df_ms3_filtered$file,
         ms3_search_results = habc3_biological_ms3_search_centered,
@@ -2959,7 +2961,7 @@ habc_v3_stage3_process_plate <- function(
 #' Convert RDS to mzrolldb file
 #'
 #' @description
-#' convert RDS files created using clamr::habc_v3_stage3_process_plate() into mzrolldB files.
+#' convert RDS files created using habc_v3_stage3_process_plate() into mzrolldB files.
 #'
 #' @param rds_results_file full path of RDS results file
 #' @param mzrolldb_results_file full path of target mzrolldb file
@@ -2976,7 +2978,7 @@ habc_v3_rds_to_mzrolldb <- function(
 
   # Add IS search results
   if (class(mzrolldb_results$IS_search_results) != "character") {
-    clamr::add_direct_infusion_search_results(
+    add_direct_infusion_search_results(
       mzroll_db_path = mzrolldb_results_file,
       samples = mzrolldb_results$IS_samples,
       ms2_ranges = mzrolldb_results$ms2_ranges,
@@ -3001,7 +3003,7 @@ habc_v3_rds_to_mzrolldb <- function(
       labeled_search_table <- mzrolldb_results$HABC_search_results
     }
 
-    clamr::add_direct_infusion_search_results(
+    add_direct_infusion_search_results(
       mzroll_db_path = mzrolldb_results_file,
       samples = mzrolldb_results$HABC_samples,
       ms2_ranges = mzrolldb_results$ms2_ranges,
@@ -3018,7 +3020,7 @@ habc_v3_rds_to_mzrolldb <- function(
 
   # Add MS3 search
   if (class(mzrolldb_results$MS3_search_results) != "character") {
-    clamr::add_targeted_ms3_search_results(
+    add_targeted_ms3_search_results(
       mzroll_db_path = mzrolldb_results_file,
       samples = mzrolldb_results$MS3_samples,
       ms3_search_results = mzrolldb_results$MS3_search_results,
