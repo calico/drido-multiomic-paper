@@ -1,6 +1,6 @@
 # drido-multiomic-paper
 
-_Companion R code for "A multiomic lifespan signature in genetically diverse, diet-restricted mice"_
+_Companion R code for "A multiomic lifespan signature in genetically diverse, diet-restricted mice" with preprint currently available on [bioRxiv](https://www.biorxiv.org/content/10.64898/2026.05.08.723574v1)_
 
 ### Interactive Data Explorer App
 
