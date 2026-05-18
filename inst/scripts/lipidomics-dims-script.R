@@ -17,8 +17,8 @@ source(file.path(local_filepath, "R/docr_lipids.R"))
 source(file.path(local_filepath, "R/direct_infusion.R"))
 
 # Inputs for all processes
-load(file.path(top_level_dir, "default_tg_is_ms3.rda"))
 top_level_dir <- file.path(local_filepath, "data")
+load(file.path(top_level_dir, "default_tg_is_ms3.rda"))
 bulkpool_compounds <- readRDS(file.path(top_level_dir, "20230213-bulkpool-compounds.rds"))
 is_search_params <- DIMS_read_search_params(file.path(top_level_dir, "habc_v4_IS.json"))
 bulkpool_params <- DIMS_read_search_params(file.path(top_level_dir, "habc_v4_bulkpool_20250116.json"))

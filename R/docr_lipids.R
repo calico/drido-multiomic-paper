@@ -240,7 +240,7 @@ docr_cv_comparison <- function(docr_quant_table) {
 #' DO CR: process plate
 #'
 #' @export
-docr_process_dims_plate <- function(
+docr_process_plate <- function(
   plate_name,
   samples_file_path,
   lib_dir,
