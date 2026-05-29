@@ -2,13 +2,15 @@
 
 _Companion R code for "A multiomic lifespan signature in genetically diverse, diet-restricted mice" with preprint currently available on [bioRxiv](https://www.biorxiv.org/content/10.64898/2026.05.08.723574v1)_
 
-### Interactive Data Explorer App
+## Interactive Data Explorer App
 
 The data and modeling results can be explored in our interactive data explorer app [here](https://public-rstudio-connect.calicolabs.com/drido-multiomics/)
 
 --------------
 
-### Instructions for using code
+## Instructions 
+
+### Cloning code
 
 This package contains the code necessary to perform the statistical analysis and
 generate the figures shown in the associated publication. User may need to access
@@ -16,11 +18,42 @@ raw data files from online repositories to run complete analyses. This code does
 not build as a package but instead sources function and data files listed below.
 Recommended use is via forking and cloning. Fork online, then:
 
-With SSH: `git clone git@github.com:<GITHUB_USERNAME>/drido-multiomic-paper.git`
+With SSH: 
+```r
+   git clone git@github.com:<GITHUB_USERNAME>/drido-multiomic-paper.git
+```
 
-With HTTPS: `git clone https://github.com/<GITHUB_USERNAME>/drido-multiomic-paper.git`
+With HTTPS:
+```r
+   git clone https://github.com/<GITHUB_USERNAME>/drido-multiomic-paper.git
+```
 
-### Repository contents
+### Reproducing the R Environment
+
+This project uses [`renv`](https://rstudio.github.io/renv/) to manage R package dependencies.
+
+1. **Install `renv`**:
+```r
+   install.packages("renv")
+```
+
+2. **Clone this repository per instructions above** and open it in R or RStudio with the project root as your working directory.
+
+3. **Restore the environment:**
+```r
+   renv::restore()
+```
+   This will install all packages at the exact versions recorded in `renv.lock`.
+
+### Notes
+
+- R version used: `4.4.1`
+- Tested on macOS 26.3.1 (Tahoe)
+- First-time environment setup may take 30–60 minutes due to Bioconductor annotation packages and packages requiring compilation. Subsequent restores using the `renv` cache are much faster.
+
+--------------
+
+## Contents and instructions for use
   
 - **/data:**
   - Contains files required for lipid normalization (.msp files)
@@ -33,8 +66,10 @@ With HTTPS: `git clone https://github.com/<GITHUB_USERNAME>/drido-multiomic-pape
   - **/extdata:** R data objects (`.Rds`) generated from statistical analysis
   scripts and used to make figures
   - **/figures:** R markdown (`.Rmd`) files used to generate figures in publication
+    - To replicate figures in the papers or supplement, open the respective figure file, confirm that the working directory links to your cloned GitHub repository, and run chunks in the markdown documents. The data required to reproduce figures in the paper are fully contained within the **/extdata** folder.
   - **/scripts:** R scripts used for normalization of metabolomics and lipidomics
   data, statistical analyses, and parsing of data. 
+    - To replicate statistical analyses or normalization procedures, confirm that the working directory links to your cloned GitHub repository, and run the R scripts to generate statistical analyses outputs. Depending on the analysis file run, statistical analyses files can require anywhere from minutes to days of runtime. The data required to run full normalization pipelines may need to be accessed from online repositories. The files required to run full statistical analyses pipelines are contained within the **/extdata** folder.
     - Proteomics data was processed using [msTrawler](https://github.com/calico/msTrawler)
     - Lipidomics data processing herein requires [mzkitcpp](https://github.com/calico/mzkitcpp)
     - Metabolomics data was annotated with [MAVEN](https://github.com/eugenemel/maven)
@@ -45,5 +80,4 @@ With HTTPS: `git clone https://github.com/<GITHUB_USERNAME>/drido-multiomic-pape
   - Files for local deployment of interactive data explorer app
   - To deploy from the repository root, run `shiny::runApp('shiny-app')`
   - The online data explorer app can be accessed [here](https://public-rstudio-connect.calicolabs.com/drido-multiomics/)
-  
 
