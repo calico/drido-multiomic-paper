@@ -273,12 +273,12 @@ ui <- fluidPage(
     p(
       class = "intro-text",
       "Data explorer application for metabolomics, lipidomics, and proteomics data from the DRiDO study"
+    ),
+    tags$a(class = "pub-link",
+      href  = "https://www.biorxiv.org/content/10.64898/2026.05.08.723574v1",
+      target = "_blank",
+      "Link to Preprint — bioRxiv 10.64898/2026.05.08.723574v1"
     )
-    # tags$a(class = "pub-link",
-    #   href  = "https://doi.org/PLACEHOLDER",
-    #   target = "_blank",
-    #   "\U0001F4C4 Link to Publication — DOI: 10.XXXX/PLACEHOLDER"
-    # )
   ),
 
   # ── Main body ────────────────────────────────────────────────────────────────
