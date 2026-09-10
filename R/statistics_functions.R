@@ -33,7 +33,8 @@ lmer_multi_formula <- function(data_use,
                                n_samples = NULL,
                                n_sample_threshold = 0.1,
                                model_type = "mixed",
-                               center_data = TRUE) {
+                               center_data = TRUE,
+                               verbose = TRUE) {
   checkmate::assertNumeric(data_use[[value_var]])
 
   # Initialized empty dataframe
@@ -56,7 +57,7 @@ lmer_multi_formula <- function(data_use,
   # If there is no data or if data is only present in < n_sample_threshold
   # percent of n_samples, skip modeling
   if (nrow(dfx) == 0) {
-    print(paste0(
+    if (verbose) print(paste0(
       "For feature_id ", feature_id_test,
       ", skipping modeling; no data points"
     ))
@@ -64,7 +65,7 @@ lmer_multi_formula <- function(data_use,
   }
   if (!is.null(n_samples)) {
     if (nrow(dfx) < n_samples * n_sample_threshold) {
-      print(paste0(
+      if (verbose) print(paste0(
         "For feature_id ", feature_id_test,
         paste0(
           ", skipping modeling; data present in < ",
@@ -89,10 +90,14 @@ lmer_multi_formula <- function(data_use,
       # If only one data point per mouse id, change random intercept to
       # generation_wave
       # Will skip if these columns are not in dataframe (for DO-CR)
-      if (all(c("mouse_id", "generation_wave") %in% colnames(dfx))) {
-        if (length(unique(dfx$mouse_id)) == nrow(dfx)) {
+      # Use complete cases for all formula variables so the check matches
+      # what lmer will actually fit on (lmer drops rows with NA covariates)
+      if (!grepl("generation_wave", f_use) && all(c("mouse_id", "generation_wave") %in% colnames(dfx))) {
+        formula_vars <- intersect(all.vars(as.formula(f_use)), colnames(dfx))
+        dfx_complete <- tidyr::drop_na(dfx, dplyr::any_of(formula_vars))
+        if (length(unique(dfx_complete$mouse_id)) >= nrow(dfx_complete)) {
           f_use <- gsub("mouse_id", "generation_wave", f_use)
-          print(paste0(
+          if (verbose) print(paste0(
             "For feature_id ", feature_id_test, ", formula ",
             f_use, ", random intercept changed to generation_wave"
           ))
@@ -100,7 +105,14 @@ lmer_multi_formula <- function(data_use,
       }
 
       # Run linear mixed model on data subset, for each formula
-      model1 <- suppressMessages(lmerTest::lmer(formula = f_use, data = dfx))
+      model1 <- tryCatch(
+        suppressMessages(lmerTest::lmer(formula = f_use, data = dfx)),
+        error = function(e) {
+          if (verbose) warning(paste0("Model failed for ", feature_id_test, " (", f_use, "): ", e$message))
+          return(NULL)
+        }
+      )
+      if (is.null(model1)) next
 
       # Extract model summary data, including coefficient
       # P-values derived from the lmerTest library
@@ -114,22 +126,43 @@ lmer_multi_formula <- function(data_use,
       dfc <- as.data.frame(coef(summary(model1)))
       colnames(dfc) <- c("coef", "se_coef", "t_value", "p_value_coef")
     } else {
-      print("'model_type' must be one of 'mixed' or 'simple'; skipping modeling")
+      if (verbose) print("'model_type' must be one of 'mixed' or 'simple'; skipping modeling")
       return(da)
     }
-
+    
+    # Test effect of entire fixed term (type II ignores interaction effects)
+    type_use <- if (grepl("baseline", f_use)) "III" else "II"
+    ftest_df <- anova(model1, type = type_use) %>%
+      as.data.frame() %>%
+      tibble::rownames_to_column(var = "anova_term") %>%
+      dplyr::select(anova_term, sum_sq = `Sum Sq`, 
+                    F_value = `F value`, p_value_anova = `Pr(>F)`)
+    
+    # Map each coefficient to its parent term
+    term_mapping <- model.matrix(model1) %>%
+      attr("assign") %>%
+      setNames(colnames(model.matrix(model1))) %>%
+      tibble::enframe(name = "model_term", value = "term_idx") %>%
+      dplyr::filter(term_idx > 0) %>%  # drop intercept
+      dplyr::mutate(anova_term = attr(terms(model1), "term.labels")[term_idx]) %>%
+      dplyr::select(model_term, anova_term)
+    
     # Add other information that we want in DA dataframe
     dfc <- dfc %>%
       tibble::rownames_to_column(var = "model_term") %>%
+      dplyr::left_join(term_mapping, by = "model_term") %>%
+      dplyr::left_join(ftest_df, by = "anova_term") %>%
       dplyr::mutate(
         model_term = factor(model_term),
         feature_id = .env$feature_id_test,
         model = .env$f_use,
-        AIC = AIC(.env$model1)
+        AIC = AIC(.env$model1),
+        sqrt_sigma = sqrt(sigma(model1))
       ) %>%
       dplyr::select(
         feature_id, model_term, model,
-        coef, se_coef, p_value_coef, t_value, AIC
+        coef, se_coef, sqrt_sigma, p_value_coef,
+        t_value, AIC, anova_term, sum_sq, p_value_anova, F_value
       )
 
     # Bind with results from other models
@@ -356,7 +389,7 @@ docr_check_factors <- function(df) {
     c(
       "weekday_collection", "generation_wave",
       "surv_years", "norm_abundance", "mouse_id",
-      "BW_Loess", "is_ddm", "age_years", "diet"
+      "BW_Loess", "age_years", "diet"
     ),
     colnames(df)
   )
@@ -391,7 +424,6 @@ docr_check_factors <- function(df) {
     checkmate::assertNumeric(df$surv_years)
     checkmate::assertNumeric(df$BW_Loess)
     checkmate::assertNumeric(df$norm_abundance)
-    checkmate::assertLogical(df$is_ddm)
   }
 
   print("All columns are present and correctly factored")
@@ -806,7 +838,8 @@ docr_gam_process <- function(mt,
 
 
 docr_elastic_train_test_parse <- function(final_data,
-                                          train_frac = 0.8) {
+                                          train_frac = 0.8,
+                                          seed = 212) {
   checkmate::assertSubset(c(
     "mouse_id", "fasting", "bw_test", "diet",
     "age_days", "surv_days"
@@ -830,7 +863,7 @@ docr_elastic_train_test_parse <- function(final_data,
     t()
 
   # make test and train mouse_id sets
-  set.seed(212)
+  set.seed(seed)
   mouse_id_train <- final_data %>%
     dplyr::group_by(diet, fasting) %>%
     dplyr::mutate(
@@ -987,6 +1020,7 @@ docr_elastic_model_fit <- function(i,
                                      "lambda.1se",
                                      "lambda.ci"
                                    ),
+                                   fixed_lambda = NULL,
                                    maxit = 1e+06,
                                    nlambda = 100,
                                    type_measure = c("default", "C") # default is partial likelihood
@@ -999,6 +1033,19 @@ docr_elastic_model_fit <- function(i,
     boot_idx <- sample(nrow(X_data), replace = TRUE)
     X_data <- X_data[boot_idx, ]
     Y_data <- Y_data[boot_idx, ]
+  }
+
+  if (!is.null(fixed_lambda) && bootstrap) {
+    fit <- glmnet(
+      x = X_data,
+      y = Y_data,
+      family = "cox",
+      alpha = alpha_value,
+      penalty.factor = penalty_vec,
+      maxit = maxit,
+      nlambda = nlambda
+    )
+    return(as.numeric(coef(fit, s = fixed_lambda)))
   }
 
   cv_model <- cv.glmnet(
@@ -1031,4 +1078,197 @@ docr_elastic_model_fit <- function(i,
   } else {
     return(cv_model)
   }
+}
+
+
+
+docr_regularization_paths <- function(model_fit,
+                                      name_conversion_use,
+                                      highlight_var = NULL,
+                                      ylim = NULL) {
+
+  lambda_min <- model_fit$lambda.min
+  lambda_1se <- model_fit$lambda.1se
+
+  # Classify variables by selection threshold
+  coef_at_min <- coef(model_fit, s = "lambda.min")
+  coef_at_1se <- coef(model_fit, s = "lambda.1se")
+  vars_min <- setdiff(rownames(coef_at_min)[coef_at_min[,1] != 0], "(Intercept)")
+  vars_1se <- setdiff(rownames(coef_at_1se)[coef_at_1se[,1] != 0], "(Intercept)")
+  vars_min_only <- setdiff(vars_min, vars_1se)
+
+  # Build coefficient paths with names joined once
+  beta_matrix <- as.matrix(model_fit$glmnet.fit$beta)
+  lambda_seq <- model_fit$glmnet.fit$lambda
+
+  paths <- beta_matrix %>%
+    as.data.frame() %>%
+    tibble::rownames_to_column("variable") %>%
+    tidyr::pivot_longer(-variable, names_to = "step", values_to = "coefficient") %>%
+    dplyr::mutate(
+      step_idx = as.integer(gsub("^s", "", step)) + 1L,
+      log_lambda = log(lambda_seq[step_idx])
+    ) %>%
+    dplyr::select(-step, -step_idx) %>%
+    dplyr::group_by(variable) %>%
+    dplyr::filter(any(coefficient != 0)) %>%
+    dplyr::ungroup() %>%
+    dplyr::mutate(
+      feature_id = gsub("^`|`$", "", variable),
+      group = dplyr::case_when(
+        variable %in% vars_1se ~ "1se",
+        variable %in% vars_min_only ~ "min_only",
+        TRUE ~ "other"
+      )
+    ) %>%
+    dplyr::left_join(name_conversion_use, by = "feature_id") %>%
+    dplyr::mutate(name_use = dplyr::coalesce(name_use, feature_id))
+
+  # Labels at 90% of final value, post-stabilization
+  final_values <- data.frame(
+    variable = rownames(coef_at_min),
+    final_coef = as.numeric(coef_at_min[, 1])
+  ) %>% dplyr::filter(final_coef != 0)
+
+  # Identify which variables to label and assign evenly-spaced x positions
+  label_vars <- paths %>%
+    dplyr::filter(group %in% c("1se", "min_only")) %>%
+    dplyr::inner_join(final_values, by = "variable") %>%
+    dplyr::filter(coefficient != 0) %>%
+    dplyr::mutate(dist = abs(coefficient - 0.9 * final_coef)) %>%
+    dplyr::group_by(variable) %>%
+    dplyr::slice_min(dist, n = 1, with_ties = FALSE) %>%
+    dplyr::ungroup() %>%
+    dplyr::select(variable, group, name_use) %>%
+    dplyr::left_join(
+      paths %>%
+        dplyr::filter(coefficient != 0) %>%
+        dplyr::group_by(variable) %>%
+        dplyr::slice_max(log_lambda, n = 1, with_ties = FALSE) %>%
+        dplyr::ungroup() %>%
+        dplyr::select(variable, orig_x = log_lambda),
+      by = "variable"
+    )
+
+  x_range <- range(paths$log_lambda)
+  x_pad <- diff(x_range) * 0.1
+  if (nrow(label_vars) > 1) {
+    label_vars <- label_vars %>%
+      dplyr::arrange(orig_x) %>%
+      dplyr::mutate(target_x = seq(x_range[1] + x_pad, x_range[2] - x_pad,
+                                    length.out = dplyr::n()))
+  } else {
+    label_vars$target_x <- label_vars$orig_x
+  }
+
+  # Anchor each label on its variable's path at the nearest point to target_x
+  labels <- label_vars %>%
+    dplyr::mutate(label_id = dplyr::row_number()) %>%
+    dplyr::left_join(
+      paths %>% dplyr::select(variable, log_lambda, coefficient),
+      by = "variable", relationship = "many-to-many"
+    ) %>%
+    dplyr::mutate(x_dist = abs(log_lambda - target_x)) %>%
+    dplyr::group_by(label_id) %>%
+    dplyr::slice_min(x_dist, n = 1, with_ties = FALSE) %>%
+    dplyr::ungroup() %>%
+    dplyr::select(variable, coefficient, log_lambda, group, name_use)
+
+  # Lambda label y-position: use ylim if supplied, otherwise data range
+  label_y <- if (!is.null(ylim)) ylim[2] * 0.95 else max(paths$coefficient) * 0.95
+
+  # Build plot
+  if (!is.null(highlight_var)) {
+    hl_pattern <- paste0("^`?(", paste(highlight_var, collapse = "|"), ")`?$")
+    hl_data <- paths %>% dplyr::filter(grepl(hl_pattern, variable))
+    bg_data <- paths %>% dplyr::filter(!variable %in% unique(hl_data$variable))
+
+    hl_labels <- labels %>% dplyr::filter(variable %in% unique(hl_data$variable))
+    # Fallback for variables that never stabilize: use rightmost point
+    missing <- setdiff(unique(hl_data$variable), hl_labels$variable)
+    if (length(missing) > 0) {
+      hl_labels <- dplyr::bind_rows(hl_labels,
+        hl_data %>%
+          dplyr::filter(variable %in% missing) %>%
+          dplyr::group_by(variable) %>%
+          dplyr::slice_min(log_lambda, n = 1) %>%
+          dplyr::ungroup() %>%
+          dplyr::select(variable, coefficient, log_lambda, group, name_use)
+      )
+    }
+
+    color_map <- c("1se" = "red", "min_only" = "#2166AC", "other" = "black")
+    y_range <- diff(range(paths$coefficient))
+
+    g <- ggplot() +
+      geom_line(data = bg_data,
+                aes(x = log_lambda, y = coefficient, group = variable),
+                color = "grey85", alpha = 0.2) +
+      geom_line(data = hl_data,
+                aes(x = log_lambda, y = coefficient,
+                    group = variable, color = group),
+                linewidth = 1.2) +
+      scale_color_manual(values = color_map, guide = "none") +
+      geom_vline(xintercept = log(lambda_min), linetype = "dashed") +
+      geom_vline(xintercept = log(lambda_1se), linetype = "dotted") +
+      annotate("text", x = log(lambda_min), y = label_y,
+               label = "lambda.min",
+               vjust = -0.5, hjust = -0.1, size = 3, fontface = "italic",
+               color = "#2166AC") +
+      annotate("text", x = log(lambda_1se), y = label_y,
+               label = "lambda.1se",
+               vjust = -0.5, hjust = -0.1, size = 3, fontface = "italic",
+               color = "red") +
+      ggrepel::geom_text_repel(
+        data = hl_labels,
+        aes(x = log_lambda, y = coefficient, label = name_use, color = group),
+        size = 4, hjust = 0, segment.size = 0.3,
+        nudge_y = ifelse(hl_labels$coefficient > 0, 1, -1) * y_range * 0.1,
+        force = 2, max.overlaps = Inf) +
+      labs(x = "log(lambda)", y = "Coefficient",
+           title = paste0("Regularization Path: ",
+                          paste(hl_labels$name_use, collapse = ", "))) +
+      theme_classic()
+  } else {
+    y_range <- diff(range(paths$coefficient))
+
+    g <- ggplot() +
+      geom_line(data = paths %>% dplyr::filter(group == "other"),
+                aes(x = log_lambda, y = coefficient, group = variable),
+                color = "grey70", alpha = 0.3) +
+      geom_line(data = paths %>% dplyr::filter(group == "min_only"),
+                aes(x = log_lambda, y = coefficient, group = variable),
+                color = "#2166AC", linewidth = 0.5) +
+      geom_line(data = paths %>% dplyr::filter(group == "1se"),
+                aes(x = log_lambda, y = coefficient, group = variable),
+                color = "red", linewidth = 0.5) +
+      geom_vline(xintercept = log(lambda_min), linetype = "dashed") +
+      geom_vline(xintercept = log(lambda_1se), linetype = "dotted") +
+      annotate("text", x = log(lambda_min), y = label_y,
+               label = "lambda.min",
+               vjust = -0.5, hjust = -0.1, size = 3, fontface = "italic",
+               color = "#2166AC") +
+      annotate("text", x = log(lambda_1se), y = label_y,
+               label = "lambda.1se",
+               vjust = -0.5, hjust = -0.1, size = 3, fontface = "italic",
+               color = "red") +
+      ggrepel::geom_text_repel(
+        data = labels,
+        aes(x = log_lambda, y = coefficient, label = name_use, color = group),
+        size = 3,
+        hjust = 0, segment.size = 0.3,
+        nudge_y = ifelse(labels$coefficient > 0, 1, -1) * y_range * 0.1,
+        force = 2, max.overlaps = Inf) +
+      scale_color_manual(values = c("1se" = "red", "min_only" = "#2166AC"),
+                         guide = "none") +
+      labs(x = "log(lambda)", y = "Coefficient",
+           title = "LASSO Regularization Path") +
+      theme_classic()
+  }
+
+  if (!is.null(ylim)) {
+    g <- g + coord_cartesian(ylim = ylim)
+  }
+
+  return(g)
 }

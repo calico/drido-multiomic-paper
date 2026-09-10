@@ -971,6 +971,8 @@ docr_find_elbow_smooth <- function(df, x_col, y_col, span = 0.5) {
 # Function to make models readable
 make_names_pretty <- function(s) {
   s <- gsub("norm_abundance", "Compound", s)
+  s <- gsub("_scaled", "_Scaled", s)
+  s <- gsub("baseline_value", "Baseline", s)
   s <- gsub("age_years", "Age", s)
   s <- gsub("diet", "Diet", s)
   s <- gsub("bw_test", "Bodyweight", s)
