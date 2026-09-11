@@ -96,8 +96,11 @@ cv_fit_initial <- docr_elastic_model_fit(
   X_data = X_final$X_metabo_matrix_train,
   Y_data = X_final$surv_obj_train
 )
-lambda_1se <- cv_fit_initial$lambda.1se
-print(paste0("lambda.1se from initial fit: ", lambda_1se))
+
+# lambda_1se <- cv_fit_initial$lambda.1se
+# print(paste0("lambda.1se from initial fit: ", lambda_1se))
+lambda_min <- cv_fit_initial$lambda.min
+print(paste0("lambda.min from initial fit: ", lambda_min))
 
 # bootstrap result
 workers <- min(future::availableCores() - 1, 32)
@@ -105,7 +108,8 @@ workers <- min(future::availableCores() - 1, 32)
 print(paste0("Starting bootstrapping for alpha = ", model_alpha))
 print(paste0("Bootstrapping ", n_bootstrap, " times"))
 print(paste0("Running with ", workers, " cores"))
-print(paste0("Using fixed lambda.1se = ", lambda_1se))
+#print(paste0("Using fixed lambda.1se = ", lambda_1se))
+print(paste0("Using fixed lambda_min = ", lambda_min))
 
 future::plan(future::multisession, workers = workers)
 coef_list <- furrr::future_map(
@@ -117,7 +121,7 @@ coef_list <- furrr::future_map(
     X_data = X_final$X_metabo_matrix_train,
     Y_data = X_final$surv_obj_train,
     bootstrap = TRUE,
-    fixed_lambda = lambda_1se
+    fixed_lambda = lambda_min
   ),
   .options = furrr::furrr_options(seed = TRUE)
 )
@@ -147,7 +151,8 @@ if (length(selected_features) > 0) {
 
 bootstrap_results <- data.frame(
   variable = colnames(X_final$X_metabo_matrix_train),
-  coef_estimate = coef(cv_fit_initial, s = "lambda.1se") %>% as.numeric(),
+ # coef_estimate = coef(cv_fit_initial, s = "lambda.1se") %>% as.numeric(),
+  coef_estimate = coef(cv_fit_initial, s = "lambda.min") %>% as.numeric(),
   ci_lower = apply(coef_bootstrap, 2, function(col) {
     quantile(x = col, probs = 0.025)
   }),
