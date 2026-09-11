@@ -23,8 +23,8 @@ model_alpha <- 1
 n_bootstrap <- 1000
 
 # ### Assign file paths
-local_filepath <- "~/Github/drido-multiomic-paper"
-output_filepath <- "~/Github/drido-multiomic-paper/inst/extdata"
+local_filepath <- "~/workspace/drido-multiomic-paper"
+output_filepath <- "~/workspace/docr_data/MS1553"
 
 source(file.path(local_filepath, "R/statistics_functions.R"))
 source(file.path(local_filepath, "R/figure_functions.R"))
@@ -55,6 +55,7 @@ dat <- data_use %>%
   dplyr::filter(
     !is.na(age_years),
     age_years == "year2",
+    PLL < 0.85,
     modality != "physiological"
   ) %>%
   dplyr::mutate(age_days = surv_days - days_remaining)
@@ -170,12 +171,12 @@ bootstrap_results <- data.frame(
 bootstrap_file_name1 <- file.path(output_filepath, paste0(
   gsub("-", "", Sys.Date()),
   "_LassoCalcs_Alpha", model_alpha,
-  "_Nboot", n_bootstrap, "ALL_PLL.Rds"
+  "_Nboot", n_bootstrap, "85PPL.Rds"
 ))
 bootstrap_file_name2 <- file.path(output_filepath, paste0(
   gsub("-", "", Sys.Date()),
   "_LassoCoefs_Alpha", model_alpha,
-  "_Nboot", n_bootstrap, "ALL_PLL.Rds"
+  "_Nboot", n_bootstrap, "85PLL.Rds"
 ))
 saveRDS(bootstrap_results, bootstrap_file_name1)
 saveRDS(coef_bootstrap, bootstrap_file_name2)

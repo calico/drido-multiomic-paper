@@ -1021,6 +1021,7 @@ docr_elastic_model_fit <- function(i,
                                      "lambda.ci"
                                    ),
                                    fixed_lambda = NULL,
+                                   fold_vec = NULL,
                                    maxit = 1e+06,
                                    nlambda = 100,
                                    type_measure = c("default", "C") # default is partial likelihood
@@ -1056,7 +1057,8 @@ docr_elastic_model_fit <- function(i,
     penalty.factor = penalty_vec,
     maxit = maxit,
     nlambda = nlambda,
-    type.measure = type_measure
+    type.measure = type_measure,
+    foldid = fold_vec
   )
 
   if (bootstrap) {
@@ -1085,7 +1087,8 @@ docr_elastic_model_fit <- function(i,
 docr_regularization_paths <- function(model_fit,
                                       name_conversion_use,
                                       highlight_var = NULL,
-                                      ylim = NULL) {
+                                      ylim = NULL,
+                                      plot_title = "LASSO Regularization Path") {
 
   lambda_min <- model_fit$lambda.min
   lambda_1se <- model_fit$lambda.1se
@@ -1212,11 +1215,11 @@ docr_regularization_paths <- function(model_fit,
       geom_vline(xintercept = log(lambda_min), linetype = "dashed") +
       geom_vline(xintercept = log(lambda_1se), linetype = "dotted") +
       annotate("text", x = log(lambda_min), y = label_y,
-               label = "lambda.min",
+               label = "λ.min",
                vjust = -0.5, hjust = -0.1, size = 3, fontface = "italic",
                color = "#2166AC") +
       annotate("text", x = log(lambda_1se), y = label_y,
-               label = "lambda.1se",
+               label = "λ.1se",
                vjust = -0.5, hjust = -0.1, size = 3, fontface = "italic",
                color = "red") +
       ggrepel::geom_text_repel(
@@ -1225,8 +1228,9 @@ docr_regularization_paths <- function(model_fit,
         size = 4, hjust = 0, segment.size = 0.3,
         nudge_y = ifelse(hl_labels$coefficient > 0, 1, -1) * y_range * 0.1,
         force = 2, max.overlaps = Inf) +
-      labs(x = "log(lambda)", y = "Coefficient",
-           title = paste0("Regularization Path: ",
+      labs(x = "log(λ)", y = "Coefficient",
+           title = plot_title,
+           subtitle = paste0("Regularization Path: ",
                           paste(hl_labels$name_use, collapse = ", "))) +
       theme_classic()
   } else {
@@ -1245,11 +1249,11 @@ docr_regularization_paths <- function(model_fit,
       geom_vline(xintercept = log(lambda_min), linetype = "dashed") +
       geom_vline(xintercept = log(lambda_1se), linetype = "dotted") +
       annotate("text", x = log(lambda_min), y = label_y,
-               label = "lambda.min",
+               label = "λ.min",
                vjust = -0.5, hjust = -0.1, size = 3, fontface = "italic",
                color = "#2166AC") +
       annotate("text", x = log(lambda_1se), y = label_y,
-               label = "lambda.1se",
+               label = "λ.1se",
                vjust = -0.5, hjust = -0.1, size = 3, fontface = "italic",
                color = "red") +
       ggrepel::geom_text_repel(
@@ -1261,8 +1265,8 @@ docr_regularization_paths <- function(model_fit,
         force = 2, max.overlaps = Inf) +
       scale_color_manual(values = c("1se" = "red", "min_only" = "#2166AC"),
                          guide = "none") +
-      labs(x = "log(lambda)", y = "Coefficient",
-           title = "LASSO Regularization Path") +
+      labs(x = "log(λ)", y = "Coefficient",
+           title = plot_title) +
       theme_classic()
   }
 
