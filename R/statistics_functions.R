@@ -78,13 +78,6 @@ lmer_multi_formula <- function(data_use,
 
   # Run analysis through all formulas
   for (f_use in forms_to_test) {
-    # f_use <- f
-    #   # Properly format equation
-    #   if (!grepl("~", f)) {
-    #     f_use <- paste0("norm_abundance ~ ", f)
-    #   } else {
-    #     f_use <- paste0("norm_abundance ", f)
-    #   }
 
     if (model_type == "mixed") {
       # If only one data point per mouse id, change random intercept to
@@ -118,6 +111,31 @@ lmer_multi_formula <- function(data_use,
       # P-values derived from the lmerTest library
       dfc <- as.data.frame(coef(summary(model1)))
       colnames(dfc) <- c("coef", "se_coef", "df", "t_value", "p_value_coef")
+      
+      
+      # Test effect of entire fixed term (type II ignores interaction effects)
+      type_use <- if (grepl("baseline", f_use)) "III" else "II"
+      ftest_df <- anova(model1, type = type_use) %>%
+        as.data.frame() %>%
+        tibble::rownames_to_column(var = "anova_term") %>%
+        dplyr::select(anova_term, sum_sq = `Sum Sq`, 
+                      F_value = `F value`, p_value_anova = `Pr(>F)`)
+      
+      # Map each coefficient to its parent term
+      term_mapping <- model.matrix(model1) %>%
+        attr("assign") %>%
+        setNames(colnames(model.matrix(model1))) %>%
+        tibble::enframe(name = "model_term", value = "term_idx") %>%
+        dplyr::filter(term_idx > 0) %>%  # drop intercept
+        dplyr::mutate(anova_term = attr(terms(model1), "term.labels")[term_idx]) %>%
+        dplyr::select(model_term, anova_term)
+      
+      # Add other information that we want in DA dataframe
+      dfc <- dfc %>%
+        tibble::rownames_to_column(var = "model_term") %>%
+        dplyr::left_join(term_mapping, by = "model_term") %>%
+        dplyr::left_join(ftest_df, by = "anova_term")
+      
     } else if (model_type == "simple") {
       # Run simple linear model on data subset, for each formula
       model1 <- stats::lm(formula = f_use, data = dfx)
@@ -125,33 +143,17 @@ lmer_multi_formula <- function(data_use,
       # Extract model summary data, including coefficient
       dfc <- as.data.frame(coef(summary(model1)))
       colnames(dfc) <- c("coef", "se_coef", "t_value", "p_value_coef")
+      
+      dfc <- dfc %>%
+        tibble::rownames_to_column(var = "model_term")
+        
     } else {
       if (verbose) print("'model_type' must be one of 'mixed' or 'simple'; skipping modeling")
       return(da)
     }
     
-    # Test effect of entire fixed term (type II ignores interaction effects)
-    type_use <- if (grepl("baseline", f_use)) "III" else "II"
-    ftest_df <- anova(model1, type = type_use) %>%
-      as.data.frame() %>%
-      tibble::rownames_to_column(var = "anova_term") %>%
-      dplyr::select(anova_term, sum_sq = `Sum Sq`, 
-                    F_value = `F value`, p_value_anova = `Pr(>F)`)
-    
-    # Map each coefficient to its parent term
-    term_mapping <- model.matrix(model1) %>%
-      attr("assign") %>%
-      setNames(colnames(model.matrix(model1))) %>%
-      tibble::enframe(name = "model_term", value = "term_idx") %>%
-      dplyr::filter(term_idx > 0) %>%  # drop intercept
-      dplyr::mutate(anova_term = attr(terms(model1), "term.labels")[term_idx]) %>%
-      dplyr::select(model_term, anova_term)
-    
     # Add other information that we want in DA dataframe
     dfc <- dfc %>%
-      tibble::rownames_to_column(var = "model_term") %>%
-      dplyr::left_join(term_mapping, by = "model_term") %>%
-      dplyr::left_join(ftest_df, by = "anova_term") %>%
       dplyr::mutate(
         model_term = factor(model_term),
         feature_id = .env$feature_id_test,
@@ -159,10 +161,11 @@ lmer_multi_formula <- function(data_use,
         AIC = AIC(.env$model1),
         sqrt_sigma = sqrt(sigma(model1))
       ) %>%
-      dplyr::select(
-        feature_id, model_term, model,
-        coef, se_coef, sqrt_sigma, p_value_coef,
-        t_value, AIC, anova_term, sum_sq, p_value_anova, F_value
+      dplyr::select(tidyselect::any_of(c(
+        "feature_id", "model_term", "model",
+        "coef", "se_coef", "sqrt_sigma", "p_value_coef",
+        "t_value", "AIC", "anova_term", "sum_sq", "p_value_anova", "F_value")
+      )
       )
 
     # Bind with results from other models
