@@ -99,13 +99,19 @@ furrr::future_walk(
         )
 
         saveRDS(model_pll_return,
-          file = paste0(file.path(gam_output_filepath, "gam_models_PLL_6", gsub("\\/|:|\\\\", "-", current_phenotype)), ".Rds")
+          file = paste0(file.path(output_filepath, "gam_models_PLL_6", gsub("\\/|:|\\\\", "-", current_phenotype)), ".Rds")
         )
 
         return(invisible())
       },
-      error = function(e) {},
-      warning = function(w) {}
+      error = function(e) {
+        cat("Error for ", current_phenotype, ": ", e$message, "\n",
+            file = file.path(output_filepath, "gam_errors.log"), append = TRUE)
+      },
+      warning = function(w) {
+        cat("Warning for ", current_phenotype, ": ", w$message, "\n",
+            file = file.path(output_filepath, "gam_errors.log"), append = TRUE)
+      }
     ) # end tryCatch
   }
 ) # End future walk
