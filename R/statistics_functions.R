@@ -815,22 +815,23 @@ docr_gam_process <- function(mt,
       )
 
       # Combine summary data
-      all_summary_data <- all_summary_data %>%
-        dplyr::bind_rows(res1$summary_stats) %>%
-        dplyr::mutate(trait = trait_id)
+      all_summary_data <- dplyr::bind_rows(
+        all_summary_data,
+        res1$summary_stats %>% dplyr::mutate(trait = trait_id, mod = gm)
+      )
 
       # Combine prediction data
-      all_prediction_data <- all_prediction_data %>%
-        dplyr::bind_rows(res1$new_data) %>%
-        dplyr::mutate(trait = trait_id)
+      all_prediction_data <- dplyr::bind_rows(
+        all_prediction_data,
+        res1$new_data %>% dplyr::mutate(trait = trait_id, mod = gm)
+      )
 
       # Create residual data list
-      all_residual_data[[tu]] <- res1$residuals
+      all_residual_data[[paste(gm, tu, sep = ":")]] <- res1$residuals %>%
+        as.data.frame()
+
     } # End term for-loop
   } # End model for-loop
-
-  # Return results as a list
-  # Assumes models will not share coefficients!
 
   return(list(
     summary = all_summary_data,
