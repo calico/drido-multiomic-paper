@@ -791,6 +791,7 @@ docr_gam_process <- function(mt,
   # Extract information from each model file
   for (gm in names(rds[[1]])) {
     gam_model <- rds[[1]][[gm]]
+    if (!inherits(gam_model, "gam")) next
 
     # Extract information from each smooth_grep smooth term
     terms_use <- grep("s\\(PLL\\)",
