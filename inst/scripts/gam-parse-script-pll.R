@@ -5,8 +5,11 @@ library(future)
 library(furrr)
 
 # set
-# local_filepath <- "~/drido-multiomic-paper"
-# gam_output_filepath <- "~/"
+# local_filepath <- "~/workspace/drido-multiomic-paper"
+# gam_output_filepath <- "~/workspace/docr_data/MS1553"
+
+local_filepath <- "~/GitHub/drido-multiomic-paper"
+gam_output_filepath <- "/Users/johanna/GitHub/drido-multiomic-paper/inst/extdata/gam_models_PLL_6"
 
 source(file.path(local_filepath, "R/statistics_functions.R"))
 source(file.path(local_filepath, "R/figure_functions.R"))
@@ -19,7 +22,8 @@ name_conv_file <- "inst/supp_tables/Table_S1_CompoundAnnotations.csv"
 # mouse_id added in docr_gam_predict() fxn
 new_data <- data.frame(
   PLL = seq(0.3, 1, by = 0.01), # predict every 1% PLL
-  fasting = "No"
+  fasting = "No",
+  baseline_value = 0
 )
 
 # Initialize data
@@ -28,9 +32,9 @@ all_prediction_data <- tibble()
 all_residual_data <- list()
 
 # Collect results from models
-future::plan(future::multisession, workers = future::availableCores() - 1)
+future::plan(future::multisession, workers = future::availableCores() - 3)
 results <- furrr::future_map(
-  .x = list.files(file.path(gam_output_filepath, "gam_models_PLL_5"), full.names = TRUE),
+  .x = list.files(file.path(gam_output_filepath), full.names = TRUE),
   ~ docr_gam_process(
     mt = .x,
     new_data = new_data
@@ -46,7 +50,9 @@ all_prediction_data <- purrr::map_dfr(results, ~ .x$prediction)
 
 # Process residual data
 for (res in results) {
+  if (is.null(res$residual) || length(names(res$residual)) == 0) next
   trait <- names(res$residual)[1]
+  if (length(res$residual[[trait]]) == 0) next
   all_residual_data[[trait]] <- res$residual[[trait]]
 }
 
@@ -59,8 +65,9 @@ for (res in results) {
 ### Cluster ### -----
 
 # pll_gam_fit_temp <- readRDS(file.path(gam_output_filepath, "20250310-gam-models-parsed-PLL-k-1-all.Rds"))
-# all_summary_data <- pll_gam_fit_temp[[1]]
-# all_prediction_data <- pll_gam_fit_temp[[2]]
+pll_gam_fit_temp <- readRDS(file.path(gam_output_filepath, "20260918-GAM-Models-Parsed-Baseline.Rds"))
+all_summary_data <- pll_gam_fit_temp[[1]]
+all_prediction_data <- pll_gam_fit_temp[[2]]
 
 ## Extract good compound IDs
 name_conversion_use <- read.csv(file.path(local_filepath, name_conv_file)) %>%
@@ -69,7 +76,7 @@ name_conversion_use <- read.csv(file.path(local_filepath, name_conv_file)) %>%
 # Clean summary df
 all_summary_data <- all_summary_data %>%
   dplyr::filter(smooth_term == "s(PLL)") %>%
-  dplyr::group_by(smooth_term) %>%
+  dplyr::group_by(smooth_term, mod) %>%
   dplyr::mutate(padj = p.adjust(pvalue, method = "BH")) %>%
   dplyr::ungroup()
 
@@ -80,17 +87,18 @@ all_prediction_data <- all_prediction_data %>%
   dplyr::filter(!(is.na(name_use) & !is.na(modality)))
 
 # identify significant traits
-fdr_cutoff <- 0.05
+fdr_cutoff <- 0.01
+r2_cutoff <- 0.30
 
 # use maximum R2 of metabolomics internal standard as minimum R2 threshold
-r2_cutoff <- all_summary_data %>%
-  dplyr::filter(
-    padj < fdr_cutoff,
-    grepl("13C|[Dd]\\d\\.", trait)
-  ) %>%
-  {
-    max(.$adj.rsquared, na.rm = TRUE)
-  }
+# r2_cutoff <- all_summary_data %>%
+#   dplyr::filter(
+#     padj < fdr_cutoff,
+#     grepl("13C|[Dd]\\d\\.", trait)
+#   ) %>%
+#   {
+#     max(.$adj.rsquared, na.rm = TRUE)
+#   }
 
 # filter summary data to good traits; keep physiological traits
 all_summary_data <- all_summary_data %>%
@@ -98,39 +106,55 @@ all_summary_data <- all_summary_data %>%
   dplyr::filter(!(is.na(name_use) & !is.na(modality)))
 
 # filter summary by R2 and adj.pvalue
-significant_all_traits <- all_summary_data %>%
-  dplyr::filter(
-    padj < fdr_cutoff,
-    adj.rsquared > r2_cutoff
-  ) %>%
-  dplyr::pull(trait)
+# significant_all_traits <- all_summary_data %>%
+#   dplyr::filter(
+#     padj < fdr_cutoff,
+#     adj.rsquared > r2_cutoff
+#   ) %>%
+#   dplyr::pull(trait)
+# 
+# # add significance column and save
+# all_summary_data <- all_summary_data %>%
+#   dplyr::mutate(significant = trait %in% significant_all_traits)
+# all_prediction_data <- all_prediction_data %>%
+#   dplyr::mutate(significant = trait %in% significant_all_traits)
 
 # add significance column and save
 all_summary_data <- all_summary_data %>%
-  dplyr::mutate(significant = trait %in% significant_all_traits)
+  dplyr::mutate(significant = padj < fdr_cutoff & adj.rsquared > r2_cutoff)
 all_prediction_data <- all_prediction_data %>%
-  dplyr::mutate(significant = trait %in% significant_all_traits)
+  dplyr::left_join(all_summary_data %>% 
+                     dplyr::select(trait, mod, significant),
+                   by = c("trait", "mod"))
+
+
+### CHOOSE ANALYSIS MODEL ###
+# with_baseline or without_baseline
+
+analysis_model <- "with_baseline"
 
 # To find max on single slope
 top_PLL_inflection <- all_prediction_data %>%
   dplyr::filter(significant) %>%
-  dplyr::group_by(trait) %>%
-  dplyr::mutate(is_max_value = ifelse(abs(deriv.2nd) == max(abs(deriv.2nd)), TRUE, FALSE)) %>%
+  dplyr::group_by(trait, mod) %>%
+  dplyr::filter(abs(deriv.2nd) == max(abs(deriv.2nd))) %>%
   dplyr::ungroup() %>%
-  dplyr::filter(is_max_value) %>%
-  dplyr::select(trait, extrema_trait = PLL)
+  dplyr::select(trait, mod, extrema_trait = PLL)
 
 predict_matrix_fit <- all_prediction_data %>%
   dplyr::filter(significant) %>%
-  dplyr::group_by(trait) %>%
+  dplyr::group_by(trait, mod) %>%
   dplyr::mutate(fit.scale = scale(fit, scale = TRUE, center = TRUE)) %>%
-  dplyr::ungroup() %>%
+  dplyr::ungroup() 
+
+predict_matrix_fit_baseline <- predict_matrix_fit %>%
+  dplyr::filter(mod == analysis_model) %>% 
   dplyr::select(PLL, trait, fit.scale) %>%
   tidyr::spread(PLL, fit.scale) %>%
   tibble::column_to_rownames("trait")
 
 # Run prcomp for PCA and extract matrix
-p <- prcomp(predict_matrix_fit)
+p <- prcomp(predict_matrix_fit_baseline)
 pca_df <- p$x %>%
   as.data.frame()
 
@@ -192,7 +216,7 @@ cat(important_pcs)
 kmeans_flexclust_wrapper <- function(x, k) {
   kcca_result <- suppressMessages(
     flexclust::kcca(x, k,
-      family = kccaFamily("kmeans"),
+      family = flexclust::kccaFamily("kmeans"),
       weights = important_pcs
     )
   )
@@ -202,7 +226,7 @@ kmeans_flexclust_wrapper <- function(x, k) {
 
 
 # Run gap stat to get cluster number
-set.seed(2017)
+set.seed(2026)
 gap_stat <- suppressMessages(
   cluster::clusGap(important_pc_df,
     FUN = kmeans_flexclust_wrapper,
@@ -213,10 +237,11 @@ gap_stat <- suppressMessages(
 
 gap_stat_fig <- factoextra::fviz_gap_stat(gap_stat)
 print(gap_stat_fig)
+
 opt_k <- gap_stat_fig$layers[[4]]$data$xintercept
 
 # Run weighted KMeans clustering with PCA weights
-set.seed(2017)
+set.seed(2026)
 clusters_row <- kmeans_flexclust_wrapper(
   x = important_pc_df,
   k = opt_k
@@ -225,7 +250,8 @@ clusters_row <- kmeans_flexclust_wrapper(
   dplyr::rename(cluster = ".") %>%
   dplyr::mutate(cluster = as.factor(cluster)) %>%
   tibble::rownames_to_column("trait") %>%
-  dplyr::left_join(top_PLL_inflection, by = "trait") %>%
+  dplyr::left_join(top_PLL_inflection %>%
+                     dplyr::filter(mod == analysis_model), by = "trait") %>%
   dplyr::group_by(cluster) %>%
   dplyr::mutate(
     extrema_mean = mean(extrema_trait, na.rm = TRUE),
@@ -237,29 +263,41 @@ clusters_row <- kmeans_flexclust_wrapper(
 clusters_change <- clusters_row %>%
   dplyr::mutate(
     cluster = as.numeric(cluster),
-    cluster = dplyr::case_when(cluster == 1 ~ 1,
-      cluster == 2 ~ 7,
-      cluster == 3 ~ 10,
-      cluster == 4 ~ 9,
-      cluster == 5 ~ 3,
-      cluster == 6 ~ 8,
+    cluster = dplyr::case_when(
+      # cluster == 1 ~ 1,
+      # cluster == 2 ~ 7,
+      # cluster == 3 ~ 10,
+      # cluster == 4 ~ 9,
+      # cluster == 5 ~ 3,
+      # cluster == 6 ~ 8,
+      # cluster == 7 ~ 4,
+      # cluster == 9 ~ 6,
+      # cluster == 8 ~ 5,
+      # cluster == 10 ~ 2,
+      # .default = cluster
+      cluster == 1 ~ 8,
+      cluster == 2 ~ 1,
+      cluster == 5 ~ 2,
+      cluster == 3 ~ 5,
+      cluster == 6 ~ 3,
+      cluster == 8 ~ 6,
       cluster == 7 ~ 4,
-      cluster == 9 ~ 6,
-      cluster == 8 ~ 5,
-      cluster == 10 ~ 2,
+      cluster == 4 ~ 7,
       .default = cluster
     )
   )
 
 # add cluster information to prediction and summary df
-all_summary_data <- all_summary_data %>%
+all_summary_data_save <- all_summary_data %>%
+  dplyr::filter(mod == analysis_model) %>%
   dplyr::left_join(clusters_change, by = "trait") %>%
   dplyr::mutate(
     modality = ifelse(is.na(modality), "physiological", modality),
     cluster = as.factor(cluster)
   ) %>%
   dplyr::mutate(name_use = ifelse(modality == "physiological", trait, name_use))
-all_prediction_data <- all_prediction_data %>%
+all_prediction_data_save <- all_prediction_data %>%
+  dplyr::filter(mod == analysis_model) %>%
   dplyr::left_join(clusters_change, by = "trait") %>%
   dplyr::mutate(
     modality = ifelse(is.na(modality), "physiological", modality),
@@ -269,5 +307,121 @@ all_prediction_data <- all_prediction_data %>%
 
 
 ## Save
-# saveRDS(all_summary_data, file.path(local_filepath, "20251008-PLL-GAM-Summary-Data.Rds"))
-# saveRDS(all_prediction_data, file.path(local_filepath, "20251008-PLL-GAM-Fit-Data.Rds"))
+# saveRDS(all_summary_data_save, file.path(local_filepath, "inst/extdata/20260922-PLL-GAM-Summary-Data.Rds"))
+# saveRDS(all_prediction_data_save, file.path(local_filepath, "inst/extdata/20260922-PLL-GAM-Fit-Data.Rds"))
+# 
+
+
+pll_gam_fits <- all_prediction_data_save
+pll_gam_summaries <- all_summary_data_save
+
+
+# Scaling the data
+scaled_data <- pll_gam_fits %>%
+  dplyr::filter(significant) %>%
+  dplyr::group_by(trait) %>%
+  dplyr::group_modify(~ docr_scale_trajectory(.x)) %>%
+  dplyr::ungroup()
+
+# Compute average trajectory
+average_trajectories <- scaled_data %>%
+  dplyr::group_by(cluster, PLL) %>%
+  dplyr::summarize(
+    average_scaled_fit = mean(scaled_fit, na.rm = TRUE),
+    average_scaled_lower_ci = mean(scaled_lower_ci, na.rm = TRUE),
+    average_scaled_upper_ci = mean(scaled_upper_ci, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+count_data <- pll_gam_summaries %>%
+  dplyr::filter(significant) %>%
+  dplyr::distinct(cluster, name_use, extrema_mean) %>%
+  dplyr::group_by(cluster) %>%
+  dplyr::summarise(count = n(),
+                   ex = unique(extrema_mean),
+                   .groups = "drop") %>%
+  dplyr::mutate(label_print = paste0("n = ", count))
+
+# Visualization
+g <- ggplot2::ggplot(
+  average_trajectories,
+  ggplot2::aes(
+    x = PLL,
+    y = average_scaled_fit,
+    color = factor(cluster)
+  )
+) +
+  ggplot2::geom_line() +
+  ggplot2::geom_text(
+    data = count_data,
+    mapping = aes(x = Inf, y = Inf, label = label_print),
+    color = "black",
+    hjust = 1.2,
+    vjust = 1.55,
+    size = 2.2
+  ) +
+  ggplot2::geom_ribbon(
+    ggplot2::aes(
+      ymin = average_scaled_lower_ci,
+      ymax = average_scaled_upper_ci,
+      fill = factor(cluster)
+    ),
+    alpha = 0.2,
+    color = NA
+  ) +
+  ggplot2::labs(
+    title = "Lifespan trajectory cluster average",
+    x = "PLL",
+    y = "Scaled Predicted Fit",
+    color = "Cluster",
+    fill = "Cluster"
+  ) +
+  ggplot2::facet_wrap(~ factor(cluster), ncol = 4) +
+  docr_ggplot_theme(
+    x_text_angle = 0,
+    x_text_hjust = 0.5
+  ) +
+  theme(
+    strip.text = element_text(margin = margin(0, 2, 2, 2)),
+    panel.spacing.y = unit(3, "pt")
+  )
+print(g)
+
+
+scaled_data_w_se_fit_score <- scaled_data %>%
+  dplyr::filter(significant) %>%
+  dplyr::group_by(trait) %>%
+  dplyr::mutate(se.fit.zscore = as.numeric(scale(se.fit, scale = F, center = T))) %>%
+  dplyr::ungroup()
+
+set.seed(2026)
+sampled_traits_se <- scaled_data_w_se_fit_score %>%
+  dplyr::distinct(trait, modality) %>%
+  dplyr::group_by(modality) %>%
+  dplyr::slice_sample(n = 5) %>%
+  dplyr::ungroup() %>%
+  dplyr::pull(trait)
+
+g2 <- ggplot(scaled_data_w_se_fit_score %>% 
+               dplyr::filter(trait %in% sampled_traits_se,
+                             modality != "physiological")) +
+  ggiraph::geom_point_interactive(
+    aes(x = PLL, y = se.fit.zscore, color = modality, data_id = trait, tooltip = trait),
+    alpha = 0.3
+  ) +
+  docr_ggplot_theme() +
+  facet_wrap(~ modality, nrow = 1)
+ggiraph::girafe(ggobj = g2)
+
+
+# Single compound fit + CI
+plot_trait <- "Phosphocreatine.M012A.2110"
+single_trait <- all_prediction_data %>%
+  dplyr::filter(trait == plot_trait, mod == analysis_model)
+
+g3 <- ggplot(single_trait, aes(x = PLL, y = fit)) +
+  geom_line() +
+  geom_ribbon(aes(ymin = lower.95.ci, ymax = upper.95.ci), alpha = 0.2) +
+  labs(title = plot_trait, y = "Predicted fit") +
+  docr_ggplot_theme(x_text_angle = 0, x_text_hjust = 0.5)
+print(g3)

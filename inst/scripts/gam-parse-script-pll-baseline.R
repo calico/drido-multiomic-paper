@@ -49,8 +49,9 @@ all_prediction_data <- purrr::map_dfr(results, ~ .x$prediction)
 
 # Process residual data
 for (res in results) {
-  if (is.null(res$residual)) next        
+  if (is.null(res$residual) || length(names(res$residual)) == 0) next
   trait <- names(res$residual)[1]
+  if (length(res$residual[[trait]]) == 0) next
   all_residual_data[[trait]] <- res$residual[[trait]]
 }
 
