@@ -79,6 +79,13 @@ lmer_multi_formula <- function(data_use,
   # Run analysis through all formulas
   for (f_use in forms_to_test) {
 
+    for (v in all.vars(as.formula(f_use))) {
+      if (v %in% colnames(dfx) && (all(is.na(dfx[[v]])) || length(unique(na.omit(dfx[[v]]))) < 2)) {
+        f_use <- gsub(paste0(v, " \\+"), "", f_use)
+        if (verbose) message("Dropped rank-deficient term: ", v)
+      }
+    }
+
     if (model_type == "mixed") {
       # If only one data point per mouse id, change random intercept to
       # generation_wave
@@ -731,7 +738,10 @@ docr_gam_predict <- function(gam_model,
       fit = predictions$fit,
       se.fit = predictions$se.fit,
       upper.95.ci = fit + (1.96 * se.fit),
-      lower.95.ci = fit - (1.96 * se.fit)
+      lower.95.ci = fit - (1.96 * se.fit),
+      se.pred = sqrt(se.fit^2 + gam_model$sig2),
+      upper.95.pi = fit + (1.96 * se.pred),
+      lower.95.pi = fit - (1.96 * se.pred)
     ) %>%
     dplyr::full_join(first_derivative,
       by = "PLL",
