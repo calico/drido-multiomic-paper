@@ -47,10 +47,11 @@ docr_read_phenotype_data <- function(phenotype_data_file_path_csv) {
     ) %>%
     dplyr::filter(!is.na(measurement)) %>%
     dplyr::rename(mouse_id = MouseID) %>%
-    tidyr::separate(name,
-      into = c("timepoint", "pheno_group", "phenotype"),
-      sep = "_"
-    ) %>%
+    tidyr::separate_wider_delim(name,
+                                delim = "_",
+                                names = c("timepoint", "pheno_group", "phenotype"),
+                                too_many = "merge",
+                                too_few = "align_start") %>%
     dplyr::group_by(pheno_group, timepoint, mouse_id) %>%
     dplyr::mutate(
       age_in_days = ifelse(any(phenotype == "AgeInDays"),
@@ -152,6 +153,11 @@ docr_make_final_data <- function(metabolomics_data_filepath,
     dplyr::filter(!is.na(name_use))
 
   ### Combine all data
+  generation_key <- all_molecular_data %>%
+    dplyr::distinct(mouse_id, generation_wave)
+  phenotype_data <- phenotype_data %>%
+    dplyr::left_join(generation_key, by = "mouse_id")
+
   cols_use <- intersect(colnames(all_molecular_data), colnames(phenotype_data))
   data_use <- dplyr::bind_rows(
     all_molecular_data %>%
@@ -666,6 +672,7 @@ docr_pheatmap <- function(heatmap_df,
 
     # Set column names in order of provided levels
     disp_matrix <- disp_matrix[, levels(as.factor(heatmap_df[[x_axis_var]])), ]
+    disp_matrix[is.na(disp_matrix)] <- ""
 
     # If display_var is null, assign to disp_matrix to default for display_numbers (F)
   } else {
@@ -971,6 +978,7 @@ docr_find_elbow_smooth <- function(df, x_col, y_col, span = 0.5) {
 # Function to make models readable
 make_names_pretty <- function(s) {
   s <- gsub("norm_abundance", "Compound", s)
+  s <- gsub("trait_value", "Compound", s)
   s <- gsub("_scaled", "_Scaled", s)
   s <- gsub("baseline_value", "Baseline", s)
   s <- gsub("age_years", "Age", s)

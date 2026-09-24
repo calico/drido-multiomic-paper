@@ -12,6 +12,9 @@ library(furrr)
 local_filepath <- "~/workspace/drido-multiomic-paper"
 output_filepath <- "~/workspace/docr_data/MS1553"
 
+# local_filepath <- "~/GitHub/drido-multiomic-paper"
+# output_filepath <- "~/Desktop"
+
 source(file.path(local_filepath, "R/statistics_functions.R"))
 source(file.path(local_filepath, "R/figure_functions.R"))
 source(file.path(local_filepath, "R/normalization_functions.R"))

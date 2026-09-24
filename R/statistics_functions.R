@@ -692,8 +692,9 @@ docr_sobel_mediation <- function(data_use,
 
   all_vars <- unique(c(outcome_var, intervention_var, mediation_var,
                         co_vars_a, co_vars_total, co_vars_direct))
-  if (!all(all_vars %in% names(data_use))) {
-    stop("All specified variables must exist in data_use")
+  missing_vars <- setdiff(all_vars, names(data_use))
+  if (length(missing_vars) > 0) {
+    stop("Missing variables in data_use: ", paste(missing_vars, collapse = ", "))
   }
 
   data_use <- data_use %>%
