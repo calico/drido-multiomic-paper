@@ -678,6 +678,90 @@ docr_extract_sobel_med_effects <- function(models,
 }
 
 
+docr_sobel_mediation <- function(data_use,
+                                 outcome_var,
+                                 intervention_var,
+                                 mediation_var,
+                                 co_vars_a = character(0),
+                                 co_vars_total = character(0),
+                                 co_vars_direct = character(0),
+                                 min_samples = 10) {
+  if (!is.data.frame(data_use)) {
+    stop("data_use must be a data.frame")
+  }
+
+  all_vars <- unique(c(outcome_var, intervention_var, mediation_var,
+                        co_vars_a, co_vars_total, co_vars_direct))
+  if (!all(all_vars %in% names(data_use))) {
+    stop("All specified variables must exist in data_use")
+  }
+
+  data_use <- data_use %>%
+    tidyr::drop_na(rlang::sym(mediation_var))
+
+  if (nrow(data_use) < min_samples) {
+    return(data.frame())
+  }
+
+  filter_covars <- function(cv, df) {
+    cv[sapply(cv, function(v) v %in% colnames(df) && length(unique(df[[v]])) > 1)]
+  }
+
+  make_cov_string <- function(cv) {
+    if (length(cv) > 0) paste(" +", paste(cv, collapse = " + ")) else ""
+  }
+
+  all_outcome_results <- data.frame()
+
+  for (ov in outcome_var) {
+    data_current <- data_use %>%
+      tidyr::drop_na(rlang::sym(ov))
+
+    if (nrow(data_current) < min_samples) next
+
+    cv_a <- filter_covars(co_vars_a, data_current)
+    cv_total <- filter_covars(co_vars_total, data_current)
+    cv_direct <- filter_covars(co_vars_direct, data_current)
+
+    # Path a: intervention -> mediator
+    f2 <- paste0(mediation_var, " ~ ", intervention_var, make_cov_string(cv_a))
+    # Total effect: intervention -> outcome
+    f3 <- paste0(ov, " ~ ", intervention_var, make_cov_string(cv_total))
+    # Direct + path b: intervention + mediator -> outcome
+    f4 <- paste0(ov, " ~ ", intervention_var, " + ", mediation_var, make_cov_string(cv_direct))
+
+    models <- list(
+      m2 = tryCatch(docr_lm_med_test(df = data_current, form = f2, mt = "Intervention>Mediator"),
+        error = function(e) data.frame()),
+      m3 = tryCatch(docr_lm_med_test(df = data_current, form = f3, mt = "Intervention>Outcome"),
+        error = function(e) data.frame()),
+      m4 = tryCatch(docr_lm_med_test(df = data_current, form = f4, mt = "Intervention+Mediator>Outcome"),
+        error = function(e) data.frame())
+    )
+
+    if (any(sapply(models, function(x) nrow(x) == 0))) next
+
+    intervention_vars <- if (is.character(data_current[[intervention_var]]) || is.factor(data_current[[intervention_var]])) {
+      paste0(intervention_var, levels(as.factor(data_current[[intervention_var]])))
+    } else {
+      intervention_var
+    }
+
+    sobel_results <- docr_extract_sobel_med_effects(models, intervention_vars, mediation_var)
+
+    if (nrow(sobel_results) > 0) {
+      sobel_results$outcome_var <- ov
+      sobel_results$mediation_var <- mediation_var
+      sobel_results$intervention_var <- intervention_var
+      sobel_results$n_obs <- nrow(data_current)
+      all_outcome_results <- dplyr::bind_rows(all_outcome_results, sobel_results)
+    }
+  }
+
+  return(all_outcome_results)
+}
+
+
 # Extract summary stats and predictions from GAM model
 docr_gam_predict <- function(gam_model,
                              smooth_term,
