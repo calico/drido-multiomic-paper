@@ -20,14 +20,6 @@ all_med_test <- furrr::future_map_dfr(
     if (nrow(temp) == 0) {
       return(NULL)
     }
-
-    # Extract metadata from filename: {cutoff}_{covar_set}_{trait}-Intervention.Rds
-    parts <- stringr::str_match(.x, "^(with_trim|without_trim)_(with_bw|without_bw)_(.+)-Intervention\\.Rds$")
-    if (!is.na(parts[1, 1])) {
-      temp$pll_cutoff <- parts[1, 2]
-      temp$covar_set <- parts[1, 3]
-    }
-
     return(temp)
   }
 )
@@ -50,4 +42,9 @@ all_med_test_adj <- all_med_test %>%
     padj_var = "sobel_p_adj"
   )
 
-saveRDS(all_med_test_adj, file = file.path(output_filepath, paste0(gsub("-", "", Sys.Date()), "-Mediation-Sobel-Test-ALL-Mol-Ints.Rds")))
+saveRDS(all_med_test_adj, file = file.path(local_filepath,
+                                           "inst/extdata",
+                                           paste0(gsub("-", "", Sys.Date()), "-Mediation-Sobel-Test-Summary-AllFeatures.Rds")))
+
+
+
