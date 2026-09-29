@@ -38,7 +38,7 @@ all_med_test_adj <- all_med_test %>%
   dplyr::filter(!is.na(sobel_p)) %>%
   fdr_multi(
     pval_var = "sobel_p",
-    nest_vars = c("model_term", "outcome_var", "modality", "pll_cutoff", "covar_set"),
+    nest_vars = c("model_term", "outcome_var", "modality", "pll_cutoff"),
     padj_var = "sobel_p_adj"
   )
 
