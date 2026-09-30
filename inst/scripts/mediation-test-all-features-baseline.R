@@ -1,5 +1,5 @@
 ###
-### Mediation Analyses for DO-CR project
+### Mediation Analyses for DO-CR project - Molecular-Molecular Hub Interactions
 ### Johanna Fleischman, Calico Life Sciences 2026
 ###
 ###
@@ -13,7 +13,7 @@ local_filepath <- "~/workspace/drido-multiomic-paper"
 output_filepath <- "~/workspace/docr_data/MS1553"
 
 # local_filepath <- "~/GitHub/drido-multiomic-paper"
-# output_filepath <- "~/Desktop"
+# output_filepath <- "~/Desktop"d
 
 source(file.path(local_filepath, "R/statistics_functions.R"))
 source(file.path(local_filepath, "R/figure_functions.R"))
@@ -89,8 +89,11 @@ rm(data_use, data_use2, baseline)
 invisible(gc())
 
 # Versions: with and without bodyweight, with and without end-life cut off
-pll_cutoffs <- list(with_trim = 0.86,
-                    without_trim = 1)
+# pll_cutoffs <- list(with_trim = 0.86,
+#                     without_trim = 1)
+pll_cutoffs <- list(dr100 = 100,
+                   dr120 = 120,
+                   without_trim = 0)
 covars <- list(with_bw = c("generation_wave", "fasting", "diet", "bw_test"),
                without_bw = c("generation_wave", "fasting", "diet"))
 
@@ -102,7 +105,8 @@ future::plan(future::multisession, workers = future::availableCores() - 1)
 for (co in names(pll_cutoffs)) {
 
   data_filtered <- data_wide %>%
-    dplyr::filter(PLL <= pll_cutoffs[[co]])
+    #dplyr::filter(PLL <= pll_cutoffs[[co]])
+    dplyr::filter(days_remaining > pll_cutoffs[[co]])
 
   for (cv_name in names(covars)) {
     cv_use <- covars[[cv_name]]
@@ -114,7 +118,7 @@ for (co in names(pll_cutoffs)) {
       afh_name <- gsub("/", "-", afh)
 
       new_filepath <- file.path(
-        output_filepath, "feature_mediation_baseline",
+        output_filepath, "feature_mediation_baseline_dr",
         paste0(co, "_", cv_name, "_", afh_name, "-Intervention.Rds")
       )
 
