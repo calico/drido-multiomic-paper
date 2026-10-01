@@ -5,7 +5,7 @@ library(furrr)
 
 # set
 local_filepath <- "~/workspace/drido-multiomic-paper"
-med_analysis_folder <- "feature_mediation_baseline" # output folder from mediation-test-all-features.R
+med_analysis_folder <- "feature_mediation_baseline_dr" # output folder from mediation-test-all-features.R
 output_filepath <- "~/workspace/docr_data/MS1553"
 
 source(file.path(local_filepath, "R/statistics_functions.R"))
@@ -44,7 +44,7 @@ all_med_test_adj <- all_med_test %>%
 
 saveRDS(all_med_test_adj, file = file.path(local_filepath,
                                            "inst/extdata",
-                                           paste0(gsub("-", "", Sys.Date()), "-Mediation-Sobel-Test-Summary-AllFeatures.Rds")))
+                                           paste0(gsub("-", "", Sys.Date()), "-Mediation-Sobel-Test-Summary-AllFeatures-DRCutoff.Rds")))
 
 
 
