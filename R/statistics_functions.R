@@ -939,7 +939,8 @@ docr_gam_process <- function(mt,
 
 docr_elastic_train_test_parse <- function(final_data,
                                           train_frac = 0.8,
-                                          seed = 212) {
+                                          seed = 212,
+                                          regress_bw = TRUE) {
   checkmate::assertSubset(c(
     "mouse_id", "fasting", "bw_test", "diet",
     "age_days", "surv_days"
@@ -954,13 +955,22 @@ docr_elastic_train_test_parse <- function(final_data,
     glmnet::makeX(na.impute = TRUE)
 
   # clear covariates
-  X_metabo_matrix_clean <- limma::removeBatchEffect(
-    x = t(X_metabo_matrix_initial),
-    batch = final_data %>% dplyr::pull(fasting),
-    batch2 = final_data %>% dplyr::pull(diet),
-    covariates = final_data %>% dplyr::pull(bw_test) %>% scale()
-  ) %>%
-    t()
+  if (regress_bw) {
+    X_metabo_matrix_clean <- limma::removeBatchEffect(
+      x = t(X_metabo_matrix_initial),
+      batch = final_data %>% dplyr::pull(fasting),
+      batch2 = final_data %>% dplyr::pull(diet),
+      covariates = final_data %>% dplyr::pull(bw_test) %>% scale()
+    ) %>%
+      t()
+  } else {
+    X_metabo_matrix_clean <- limma::removeBatchEffect(
+      x = t(X_metabo_matrix_initial),
+      batch = final_data %>% dplyr::pull(fasting),
+      batch2 = final_data %>% dplyr::pull(diet)
+    ) %>%
+      t()
+  }
 
   # make test and train mouse_id sets
   set.seed(seed)

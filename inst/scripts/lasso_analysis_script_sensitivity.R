@@ -44,10 +44,11 @@ print("Functions and files loaded")
 # 1) All year2 data (no end-life trim)
 # 2) Year2 with days_remaining > 100
 sensitivity_configs <- list(
-  list(label = "ALL_Year2", filter_expr = TRUE, lambda_use = "lambda.min"),
-  list(label = "ALL_Year2_1se", filter_expr = TRUE, lambda_use = "lambda.1se"),
-  list(label = "DR100", filter_expr = quote(days_remaining > 100), lambda_use = "lambda.min"),
-  list(label = "DR120", filter_expr = quote(days_remaining > 120), lambda_use = "lambda.min")
+  list(label = "ALL_Year2", filter_expr = TRUE, lambda_use = "lambda.min", regress_bw = TRUE),
+  list(label = "ALL_Year2_noBW", filter_expr = TRUE, lambda_use = "lambda.min", regress_bw = FALSE),
+  list(label = "ALL_Year2_1se", filter_expr = TRUE, lambda_use = "lambda.1se", regress_bw = TRUE),
+  list(label = "DR100", filter_expr = quote(days_remaining > 100), lambda_use = "lambda.min", regress_bw = TRUE),
+  list(label = "DR120", filter_expr = quote(days_remaining > 120), lambda_use = "lambda.min", regress_bw = TRUE)
 )
 
 # parallelize
@@ -95,7 +96,8 @@ for (config in sensitivity_configs) {
   train_frac <- 0.8
   X_final <- docr_elastic_train_test_parse(final_data,
                                            train_frac = train_frac,
-                                           seed = 212)
+                                           seed = 212,
+                                           regress_bw = config$regress_bw)
 
   print(paste0("Data parsed for training fraction = ", train_frac))
 
