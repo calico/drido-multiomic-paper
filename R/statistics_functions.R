@@ -1315,12 +1315,12 @@ docr_regularization_paths <- function(model_fit,
       geom_vline(xintercept = log(lambda_min), linetype = "dashed") +
       geom_vline(xintercept = log(lambda_1se), linetype = "dotted") +
       annotate("text", x = log(lambda_min), y = label_y,
-               label = "λ.min",
-               vjust = -0.5, hjust = -0.1, size = 3, fontface = "italic",
+               label = "lambda*'.min'", parse = TRUE,
+               vjust = -0.5, hjust = -0.1, size = 3,
                color = "#2166AC") +
       annotate("text", x = log(lambda_1se), y = label_y,
-               label = "λ.1se",
-               vjust = -0.5, hjust = -0.1, size = 3, fontface = "italic",
+               label = "lambda*'.1se'", parse = TRUE,
+               vjust = -0.5, hjust = -0.1, size = 3,
                color = "red") +
       ggrepel::geom_text_repel(
         data = hl_labels,
@@ -1328,7 +1328,7 @@ docr_regularization_paths <- function(model_fit,
         size = 4, hjust = 0, segment.size = 0.3,
         nudge_y = ifelse(hl_labels$coefficient > 0, 1, -1) * y_range * 0.1,
         force = 2, max.overlaps = Inf) +
-      labs(x = "log(λ)", y = "Coefficient",
+      labs(x = expression(log(lambda)), y = "Coefficient",
            title = plot_title,
            subtitle = paste0("Regularization Path: ",
                           paste(hl_labels$name_use, collapse = ", "))) +
@@ -1349,12 +1349,12 @@ docr_regularization_paths <- function(model_fit,
       geom_vline(xintercept = log(lambda_min), linetype = "dashed") +
       geom_vline(xintercept = log(lambda_1se), linetype = "dotted") +
       annotate("text", x = log(lambda_min), y = label_y,
-               label = "λ.min",
-               vjust = -0.5, hjust = -0.1, size = 3, fontface = "italic",
+               label = "lambda*'.min'", parse = TRUE,
+               vjust = -0.5, hjust = -0.1, size = 3,
                color = "#2166AC") +
       annotate("text", x = log(lambda_1se), y = label_y,
-               label = "λ.1se",
-               vjust = -0.5, hjust = -0.1, size = 3, fontface = "italic",
+               label = "lambda*'.1se'", parse = TRUE,
+               vjust = -0.5, hjust = -0.1, size = 3,
                color = "red") +
       ggrepel::geom_text_repel(
         data = labels,
@@ -1365,7 +1365,7 @@ docr_regularization_paths <- function(model_fit,
         force = 2, max.overlaps = Inf) +
       scale_color_manual(values = c("1se" = "red", "min_only" = "#2166AC"),
                          guide = "none") +
-      labs(x = "log(λ)", y = "Coefficient",
+      labs(x = expression(log(lambda)), y = "Coefficient",
            title = plot_title) +
       theme_classic()
   }
