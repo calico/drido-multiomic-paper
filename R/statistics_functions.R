@@ -763,6 +763,145 @@ docr_sobel_mediation <- function(data_use,
 }
 
 
+#' Counterfactual (natural direct/indirect effect) mediation, via `mediation`
+#'
+#' @description
+#' Replaces \code{docr_sobel_mediation()}'s product-of-coefficients + Sobel
+#' test with Imai/Keele/Tingley's counterfactual mediation framework
+#' (\code{mediation::mediate()}). The outcome model includes an
+#' intervention x mediator interaction, so the mediator's effect on the
+#' outcome is allowed to depend on the intervention level -- the Sobel
+#' approach assumes no such interaction. Because of the interaction, ACME
+#' (indirect effect), ADE (direct effect), and proportion mediated are each
+#' reported under the control condition, under the treated condition, and
+#' averaged across the two (mirroring \code{summary.mediate()}'s d0/d1/d.avg,
+#' z0/z1/z.avg, n0/n1/n.avg). The total effect (tau) does not depend on the
+#' interaction and is reported once.
+#'
+#' Since \code{mediate()} only contrasts two intervention levels at a time,
+#' one pair of models is fit per \code{mediation_var} (shared across all
+#' comparisons), then \code{mediate()} is called once per level in
+#' \code{treat_values} against the shared \code{control_value}.
+#'
+#' @param data_use a dataframe with columns corresponding to necessary variables
+#' @param outcome_var column name(s) for outcome variable of interest, as a string
+#' @param intervention_var column name for intervention variable of interest, as a string
+#' @param mediation_var column name for mediation variable of interest, as a string
+#' @param co_vars_a covariates for the intervention -> mediator model
+#' @param co_vars_direct covariates for the outcome model (intervention * mediator + these)
+#' @param control_value reference level of \code{intervention_var}
+#' @param treat_values levels of \code{intervention_var} to contrast against \code{control_value}
+#' @param n_sims number of quasi-Bayesian simulation draws per \code{mediate()} call
+#' @param min_samples minimum non-missing sample size required to run
+#'
+#' @returns a dataframe, one row per outcome_var x treat_values level
+#'
+#' @export
+docr_counterfactual_mediation <- function(data_use,
+                                          outcome_var,
+                                          intervention_var,
+                                          mediation_var,
+                                          co_vars_a = character(0),
+                                          co_vars_direct = character(0),
+                                          control_value,
+                                          treat_values,
+                                          n_sims = 500,
+                                          min_samples = 10) {
+  if (!is.data.frame(data_use)) {
+    stop("data_use must be a data.frame")
+  }
+
+  all_vars <- unique(c(outcome_var, intervention_var, mediation_var,
+                        co_vars_a, co_vars_direct))
+  missing_vars <- setdiff(all_vars, names(data_use))
+  if (length(missing_vars) > 0) {
+    stop("Missing variables in data_use: ", paste(missing_vars, collapse = ", "))
+  }
+
+  data_use <- data_use %>%
+    tidyr::drop_na(rlang::sym(mediation_var))
+
+  if (nrow(data_use) < min_samples) {
+    return(data.frame())
+  }
+
+  filter_covars <- function(cv, df) {
+    cv[sapply(cv, function(v) v %in% colnames(df) && length(unique(df[[v]])) > 1)]
+  }
+
+  make_cov_string <- function(cv) {
+    if (length(cv) > 0) paste(" +", paste(cv, collapse = " + ")) else ""
+  }
+
+  all_outcome_results <- data.frame()
+
+  for (ov in outcome_var) {
+    data_current <- data_use %>%
+      tidyr::drop_na(rlang::sym(ov)) %>%
+      droplevels() # avoid all-zero dummy columns for levels with no rows left
+
+    if (nrow(data_current) < min_samples) next
+
+    cv_a <- filter_covars(co_vars_a, data_current)
+    cv_direct <- filter_covars(co_vars_direct, data_current)
+
+    # Path a: intervention -> mediator
+    f_m <- paste0(mediation_var, " ~ ", intervention_var, make_cov_string(cv_a))
+    # Outcome model with the intervention x mediator interaction
+    f_y <- paste0(ov, " ~ ", intervention_var, " * ", mediation_var, make_cov_string(cv_direct))
+
+    model_m <- tryCatch(lm(as.formula(f_m), data = data_current), error = function(e) NULL)
+    model_y <- tryCatch(lm(as.formula(f_y), data = data_current), error = function(e) NULL)
+    if (is.null(model_m) || is.null(model_y)) next
+
+    # Need to loop throught the different diets
+    treat_values_use <- intersect(treat_values, unique(as.character(data_current[[intervention_var]])))
+
+    for (tv in treat_values_use) {
+      med_fit <- tryCatch(
+        mediation::mediate(
+          model.m = model_m, model.y = model_y,
+          treat = intervention_var, mediator = mediation_var,
+          control.value = control_value, treat.value = tv,
+          sims = n_sims, long = FALSE
+        ),
+        error = function(e) NULL
+      )
+      if (is.null(med_fit)) next
+      s <- summary(med_fit)
+
+      result_row <- data.frame(
+        model_term = paste0(intervention_var, tv),
+        # ACME (indirect effect, a x b): differs by condition because of the
+        # intervention x mediator interaction in model_y
+        acme_control = s$d0, acme_control_lo = s$d0.ci[1], acme_control_hi = s$d0.ci[2], acme_control_p = s$d0.p,
+        acme_treated = s$d1, acme_treated_lo = s$d1.ci[1], acme_treated_hi = s$d1.ci[2], acme_treated_p = s$d1.p,
+        acme_avg = s$d.avg, acme_avg_lo = s$d.avg.ci[1], acme_avg_hi = s$d.avg.ci[2], acme_avg_p = s$d.avg.p,
+        # ADE (direct effect)
+        ade_control = s$z0, ade_control_lo = s$z0.ci[1], ade_control_hi = s$z0.ci[2], ade_control_p = s$z0.p,
+        ade_treated = s$z1, ade_treated_lo = s$z1.ci[1], ade_treated_hi = s$z1.ci[2], ade_treated_p = s$z1.p,
+        ade_avg = s$z.avg, ade_avg_lo = s$z.avg.ci[1], ade_avg_hi = s$z.avg.ci[2], ade_avg_p = s$z.avg.p,
+        # Total effect (tau): does not depend on the interaction
+        total_effect = s$tau.coef, total_effect_lo = s$tau.ci[1], total_effect_hi = s$tau.ci[2], total_effect_p = s$tau.p,
+        # Proportion mediated
+        prop_mediated_control = s$n0, prop_mediated_control_lo = s$n0.ci[1], prop_mediated_control_hi = s$n0.ci[2], prop_mediated_control_p = s$n0.p,
+        prop_mediated_treated = s$n1, prop_mediated_treated_lo = s$n1.ci[1], prop_mediated_treated_hi = s$n1.ci[2], prop_mediated_treated_p = s$n1.p,
+        prop_mediated_avg = s$n.avg, prop_mediated_avg_lo = s$n.avg.ci[1], prop_mediated_avg_hi = s$n.avg.ci[2], prop_mediated_avg_p = s$n.avg.p,
+        row.names = NULL
+      )
+      result_row$outcome_var <- ov
+      result_row$mediation_var <- mediation_var
+      result_row$intervention_var <- intervention_var
+      result_row$n_obs <- nrow(data_current)
+
+      all_outcome_results <- dplyr::bind_rows(all_outcome_results, result_row)
+    }
+  }
+
+  return(all_outcome_results)
+}
+
+
 # Extract summary stats and predictions from GAM model
 docr_gam_predict <- function(gam_model,
                              smooth_term,
