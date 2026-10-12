@@ -802,10 +802,10 @@ docr_counterfactual_mediation <- function(data_use,
                                           intervention_var,
                                           mediation_var,
                                           co_vars_a = character(0),
-                                          co_vars_direct = character(0),
                                           control_value,
                                           treat_values,
                                           n_sims = 500,
+                                          boot_use = FALSE,
                                           min_samples = 10) {
   if (!is.data.frame(data_use)) {
     stop("data_use must be a data.frame")
@@ -842,28 +842,37 @@ docr_counterfactual_mediation <- function(data_use,
 
     if (nrow(data_current) < min_samples) next
 
-    cv_a <- filter_covars(co_vars_a, data_current)
-    cv_direct <- filter_covars(co_vars_direct, data_current)
+    cv_a <- make_cov_string(filter_covars(co_vars_a, data_current))
 
     # Path a: intervention -> mediator
-    f_m <- paste0(mediation_var, " ~ ", intervention_var, make_cov_string(cv_a))
+    f_m <- paste0(mediation_var, " ~ ", intervention_var, cv_a)
     # Outcome model with the intervention x mediator interaction
-    f_y <- paste0(ov, " ~ ", intervention_var, " * ", mediation_var, make_cov_string(cv_direct))
+    f_y <- paste0(ov, " ~ ", intervention_var, " * ", mediation_var, cv_a)
 
     model_m <- tryCatch(lm(as.formula(f_m), data = data_current), error = function(e) NULL)
     model_y <- tryCatch(lm(as.formula(f_y), data = data_current), error = function(e) NULL)
     if (is.null(model_m) || is.null(model_y)) next
 
-    # Need to loop throught the different diets
+    # Need to loop through the different diets
     treat_values_use <- intersect(treat_values, unique(as.character(data_current[[intervention_var]])))
+    
+    # Define mouse_id clusters
+    mouse_ids <- data_current$mouse_id
+    names(mouse_ids) <- rownames(data_current)
 
     for (tv in treat_values_use) {
       med_fit <- tryCatch(
         mediation::mediate(
-          model.m = model_m, model.y = model_y,
-          treat = intervention_var, mediator = mediation_var,
-          control.value = control_value, treat.value = tv,
-          sims = n_sims, long = FALSE
+          model.m = model_m,
+          model.y = model_y,
+          treat = intervention_var,
+          mediator = mediation_var,
+          control.value = control_value,
+          treat.value = tv,
+          sims = n_sims,
+          boot = boot_use,
+          cluster = mouse_ids,
+          long = FALSE
         ),
         error = function(e) NULL
       )

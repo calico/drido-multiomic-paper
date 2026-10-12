@@ -69,12 +69,13 @@ data_use2 <- data_use %>%
   dplyr::left_join(baseline %>%
                      dplyr::select(mouse_id, trait_id, baseline_value = trait_value),
                    by = c("mouse_id", "trait_id")) %>%
-  dplyr::filter(age_years == "year2")
+ #  dplyr::filter(age_years == "year2")
+  dplyr::filter(age_years %in% c("year2", "year3"))
 
 invisible(gc())
 
 data_wide <- data_use2 %>%
-  dplyr::select(-diet_fasting, -Age, -age_years, -diet_assignment,
+  dplyr::select(-diet_fasting, -Age, -diet_assignment,
                 -modality, -name_use) %>%
   tidyr::pivot_wider(values_from = c("baseline_value", "trait_value"),
                      names_from = "trait_id")
@@ -114,6 +115,7 @@ diet_treat_values <- c("1D", "2D", "20", "40")
 # Number of quasi-Bayesian draws mediate() uses per ACME/ADE CI
 # Tested at higher simulation for the traits that mattered
 n_sims <- 500
+boot_use <- FALSE
 
 ### Start loop ----
 cat("------ Starting counterfactual mediation --------\n")
@@ -121,7 +123,7 @@ cat("------ Starting counterfactual mediation --------\n")
 for (co in names(pll_cutoffs)) {
   for (cv_name in names(covars)) {
     dir.create(
-      file.path(output_filepath, "diet_mediation_20261006"),
+      file.path(output_filepath, "diet_mediation_20261012"),
       showWarnings = FALSE, recursive = TRUE
     )
   }
@@ -138,7 +140,7 @@ for (co in names(pll_cutoffs)) {
     cv_use <- covars[[cv_name]]
 
     new_filepath <- file.path(
-      output_filepath, "diet_mediation_20261006",
+      output_filepath, "diet_mediation_20261012",
       paste0(co, "_", cv_name, "_diet-Intervention.Rds")
     )
 
@@ -155,9 +157,9 @@ for (co in names(pll_cutoffs)) {
         intervention_var = "diet",
         mediation_var = mediator_var,
         co_vars_a = c(cv_use, mediator_bl),
-        co_vars_direct = c(cv_use, mediator_bl),
         control_value = diet_control,
         treat_values = diet_treat_values,
+        boot_use = boot_use,
         n_sims = n_sims
       ) %>%
         dplyr::mutate(mediation_var = name_key$trait_id[j])
