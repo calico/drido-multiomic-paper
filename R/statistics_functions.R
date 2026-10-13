@@ -847,8 +847,15 @@ docr_counterfactual_mediation <- function(data_use,
     # Outcome model with the intervention x mediator interaction
     f_y <- paste0(ov, " ~ ", intervention_var, " * ", mediation_var, cv_a)
 
-    model_m <- tryCatch(lm(as.formula(f_m), data = data_current), error = function(e) NULL)
-    model_y <- tryCatch(lm(as.formula(f_y), data = data_current), error = function(e) NULL)
+    # Fit via do.call() rather than lm(as.formula(f_m), ...) directly -- mediate()'s
+    # cluster-robust SE path calls update(model.m, data = dta) deep inside the
+    # mediation package, which re-evaluates the model's stored formula expression
+    # by dynamic scoping from wherever update() is called. A formula built from a
+    # local variable (f_m) isn't visible from there and update() errors with
+    # "object 'f_m' not found" -- do.call() embeds the evaluated formula/data
+    # objects directly in the model's call instead of a reference to the name.
+    model_m <- tryCatch(do.call("lm", list(formula = as.formula(f_m), data = data_current)), error = function(e) NULL)
+    model_y <- tryCatch(do.call("lm", list(formula = as.formula(f_y), data = data_current)), error = function(e) NULL)
     if (is.null(model_m) || is.null(model_y)) next
 
     # Need to loop through the different diets
