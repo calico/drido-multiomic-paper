@@ -787,8 +787,7 @@ docr_sobel_mediation <- function(data_use,
 #' @param outcome_var column name(s) for outcome variable of interest, as a string
 #' @param intervention_var column name for intervention variable of interest, as a string
 #' @param mediation_var column name for mediation variable of interest, as a string
-#' @param co_vars_a covariates for the intervention -> mediator model
-#' @param co_vars_direct covariates for the outcome model (intervention * mediator + these)
+#' @param co_vars_a covariates included in model
 #' @param control_value reference level of \code{intervention_var}
 #' @param treat_values levels of \code{intervention_var} to contrast against \code{control_value}
 #' @param n_sims number of quasi-Bayesian simulation draws per \code{mediate()} call
@@ -811,8 +810,7 @@ docr_counterfactual_mediation <- function(data_use,
     stop("data_use must be a data.frame")
   }
 
-  all_vars <- unique(c(outcome_var, intervention_var, mediation_var,
-                        co_vars_a, co_vars_direct))
+  all_vars <- unique(c(outcome_var, intervention_var, mediation_var, co_vars_a))
   missing_vars <- setdiff(all_vars, names(data_use))
   if (length(missing_vars) > 0) {
     stop("Missing variables in data_use: ", paste(missing_vars, collapse = ", "))
