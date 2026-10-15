@@ -69,8 +69,7 @@ data_use2 <- data_use %>%
   dplyr::left_join(baseline %>%
                      dplyr::select(mouse_id, trait_id, baseline_value = trait_value),
                    by = c("mouse_id", "trait_id")) %>%
- #  dplyr::filter(age_years == "year2")
-  dplyr::filter(age_years %in% c("year2", "year3"))
+  dplyr::filter(age_years == "year2")
 
 invisible(gc())
 
@@ -114,8 +113,8 @@ diet_treat_values <- c("1D", "2D", "20", "40")
 
 # Number of quasi-Bayesian draws mediate() uses per ACME/ADE CI
 # Tested at higher simulation for the traits that mattered
-n_sims <- 500
-boot_use <- FALSE
+n_sims <- 1000
+boot_use <- TRUE
 
 ### Start loop ----
 cat("------ Starting counterfactual mediation --------\n")
@@ -123,7 +122,7 @@ cat("------ Starting counterfactual mediation --------\n")
 for (co in names(pll_cutoffs)) {
   for (cv_name in names(covars)) {
     dir.create(
-      file.path(output_filepath, "diet_mediation_20261012"),
+      file.path(output_filepath, "diet_mediation_20261019"),
       showWarnings = FALSE, recursive = TRUE
     )
   }
@@ -140,7 +139,7 @@ for (co in names(pll_cutoffs)) {
     cv_use <- covars[[cv_name]]
 
     new_filepath <- file.path(
-      output_filepath, "diet_mediation_20261012",
+      output_filepath, "diet_mediation_20261019",
       paste0(co, "_", cv_name, "_diet-Intervention.Rds")
     )
 
@@ -153,7 +152,7 @@ for (co in names(pll_cutoffs)) {
 
       docr_counterfactual_mediation(
         data_use = data_filtered,
-        outcome_var = "surv_days",
+        outcome_var = "days_remaining",
         intervention_var = "diet",
         mediation_var = mediator_var,
         co_vars_a = c(cv_use, mediator_bl),

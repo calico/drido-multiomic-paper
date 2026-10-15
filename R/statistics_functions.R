@@ -876,7 +876,7 @@ docr_counterfactual_mediation <- function(data_use,
           treat.value = tv,
           sims = n_sims,
           boot = boot_use,
-          cluster = mouse_ids,
+          cluster = if (!boot_use) mouse_ids else NULL,
           long = FALSE
         ),
         error = function(e) NULL
