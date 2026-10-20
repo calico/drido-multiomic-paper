@@ -104,16 +104,15 @@ invisible(gc())
 # Versions: with and without bodyweight, with and without end-life (PLL > 0.86) cutoff
 pll_cutoffs <- list(with_trim = 0.86,
                     without_trim = 1)
-covars <- list(with_bw = c("generation_wave", "fasting", "diet", "bw_test"),
-               without_bw = c("generation_wave", "fasting", "diet"))
+covars <- list(with_bw = c("generation_wave", "fasting", "bw_test"),
+               without_bw = c("generation_wave", "fasting"))
 
 # Diet levels contrasted against ad lib
 diet_control <- "AL"
 diet_treat_values <- c("1D", "2D", "20", "40")
 
-# Number of quasi-Bayesian draws mediate() uses per ACME/ADE CI
-# Tested at higher simulation for the traits that mattered
-n_sims <- 1000
+# Draws for QB inference or bootstrap
+n_sims <- 2000
 boot_use <- TRUE
 
 ### Start loop ----
@@ -122,7 +121,7 @@ cat("------ Starting counterfactual mediation --------\n")
 for (co in names(pll_cutoffs)) {
   for (cv_name in names(covars)) {
     dir.create(
-      file.path(output_filepath, "diet_mediation_20261019"),
+      file.path(output_filepath, "diet_mediation_20261020"),
       showWarnings = FALSE, recursive = TRUE
     )
   }
@@ -139,7 +138,7 @@ for (co in names(pll_cutoffs)) {
     cv_use <- covars[[cv_name]]
 
     new_filepath <- file.path(
-      output_filepath, "diet_mediation_20261019",
+      output_filepath, "diet_mediation_20261020",
       paste0(co, "_", cv_name, "_diet-Intervention.Rds")
     )
 
@@ -152,7 +151,7 @@ for (co in names(pll_cutoffs)) {
 
       docr_counterfactual_mediation(
         data_use = data_filtered,
-        outcome_var = "days_remaining",
+        outcome_var = "surv_days",
         intervention_var = "diet",
         mediation_var = mediator_var,
         co_vars_a = c(cv_use, mediator_bl),
