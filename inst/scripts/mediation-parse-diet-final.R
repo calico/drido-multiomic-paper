@@ -6,7 +6,11 @@ library(furrr)
 # set
 local_filepath <- "~/workspace/drido-multiomic-paper"
 output_filepath <- "~/workspace/docr_data/MS1553"
-med_analysis_folder <- "diet_mediation_20261012" # output folder from mediation-test-diet-final.R
+
+# local_filepath <- "~/GitHub/drido-multiomic-paper"
+# output_filepath <- "~/GitHub/drido-multiomic-paper/inst/extdata/"
+
+med_analysis_folder <- "diet_mediation_20261020" # output folder from mediation-test-diet-final.R
 
 source(file.path(local_filepath, "R/statistics_functions.R"))
 
