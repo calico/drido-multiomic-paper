@@ -77,7 +77,8 @@ data_wide <- data_use2 %>%
   dplyr::select(-diet_fasting, -Age, -diet_assignment,
                 -modality, -name_use) %>%
   tidyr::pivot_wider(values_from = c("baseline_value", "trait_value"),
-                     names_from = "trait_id")
+                     names_from = "trait_id") %>%
+  dplyr::mutate(generation = factor(sub("W\\d+$", "", generation_wave)))
 
 print("Data combined")
 
@@ -121,7 +122,7 @@ cat("------ Starting counterfactual mediation --------\n")
 for (co in names(pll_cutoffs)) {
   for (cv_name in names(covars)) {
     dir.create(
-      file.path(output_filepath, "diet_mediation_20261020"),
+      file.path(output_filepath, "diet_mediation_20261027"),
       showWarnings = FALSE, recursive = TRUE
     )
   }
@@ -138,7 +139,7 @@ for (co in names(pll_cutoffs)) {
     cv_use <- covars[[cv_name]]
 
     new_filepath <- file.path(
-      output_filepath, "diet_mediation_20261020",
+      output_filepath, "diet_mediation_20261027",
       paste0(co, "_", cv_name, "_diet-Intervention.Rds")
     )
 

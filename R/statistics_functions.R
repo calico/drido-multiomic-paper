@@ -792,6 +792,8 @@ docr_sobel_mediation <- function(data_use,
 #' @param treat_values levels of \code{intervention_var} to contrast against \code{control_value}
 #' @param n_sims number of quasi-Bayesian simulation draws per \code{mediate()} call
 #' @param min_samples minimum non-missing sample size required to run
+#' @param min_level_n with \code{boot_use}, minimum mice per \code{generation_wave}
+#'   level before falling back to \code{generation}
 #'
 #' @returns a dataframe, one row per outcome_var x treat_values level
 #'
@@ -805,7 +807,8 @@ docr_counterfactual_mediation <- function(data_use,
                                           treat_values,
                                           n_sims = 500,
                                           boot_use = FALSE,
-                                          min_samples = 10) {
+                                          min_samples = 10,
+                                          min_level_n = 15) {
   if (!is.data.frame(data_use)) {
     stop("data_use must be a data.frame")
   }
@@ -840,7 +843,19 @@ docr_counterfactual_mediation <- function(data_use,
 
     if (nrow(data_current) < min_samples) next
 
-    cv_a <- make_cov_string(filter_covars(co_vars_a, data_current))
+    cv_use <- filter_covars(co_vars_a, data_current)
+
+    # If any generation_wave level is sparse, a bootstrap resample can miss it
+    # and mediate() errors on "new levels"; fall back to generation
+    if (boot_use && "generation_wave" %in% cv_use && "generation" %in% colnames(data_current)) {
+      model_vars <- c(ov, intervention_var, mediation_var, cv_use)
+      dfx_complete <- tidyr::drop_na(data_current, dplyr::any_of(model_vars))
+      if (min(table(as.character(dfx_complete$generation_wave))) < min_level_n) {
+        cv_use[cv_use == "generation_wave"] <- "generation"
+      }
+    }
+
+    cv_a <- make_cov_string(cv_use)
 
     # Path a: intervention -> mediator
     f_m <- paste0(mediation_var, " ~ ", intervention_var, cv_a)
@@ -907,6 +922,7 @@ docr_counterfactual_mediation <- function(data_use,
       result_row$mediation_var <- mediation_var
       result_row$intervention_var <- intervention_var
       result_row$n_obs <- nrow(data_current)
+      result_row$batch_covar <- intersect(c("generation_wave", "generation"), cv_use)[1]
 
       all_outcome_results <- dplyr::bind_rows(all_outcome_results, result_row)
     }
@@ -1093,11 +1109,13 @@ docr_gam_process <- function(mt,
 docr_elastic_train_test_parse <- function(final_data,
                                           train_frac = 0.8,
                                           seed = 212,
-                                          regress_bw = TRUE) {
+                                          regress_bw = TRUE,
+                                          family = c("cox", "gaussian")) {
   checkmate::assertSubset(c(
     "mouse_id", "fasting", "bw_test", "diet",
     "age_days", "surv_days"
   ), colnames(final_data))
+  family = match.arg(family)
 
   # make metabolite matrix
   X_metabo_matrix_initial <- final_data %>%
@@ -1158,16 +1176,23 @@ docr_elastic_train_test_parse <- function(final_data,
   X_metabo_matrix_test <- X_metabo_matrix_clean[test_idx, ]
 
   # make survival objects
-  surv_obj_train <- survival::Surv(
-    time = X_control_df_train$age_days,
-    time2 = X_control_df_train$surv_days,
-    event = rep(1, nrow(X_control_df_train))
-  )
-  surv_obj_test <- survival::Surv(
-    time = X_control_df_test$age_days,
-    time2 = X_control_df_test$surv_days,
-    event = rep(1, nrow(X_control_df_test))
-  )
+  if (family == "cox") {
+    surv_obj_train <- survival::Surv(
+      time = X_control_df_train$age_days,
+      time2 = X_control_df_train$surv_days,
+      event = rep(1, nrow(X_control_df_train))
+    )
+    surv_obj_test <- survival::Surv(
+      time = X_control_df_test$age_days,
+      time2 = X_control_df_test$surv_days,
+      event = rep(1, nrow(X_control_df_test))
+    )
+  } else {
+    surv_obj_train <- X_control_df_train %>%
+      dplyr::pull(surv_days, mouse_id)
+    surv_obj_test <- X_control_df_test %>%
+      dplyr::pull(surv_days, mouse_id)
+  }
 
   return(list(
     X_control_df_train = X_control_df_train,
@@ -1280,42 +1305,52 @@ docr_elastic_model_fit <- function(i,
                                    bootstrap = FALSE,
                                    bootstrap_lamdba = c(
                                      "lambda.min",
-                                     "lambda.1se",
-                                     "lambda.ci"
+                                     "lambda.1se"
                                    ),
                                    fixed_lambda = NULL,
                                    fold_vec = NULL,
                                    maxit = 1e+06,
                                    nlambda = 100,
-                                   type_measure = c("default", "C") # default is partial likelihood
+                                   family = c("cox", "gaussian"),
+                                   type_measure = c("default", "C", "mse", "deviance") # default is partial likelihood
 ) {
-  if (length(type_measure) > 1) {
-    type_measure <- type_measure[1]
-  }
+    type_measure <- match.arg(type_measure)
+    family <- match.arg(family)
+    bootstrap_lamdba <- match.arg(bootstrap_lamdba)
 
   if (bootstrap) {
     boot_idx <- sample(nrow(X_data), replace = TRUE)
     X_data <- X_data[boot_idx, ]
-    Y_data <- Y_data[boot_idx, ]
+    if (!is.null(dim(Y_data))) {
+      Y_data <- Y_data[boot_idx, ]
+    } else {
+      Y_data <- Y_data[boot_idx]
+    }
   }
 
   if (!is.null(fixed_lambda) && bootstrap) {
     fit <- glmnet(
       x = X_data,
       y = Y_data,
-      family = "cox",
+      family = family,
       alpha = alpha_value,
       penalty.factor = penalty_vec,
       maxit = maxit,
       nlambda = nlambda
     )
-    return(as.numeric(coef(fit, s = fixed_lambda)))
+    coef_vec <- as.matrix(coef(fit, s = fixed_lambda))
+    if (rownames(coef_vec)[1] == "(Intercept)") coef_vec <- coef_vec[-1, , drop = FALSE]
+    return(as.numeric(coef_vec))
   }
+    
+    if (family %in% c("gaussian") && type_measure == "C") {
+      type_measure = "default"
+    }
 
   cv_model <- cv.glmnet(
     x = X_data,
     y = Y_data,
-    family = "cox",
+    family = family,
     alpha = alpha_value,
     penalty.factor = penalty_vec,
     maxit = maxit,
@@ -1325,21 +1360,9 @@ docr_elastic_model_fit <- function(i,
   )
 
   if (bootstrap) {
-    if (length(bootstrap_lamdba) > 1) {
-      bootstrap_lamdba <- bootstrap_lamdba[1]
-    }
-    if (bootstrap_lamdba == "lambda.ci") {
-      all_predictions <- predict(cv_model,
-        newx = X_data,
-        s = cv_model$lambda,
-        type = "response"
-      )
-      c_indices <- apply(all_predictions, 2, function(pred_vec) {
-        glmnet::Cindex(pred = pred_vec, y = Y_data)
-      })
-      bootstrap_lamdba <- cv_model$lambda[which.max(c_indices)]
-    }
-    return(as.numeric(coef(cv_model, s = bootstrap_lamdba)))
+    coef_vec <- as.matrix(coef(cv_model, s = bootstrap_lamdba))
+    if (rownames(coef_vec)[1] == "(Intercept)") coef_vec <- coef_vec[-1, , drop = FALSE]
+    return(as.numeric(coef_vec))
   } else {
     return(cv_model)
   }
