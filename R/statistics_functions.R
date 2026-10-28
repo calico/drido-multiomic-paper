@@ -763,6 +763,29 @@ docr_sobel_mediation <- function(data_use,
 }
 
 
+# Summarize a vector of mediate() simulation/bootstrap draws for a derived
+# effect, using the same rules mediate() applies to its own effects: BCa
+# (mediate()'s implementation) or percentile CI, and
+# p = 2 * min(share > 0, share < 0)
+mediation_sims_summary <- function(sims, est, bca = FALSE, conf_level = 0.95) {
+  sims <- sims[!is.na(sims)]
+  n <- length(sims)
+  low <- (1 - conf_level) / 2
+  high <- 1 - low
+  if (bca) {
+    z <- qnorm(sum(sims < mean(sims)) / n)
+    U <- (n - 1) * (mean(sims) - sims)
+    a <- sum(U^3) / (6 * sum(U^2)^(3 / 2))
+    probs <- pnorm(z + (z + qnorm(c(low, high))) / (1 - a * (z + qnorm(c(low, high)))))
+  } else {
+    probs <- c(low, high)
+  }
+  ci <- unname(quantile(sims, probs, na.rm = TRUE))
+  p <- if (est == 0) 1 else min(2 * min(sum(sims > 0), sum(sims < 0)) / n, 1)
+  c(est = est, lo = ci[1], hi = ci[2], p = p)
+}
+
+
 #' Counterfactual (natural direct/indirect effect) mediation, via `mediation`
 #'
 #' @description
@@ -783,14 +806,22 @@ docr_sobel_mediation <- function(data_use,
 #' comparisons), then \code{mediate()} is called once per level in
 #' \code{treat_values} against the shared \code{control_value}.
 #'
+#' The ACME(treated) - ACME(control) difference (= the interaction's
+#' contribution to the indirect effect) is summarized from the per-draw
+#' \code{d1.sims - d0.sims} (\code{long = TRUE}), with the same CI/p-value
+#' rules \code{mediate()} uses for its own effects.
+#'
 #' @param data_use a dataframe with columns corresponding to necessary variables
 #' @param outcome_var column name(s) for outcome variable of interest, as a string
 #' @param intervention_var column name for intervention variable of interest, as a string
 #' @param mediation_var column name for mediation variable of interest, as a string
 #' @param co_vars_a covariates included in model
 #' @param control_value reference level of \code{intervention_var}
-#' @param treat_values levels of \code{intervention_var} to contrast against \code{control_value}
-#' @param n_sims number of quasi-Bayesian simulation draws per \code{mediate()} call
+#' @param treat_values levels of \code{intervention_var} to contrast against
+#'   \code{control_value}; numeric for a continuous intervention
+#' @param n_sims number of quasi-Bayesian or bootstrap draws per \code{mediate()} call
+#' @param boot_use use the nonparametric bootstrap instead of quasi-Bayesian draws
+#' @param boot_ci_type bootstrap CI type passed to \code{mediate()}, "bca" or "perc"
 #' @param min_samples minimum non-missing sample size required to run
 #' @param min_level_n with \code{boot_use}, minimum mice per \code{generation_wave}
 #'   level before falling back to \code{generation}
@@ -807,6 +838,7 @@ docr_counterfactual_mediation <- function(data_use,
                                           treat_values,
                                           n_sims = 500,
                                           boot_use = FALSE,
+                                          boot_ci_type = "bca",
                                           min_samples = 10,
                                           min_level_n = 15) {
   if (!is.data.frame(data_use)) {
@@ -873,9 +905,14 @@ docr_counterfactual_mediation <- function(data_use,
     model_y <- tryCatch(do.call("lm", list(formula = as.formula(f_y), data = data_current)), error = function(e) NULL)
     if (is.null(model_m) || is.null(model_y)) next
 
-    # Need to loop through the different diets
-    treat_values_use <- intersect(treat_values, unique(as.character(data_current[[intervention_var]])))
-    
+    # Need to loop through the different diets; a continuous intervention
+    # uses the supplied contrast values as-is
+    treat_values_use <- if (is.numeric(treat_values)) {
+      treat_values
+    } else {
+      intersect(treat_values, unique(as.character(data_current[[intervention_var]])))
+    }
+
     # Define mouse_id clusters
     mouse_ids <- data_current$mouse_id
     names(mouse_ids) <- rownames(data_current)
@@ -891,21 +928,33 @@ docr_counterfactual_mediation <- function(data_use,
           treat.value = tv,
           sims = n_sims,
           boot = boot_use,
+          boot.ci.type = boot_ci_type,
           cluster = if (!boot_use) mouse_ids else NULL,
-          long = FALSE
+          long = TRUE
         ),
         error = function(e) NULL
       )
       if (is.null(med_fit)) next
       s <- summary(med_fit)
 
+      # ACME(treated) - ACME(control), from the per-draw sims
+      acme_diff <- mediation_sims_summary(
+        sims = as.numeric(med_fit$d1.sims) - as.numeric(med_fit$d0.sims),
+        est = s$d1 - s$d0,
+        bca = boot_use && boot_ci_type == "bca"
+      )
+
       result_row <- data.frame(
-        model_term = paste0(intervention_var, tv),
+        model_term = if (is.numeric(treat_values)) intervention_var else paste0(intervention_var, tv),
+        control_value = as.character(control_value),
+        treat_value = as.character(tv),
         # ACME (indirect effect, a x b): differs by condition because of the
         # intervention x mediator interaction in model_y
         acme_control = s$d0, acme_control_lo = s$d0.ci[1], acme_control_hi = s$d0.ci[2], acme_control_p = s$d0.p,
         acme_treated = s$d1, acme_treated_lo = s$d1.ci[1], acme_treated_hi = s$d1.ci[2], acme_treated_p = s$d1.p,
         acme_avg = s$d.avg, acme_avg_lo = s$d.avg.ci[1], acme_avg_hi = s$d.avg.ci[2], acme_avg_p = s$d.avg.p,
+        # ACME(treated) - ACME(control): the interaction's contribution
+        acme_diff = acme_diff[["est"]], acme_diff_lo = acme_diff[["lo"]], acme_diff_hi = acme_diff[["hi"]], acme_diff_p = acme_diff[["p"]],
         # ADE (direct effect)
         ade_control = s$z0, ade_control_lo = s$z0.ci[1], ade_control_hi = s$z0.ci[2], ade_control_p = s$z0.p,
         ade_treated = s$z1, ade_treated_lo = s$z1.ci[1], ade_treated_hi = s$z1.ci[2], ade_treated_p = s$z1.p,

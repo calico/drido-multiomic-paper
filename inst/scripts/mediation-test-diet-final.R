@@ -112,71 +112,93 @@ covars <- list(with_bw = c("generation_wave", "fasting", "bw_test"),
 diet_control <- "AL"
 diet_treat_values <- c("1D", "2D", "20", "40")
 
+# Body weight as its own (continuous) intervention, diet as a covariate;
+# contrast = mean -/+ 0.5 SD of bw_test within each trim subset (1 SD apart)
+bw_covars <- c("generation_wave", "fasting", "diet")
+bw_sd_contrast <- 0.5
+
 # Draws for QB inference or bootstrap
 n_sims <- 2000
 boot_use <- TRUE
+boot_ci_type <- "bca"
+
+med_folder <- "diet_mediation_20261028"
+
+# One entry per saved file: diet intervention x covariate set, plus the
+# body weight intervention
+run_specs <- list()
+for (co in names(pll_cutoffs)) {
+  for (cv_name in names(covars)) {
+    run_specs[[length(run_specs) + 1]] <- list(
+      co = co, intervention_var = "diet", covar_set = cv_name, cv_use = covars[[cv_name]],
+      file_name = paste0(co, "_", cv_name, "_diet-Intervention.Rds")
+    )
+  }
+  run_specs[[length(run_specs) + 1]] <- list(
+    co = co, intervention_var = "bw_test", covar_set = "with_diet", cv_use = bw_covars,
+    file_name = paste0(co, "_with_diet_bw-Intervention.Rds")
+  )
+}
 
 ### Start loop ----
 cat("------ Starting counterfactual mediation --------\n")
 
-for (co in names(pll_cutoffs)) {
-  for (cv_name in names(covars)) {
-    dir.create(
-      file.path(output_filepath, "diet_mediation_20261027"),
-      showWarnings = FALSE, recursive = TRUE
-    )
-  }
-}
+dir.create(file.path(output_filepath, med_folder), showWarnings = FALSE, recursive = TRUE)
 
 future::plan(future::multisession, workers = future::availableCores() - 1)
 
-for (co in names(pll_cutoffs)) {
+for (spec in run_specs) {
+  co <- spec$co
 
   data_filtered <- data_wide %>%
     dplyr::filter(PLL <= pll_cutoffs[[co]])
 
-  for (cv_name in names(covars)) {
-    cv_use <- covars[[cv_name]]
+  new_filepath <- file.path(output_filepath, med_folder, spec$file_name)
 
-    new_filepath <- file.path(
-      output_filepath, "diet_mediation_20261027",
-      paste0(co, "_", cv_name, "_diet-Intervention.Rds")
-    )
+  if (file.exists(new_filepath)) next
 
-    if (file.exists(new_filepath)) next
-
-    final_mediation_df <- furrr::future_map_dfr(seq_len(nrow(name_key)), function(j) {
-      mediator_var <- paste0("tv_", name_key$safe[j])
-      mediator_bl <- paste0("bl_", name_key$safe[j])
-      if (!(mediator_var %in% colnames(data_filtered))) return(data.frame())
-
-      docr_counterfactual_mediation(
-        data_use = data_filtered,
-        outcome_var = "surv_days",
-        intervention_var = "diet",
-        mediation_var = mediator_var,
-        co_vars_a = c(cv_use, mediator_bl),
-        control_value = diet_control,
-        treat_values = diet_treat_values,
-        boot_use = boot_use,
-        n_sims = n_sims
-      ) %>%
-        dplyr::mutate(mediation_var = name_key$trait_id[j])
-    })
-
-    if (nrow(final_mediation_df) > 0) {
-      final_mediation_df <- final_mediation_df %>%
-        dplyr::mutate(
-          intervention_var = "diet",
-          pll_cutoff = co,
-          pll_cutoff_value = pll_cutoffs[[co]],
-          covar_set = cv_name
-        )
-    }
-
-    saveRDS(final_mediation_df, new_filepath)
-    cat(paste0("\n[", co, "/", cv_name, "] Saved: diet intervention"))
+  if (spec$intervention_var == "diet") {
+    control_use <- diet_control
+    treat_use <- diet_treat_values
+  } else {
+    bw_mean <- mean(data_filtered$bw_test, na.rm = TRUE)
+    bw_sd <- sd(data_filtered$bw_test, na.rm = TRUE)
+    control_use <- bw_mean - bw_sd_contrast * bw_sd
+    treat_use <- bw_mean + bw_sd_contrast * bw_sd
   }
+
+  final_mediation_df <- furrr::future_map_dfr(seq_len(nrow(name_key)), function(j) {
+    mediator_var <- paste0("tv_", name_key$safe[j])
+    mediator_bl <- paste0("bl_", name_key$safe[j])
+    if (!(mediator_var %in% colnames(data_filtered))) return(data.frame())
+
+    docr_counterfactual_mediation(
+      data_use = data_filtered,
+      outcome_var = "surv_days",
+      intervention_var = spec$intervention_var,
+      mediation_var = mediator_var,
+      co_vars_a = c(spec$cv_use, mediator_bl),
+      control_value = control_use,
+      treat_values = treat_use,
+      boot_use = boot_use,
+      boot_ci_type = boot_ci_type,
+      n_sims = n_sims
+    ) %>%
+      dplyr::mutate(mediation_var = name_key$trait_id[j])
+  }, .options = furrr::furrr_options(seed = TRUE))
+
+  if (nrow(final_mediation_df) > 0) {
+    final_mediation_df <- final_mediation_df %>%
+      dplyr::mutate(
+        intervention_var = spec$intervention_var,
+        pll_cutoff = co,
+        pll_cutoff_value = pll_cutoffs[[co]],
+        covar_set = spec$covar_set
+      )
+  }
+
+  saveRDS(final_mediation_df, new_filepath)
+  cat(paste0("\n[", co, "/", spec$covar_set, "] Saved: ", spec$intervention_var, " intervention"))
 }
 
 future::plan(future::sequential)

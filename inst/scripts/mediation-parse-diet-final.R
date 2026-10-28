@@ -10,7 +10,7 @@ output_filepath <- "~/workspace/docr_data/MS1553"
 # local_filepath <- "~/GitHub/drido-multiomic-paper"
 # output_filepath <- "~/GitHub/drido-multiomic-paper/inst/extdata/"
 
-med_analysis_folder <- "diet_mediation_20261027" # output folder from mediation-test-diet-final.R
+med_analysis_folder <- "diet_mediation_20261028" # output folder from mediation-test-diet-final.R
 
 source(file.path(local_filepath, "R/statistics_functions.R"))
 
@@ -31,12 +31,6 @@ all_med_test <- furrr::future_map_dfr(
 
 future::plan(future::sequential)
 
-# Normal p-value using the CI half facing zero; avoids the bootstrap p = 0 floor (< 2/n_sims)
-ci_pvalue <- function(est, lo, hi) {
-  se <- ifelse(est > 0, est - lo, hi - est) / 1.96
-  2 * pnorm(-abs(est) / se)
-}
-
 all_med_test_clean <- all_med_test %>%
   dplyr::mutate(
     feature_id = mediation_var,
@@ -47,16 +41,9 @@ all_med_test_clean <- all_med_test %>%
         TRUE ~ "proteomics"
       )
   ) %>%
-  dplyr::select(-intervention_var, -mediation_var) %>%
-  dplyr::mutate(
-    acme_control_p_norm = ci_pvalue(acme_control, acme_control_lo, acme_control_hi),
-    acme_treated_p_norm = ci_pvalue(acme_treated, acme_treated_lo, acme_treated_hi),
-    acme_avg_p_norm = ci_pvalue(acme_avg, acme_avg_lo, acme_avg_hi),
-    total_effect_p_norm = ci_pvalue(total_effect, total_effect_lo, total_effect_hi)
-  )
+  dplyr::select(-mediation_var)
 
-p_cols <- c("acme_control_p", "acme_treated_p", "acme_avg_p", "total_effect_p",
-            "acme_control_p_norm", "acme_treated_p_norm", "acme_avg_p_norm", "total_effect_p_norm")
+p_cols <- c("acme_control_p", "acme_treated_p", "acme_avg_p", "acme_diff_p", "total_effect_p")
 
 all_med_test_adj <- purrr::reduce(
   p_cols,
@@ -71,6 +58,18 @@ all_med_test_adj <- purrr::reduce(
   .init = all_med_test_clean
 )
 
-saveRDS(all_med_test_adj, file = file.path(local_filepath,
-                                           "inst/extdata",
-                                           paste0(gsub("-", "", Sys.Date()), "-Mediation-CounterfactualTest-Summary-Diet.Rds")))
+# Diet and body weight interventions saved separately; FDR is already
+# within intervention via model_term ("diet<level>" vs "bw_test")
+saveRDS(all_med_test_adj %>%
+          dplyr::filter(intervention_var == "diet") %>%
+          dplyr::select(-intervention_var),
+        file = file.path(local_filepath,
+                         "inst/extdata",
+                         paste0(gsub("-", "", Sys.Date()), "-Mediation-CounterfactualTest-Summary-Diet.Rds")))
+
+saveRDS(all_med_test_adj %>%
+          dplyr::filter(intervention_var == "bw_test") %>%
+          dplyr::select(-intervention_var),
+        file = file.path(local_filepath,
+                         "inst/extdata",
+                         paste0(gsub("-", "", Sys.Date()), "-Mediation-CounterfactualTest-Summary-BW.Rds")))
