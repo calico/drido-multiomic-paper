@@ -120,9 +120,10 @@ bw_sd_contrast <- 0.5
 # Draws for QB inference or bootstrap
 n_sims <- 2000
 boot_use <- TRUE
-boot_ci_type <- "bca"
+boot_ci_type <- "perc"
 
-med_folder <- "diet_mediation_20261028"
+med_folder <- "diet_mediation_20261103"
+seed_use <- 212
 
 # One entry per saved file: diet intervention x covariate set, plus the
 # body weight intervention
@@ -149,6 +150,7 @@ future::plan(future::multisession, workers = future::availableCores() - 1)
 
 for (spec in run_specs) {
   co <- spec$co
+  set.seed(seed_use) # reproducible draws per run (furrr derives per-feature streams from this)
 
   data_filtered <- data_wide %>%
     dplyr::filter(PLL <= pll_cutoffs[[co]])
@@ -204,3 +206,39 @@ for (spec in run_specs) {
 future::plan(future::sequential)
 
 print("Data saved")
+
+### Parse: combine runs, FDR-correct, and save (as in mediation-parse-diet-final.R) ----
+all_med_test <- purrr::map_dfr(list.files(file.path(output_filepath, med_folder), full.names = TRUE), readRDS) %>%
+  dplyr::mutate(
+    feature_id = mediation_var,
+    modality = dplyr::case_when(
+      grepl("\\.M012|\\.M013", feature_id) ~ "metabolomics",
+      grepl("\\.M014|\\.M015", feature_id) ~ "lipidomics",
+      TRUE ~ "proteomics"
+    )
+  ) %>%
+  dplyr::select(-mediation_var)
+
+p_cols <- c("acme_control_p", "acme_treated_p", "acme_avg_p", "acme_diff_p", "total_effect_p")
+
+all_med_test_adj <- purrr::reduce(
+  p_cols,
+  function(df, p) {
+    fdr_multi(df, pval_var = p, nest_vars = c("model_term", "outcome_var", "modality", "pll_cutoff", "covar_set"),
+              padj_var = paste0(p, "_adj"))
+  },
+  .init = all_med_test
+)
+
+# Diet and body weight interventions saved separately; FDR is already within intervention via model_term
+for (iv in c("diet", "bw_test")) {
+  saveRDS(all_med_test_adj %>%
+            dplyr::filter(intervention_var == iv) %>%
+            dplyr::select(-intervention_var),
+          file = file.path(local_filepath,
+                           "inst/extdata",
+                           paste0(gsub("-", "", Sys.Date()), "-Mediation-CounterfactualTest-Summary-",
+                                  ifelse(iv == "diet", "Diet", "BW"), ".Rds")))
+}
+
+print("Parsed data saved")
