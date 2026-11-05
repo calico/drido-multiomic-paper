@@ -2,7 +2,7 @@
 ### Mediation Analyses for DO-CR project - Diet -> Bodyweight -> Compound (Year 2)
 ###
 ### Counterfactual mediation (natural direct/indirect effects, via the
-### `mediation` package, quasi-Bayesian draws) of whether diet's effect on
+### `mediation` package, percentile bootstrap) of whether diet's effect on
 ### each Year 2 compound runs through bodyweight. Same setup as
 ### mediation-test-diet-final.R, with bodyweight (bw_test) as the mediator
 ### and the compound as the outcome. Adjusts for baseline (Year 1)
@@ -81,7 +81,8 @@ data_wide <- data_use2 %>%
                 -modality, -name_use) %>%
   tidyr::pivot_wider(values_from = c("baseline_value", "trait_value"),
                      names_from = "trait_id") %>%
-  dplyr::left_join(bw_baseline, by = "mouse_id")
+  dplyr::left_join(bw_baseline, by = "mouse_id") %>%
+  dplyr::mutate(generation = factor(sub("W\\d+$", "", generation_wave))) # bootstrap fallback for sparse generation_wave levels
 
 print("Data combined")
 
@@ -114,11 +115,13 @@ covars <- c("generation_wave", "fasting", "bl_bw")
 diet_control <- "AL"
 diet_treat_values <- c("1D", "2D", "20", "40")
 
-# Quasi-Bayesian draws (no bootstrap)
+# Bootstrap settings, same as mediation-test-diet-final.R
 n_sims <- 2000
-boot_use <- FALSE
+boot_use <- TRUE
+boot_ci_type <- "perc"
 
-med_folder <- "diet_bw_compound_mediation_20261102"
+med_folder <- "diet_bw_compound_mediation_20261105"
+seed_use <- 212
 
 ### Start loop ----
 cat("------ Starting counterfactual mediation --------\n")
@@ -128,6 +131,7 @@ dir.create(file.path(output_filepath, med_folder), showWarnings = FALSE, recursi
 future::plan(future::multisession, workers = future::availableCores() - 1)
 
 for (co in names(pll_cutoffs)) {
+  set.seed(seed_use) # reproducible draws per run (furrr derives per-feature streams from this)
   data_filtered <- data_wide %>%
     dplyr::filter(PLL <= pll_cutoffs[[co]])
 
@@ -149,6 +153,7 @@ for (co in names(pll_cutoffs)) {
       control_value = diet_control,
       treat_values = diet_treat_values,
       boot_use = boot_use,
+      boot_ci_type = boot_ci_type,
       n_sims = n_sims
     ) %>%
       dplyr::mutate(feature_id = name_key$trait_id[j])
@@ -173,7 +178,7 @@ all_med_test <- purrr::map_dfr(list.files(file.path(output_filepath, med_folder)
     TRUE ~ "proteomics"
   ))
 
-p_cols <- c("acme_control_p", "acme_treated_p", "acme_avg_p", "acme_diff_p", "total_effect_p")
+p_cols <- c("acme_control_p", "acme_treated_p", "acme_avg_p", "acme_diff_p", "ade_avg_p", "total_effect_p")
 
 all_med_test_adj <- purrr::reduce(
   p_cols,
